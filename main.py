@@ -5,6 +5,7 @@ from Encode_for_FJSP import Encode
 from Instance import Processing_time, J, M_num, J_num, O_num
 import itertools
 import matplotlib.pyplot as plt
+import datetime
 
 
 class GA:
@@ -14,7 +15,7 @@ class GA:
         self.P_m = 0.3  # 变异概率
         self.P_v = 0.5  # 选择何种方式进行交叉
         self.P_w = 0.95  # 采用何种方式进行变异
-        self.Max_Itertions = 50  # 最大迭代次数
+        self.Max_Iterations = 10  # 最大迭代次数
 
     # 适应度
     def fitness(self, CHS, J, Processing_time, M_num, Len):
@@ -140,6 +141,8 @@ class GA:
         return idx
 
     def main(self, Processing_time, J, M_num, J_num, O_num):
+        start_time = datetime.datetime.now()
+        print("start time is : ", start_time)
         e = Encode(Processing_time, self.Pop_size, J, J_num, M_num)
         OS_List = e.OS_List()
         Len_Chromo = e.Len_Chromo
@@ -149,9 +152,10 @@ class GA:
         C = np.vstack((CHS1, CHS2, CHS3))
         Optimal_fit = 9999
         Optimal_CHS = 0
-        x = np.linspace(0, 50, 50)
+        x = np.linspace(1, 10, 10)
+        print(x)
         Best_fit = []
-        for i in range(self.Max_Itertions):
+        for i in range(self.Max_Iterations):
             Fit = self.fitness(C, J, Processing_time, M_num, Len_Chromo)
             Best = C[Fit.index(min(Fit))]
             best_fitness = min(Fit)
@@ -184,22 +188,25 @@ class GA:
                     else:
                         Mutation = self.Variation_Operation(C[j], Len_Chromo, J_num, J, Processing_time, M_num)
                     offspring.append(Mutation)
-                if offspring != []:
+                if offspring:
                     Fit = []
                     for i in range(len(offspring)):
                         d = Decode(J, Processing_time, M_num)
                         Fit.append(d.Decode_1(offspring[i], Len_Chromo))
                     C[j] = offspring[Fit.index(min(Fit))]
+            cur_time = datetime.datetime.now()
+            print("current time : ", cur_time)
         plt.plot(x, Best_fit, '-k')
+        plt.xticks(np.arange(0, 10, 2))
         plt.title(
             'the maximum completion time of each iteration for flexible job shop scheduling problem')
         plt.ylabel('Cmax')
         plt.xlabel('Test Num')
         plt.show()
+        stop_time = datetime.datetime.now()
+        print("end time : ", cur_time)
 
 
 if __name__ == '__main__':
-
-
     g = GA()
     g.main(Processing_time, J, M_num, J_num, O_num)

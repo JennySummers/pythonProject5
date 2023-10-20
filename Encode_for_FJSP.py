@@ -1,5 +1,6 @@
 import numpy as np
 import random
+# from Instance import put_time, pick_time, switch_time
 
 
 class Encode:
@@ -60,8 +61,7 @@ class Encode:
                     Machine_Select = []
                     for Machine_add in List_Machine_weizhi:  # 将这道工序的可用机器时间和以前积累的机器时间相加
                         #  比较可用机器的时间加上以前累计的机器时间的时间值，并选出时间最小
-                        Machine_Select.append(Machine_time[Machine_add] + D[
-                            Machine_add])
+                        Machine_Select.append(Machine_time[Machine_add] + D[Machine_add])
                     Min_time = min(Machine_Select)
                     K = Machine_Select.index(Min_time)
                     I = List_Machine_weizhi[K]
@@ -95,8 +95,7 @@ class Encode:
                             List_Machine_weizhi.append(k)
                     Machine_Select = []
                     for Machine_add in List_Machine_weizhi:  # 将这道工序的可用机器时间和以前积累的机器时间相加
-                        Machine_time[Machine_add] = Machine_time[Machine_add] + D[
-                            Machine_add]  # 比较可用机器的时间加上以前累计的机器时间的时间值，并选出时间最小
+                        Machine_time[Machine_add] = Machine_time[Machine_add] + D[Machine_add]  # 比较可用机器的时间加上以前累计的机器时间的时间值，并选出时间最小
                         Machine_Select.append(Machine_time[Machine_add])
                     Machine_Index_add = Machine_Select.index(min(Machine_Select))
                     site = self.Site(g, j)

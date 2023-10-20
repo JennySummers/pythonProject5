@@ -1,3 +1,6 @@
+from Instance import put_time, pick_time, switch_time
+
+
 class Machine_Time_window:
     def __init__(self, Machine_index):
         self.Machine_index = Machine_index
@@ -32,23 +35,24 @@ class Machine_Time_window:
         if len(self.O_start) == 0:
             burden = 0
         else:
+            # 处理时间 = 工件结束时间 - 工件开始时间
             processing_time = [self.O_end[i] - self.O_start[i] for i in range(len(self.O_start))]
             burden = sum(processing_time)
         return burden
 
-    def _Input(self, Job, M_Ealiest, P_t, O_num):
-        if self.O_end != []:
-            if self.O_start[-1] > M_Ealiest:
+    def _Input(self, Job, M_Earliest, P_t, O_num):
+        if self.O_end:
+            if self.O_start[-1] > M_Earliest:
                 for i in range(len(self.O_end)):
-                    if self.O_start[i] >= M_Ealiest:
+                    if self.O_start[i] >= M_Earliest:
                         self.assigned_task.insert(i, [Job + 1, O_num + 1])
                         break
             else:
                 self.assigned_task.append([Job + 1, O_num + 1])
         else:
             self.assigned_task.append([Job + 1, O_num + 1])
-        self.O_start.append(M_Ealiest)
+        self.O_start.append(M_Earliest)
         self.O_start.sort()
-        self.O_end.append(M_Ealiest + P_t)
+        self.O_end.append(M_Earliest + P_t)
         self.O_end.sort()
         self.End_time = self.O_end[-1]

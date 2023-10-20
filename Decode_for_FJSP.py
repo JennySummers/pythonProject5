@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 from Jobs import Job
 from Machines import Machine_Time_window
+from Instance import put_time, pick_time, switch_time
 import numpy as np
 
 
@@ -47,9 +48,9 @@ class Decode:
             T.append(T_i)
         return JM, T
 
-    def Earliest_Start(self, Job, O_num, Machine):
-        P_t = self.Processing_time[Job][O_num][Machine]
-        last_O_end = self.Jobs[Job].Last_Processing_end_time  # 上道工序结束时间
+    def Earliest_Start(self, job, O_num, Machine):
+        P_t = self.Processing_time[job][O_num][Machine]
+        last_O_end = self.Jobs[job].Last_Processing_end_time  # 上道工序结束时间
         Selected_Machine = Machine
         M_window = self.Machines[Selected_Machine].Empty_time_window()
         M_Tstart = M_window[0]
@@ -97,13 +98,10 @@ class Decode:
             Start_time = Machine.O_start
             End_time = Machine.O_end
             for i_1 in range(len(End_time)):
-                # plt.barh(i,width=End_time[i_1]-Start_time[i_1],height=0.8,left=Start_time[i_1],\
-                #          color=M[Machine.assigned_task[i_1][0]],edgecolor='black')
-                # plt.text(x=Start_time[i_1]+0.1,y=i,s=Machine.assigned_task[i_1])
-                plt.barh(i, width=End_time[i_1] - Start_time[i_1], height=0.8, left=Start_time[i_1], \
-                         color='white', edgecolor='black')
-                plt.text(x=Start_time[i_1] + (End_time[i_1] - Start_time[i_1]) / 2 - 0.5, y=i,
-                         s=Machine.assigned_task[i_1][0])
+                plt.barh(i, width=End_time[i_1] - Start_time[i_1], height=0.8, left=Start_time[i_1], color=M[Machine.assigned_task[i_1][0]], edgecolor='black')
+                plt.text(x=Start_time[i_1] + 0.1, y=i, s=Machine.assigned_task[i_1])
+                # plt.barh(i, width=End_time[i_1] - Start_time[i_1], height=0.8, left=Start_time[i_1], color='white', edgecolor='black')
+                # plt.text(x=Start_time[i_1] + (End_time[i_1] - Start_time[i_1]) / 2 - 0.5, y=i, s=Machine.assigned_task[i_1][0])
         plt.yticks(np.arange(i + 1), np.arange(1, i + 2))
         plt.title('Scheduling Gantt chart')
         plt.ylabel('Machines')
