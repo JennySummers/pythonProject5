@@ -1,3 +1,5 @@
+import profile
+
 import numpy as np
 import random
 from Decode_for_FJSP import Decode
