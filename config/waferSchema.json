@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "wafer schema",
+  "description": "用于晶圆配置文件wafer.json的格式说明",
+  "type": "array",
+  "items": {
+    "description": "用于描述一组晶圆的配方和数量",
+    "type": "object",
+    "properties": {
+      "waferGroupName": {
+        "description": "晶圆组名称",
+        "type": "string"
+      },
+      "waferNum": {
+        "description": "所包含的晶圆个数",
+        "type": "integer"
+      },
+      "recipe": {
+        "description": "晶圆的配方",
+        "type": "array",
+        "items": {
+          "description": "晶圆的单步配方",
+          "type": "object",
+          "properties": {
+            "processModule": {
+              "description": "可用于进行该步加工的单元列表，其中元素必须是layout中定义的（CM或PM或BM）的（组或单个单元）名",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "processTime": {
+              "description": "进行该步加工所需要的时间",
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "required": ["processModule","processTime"]
+        }
+      }
+    },
+    "required": ["waferGroupName","waferNum","recipe"]
+  }
+}

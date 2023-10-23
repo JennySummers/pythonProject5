@@ -12,7 +12,7 @@ switch_time = 1
 Processing_time代表不同的工件的不同工序可选的机器编号和对应的处理时间。
 Processing_time[i][j][k]表示工件i的第j道工序可以在机器k上加工，加工时间为Processing_time[i][j][k]
 '''
-Processing_time = [[[5, 3, 5, 3, 3, 9999, 10, 9],
+Processing_time = [[[5, 3, 9999, 3, 3, 9999, 10, 9],
                     [10, 9999, 5, 8, 3, 9, 9, 6],
                     [9999, 10, 9999, 5, 6, 2, 4, 5]],
 

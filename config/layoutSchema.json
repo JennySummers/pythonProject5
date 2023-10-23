@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "layout schema",
+  "description": "用于机台配置文件layout.json的格式定义",
+  "type": "object",
+  "properties": {
+    "VERSION": {
+      "type": "string"
+    },
+    "CM": {
+      "description": "用于描述一个机台中的CM个数、名称和分组",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/moduleGroup"
+      }
+    },
+    "PM": {
+      "description": "用于描述一个机台中的PM个数、名称和分组",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/moduleGroup"
+      }
+    },
+    "TM": {
+      "description": "用于描述一个机台中的TM个数、名称、分组以及可交互单元列表",
+      "type": "array",
+      "items": {
+        "description": "专用于描述机械臂组的名称、组成员以及可交互单元列表",
+        "type": "object",
+        "properties": {
+          "groupName": {
+            "description": "组名称，不同的组名称间不能重名",
+            "type": "string"
+          },
+          "elements": {
+            "description": "所包含的机械臂列表，不同的机械臂间不能重名",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "accessibleList": {
+            "description": "机械臂组的可访问单元列表,其中元素必须是已定义的（CM或PM或BM）的（组或单个单元）名",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "groupName",
+          "elements",
+          "accessibleList"
+        ]
+      }
+    },
+    "BM": {
+      "description": "用于描述一个机台中的BM个数、名称和分组",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/moduleGroup"
+      }
+    }
+  },
+  "definitions": {
+    "moduleGroup": {
+      "$id": "moduleGroup",
+      "description": "用于描述一个处理单元组，包含组名和组元素两个属性",
+      "type": "object",
+      "properties": {
+        "groupName": {
+          "description": "组名称，不同的组名称间不能重名",
+          "type": "string"
+        },
+        "elements": {
+          "description": "所包含的处理单元列表，不同的处理单元名称间不能重名",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "groupName",
+        "elements"
+      ]
+    }
+  },
+  "required": [
+    "CM",
+    "PM",
+    "TM",
+    "BM"
+  ]
+}
