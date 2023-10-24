@@ -5,17 +5,61 @@ from Instance import put_time, pick_time, switch_time
 import numpy as np
 
 
+def Gantt_Machine(Machines):
+    M = ['red', 'blue', 'yellow', 'orange', 'green', 'palegoldenrod', 'purple', 'pink', 'Thistle', 'Magenta',
+         'SlateBlue', 'RoyalBlue', 'Cyan', 'Aqua', 'floralwhite', 'ghostwhite', 'goldenrod', 'mediumslateblue',
+         'navajowhite',
+         'navy', 'sandybrown', 'moccasin']
+    for i in range(len(Machines)):
+        Machine = Machines[i]
+        Start_time = Machine.O_start
+        End_time = Machine.O_end
+        for i_1 in range(len(End_time)):
+            plt.barh(i, width=End_time[i_1] - Start_time[i_1], height=0.8, left=Start_time[i_1], color=M[Machine.assigned_task[i_1][0]], edgecolor='black')
+            plt.text(x=Start_time[i_1] + 0.1, y=i, s=Machine.assigned_task[i_1])
+            # plt.barh(i, width=End_time[i_1] - Start_time[i_1], height=0.8, left=Start_time[i_1], color='white', edgecolor='black')
+            # plt.text(x=Start_time[i_1] + (End_time[i_1] - Start_time[i_1]) / 2 - 0.5, y=i, s=Machine.assigned_task[i_1][0])
+    plt.yticks(np.arange(i + 1), np.arange(1, i + 2))
+    plt.title('Scheduling Gantt chart')
+    plt.ylabel('Machines')
+    plt.xlabel('Time(s)')
+    plt.show()
+
+
+def Gantt_Job(Jobs):
+    M = ['red', 'blue', 'yellow', 'orange', 'green', 'palegoldenrod', 'purple', 'pink', 'Thistle', 'Magenta',
+         'SlateBlue', 'RoyalBlue', 'Cyan', 'Aqua', 'floralwhite', 'ghostwhite', 'goldenrod', 'mediumslateblue',
+         'navajowhite',
+         'navy', 'sandybrown', 'moccasin']
+    for i in range(len(Jobs)):
+        job = Jobs[i]
+        # print(job.J_machine)
+        Start_time = job.J_start
+        End_time = job.J_end
+        for j in range(len(End_time)):
+            plt.barh(i, width=End_time[j] - Start_time[j], height=0.8, left=Start_time[j], color=M[job.J_machine[j]], edgecolor='black')
+            plt.text(x=Start_time[j] + 0.1, y=i, s=job.J_machine[j]+1)
+            # plt.barh(i, width=End_time[i_1] - Start_time[i_1], height=0.8, left=Start_time[i_1], color='white', edgecolor='black')
+            # plt.text(x=Start_time[i_1] + (End_time[i_1] - Start_time[i_1]) / 2 - 0.5, y=i, s=Machine.assigned_task[i_1][0])
+    plt.yticks(np.arange(i + 1), np.arange(1, i + 2))
+    plt.title('Scheduling Gantt chart')
+    plt.ylabel('Jobs')
+    plt.xlabel('Time(s)')
+    plt.show()
+
+
 class Decode:
-    def __init__(self, J, Processing_time, M_num):
+    def __init__(self, J, Processing_time, M_num, M_status):
         self.Processing_time = Processing_time
-        self.Scheduled = []  # 已经排产过的工序
-        self.M_num = M_num
+        # self.Scheduled = []  # 已经排产过的工序
+        self.M_num = M_num  # 机器数
         self.Machines = []  # 存储机器类
-        self.fitness = 0
-        self.J = J  #
+        self.fitness = 0    # 计算适应度
+        self.J = J          # 表示各个工件对应的工序数。用键值对来表示
         for j in range(M_num):
-            self.Machines.append(Machine_Time_window(j))
-        self.Machine_State = np.zeros(M_num, dtype=int)  # 在机器上加工的工件是哪个
+            self.Machines.append(Machine_Time_window(j))    # 为每个机器分配一个机器类，并对其进行编号
+        self.Machine_time = np.zeros(self.M_num, dtype=float)  # 机器时间初始化，使用当前机器运行情况初始化
+        # self.Machine_State = [x for x in M_status]          # 当前机器还有多少时间达到空闲
         self.Jobs = []  # 存储工件类
         for k, v in J.items():
             self.Jobs.append(Job(k, v))
@@ -87,23 +131,3 @@ class Decode:
                 self.fitness = Para[5]
             self.Machines[Machine]._Input(Job, Para[0], Para[2], Para[3])
         return self.fitness
-
-    def Gantt(self, Machines):
-        M = ['red', 'blue', 'yellow', 'orange', 'green', 'palegoldenrod', 'purple', 'pink', 'Thistle', 'Magenta',
-             'SlateBlue', 'RoyalBlue', 'Cyan', 'Aqua', 'floralwhite', 'ghostwhite', 'goldenrod', 'mediumslateblue',
-             'navajowhite',
-             'navy', 'sandybrown', 'moccasin']
-        for i in range(len(Machines)):
-            Machine = Machines[i]
-            Start_time = Machine.O_start
-            End_time = Machine.O_end
-            for i_1 in range(len(End_time)):
-                plt.barh(i, width=End_time[i_1] - Start_time[i_1], height=0.8, left=Start_time[i_1], color=M[Machine.assigned_task[i_1][0]], edgecolor='black')
-                plt.text(x=Start_time[i_1] + 0.1, y=i, s=Machine.assigned_task[i_1])
-                # plt.barh(i, width=End_time[i_1] - Start_time[i_1], height=0.8, left=Start_time[i_1], color='white', edgecolor='black')
-                # plt.text(x=Start_time[i_1] + (End_time[i_1] - Start_time[i_1]) / 2 - 0.5, y=i, s=Machine.assigned_task[i_1][0])
-        plt.yticks(np.arange(i + 1), np.arange(1, i + 2))
-        plt.title('Scheduling Gantt chart')
-        plt.ylabel('Machines')
-        plt.xlabel('Time(s)')
-        plt.show()
