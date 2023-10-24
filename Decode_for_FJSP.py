@@ -58,8 +58,8 @@ class Decode:
         self.J = J          # 表示各个工件对应的工序数。用键值对来表示
         for j in range(M_num):
             self.Machines.append(Machine_Time_window(j))    # 为每个机器分配一个机器类，并对其进行编号
-        # Machine_time = np.zeros(self.M_num, dtype=float)  # 机器时间初始化，使用当前机器运行情况初始化
-        self.Machine_State = [x for x in M_status]          # 当前机器还有多少时间达到空闲
+        self.Machine_time = np.zeros(self.M_num, dtype=float)  # 机器时间初始化，使用当前机器运行情况初始化
+        # self.Machine_State = [x for x in M_status]          # 当前机器还有多少时间达到空闲
         self.Jobs = []  # 存储工件类
         for k, v in J.items():
             self.Jobs.append(Job(k, v))

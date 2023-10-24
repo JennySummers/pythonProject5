@@ -12,7 +12,7 @@ class Encode:
         self.J = J  # 各工件对应的工序数
         self.J_num = J_num  # 工件数
         self.M_num = M_num  # 机器数
-        self.Machine_status = M_status     # 当前机器还需要Machine_status[i]个单位时间达到空闲状态。
+        # self.Machine_status = [x for x in M_status]   # 当前机器还需要Machine_status[i]个单位时间达到空闲状态。
         self.CHS = []
         self.Len_Chromo = 0                # 染色体长度，长度等于所有工序数的总和
         for i in J.values():
@@ -45,8 +45,8 @@ class Encode:
         OS_list = self.OS_List()
         OS = self.CHS_Matrix(self.GS_num)
         for i in range(self.GS_num):
-            # Machine_time = np.zeros(self.M_num, dtype=float)  # 机器时间初始化，使用当前机器运行情况初始化
-            Machine_time = [x for x in self.Machine_status]
+            Machine_time = np.zeros(self.M_num, dtype=float)  # 机器时间初始化，使用当前机器运行情况初始化
+            # Machine_time = [x for x in self.Machine_status]
             random.shuffle(OS_list)  # 生成工序排序部分
             OS[i] = np.array(OS_list)
             GJ_list = [i for i in range(self.J_num)]
