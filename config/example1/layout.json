@@ -1,0 +1,329 @@
+{
+  "VERSION": "1.0",
+  "CM": [
+    {
+      "groupName": "CM1",
+      "elements": [
+        "CM1-1-1",
+        "CM1-1-2",
+        "CM1-1-3",
+        "CM1-1-4"
+      ]
+    }
+  ],
+  "PM": [
+    {
+      "groupName": "PG1",
+      "elements": [
+        "PM2-3A",
+        "PM2-4A",
+        "PM2-5A",
+        "PM2-6A",
+        "PM2-7A",
+        "PM2-3B",
+        "PM2-4B",
+        "PM2-5B",
+        "PM2-6B",
+        "PM2-7B"
+      ]
+    },
+    {
+      "groupName": "PG2",
+      "elements": [
+        "PM3-2A",
+        "PM3-2B"
+      ]
+    },
+    {
+      "groupName": "PG3",
+      "elements": [
+        "PM3-1A",
+        "PM3-4A",
+        "PM3-5A",
+        "PM3-7A",
+        "PM3-3B",
+        "PM3-4B",
+        "PM3-5B",
+        "PM3-7B"
+      ]
+    },
+    {
+      "groupName": "PG4",
+      "elements": [
+        "PM3-3A",
+        "PM3-3B"
+      ]
+    },
+    {
+      "groupName": "PG5",
+      "elements": [
+        "PM4-2A",
+        "PM4-2B"
+      ]
+    },
+    {
+      "groupName": "PG6",
+      "elements": [
+        "PM4-1A",
+        "PM4-4A",
+        "PM4-5A",
+        "PM4-7A",
+        "PM4-3B",
+        "PM4-4B",
+        "PM4-5B",
+        "PM4-7B"
+      ]
+    },
+    {
+      "groupName": "PG7",
+      "elements": [
+        "PM4-8A",
+        "PM4-8B"
+      ]
+    },
+    {
+      "groupName": "PG8",
+      "elements": [
+        "PM6-4A",
+        "PM6-5A",
+        "PM6-6A",
+        "PM6-7A",
+        "PM6-4B",
+        "PM6-5B",
+        "PM6-6B",
+        "PM6-7B"
+      ]
+    },
+    {
+      "groupName": "PG9",
+      "elements": [
+        "PM6-8A",
+        "PM6-9A",
+        "PM6-10A",
+        "PM6-8B",
+        "PM6-9B",
+        "PM6-10B"
+      ]
+    },
+    {
+      "groupName": "PG10",
+      "elements": [
+        "PM8-3",
+        "PM8-4",
+        "PM8-5"
+      ]
+    },
+    {
+      "groupName": "PG11",
+      "elements": [
+        "ExposerIn8-6",
+        "ExposerOut8-7"
+      ]
+    },
+    {
+      "groupName": "PG12",
+      "elements": [
+        "PM7-1A",
+        "PM7-2A",
+        "PM7-3A",
+        "PM7-4A",
+        "PM7-1B",
+        "PM7-2B",
+        "PM7-3B",
+        "PM7-4B"
+      ]
+    },
+    {
+      "groupName": "PG13",
+      "elements": [
+        "PM5-9A",
+        "PM5-9B"
+      ]
+    },
+    {
+      "groupName": "PG14",
+      "elements": [
+        "PM5-1A",
+        "PM5-4A",
+        "PM5-5A",
+        "PM5-7A",
+        "PM5-3B",
+        "PM5-4B",
+        "PM5-5B",
+        "PM5-7B"
+      ]
+    },
+    {
+      "groupName": "PG15",
+      "elements": [
+        "PM5-3A",
+        "PM5-3B"
+      ]
+    }
+  ],
+  "TM": [
+    {
+      "groupName": "TM1",
+      "elements": [
+        "TM1"
+      ],
+      "accessibleList": [
+        "CM1",
+        "BM2-1",
+        "BM2-2"
+      ]
+    },
+    {
+      "groupName": "TM2",
+      "elements": [
+        "TM2"
+      ],
+      "accessibleList": [
+        "BM2-1",
+        "BM2-2",
+        "PG1",
+        "PG2",
+        "PG4",
+        "PG5",
+        "PG15"
+      ]
+    },
+    {
+      "groupName": "TM3",
+      "elements": [
+        "TM3"
+      ],
+      "accessibleList": [
+        "PG2",
+        "PG3",
+        "PG4"
+      ]
+    },
+    {
+      "groupName": "TM4",
+      "elements": [
+        "TM4"
+      ],
+      "accessibleList": [
+        "PG5",
+        "PG6",
+        "PG7"
+      ]
+    },
+    {
+      "groupName": "TM6",
+      "elements": [
+        "TM6"
+      ],
+      "accessibleList": [
+        "PG8",
+        "PG9",
+        "PG13",
+        "BM6-3",
+        "BM6-1",
+        "BM6-2",
+        "BM6-11",
+        "BM6-12"
+      ]
+    },
+    {
+      "groupName": "TM8",
+      "elements": [
+        "TM8"
+      ],
+      "accessibleList": [
+        "BM6-1",
+        "BM6-2",
+        "BM8-1",
+        "BM8-2",
+        "PG10",
+        "PG11"
+      ]
+    },
+    {
+      "groupName": "TM7",
+      "elements": [
+        "TM7"
+      ],
+      "accessibleList": [
+        "BM6-11",
+        "BM6-12",
+        "PG12"
+      ]
+    },
+    {
+      "groupName": "TM5",
+      "elements": [
+        "TM5"
+      ],
+      "accessibleList": [
+        "PG13",
+        "PG14",
+        "PG15"
+      ]
+    }
+  ],
+  "BM": [
+    {
+      "groupName": "BM2-1",
+      "elements": [
+        "BM2-1A",
+        "BMB2-1B"
+      ]
+    },
+    {
+      "groupName": "BM2-2",
+      "elements": [
+        "BM2-2A",
+        "BM2-2B"
+      ]
+    },
+    {
+      "groupName": "BM6-3",
+      "elements": [
+        "BM6-3A",
+        "BM6-3B"
+      ]
+    },
+    {
+      "groupName": "BM6-1",
+      "elements": [
+        "BM6-1A",
+        "BM6-1B"
+      ]
+    },
+    {
+      "groupName": "BM6-2",
+      "elements": [
+        "BM6-2A",
+        "BM6-2B"
+      ]
+    },
+    {
+      "groupName": "BM8-1",
+      "elements": [
+        "BM8-1"
+      ]
+    },
+    {
+      "groupName": "BM8-2",
+      "elements": [
+        "BM8-2"
+      ]
+    },
+    {
+      "groupName": "BM6-11",
+      "elements": [
+        "BM6-11A",
+        "BM6-11B"
+      ]
+    },
+    {
+      "groupName": "BM6-12",
+      "elements": [
+        "BM6-12A",
+        "BM6-12B"
+      ]
+    }
+  ]
+}
