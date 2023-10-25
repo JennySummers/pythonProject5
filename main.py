@@ -4,7 +4,7 @@ import numpy as np
 import random
 from Decode_for_FJSP import Decode, Gantt_Machine, Gantt_Job
 from Encode_for_FJSP import Encode
-from Instance import Processing_time, J, M_num, J_num, O_num, Machine_status
+from Instance import Processing_time, J, M_num, J_num, O_num, Machine_status, INVALID
 import itertools
 import matplotlib.pyplot as plt
 import datetime
@@ -100,7 +100,7 @@ class GA:
             Machine_using = O[O_i][O_j]
             Machine_time = []
             for j in Machine_using:
-                if j != 9999:
+                if j != INVALID:
                     Machine_time.append(j)
             Min_index = Machine_time.index(min(Machine_time))
             # print(Machine_time)
@@ -155,7 +155,7 @@ class GA:
         # CHS3 = e.Local_initial()
         # C = np.vstack((CHS1, CHS2, CHS3))
         C = CHS1
-        Optimal_fit = 9999
+        Optimal_fit = INVALID
         Optimal_CHS = 0
         x = np.linspace(1, 10, 10)
         Best_fit = []
@@ -170,7 +170,7 @@ class GA:
                 print('best_fitness', best_fitness)
                 d = Decode(J_O, processing_time, m_num, machine_status)
                 Fit.append(d.Decode_1(Optimal_CHS, Len_Chromo))
-                # Gantt_Machine(d.Machines)     # 根据机器调度结果，绘制调度结果的甘特图
+                Gantt_Machine(d.Machines)     # 根据机器调度结果，绘制调度结果的甘特图
                 Gantt_Job(d.Jobs)               # 根据工件调度结果，绘制调度结果的甘特图
             else:
                 Best_fit.append(Optimal_fit)

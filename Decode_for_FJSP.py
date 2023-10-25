@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 from Jobs import Job
 from Machines import Machine_Time_window
-from Instance import put_time, pick_time, switch_time
+from Instance import put_time, pick_time, switch_time, INVALID
 import numpy as np
 
 
@@ -81,7 +81,7 @@ class Decode:
                 M_ij = []
                 T_ij = []
                 for Mac_num in range(len(O_j)):  # 寻找MS对应部分的机器时间和机器顺序
-                    if O_j[Mac_num] != 9999:
+                    if O_j[Mac_num] != INVALID:
                         M_ij.append(Mac_num)
                         T_ij.append(O_j[Mac_num])
                     else:
