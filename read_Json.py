@@ -17,12 +17,16 @@ class Read_json:
         self.group_elements_index = {}  # 各group在list中的起始索引位；例CM1=0,PG1=4,则一个list中0-3位的数字表示CM1的时间
         self.all_elements_num = 0  # CM/PM含有的处理单元(elements)总个数，即每个step的list中的元素个数
 
+        # 机械臂相关
+        self.transfer_time=[] # 每个机械臂的取放时间
+        self.accessibleList=[] # 每个PM/CM的可交互机械臂列表在transfer_time中的索引
+
     def get_Layout_Info(self):
         with open(self.layout_path, 'r', encoding='utf-8') as file:
-            layout_json_data = json.load(file)
+            self.layout_json_data = json.load(file)
             # 将CM的各个group含有的处理单元(elements)个数、数组中的索引位添加到字典
             index = 0  # 各group在list中的起始索引位
-            CM = layout_json_data['CM']
+            CM = self.layout_json_data['CM']
             for CG in CM:
                 groupName = CG['groupName']
                 len_group = len(CG['elements'])
@@ -34,7 +38,7 @@ class Read_json:
                 # 该group含有的处理单元(elements)数量
                 self.group_elements_num[groupName] = len_group
             # 将PM的各个group含有的处理单元(elements)个数、数组中的索引位添加到字典
-            PM = layout_json_data['PM']
+            PM = self.layout_json_data['PM']
             for PG in PM:
                 groupName = PG['groupName']
                 len_group = len(PG['elements'])
@@ -42,10 +46,29 @@ class Read_json:
                 self.group_elements_index[groupName] = index
                 index += len_group
                 self.group_elements_num[groupName] = len_group
+            self.accessibleList=[set() for i in range(self.all_elements_num)]
+            for TG in self.layout_json_data['TM']:
+                count=len(TG['elements']) # 该机械臂组所包含的元素数
+                base=len(self.transfer_time) # 该组之前已有的机械臂元素总数
+                temp_accessible_set={x for x in range(base,base+count)} # 可访问集合列表
+
+                # 存储每个机械臂的运动时间
+                for i in range(count):
+                    self.transfer_time.append(TG['transferTime'])
+
+                # 构建从PM/CM至TM的索引
+                for accessibleModule in TG['accessibleList']:
+                    if self.group_elements_index.__contains__(accessibleModule): #由于暂未将BM添加进group_elements_index中，故添加此判断条件来跳过BM
+                        index = self.group_elements_index[accessibleModule]
+                        num = self.group_elements_num[accessibleModule]
+                        for i in range(num):
+                            self.accessibleList[i+index]|=temp_accessible_set
+
         print('group_elements_num', self.group_elements_num)
         print('group_elements_index', self.group_elements_index)
         print('all_elements_num', self.all_elements_num)
 
+    #TODO 当前此函数生成的路径存在断路（如Processing_time[0][1]中所有时间均是9999），因为没有考虑BM，有些转移不能依靠单个机械臂完成，需要在此种情况下自动插入BM step
     def get_Wafer_Info(self):
         with open(self.wafer_path, 'r', encoding='utf-8') as file:
             wafer_json_data = json.load(file)
@@ -56,8 +79,12 @@ class Read_json:
                 # 工序数
                 step_num = len(waferGroup['recipe'])
                 print('number of gongxu : ', step_num)
+
+                last_transfer = None
                 for step in recipe:
-                    list_step = [INVALID] * self.all_elements_num  # 第三层[]，表示一个step中不同的处理单元的用时
+                    now_transfer = set()
+                    list_step = [INVALID] * (self.all_elements_num+len(self.transfer_time))  # 第三层[]，表示一个step中不同的处理单元的用时
+                    transfer_step_time = [INVALID] * (self.all_elements_num+len(self.transfer_time))
                     processModule = step['processModule']
                     processTime = step['processTime']
                     for name in processModule:
@@ -67,12 +94,23 @@ class Read_json:
                         # 修改该gruop中的各处理单元对应的处理时间
                         for i in range(num):
                             list_step[index + i] = processTime
+                            now_transfer|=self.accessibleList[index+i] # 记录与当前工序相关联的机械臂
+                    # print(list_step)
+
+                    # 在工序列表中添加机械臂行
+                    if last_transfer: # 第一个工序不需要添加前置机械臂
+                        transfer=last_transfer&now_transfer # 选取前一道工序和当前工序关联机械臂的交集
+                        for transfer_index in transfer:
+                            transfer_step_time[self.all_elements_num+transfer_index]=self.transfer_time[transfer_index]
+                        list_recipe.append(transfer_step_time)
+                    last_transfer = now_transfer
+
                     list_recipe.append(list_step)
                 self.Processing_time.append(list_recipe)
-
         print(self.Processing_time)  # 最后结果
         print('wafer_num:', self.wafer_num)
         print('wafer_num:', len(self.wafer_num))
+
 
 
 '''
@@ -91,9 +129,9 @@ class get_Recipe:
         j.get_Layout_Info()
         j.get_Wafer_Info()
         self.M_num = j.all_elements_num
-        self.O_Max_len = 4  # 待修改
-        self.J_num = 8  # 待修改
-        self.O_num = 27  # 待修改
-        self.J = {1: 3, 2: 4, 3: 3, 4: 3, 5: 4, 6: 3, 7: 3, 8: 4}  # 待修改
+        self.O_Max_len = 4  # TODO 待修改
+        self.J_num = 8  # TODO 待修改
+        self.O_num = 27  # TODO 待修改
+        self.J = {1: 3, 2: 4, 3: 3, 4: 3, 5: 4, 6: 3, 7: 3, 8: 4}  # TODO 待修改
         self.Processing_time = j.Processing_time
         self.Machine_status = np.zeros(self.M_num, dtype=float)

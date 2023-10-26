@@ -45,12 +45,18 @@
             "items": {
               "type": "string"
             }
+          },
+          "transferTime": {
+            "description": "机械臂执行一次取放动作的时间",
+            "type": "number",
+            "minimum": 0
           }
         },
         "required": [
           "groupName",
           "elements",
-          "accessibleList"
+          "accessibleList",
+          "transferTime"
         ]
       }
     },
