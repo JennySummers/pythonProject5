@@ -4,7 +4,8 @@ import numpy as np
 import random
 from Decode_for_FJSP import Decode, Gantt_Machine, Gantt_Job
 from Encode_for_FJSP import Encode
-from Instance import Processing_time, J, M_num, J_num, O_num, Machine_status, INVALID
+from read_Json import INVALID
+from read_Json import get_Recipe
 import itertools
 import matplotlib.pyplot as plt
 import datetime
@@ -85,7 +86,7 @@ class GA:
         return Job, O_num
 
     # 机器变异部分
-    def Variation_Machine(self, CHS, O, T0, J):     # CHS表示，O表示处理时间矩阵，T0表示，J表示工件对应工序数
+    def Variation_Machine(self, CHS, O, T0, J, Machine_stat):     # CHS表示，O表示处理时间矩阵，T0表示，J表示工件对应工序数
         Tr = [i_num for i_num in range(T0)]
         MS = CHS[0:T0]
         OS = CHS[T0:2 * T0]
@@ -99,9 +100,9 @@ class GA:
             O_j = Job[1]
             Machine_using = O[O_i][O_j]
             Machine_time = []
-            for j in Machine_using:
-                if j != INVALID:
-                    Machine_time.append(j)
+            for j in range(len(Machine_using)):
+                if Machine_using[j] != INVALID:
+                    Machine_time.append(Machine_using[j] + Machine_stat[j])
             Min_index = Machine_time.index(min(Machine_time))
             # print(Machine_time)
             MS[i] = Min_index
@@ -189,7 +190,7 @@ class GA:
                     offspring.append(C[j])
                 if random.random() < self.P_m:
                     if random.random() < self.P_w:
-                        Mutation = self.Variation_Machine(C[j], processing_time, Len_Chromo, J_O)
+                        Mutation = self.Variation_Machine(C[j], processing_time, Len_Chromo, J_O, machine_status)
                     else:
                         Mutation = self.Variation_Operation(C[j], Len_Chromo, j_num, J_O, processing_time, m_num, machine_status)
                     offspring.append(Mutation)
@@ -213,5 +214,8 @@ class GA:
 
 
 if __name__ == '__main__':
-    g = GA(Machine_status)
-    g.main(Processing_time, J, M_num, J_num, O_num, Machine_status)
+    layout_path = "./config/example1/layout.json"
+    wafer_path = "./config/example1/wafer.json"
+    r = get_Recipe(layout_path, wafer_path)
+    g = GA(r.Machine_status)
+    g.main(r.Processing_time, r.J, r.M_num, r.J_num, r.O_num, r.Machine_status)

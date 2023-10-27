@@ -59,13 +59,13 @@ class Decode:
         for j in range(M_num):
             self.Machines.append(Machine_Time_window(j))    # 为每个机器分配一个机器类，并对其进行编号
         self.Machine_time = np.zeros(self.M_num, dtype=float)  # 机器时间初始化，使用当前机器运行情况初始化
-        # self.Machine_State = [x for x in M_status]          # 当前机器还有多少时间达到空闲
+        self.Machine_State = [x for x in M_status]          # 当前机器还有多少时间达到空闲
         self.Jobs = []  # 存储工件类
         for k, v in J.items():
             self.Jobs.append(Job(k, v))
 
     # 时间顺序矩阵和机器顺序矩阵
-    def Order_Matrix(self, MS):
+    def Order_Matrix(self, MS):  # MS为机器选择部分
         JM = []
         T = []
         Ms_decompose = []
@@ -73,6 +73,7 @@ class Decode:
         for S_i in self.J.values():
             Ms_decompose.append(MS[Site:Site + S_i])
             Site += S_i
+        # print(Ms_decompose)
         for i in range(len(Ms_decompose)):
             JM_i = []
             T_i = []
@@ -95,13 +96,13 @@ class Decode:
     def Earliest_Start(self, job, O_num, Machine):
         P_t = self.Processing_time[job][O_num][Machine]
         last_O_end = self.Jobs[job].Last_Processing_end_time  # 上道工序结束时间
-        Selected_Machine = Machine
+        Selected_Machine = Machine  # 选中的机器即为当前的机器编号
         M_window = self.Machines[Selected_Machine].Empty_time_window()
         M_Tstart = M_window[0]
         M_Tend = M_window[1]
         M_Tlen = M_window[2]
-        Machine_end_time = self.Machines[Selected_Machine].End_time
-        ealiest_start = max(last_O_end, Machine_end_time)
+        Machine_end_time = self.Machines[Selected_Machine].End_time  # 当前选中的机器在哪个时刻达到空闲状态
+        ealiest_start = max(last_O_end, Machine_end_time)  # 当前工序的最早开始时间为上一道工序完成时间与机器到达空闲状态时间取最大值
         if M_Tlen is not None:  # 此处为全插入时窗
             for le_i in range(len(M_Tlen)):
                 if M_Tlen[le_i] >= P_t:
@@ -113,7 +114,7 @@ class Decode:
                         break
         M_Ealiest = ealiest_start
         End_work_time = M_Ealiest + P_t
-        return M_Ealiest, Selected_Machine, P_t, O_num, last_O_end, End_work_time
+        return M_Ealiest, Selected_Machine, P_t, O_num, last_O_end, End_work_time  # 返回
 
     # 解码
     def Decode_1(self, CHS, Len_Chromo):
