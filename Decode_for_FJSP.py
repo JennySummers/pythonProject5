@@ -89,6 +89,7 @@ class Decode:
                         T_ij.append(O_j[Mac_num])
                     else:
                         continue
+                # Ms_decompose二维数组代表工件在每个工序上所选择的机器，第一维代表工件数，第二维代表每个工件的工序数，
                 JM_i.append(M_ij[Ms_decompose[i][j]])
                 T_i.append(T_ij[Ms_decompose[i][j]])
             JM.append(JM_i)

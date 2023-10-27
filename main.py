@@ -20,11 +20,10 @@ class GA:
         self.P_m = 0.3  # 变异概率
         self.P_v = 0.5  # 选择何种方式进行交叉
         self.P_w = 0.95  # 采用何种方式进行变异
-        self.Max_Iterations = 10  # 最大迭代次数
+        self.Max_Iterations = 5  # 最大迭代次数
         self.Machine_status = M_status
 
     # 适应度
-    @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def fitness(self, CHS, J, Processing_time, M_num, Len, machine_status):
         Fit = []
         for i in range(len(CHS)):
@@ -33,7 +32,6 @@ class GA:
         return Fit
 
     # 机器部分交叉
-    @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def Crossover_Machine(self, CHS1, CHS2, T0):
         T_r = [j for j in range(T0)]
         r = random.randint(1, 10)  # 在区间[1,T0]内产生一个整数r
@@ -52,7 +50,6 @@ class GA:
         return CHS1, CHS2
 
     # 工序交叉部分
-    @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def Crossover_Operation(self, CHS1, CHS2, T0, J_num):
         OS_1 = CHS1[T0:2 * T0]
         OS_2 = CHS2[T0:2 * T0]
@@ -76,7 +73,6 @@ class GA:
         CHS2 = np.hstack((MS_2, new_os))
         return CHS1, CHS2
 
-    @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def reduction(self, num, J, T0):
         T0 = [j for j in range(T0)]
         K = []
@@ -92,7 +88,6 @@ class GA:
         return Job, O_num
 
     # 机器变异部分
-    @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def Variation_Machine(self, CHS, O, T0, J, Machine_stat):     # CHS表示，O表示处理时间矩阵，T0表示，J表示工件对应工序数
         Tr = [i_num for i_num in range(T0)]
         MS = CHS[0:T0]
@@ -117,7 +112,6 @@ class GA:
         return CHS
 
     # 工序变异部分
-    @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def Variation_Operation(self, CHS, T0, J_num, J, Processing_time, M_num, machine_status):
         MS = CHS[0:T0]
         OS = list(CHS[T0:2 * T0])
@@ -143,7 +137,6 @@ class GA:
             Fit.append(d.Decode_1(CHS, T0))
         return A_CHS[Fit.index(min(Fit))]
 
-    @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def Select(self, Fit_value):
         Fit = []
         for i in range(len(Fit_value)):
@@ -154,6 +147,7 @@ class GA:
                                p=Fit / (Fit.sum()))
         return idx
 
+    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def main(self, processing_time, J_O, m_num, j_num, o_num, machine_status):
         start_time = datetime.datetime.now()
         print("start time is : ", start_time)
@@ -167,7 +161,7 @@ class GA:
         C = CHS1
         Optimal_fit = INVALID
         Optimal_CHS = 0
-        x = np.linspace(1, 10, 10)
+        x = np.linspace(1, self.Max_Iterations, self.Max_Iterations)
         Best_fit = []
         for i in range(self.Max_Iterations):
             Fit = self.fitness(C, J_O, processing_time, m_num, Len_Chromo, machine_status)
@@ -211,8 +205,9 @@ class GA:
                     C[j] = offspring[Fit.index(min(Fit))]
             cur_time = datetime.datetime.now()
             print("current time : ", cur_time)
+        plt.rcParams['figure.figsize'] = (8, 6)
         plt.plot(x, Best_fit, '-k')
-        plt.xticks(np.arange(0, 10, 2))
+        plt.xticks(np.arange(0, self.Max_Iterations, 1))
         plt.title(
             'the maximum completion time of each iteration for flexible job shop scheduling problem')
         plt.ylabel('Cmax')

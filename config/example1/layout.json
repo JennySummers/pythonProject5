@@ -172,7 +172,7 @@
         "BM2-1",
         "BM2-2"
       ],
-      "transferTime": 5
+      "transferTime": 3
     },
     {
       "groupName": "TM2",
@@ -188,7 +188,7 @@
         "PG5",
         "PG15"
       ],
-      "transferTime": 5
+      "transferTime": 3
     },
     {
       "groupName": "TM3",
@@ -200,7 +200,7 @@
         "PG3",
         "PG4"
       ],
-      "transferTime": 5
+      "transferTime": 3
     },
     {
       "groupName": "TM4",
@@ -212,7 +212,7 @@
         "PG6",
         "PG7"
       ],
-      "transferTime": 5
+      "transferTime": 3
     },
     {
       "groupName": "TM6",
@@ -230,7 +230,7 @@
         "BM6-11",
         "BM6-12"
       ],
-      "transferTime": 5
+      "transferTime": 3
     },
     {
       "groupName": "TM8",
@@ -245,7 +245,7 @@
         "PG10",
         "PG11"
       ],
-      "transferTime": 5
+      "transferTime": 3
     },
     {
       "groupName": "TM7",
@@ -257,7 +257,7 @@
         "BM6-12",
         "PG12"
       ],
-      "transferTime": 5
+      "transferTime": 3
     },
     {
       "groupName": "TM5",
@@ -269,7 +269,7 @@
         "PG14",
         "PG15"
       ],
-      "transferTime": 5
+      "transferTime": 3
     }
   ],
   "BM": [
