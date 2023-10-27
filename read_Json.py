@@ -88,10 +88,9 @@ class Read_json:
                 self.wafer_num.append(waferGroup['waferNum'])
                 recipe = waferGroup['recipe']
                 # 工序数
-                step_num = len(waferGroup['recipe'])
-                self.process_list.append(step_num)
+                step_num = len(recipe)
+                # self.process_list.append(step_num)
                 # print('number of gongxu : ', step_num)
-
                 last_transfer = None
                 for step in recipe:
                     now_transfer = set()
@@ -108,8 +107,6 @@ class Read_json:
                         for i in range(num):
                             list_step[index + i] = processTime
                             now_transfer |= self.accessibleList[index + i]  # 记录与当前工序相关联的机械臂
-                    # print(list_step)
-
                     # 在工序列表中添加机械臂行
                     if last_transfer:  # 第一个工序不需要添加前置机械臂
                         transfer = last_transfer & now_transfer  # 选取前一道工序和当前工序关联机械臂的交集
@@ -118,8 +115,8 @@ class Read_json:
                                 transfer_index]
                         list_recipe.append(transfer_step_time)
                     last_transfer = now_transfer
-
                     list_recipe.append(list_step)
+                self.process_list.append(len(list_recipe))  # 算上机械臂后的工序数
                 self.Processing_time.append(list_recipe)
         # print(self.Processing_time)  # 最后结果
         # print('wafer_num:', self.wafer_num)
@@ -141,11 +138,12 @@ class get_Recipe:
         j = Read_json(layout_path, wafer_path)
         j.get_Layout_Info()
         j.get_Wafer_Info()
-        self.M_num = j.all_elements_num  # 配方的可用机器数
-        self.O_Max_len = 0  # TODO 待修改
-        self.J_num = len(j.process_list)  # TODO 待修改
-        self.O_num = 0  # TODO 待修改
-        self.J = {}  # TODO 待修改
+        # self.M_num = j.all_elements_num  # 配方的可用机器数
+        self.M_num = j.all_elements_num + len(j.transfer_time)  # 配方的可用机器数,要考虑TM
+        self.O_Max_len = 0  # TODO 待修改 表示最大的工序数目
+        self.J_num = len(j.process_list)  # TODO 待修改 表示工件数目
+        self.O_num = 0  # TODO 待修改 表示所有工件的所有工序总数
+        self.J = {}  # TODO 待修改 表示各个工件对应的工序数。用键值对来表示。
         for i in range(len(j.process_list)):
             self.J[i] = j.process_list[i]
             self.O_num = self.O_num + j.process_list[i]
