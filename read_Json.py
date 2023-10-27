@@ -85,7 +85,8 @@ class Read_json:
             wafer_json_data = json.load(file)
             for waferGroup in wafer_json_data:
                 list_recipe = []  # 第二层[]，代表不同的recipe
-                self.wafer_num.append(waferGroup['waferNum'])
+                wafer_num = waferGroup['waferNum']
+                self.wafer_num.append(wafer_num)
                 recipe = waferGroup['recipe']
                 # 工序数
                 step_num = len(recipe)
@@ -117,8 +118,10 @@ class Read_json:
                     last_transfer = now_transfer
                     list_recipe.append(list_step)
                 self.process_list.append(len(list_recipe))  # 算上机械臂后的工序数
-                self.Processing_time.append(list_recipe)
+                for i in range(wafer_num):
+                    self.Processing_time.append(list_recipe)
         # print(self.Processing_time)  # 最后结果
+
         # print('wafer_num:', self.wafer_num)
         # print('wafer_num:', len(self.wafer_num))
 
@@ -140,14 +143,19 @@ class get_Recipe:
         j.get_Wafer_Info()
         # self.M_num = j.all_elements_num  # 配方的可用机器数
         self.M_num = j.all_elements_num + len(j.transfer_time)  # 配方的可用机器数,要考虑TM
-        self.O_Max_len = 0  # TODO 待修改 表示最大的工序数目
-        self.J_num = len(j.process_list)  # TODO 待修改 表示工件数目
-        self.O_num = 0  # TODO 待修改 表示所有工件的所有工序总数
-        self.J = {}  # TODO 待修改 表示各个工件对应的工序数。用键值对来表示。
-        for i in range(len(j.process_list)):
-            self.J[i] = j.process_list[i]
-            self.O_num = self.O_num + j.process_list[i]
-            self.O_Max_len = max(self.O_Max_len, j.process_list[i])
+        self.O_Max_len = 0  # 表示最大的工序数目
+        # self.J_num = len(j.process_list)  # 表示工件数目
+        self.J_num = len(j.Processing_time)  # 表示工件数目
+        self.O_num = 0  # 表示所有工件的所有工序总数
+        self.J = {}  # 表示各个工件对应的工序数，用键值对来表示
+        # for i in range(len(j.process_list)):
+        for i in range(len(j.Processing_time)):
+            # self.J[i] = j.process_list[i]
+            self.J[i+1] = len(j.Processing_time[i])
+            # self.O_num = self.O_num + j.process_list[i]
+            self.O_num = self.O_num + len(j.Processing_time[i])
+            # self.O_Max_len = max(self.O_Max_len, j.process_list[i])
+            self.O_Max_len = max(self.O_Max_len, len(j.Processing_time[i]))
         self.Processing_time = j.Processing_time
         self.Machine_status = np.zeros(self.M_num, dtype=float)
         print(self.M_num)
