@@ -22,3 +22,10 @@ https://blog.csdn.net/crazy_girl_me/article/details/114831730
 //////////////////////////////////\
 可以将机械臂看作单独的处理单元，每个工件的工序在加工完成后都需要经过机械臂的运输处理才能进入下一道工序。\
 //////////////////////////////////
+
+https://www.cnblogs.com/rgcLOVEyaya/p/RGC_LOVE_YAYA_603days_1.html
+memory_profiler是用来分析每行代码的内存使用情况
+1.先导入：    from memory_profiler import profile
+2.函数前加装饰器：   @profile(precision=4,stream=open('memory_profiler.log','w+'))            
+参数含义：precision:精确到小数点后几位 
+        stream:此模块分析结果保存到 'memory_profiler.log' 日志文件。如果没有此参数，分析结果会在控制台输出
