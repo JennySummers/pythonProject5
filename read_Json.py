@@ -46,6 +46,16 @@ class Read_json:
                 self.group_elements_index[groupName] = index
                 index += len_group
                 self.group_elements_num[groupName] = len_group
+
+            BM=self.layout_json_data['BM']
+            for BG in BM:
+                groupName = BG['groupName']
+                len_group = len(BG['elements'])
+                self.all_elements_num += len_group
+                self.group_elements_index[groupName] = index
+                index += len_group
+                self.group_elements_num[groupName] = len_group
+
             self.accessibleList = [set() for i in range(self.all_elements_num)]
             for TG in self.layout_json_data['TM']:
                 count = len(TG['elements'])  # 该机械臂组所包含的元素数

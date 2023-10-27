@@ -10,6 +10,10 @@
         "processTime": 0
       },
       {
+        "processModule": ["BM2-1"],
+        "processTime": 0
+      },
+      {
         "processModule": [
           "PG1"
         ],
@@ -58,6 +62,14 @@
         "processTime": 5
       },
       {
+        "processModule": ["BM6-1"],
+        "processTime": 0
+      },
+      {
+        "processModule": ["BM8-1"],
+        "processTime": 0
+      },
+      {
         "processModule": [
           "PG10"
         ],
@@ -70,16 +82,32 @@
         "processTime": 5
       },
       {
+        "processModule": ["BM8-2"],
+        "processTime": 0
+      },
+      {
+        "processModule": ["BM6-2"],
+        "processTime": 0
+      },
+      {
         "processModule": [
           "PG9"
         ],
         "processTime": 5
       },
       {
+        "processModule": ["BM6-11"],
+        "processTime": 0
+      },
+      {
         "processModule": [
           "PG12"
         ],
         "processTime": 5
+      },
+      {
+        "processModule": ["BM6-12"],
+        "processTime": 0
       },
       {
         "processModule": [
@@ -98,6 +126,10 @@
           "PG15"
         ],
         "processTime": 5
+      },
+      {
+        "processModule": ["BM2-2"],
+        "processTime": 0
       },
       {
         "processModule": [
@@ -118,6 +150,10 @@
         "processTime": 0
       },
       {
+        "processModule": ["BM2-1"],
+        "processTime": 0
+      },
+      {
         "processModule": [
           "PG1"
         ],
@@ -166,10 +202,18 @@
         "processTime": 5
       },
       {
+        "processModule": ["BM6-11"],
+        "processTime": 0
+      },
+      {
         "processModule": [
           "PG12"
         ],
         "processTime": 5
+      },
+      {
+        "processModule": ["BM6-12"],
+        "processTime": 0
       },
       {
         "processModule": [
@@ -188,6 +232,10 @@
           "PG15"
         ],
         "processTime": 5
+      },
+      {
+        "processModule": ["BM2-2"],
+        "processTime": 0
       },
       {
         "processModule": [
