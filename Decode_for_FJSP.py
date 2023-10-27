@@ -15,10 +15,10 @@ def Gantt_Machine(Machines):
         Start_time = Machine.O_start
         End_time = Machine.O_end
         for i_1 in range(len(End_time)):
-            plt.barh(i, width=End_time[i_1] - Start_time[i_1], height=0.8, left=Start_time[i_1], color=M[Machine.assigned_task[i_1][0]], edgecolor='black')
+            # plt.barh(i, width=End_time[i_1] - Start_time[i_1], height=0.8, left=Start_time[i_1], color=M[Machine.assigned_task[i_1][0]], edgecolor='black')
+            # plt.text(x=Start_time[i_1] + 0.1, y=i, s=Machine.assigned_task[i_1])
+            plt.barh(i, width=End_time[i_1] - Start_time[i_1], height=0.8, left=Start_time[i_1], color='white', edgecolor='black')
             plt.text(x=Start_time[i_1] + 0.1, y=i, s=Machine.assigned_task[i_1])
-            # plt.barh(i, width=End_time[i_1] - Start_time[i_1], height=0.8, left=Start_time[i_1], color='white', edgecolor='black')
-            # plt.text(x=Start_time[i_1] + (End_time[i_1] - Start_time[i_1]) / 2 - 0.5, y=i, s=Machine.assigned_task[i_1][0])
     plt.yticks(np.arange(i + 1), np.arange(1, i + 2))
     plt.title('Scheduling Gantt chart')
     plt.ylabel('Machines')
@@ -37,10 +37,10 @@ def Gantt_Job(Jobs):
         Start_time = job.J_start
         End_time = job.J_end
         for j in range(len(End_time)):
-            plt.barh(i, width=End_time[j] - Start_time[j], height=0.8, left=Start_time[j], color=M[job.J_machine[j]], edgecolor='black')
+            # plt.barh(i, width=End_time[j] - Start_time[j], height=0.8, left=Start_time[j], color=M[job.J_machine[j]], edgecolor='black')
+            # plt.text(x=Start_time[j] + 0.1, y=i, s=job.J_machine[j]+1)
+            plt.barh(i, width=End_time[j] - Start_time[j], height=0.8, left=Start_time[j], color='white', edgecolor='black')
             plt.text(x=Start_time[j] + 0.1, y=i, s=job.J_machine[j]+1)
-            # plt.barh(i, width=End_time[i_1] - Start_time[i_1], height=0.8, left=Start_time[i_1], color='white', edgecolor='black')
-            # plt.text(x=Start_time[i_1] + (End_time[i_1] - Start_time[i_1]) / 2 - 0.5, y=i, s=Machine.assigned_task[i_1][0])
     plt.yticks(np.arange(i + 1), np.arange(1, i + 2))
     plt.title('Scheduling Gantt chart')
     plt.ylabel('Jobs')
