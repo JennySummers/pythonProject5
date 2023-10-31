@@ -13,10 +13,10 @@ class Job:
     def Current_Processed(self):
         return len(self.Processed)
 
-    def _Input(self, W_Eailiest, End_time, Machine):
+    def _Input(self, W_Earliest, End_time, Machine):
         self.Processed.append(1)
         self.Last_Processing_Machine = Machine
         self.Last_Processing_end_time = End_time
-        self.J_start.append(W_Eailiest)
+        self.J_start.append(W_Earliest)
         self.J_end.append(End_time)
         self.J_machine.append(Machine)

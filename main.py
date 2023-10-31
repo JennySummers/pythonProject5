@@ -9,8 +9,7 @@ from read_Json import get_Recipe
 import itertools
 import matplotlib.pyplot as plt
 import datetime
-
-from memory_profiler import profile
+from Instance import Processing_time, J, M_num, J_num, O_num, Machine_status
 
 
 class GA:
@@ -20,14 +19,14 @@ class GA:
         self.P_m = 0.3  # 变异概率
         self.P_v = 0.5  # 选择何种方式进行交叉
         self.P_w = 0.95  # 采用何种方式进行变异
-        self.Max_Iterations = 5  # 最大迭代次数
+        self.Max_Iterations = 10  # 最大迭代次数
         self.Machine_status = M_status
 
     # 适应度
-    def fitness(self, CHS, J, Processing_time, M_num, Len, machine_status):
+    def fitness(self, CHS, J_f, Processing_t, M_number, Len, machine_status):
         Fit = []
         for i in range(len(CHS)):
-            d = Decode(J, Processing_time, M_num, machine_status)
+            d = Decode(J_f, Processing_t, M_number, machine_status)
             Fit.append(d.Decode_1(CHS[i], Len))
         return Fit
 
@@ -50,16 +49,16 @@ class GA:
         return CHS1, CHS2
 
     # 工序交叉部分
-    def Crossover_Operation(self, CHS1, CHS2, T0, J_num):
+    def Crossover_Operation(self, CHS1, CHS2, T0, J_number):
         OS_1 = CHS1[T0:2 * T0]
         OS_2 = CHS2[T0:2 * T0]
         MS_1 = CHS1[0:T0]
         MS_2 = CHS2[0:T0]
-        Job_list = [i for i in range(J_num)]
+        Job_list = [i for i in range(J_number)]
         random.shuffle(Job_list)
-        r = random.randint(1, J_num - 1)
+        r = random.randint(1, J_number - 1)
         Set1 = Job_list[0:r]
-        Set2 = Job_list[r:J_num]
+        Set2 = Job_list[r:J_number]
         new_os = list(np.zeros(T0, dtype=int))
         for k, v in enumerate(OS_1):
             if v in Set1:
@@ -73,22 +72,22 @@ class GA:
         CHS2 = np.hstack((MS_2, new_os))
         return CHS1, CHS2
 
-    def reduction(self, num, J, T0):
+    def reduction(self, num, J_r, T0):
         T0 = [j for j in range(T0)]
         K = []
         Site = 0
-        for k, v in J.items():
+        for k, v in J_r.items():
             K.append(T0[Site:Site + v])
             Site += v
         for i in range(len(K)):
             if num in K[i]:
                 Job = i
-                O_num = K[i].index(num)
+                O_number = K[i].index(num)
                 break
-        return Job, O_num
+        return Job, O_number
 
     # 机器变异部分
-    def Variation_Machine(self, CHS, O, T0, J, Machine_stat):     # CHS表示，O表示处理时间矩阵，T0表示，J表示工件对应工序数
+    def Variation_Machine(self, CHS, O, T0, J, Machine_stat):  # CHS表示，O表示处理时间矩阵，T0表示，J表示工件对应工序数
         Tr = [i_num for i_num in range(T0)]
         MS = CHS[0:T0]
         OS = CHS[T0:2 * T0]
@@ -112,11 +111,11 @@ class GA:
         return CHS
 
     # 工序变异部分
-    def Variation_Operation(self, CHS, T0, J_num, J, Processing_time, M_num, machine_status):
+    def Variation_Operation(self, CHS, T0, J_number, J_v, Process_time, M_number, machine_status):
         MS = CHS[0:T0]
         OS = list(CHS[T0:2 * T0])
-        r = random.randint(1, J_num - 1)
-        Tr = [i for i in range(J_num)]
+        r = random.randint(1, J_number - 1)
+        Tr = [i for i in range(J_number)]
         random.shuffle(Tr)
         Tr = Tr[0:r]
         J_os = dict(enumerate(OS))  # 随机选择r个不同的基因
@@ -133,7 +132,7 @@ class GA:
             A_CHS.append(C_I)
         Fit = []
         for i in range(len(A_CHS)):
-            d = Decode(J, Processing_time, M_num, machine_status)
+            d = Decode(J_v, Process_time, M_number, machine_status)
             Fit.append(d.Decode_1(CHS, T0))
         return A_CHS[Fit.index(min(Fit))]
 
@@ -147,7 +146,6 @@ class GA:
                                p=Fit / (Fit.sum()))
         return idx
 
-    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def main(self, processing_time, J_O, m_num, j_num, o_num, machine_status):
         start_time = datetime.datetime.now()
         print("start time is : ", start_time)
@@ -161,7 +159,7 @@ class GA:
         C = CHS1
         Optimal_fit = INVALID
         Optimal_CHS = 0
-        x = np.linspace(1, self.Max_Iterations, self.Max_Iterations)
+        x = np.linspace(1, 10, 10)
         Best_fit = []
         for i in range(self.Max_Iterations):
             Fit = self.fitness(C, J_O, processing_time, m_num, Len_Chromo, machine_status)
@@ -174,8 +172,8 @@ class GA:
                 print('best_fitness', best_fitness)
                 d = Decode(J_O, processing_time, m_num, machine_status)
                 Fit.append(d.Decode_1(Optimal_CHS, Len_Chromo))
-                Gantt_Machine(d.Machines)     # 根据机器调度结果，绘制调度结果的甘特图
-                Gantt_Job(d.Jobs)               # 根据工件调度结果，绘制调度结果的甘特图
+                Gantt_Machine(d.Machines)  # 根据机器调度结果，绘制调度结果的甘特图
+                Gantt_Job(d.Jobs)  # 根据工件调度结果，绘制调度结果的甘特图
             else:
                 Best_fit.append(Optimal_fit)
             Select = self.Select(Fit)
@@ -195,7 +193,8 @@ class GA:
                     if random.random() < self.P_w:
                         Mutation = self.Variation_Machine(C[j], processing_time, Len_Chromo, J_O, machine_status)
                     else:
-                        Mutation = self.Variation_Operation(C[j], Len_Chromo, j_num, J_O, processing_time, m_num, machine_status)
+                        Mutation = self.Variation_Operation(C[j], Len_Chromo, j_num, J_O, processing_time, m_num,
+                                                            machine_status)
                     offspring.append(Mutation)
                 if offspring:
                     Fit = []
@@ -207,7 +206,7 @@ class GA:
             print("current time : ", cur_time)
         plt.rcParams['figure.figsize'] = (8, 6)
         plt.plot(x, Best_fit, '-k')
-        plt.xticks(np.arange(0, self.Max_Iterations, 1))
+        plt.xticks(np.arange(0, 10, 2))
         plt.title(
             'the maximum completion time of each iteration for flexible job shop scheduling problem')
         plt.ylabel('Cmax')
@@ -217,9 +216,16 @@ class GA:
         print("end time : ", stop_time)
 
 
+'''
+将晶圆在CM中的处理时间设置成晶圆需要等待之前的晶圆被取走的时间。
+具体实现方法为：
+将CM作为处理单元，其处理时间等于(编号-1)*机械臂运行时间
+晶圆在CM中的可选加工单元为其编号对应的CM
+'''
 if __name__ == '__main__':
     layout_path = "./config/example1/layout.json"
     wafer_path = "./config/example1/wafer.json"
     r = get_Recipe(layout_path, wafer_path)
     g = GA(r.Machine_status)
-    g.main(r.Processing_time, r.J, r.M_num, r.J_num, r.O_num, r.Machine_status)
+    # g.main(r.Processing_time, r.J, r.M_num, r.J_num, r.O_num, r.Machine_status)
+    g.main(Processing_time, J, M_num, J_num, O_num, Machine_status)
