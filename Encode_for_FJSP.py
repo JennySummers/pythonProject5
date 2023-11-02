@@ -2,13 +2,15 @@ import numpy as np
 import random
 from Instance import put_time, pick_time, switch_time, INVALID
 
+from memory_profiler import profile
+
 
 class Encode:
     def __init__(self, Matrix, Pop_size, J, J_num, M_num, M_status):
         self.Matrix = Matrix  # 工件各工序对应各机器加工时间矩阵
-        self.GS_num = int(0.6 * Pop_size)  # 全局选择初始化的种群数目
-        self.LS_num = int(0.2 * Pop_size)  # 局部选择初始化的种群数目
-        self.RS_num = int(0.2 * Pop_size)  # 随机选择初始化的种群数目
+        self.GS_num = int(0.6 * Pop_size)  # 全局选择初始化
+        self.LS_num = int(0.2 * Pop_size)  # 局部选择初始化
+        self.RS_num = int(0.2 * Pop_size)  # 随机选择初始化
         self.J = J  # 各工件对应的工序数
         self.J_num = J_num  # 工件数
         self.M_num = M_num  # 机器数
@@ -19,6 +21,7 @@ class Encode:
             self.Len_Chromo += i
 
     # 生成工序准备的部分
+    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def OS_List(self):
         OS_list = []
         for k, v in self.J.items():
@@ -27,10 +30,12 @@ class Encode:
         return OS_list
 
     # 生成初始化矩阵
+    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def CHS_Matrix(self, C_num):  # C_num:所需列数
         return np.zeros([C_num, self.Len_Chromo], dtype=int)
 
-    def Site(self, Job, Operation):  # 第job个工件的第operation道工序在染色体中机器选择部分的位置。机器选择部分的下标对应一道确定的工序。
+    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
+    def Site(self, Job, Operation):
         O_num = 0
         for i in range(len(self.J)):
             if i == Job:
@@ -40,6 +45,7 @@ class Encode:
         return O_num
 
     # 全局选择初始化
+    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def Global_initial(self):
         MS = self.CHS_Matrix(self.GS_num)
         OS_list = self.OS_List()
@@ -72,15 +78,11 @@ class Encode:
                     # Machine_time[I] += Min_time
                     site = self.Site(g, j)
                     MS[i][site] = K
-        '''
-        MS[i][j]表示第i个染色体的j对应的工件的工序选择的机器在当前工序可选机器集中的位置
-        OS[i][j]表示第i个染色体的工序处理顺序排序
-        CHS1[i] = MS[i] + OS[i]
-        '''
         CHS1 = np.hstack((MS, OS))
         return CHS1
 
     # 局部选择初始化
+    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def Local_initial(self):
         MS = self.CHS_Matrix(self.LS_num)
         OS_list = self.OS_List()
@@ -95,15 +97,15 @@ class Encode:
                 h = self.Matrix[g]  # 第一个工件及其对应工序的加工时间
                 for j in range(len(h)):  # 从工件的第一个工序开始选择机器
                     D = h[j]
-                    List_Machine_pos = []
+                    List_Machine_weizhi = []
                     for k in range(len(D)):  # 每道工序可使用的机器以及机器的加工时间
-                        Using_Machine = D[k]
-                        if Using_Machine == INVALID:  # 确定可加工该工序的机器
+                        Useing_Machine = D[k]
+                        if Useing_Machine == INVALID:  # 确定可加工该工序的机器
                             continue
                         else:
-                            List_Machine_pos.append(k)
+                            List_Machine_weizhi.append(k)
                     Machine_Select = []
-                    for Machine_add in List_Machine_pos:  # 将这道工序的可用机器时间和以前积累的机器时间相加
+                    for Machine_add in List_Machine_weizhi:  # 将这道工序的可用机器时间和以前积累的机器时间相加
                         Machine_time[Machine_add] = Machine_time[Machine_add] + D[Machine_add]  # 比较可用机器的时间加上以前累计的机器时间的时间值，并选出时间最小
                         Machine_Select.append(Machine_time[Machine_add])
                     Machine_Index_add = Machine_Select.index(min(Machine_Select))
@@ -112,6 +114,7 @@ class Encode:
         CHS1 = np.hstack((MS, OS))
         return CHS1
 
+    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def Random_initial(self):
         MS = self.CHS_Matrix(self.RS_num)
         OS_list = self.OS_List()
@@ -128,15 +131,15 @@ class Encode:
                 h = np.array(self.Matrix[g])  # 第一个工件及其对应工序的加工时间
                 for j in range(len(h)):  # 从工件的第一个工序开始选择机器
                     D = np.array(h[j])
-                    List_Machine_pos = []
+                    List_Machine_weizhi = []
                     Site = 0
                     for k in range(len(D)):  # 每道工序可使用的机器以及机器的加工时间
                         if D[k] == INVALID:  # 确定可加工该工序的机器
                             continue
                         else:
-                            List_Machine_pos.append(Site)
+                            List_Machine_weizhi.append(Site)
                             Site += 1
-                    Machine_Index_add = random.choice(List_Machine_pos)
+                    Machine_Index_add = random.choice(List_Machine_weizhi)
                     MS[i][A] = MS[i][A] + Machine_Index_add
                     A += 1
         CHS1 = np.hstack((MS, OS))
