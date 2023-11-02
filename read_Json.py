@@ -1,8 +1,8 @@
 import json
-
 import numpy as np
 
 INVALID = 99999999
+
 
 class Read_json:
     def __init__(self, layout_path, wafer_path, wafer_noBM_path):
@@ -17,7 +17,7 @@ class Read_json:
         self.group_elements_num = {}  # 各group含有的处理单元(elements)数量
         self.group_elements_index = {}  # 各group在list中的起始索引位；例CM1=0,PG1=4,则一个list中0-3位的数字表示CM1的时间
         self.all_elements_num = 0  # CM/PM含有的处理单元(elements)总个数，即每个step的list中的元素个数
-        self.buffer_module = []     # 存放所有的BM，以供判断
+        self.buffer_module = []  # 存放所有的BM，以供判断
 
         # 机械臂相关
         self.transfer_time = []  # 每个机械臂的取放时间
@@ -97,6 +97,10 @@ class Read_json:
 
         with open(self.wafer_path, 'w+', encoding='utf-8') as file:
             json.dump(new_wafer_json_data, file, indent=4)
+
+    # 根据晶圆的顺序实现按序取片
+    def Ordered_wafer(self, arm_time=1):
+        wafer_nums = [x for x in self.wafer_num]
 
     def get_Layout_Info(self):
         with open(self.layout_path, 'r', encoding='utf-8') as file:
@@ -191,7 +195,7 @@ class Read_json:
                     # 在工序列表中添加机械臂行
                     if last_transfer:  # 第一个工序不需要添加前置机械臂
                         transfer = last_transfer & now_transfer  # 选取前一道工序和当前工序关联机械臂的交集
-                        for transfer_index in transfer:     # TODO 假如该工序与多个机械臂有关联，怎么处理？
+                        for transfer_index in transfer:  # TODO 假如该工序与多个机械臂有关联，怎么处理？
                             transfer_step_time[self.all_elements_num + transfer_index] = self.transfer_time[
                                 transfer_index]
                         list_recipe.append(transfer_step_time)
@@ -232,7 +236,7 @@ class get_Recipe:
         # for i in range(len(j.process_list)):
         for i in range(len(j.Processing_time)):
             # self.J[i] = j.process_list[i]
-            self.J[i+1] = len(j.Processing_time[i])
+            self.J[i + 1] = len(j.Processing_time[i])
             # self.O_num = self.O_num + j.process_list[i]
             self.O_num = self.O_num + len(j.Processing_time[i])
             # self.O_Max_len = max(self.O_Max_len, j.process_list[i])
