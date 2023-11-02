@@ -2,6 +2,8 @@ import numpy as np
 import random
 from Instance import put_time, pick_time, switch_time, INVALID
 
+from memory_profiler import profile
+
 
 class Encode:
     def __init__(self, Matrix, Pop_size, J, J_num, M_num, M_status):
@@ -19,6 +21,7 @@ class Encode:
             self.Len_Chromo += i
 
     # 生成工序准备的部分
+    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def OS_List(self):
         OS_list = []
         for k, v in self.J.items():
@@ -27,9 +30,11 @@ class Encode:
         return OS_list
 
     # 生成初始化矩阵
+    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def CHS_Matrix(self, C_num):  # C_num:所需列数
         return np.zeros([C_num, self.Len_Chromo], dtype=int)
 
+    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def Site(self, Job, Operation):
         O_num = 0
         for i in range(len(self.J)):
@@ -40,6 +45,7 @@ class Encode:
         return O_num
 
     # 全局选择初始化
+    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def Global_initial(self):
         MS = self.CHS_Matrix(self.GS_num)
         OS_list = self.OS_List()
@@ -76,6 +82,7 @@ class Encode:
         return CHS1
 
     # 局部选择初始化
+    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def Local_initial(self):
         MS = self.CHS_Matrix(self.LS_num)
         OS_list = self.OS_List()
@@ -107,6 +114,7 @@ class Encode:
         CHS1 = np.hstack((MS, OS))
         return CHS1
 
+    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def Random_initial(self):
         MS = self.CHS_Matrix(self.RS_num)
         OS_list = self.OS_List()

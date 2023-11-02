@@ -4,7 +4,9 @@ from Machines import Machine_Time_window
 from Instance import put_time, pick_time, switch_time, INVALID
 import numpy as np
 
+from memory_profiler import profile
 
+# @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
 def Gantt_Machine(Machines):
     M = ['red', 'blue', 'yellow', 'orange', 'green', 'palegoldenrod', 'purple', 'pink', 'Thistle', 'Magenta',
          'SlateBlue', 'RoyalBlue', 'Cyan', 'Aqua', 'floralwhite', 'ghostwhite', 'goldenrod', 'mediumslateblue',
@@ -26,7 +28,7 @@ def Gantt_Machine(Machines):
     plt.xlabel('Time(s)')
     plt.show()
 
-
+# @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
 def Gantt_Job(Jobs):
     M = ['red', 'blue', 'yellow', 'orange', 'green', 'palegoldenrod', 'purple', 'pink', 'Thistle', 'Magenta',
          'SlateBlue', 'RoyalBlue', 'Cyan', 'Aqua', 'floralwhite', 'ghostwhite', 'goldenrod', 'mediumslateblue',
@@ -67,6 +69,7 @@ class Decode:
             self.Jobs.append(Job(k, v))
 
     # 时间顺序矩阵和机器顺序矩阵
+    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def Order_Matrix(self, MS):  # MS为机器选择部分
         JM = []
         T = []
@@ -96,6 +99,7 @@ class Decode:
             T.append(T_i)
         return JM, T
 
+    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def Earliest_Start(self, job, O_num, Machine):
         P_t = self.Processing_time[job][O_num][Machine]
         last_O_end = self.Jobs[job].Last_Processing_end_time  # 上道工序结束时间
@@ -120,6 +124,7 @@ class Decode:
         return M_Ealiest, Selected_Machine, P_t, O_num, last_O_end, End_work_time  # 返回
 
     # 解码
+    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def Decode_1(self, CHS, Len_Chromo):
         MS = list(CHS[0:Len_Chromo])
         OS = list(CHS[Len_Chromo:2 * Len_Chromo])

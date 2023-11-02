@@ -29,3 +29,8 @@ memory_profiler是用来分析每行代码的内存使用情况
 2.函数前加装饰器：   @profile(precision=4,stream=open('memory_profiler.log','w+'))            
 参数含义：precision:精确到小数点后几位 
         stream:此模块分析结果保存到 'memory_profiler.log' 日志文件。如果没有此参数，分析结果会在控制台输出
+Line列记录了分析的各行代码具体行位置
+Mem usage列记录了当程序执行到该行时当前进程占用内存的量
+Increment记录了当前行相比上一行内存消耗的变化量
+Occurrences记录了当前行的执行次数(循环、列表推导等代码行会记作多次)
+Line Contents列则记录了具体对应的行代码

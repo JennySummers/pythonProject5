@@ -1,5 +1,6 @@
 from Instance import put_time, pick_time, switch_time
 
+from memory_profiler import profile
 
 class Machine_Time_window:
     def __init__(self, Machine_index):
@@ -11,6 +12,7 @@ class Machine_Time_window:
         self.End_time = 0
 
     # 机器的哪些时间窗是空的,此处只考虑内部封闭的时间窗
+    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def Empty_time_window(self):
         time_window_start = []
         time_window_end = []
@@ -31,6 +33,7 @@ class Machine_Time_window:
             len_time_window = [time_window_end[i] - time_window_start[i] for i in range(len(time_window_end))]
         return time_window_start, time_window_end, len_time_window
 
+    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def Machine_Burden(self):
         if len(self.O_start) == 0:
             burden = 0
@@ -40,6 +43,7 @@ class Machine_Time_window:
             burden = sum(processing_time)
         return burden
 
+    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def _Input(self, Job, M_Earliest, P_t, O_num):
         if self.O_end:
             if self.O_start[-1] > M_Earliest:
