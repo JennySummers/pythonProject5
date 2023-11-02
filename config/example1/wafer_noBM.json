@@ -1,0 +1,216 @@
+[
+  {
+    "waferGroupName": "inputGroup1",
+    "waferNum": 5,
+    "recipe": [
+      {
+        "processModule": [
+          "CM1"
+        ],
+        "processTime": 0
+      },
+      {
+        "processModule": [
+          "PG1"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "PG2"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "PG3"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "PG4"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "PG5"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "PG6"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "PG7"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "PG8"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "PG10"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "PG11"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "PG9"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "PG12"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "PG13"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "PG14"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "PG15"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "CM1"
+        ],
+        "processTime": 0
+      }
+    ]
+  },
+  {
+    "waferGroupName": "inputGroup2",
+    "waferNum": 3,
+    "recipe": [
+      {
+        "processModule": [
+          "CM1"
+        ],
+        "processTime": 0
+      },
+      {
+        "processModule": ["BM2-1"],
+        "processTime": 0
+      },
+      {
+        "processModule": [
+          "PG1"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "PG4"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "PG3"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "PG2"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "PG5"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "PG6"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "PG7"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "PG8"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": ["BM6-11"],
+        "processTime": 0
+      },
+      {
+        "processModule": [
+          "PG12"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": ["BM6-12"],
+        "processTime": 0
+      },
+      {
+        "processModule": [
+          "PG13"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "PG14"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": [
+          "PG15"
+        ],
+        "processTime": 5
+      },
+      {
+        "processModule": ["BM2-2"],
+        "processTime": 0
+      },
+      {
+        "processModule": [
+          "CM1"
+        ],
+        "processTime": 0
+      }
+    ]
+  }
+]
