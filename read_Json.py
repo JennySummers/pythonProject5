@@ -1,6 +1,7 @@
 import json
 import numpy as np
 import copy
+
 INVALID = 99999999
 
 
@@ -218,9 +219,6 @@ O_Max_len 表示最大的工序数目
 J_num 表示工件数目
 O_num 表示所有工件的所有工序总数
 '''
-
-
-
 
 
 class get_Recipe:

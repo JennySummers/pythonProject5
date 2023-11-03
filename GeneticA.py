@@ -11,7 +11,7 @@ import datetime
 
 
 class GA:
-    def __init__(self, M_status, pop_size=300, p_c=0.8, p_m=0.3, p_v=0.5, p_w=0.95, max_iteration=10):
+    def __init__(self, M_status, pop_size=100, p_c=0.8, p_m=0.3, p_v=0.5, p_w=0.95, max_iteration=10):
         self.Best_Job = None
         self.Best_Machine = None
         self.Pop_size = pop_size  # 种群数量
@@ -150,8 +150,6 @@ class GA:
     def get_State(self, time):
         cur_state = []
         for m in self.Best_Machine:
-            print(len(m.O_end))
-            print(len(m.O_start))
             sec = 0
             if len(m.O_end) == 0:
                 cur_state.append(0)
@@ -237,4 +235,4 @@ class GA:
         stop_time = datetime.datetime.now()
         print("end time : ", stop_time)
         cur_state = self.get_State(20)
-        print(cur_state)
+        # print(cur_state)
