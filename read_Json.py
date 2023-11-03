@@ -1,6 +1,6 @@
 import json
 import numpy as np
-
+import copy
 INVALID = 99999999
 
 
@@ -190,7 +190,7 @@ class Read_json:
                         num = self.group_elements_num[name]
                         # 修改该gruop中的各处理单元对应的处理时间
                         for i in range(num):
-                            list_step[index + i] = processTime
+                            list_step[index + i] = copy.deepcopy(processTime)
                             now_transfer |= self.accessibleList[index + i]  # 记录与当前工序相关联的机械臂
                     # 在工序列表中添加机械臂行
                     if last_transfer:  # 第一个工序不需要添加前置机械臂
@@ -203,7 +203,7 @@ class Read_json:
                     list_recipe.append(list_step)
                 self.process_list.append(len(list_recipe))  # 算上机械臂后的工序数
                 for i in range(wafer_num):
-                    self.Processing_time.append(list_recipe)
+                    self.Processing_time.append(copy.deepcopy(list_recipe))
         # print(self.Processing_time)  # 最后结果
 
         # print('wafer_num:', self.wafer_num)
@@ -218,6 +218,9 @@ O_Max_len 表示最大的工序数目
 J_num 表示工件数目
 O_num 表示所有工件的所有工序总数
 '''
+
+
+
 
 
 class get_Recipe:
@@ -241,10 +244,19 @@ class get_Recipe:
             self.O_num = self.O_num + len(j.Processing_time[i])
             # self.O_Max_len = max(self.O_Max_len, j.process_list[i])
             self.O_Max_len = max(self.O_Max_len, len(j.Processing_time[i]))
-        self.Processing_time = j.Processing_time
+        self.Processing_time = self.modify_processing(j.Processing_time)
         self.Machine_status = np.zeros(self.M_num, dtype=float)
         print(self.M_num)
         print(self.O_Max_len)
         print(self.J_num)
         print(self.O_num)
         print(self.J)
+
+    def modify_processing(self, processing_time):
+        tmp = copy.deepcopy(processing_time)
+        for i in range(self.J_num):
+            for j in range(self.J_num):
+                tmp[i][0][j] = INVALID
+        for i in range(self.J_num):
+            tmp[i][0][i] = i * 3
+        return tmp
