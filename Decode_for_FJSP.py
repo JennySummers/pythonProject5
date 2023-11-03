@@ -6,6 +6,7 @@ import numpy as np
 
 from memory_profiler import profile
 
+
 # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
 def Gantt_Machine(Machines):
     M = ['red', 'blue', 'yellow', 'orange', 'green', 'palegoldenrod', 'purple', 'pink', 'Thistle', 'Magenta',
@@ -20,13 +21,15 @@ def Gantt_Machine(Machines):
         for i_1 in range(len(End_time)):
             # plt.barh(i, width=End_time[i_1] - Start_time[i_1], height=0.8, left=Start_time[i_1], color=M[Machine.assigned_task[i_1][0]], edgecolor='black')
             # plt.text(x=Start_time[i_1] + 0.1, y=i, s=Machine.assigned_task[i_1])
-            plt.barh(i, width=End_time[i_1] - Start_time[i_1], height=0.8, left=Start_time[i_1], color='white', edgecolor='black')
+            plt.barh(i, width=End_time[i_1] - Start_time[i_1], height=0.8, left=Start_time[i_1], color='white',
+                     edgecolor='black')
             plt.text(x=Start_time[i_1] + 0.1, y=i, s=Machine.assigned_task[i_1])
     plt.yticks(np.arange(i + 1), np.arange(1, i + 2))
     plt.title('Scheduling Gantt chart')
     plt.ylabel('Machines')
     plt.xlabel('Time(s)')
     plt.show()
+
 
 # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
 def Gantt_Job(Jobs):
@@ -43,8 +46,9 @@ def Gantt_Job(Jobs):
         for j in range(len(End_time)):
             # plt.barh(i, width=End_time[j] - Start_time[j], height=0.8, left=Start_time[j], color=M[job.J_machine[j]], edgecolor='black')
             # plt.text(x=Start_time[j] + 0.1, y=i, s=job.J_machine[j]+1)
-            plt.barh(i, width=End_time[j] - Start_time[j], height=0.8, left=Start_time[j], color='white', edgecolor='black')
-            plt.text(x=Start_time[j] + 0.1, y=i, s=job.J_machine[j]+1)
+            plt.barh(i, width=End_time[j] - Start_time[j], height=0.8, left=Start_time[j], color='white',
+                     edgecolor='black')
+            plt.text(x=Start_time[j] + 0.1, y=i, s=job.J_machine[j] + 1)
     plt.yticks(np.arange(i + 1), np.arange(1, i + 2))
     plt.title('Scheduling Gantt chart')
     plt.ylabel('Jobs')
@@ -58,12 +62,12 @@ class Decode:
         # self.Scheduled = []  # 已经排产过的工序
         self.M_num = M_num  # 机器数
         self.Machines = []  # 存储机器类
-        self.fitness = 0    # 计算适应度
-        self.J = J          # 表示各个工件对应的工序数。用键值对来表示
+        self.fitness = 0  # 计算适应度
+        self.J = J  # 表示各个工件对应的工序数。用键值对来表示
         for j in range(M_num):
-            self.Machines.append(Machine_Time_window(j))    # 为每个机器分配一个机器类，并对其进行编号
+            self.Machines.append(Machine_Time_window(j))  # 为每个机器分配一个机器类，并对其进行编号
         self.Machine_time = np.zeros(self.M_num, dtype=float)  # 机器时间初始化，使用当前机器运行情况初始化
-        self.Machine_State = [x for x in M_status]          # 当前机器还有多少时间达到空闲
+        self.Machine_State = [x for x in M_status]  # 当前机器还有多少时间达到空闲
         self.Jobs = []  # 存储工件类
         for k, v in J.items():
             self.Jobs.append(Job(k, v))

@@ -1,15 +1,7 @@
 import profile
 
-import numpy as np
-import random
-from Decode_for_FJSP import Decode, Gantt_Machine, Gantt_Job
-from Encode_for_FJSP import Encode
-from read_Json import INVALID
 from read_Json import get_Recipe
 from GeneticA import GA
-import itertools
-import matplotlib.pyplot as plt
-import datetime
 from Instance import Processing_time, J, M_num, J_num, O_num, Machine_status
 
 

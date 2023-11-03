@@ -4,6 +4,7 @@ import random
 from Decode_for_FJSP import Decode, Gantt_Machine, Gantt_Job
 from Encode_for_FJSP import Encode
 from read_Json import INVALID
+from copy import *
 import itertools
 import matplotlib.pyplot as plt
 import datetime
@@ -11,6 +12,8 @@ import datetime
 
 class GA:
     def __init__(self, M_status, pop_size=300, p_c=0.8, p_m=0.3, p_v=0.5, p_w=0.95, max_iteration=10):
+        self.Best_Job = None
+        self.Best_Machine = None
         self.Pop_size = pop_size  # 种群数量
         self.P_c = p_c  # 交叉概率
         self.P_m = p_m  # 变异概率
@@ -18,6 +21,7 @@ class GA:
         self.P_w = p_w  # 采用何种方式进行变异
         self.Max_Iterations = max_iteration  # 最大迭代次数
         self.Machine_status = [x for x in M_status]
+        self.Best_fit = []
 
     # 适应度
     def fitness(self, CHS, J_f, Processing_t, M_number, Len):
@@ -145,6 +149,21 @@ class GA:
 
     def get_State(self, time):
         cur_state = []
+        for m in self.Best_Machine:
+            print(len(m.O_end))
+            print(len(m.O_start))
+            sec = 0
+            if len(m.O_end) == 0:
+                cur_state.append(0)
+                continue
+            for i in range(len(m.O_end)):
+                if time <= m.O_end[i]:
+                    sec = i
+                    break
+            if m.O_start[sec] < time <= m.O_end[sec]:
+                cur_state.append(m.O_end[sec] - time)
+            else:
+                cur_state.append(0)
         return cur_state
 
     def main(self, processing_time, J_O, m_num, j_num, o_num):
@@ -161,7 +180,6 @@ class GA:
         Optimal_fit = INVALID
         Optimal_CHS = 0
         x = np.linspace(1, 10, 10)
-        Best_fit = []
         for i in range(self.Max_Iterations):
             Fit = self.fitness(C, J_O, processing_time, m_num, Len_Chromo)
             Best = C[Fit.index(min(Fit))]
@@ -169,14 +187,16 @@ class GA:
             if best_fitness < Optimal_fit:
                 Optimal_fit = best_fitness
                 Optimal_CHS = Best
-                Best_fit.append(Optimal_fit)
+                self.Best_fit.append(Optimal_fit)
                 print('best_fitness', best_fitness)
                 d = Decode(J_O, processing_time, m_num, self.Machine_status)
                 Fit.append(d.Decode_1(Optimal_CHS, Len_Chromo))
-                Gantt_Machine(d.Machines)  # 根据机器调度结果，绘制调度结果的甘特图
-                Gantt_Job(d.Jobs)  # 根据工件调度结果，绘制调度结果的甘特图
+                self.Best_Machine = deepcopy(d.Machines)
+                self.Best_Job = deepcopy(d.Jobs)
+                # Gantt_Machine(d.Machines)  # 根据机器调度结果，绘制调度结果的甘特图
+                # Gantt_Job(d.Jobs)  # 根据工件调度结果，绘制调度结果的甘特图
             else:
-                Best_fit.append(Optimal_fit)
+                self.Best_fit.append(Optimal_fit)
             # Select = self.Select(Fit)
             for j in range(len(C)):
                 offspring = []
@@ -204,8 +224,10 @@ class GA:
                     C[j] = offspring[Fit.index(min(Fit))]
             cur_time = datetime.datetime.now()
             print("current time : ", cur_time)
+        Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
+        Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图
         plt.rcParams['figure.figsize'] = (8, 6)
-        plt.plot(x, Best_fit, '-k')
+        plt.plot(x, self.Best_fit, '-k')
         plt.xticks(np.arange(0, 10, 2))
         plt.title(
             'the maximum completion time of each iteration for flexible job shop scheduling problem')
@@ -214,3 +236,5 @@ class GA:
         plt.show()
         stop_time = datetime.datetime.now()
         print("end time : ", stop_time)
+        cur_state = self.get_State(20)
+        print(cur_state)
