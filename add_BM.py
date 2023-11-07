@@ -111,62 +111,6 @@ with open(wafer_path, 'w+', encoding='utf-8') as file:
     json.dump(new_wafer_json_data, file, indent=4)
 
 
-# with open(wafer_path_test, 'r+', encoding='utf-8') as file:
-#     wafer_json_data = json.load(file)
-#     for waferGroup in wafer_json_data:
-#         list_recipe = []  # 第二层[]，代表不同的recipe
-#         recipe = waferGroup['recipe']
-#         new_recipe = recipe     # 插入BM后的新recipe
-#         new_recipe = waferGroup['recipe']  # 插入BM后的新recipe
-#         step_num = len(recipe)  # 工序数
-#         for i in range(step_num-1):
-#             moduleName1 = recipe[i]['processModule'][0]
-#             moduleName2 = recipe[i+1]['processModule'][0]
-#             # print('moduleName1', moduleName1)
-#             moduleName1_index = group_elements_index[moduleName1]
-#             moduleName2_index = group_elements_index[moduleName2]
-#             # 相邻的两个processModule的可达的机械臂(的编号)：
-#             accessibleTM1 = accessibleList[moduleName1_index]
-#             accessibleTM2 = accessibleList[moduleName2_index]
-#             # print(accessibleList[moduleName1_index])
-#             # print(accessibleList[moduleName2_index])
-#             transfer = accessibleTM1 & accessibleTM2
-#             if transfer == set():   # 若两个processModule不在同一个TM下(交集为空)，则需要找这两组TM的accessibleList中共同的BM
-#                 print('moduleName1:', moduleName1)
-#                 print('i=', i)
-#                 print('accessibleTM1', accessibleTM1)
-#                 print('accessibleTM2', accessibleTM2)
-#                 # TODO 有多个可选的BM怎么处理(暂不考虑)(采用双层循环？)
-#                 for j in accessibleTM1:
-#                     access_module1 = TM[j]['accessibleList']
-#                     print('access_module1', access_module1)
-#                 for k in accessibleTM2:
-#                     access_module2 = TM[k]['accessibleList']
-#                     print('access_module2', access_module2)
-#                 # 找出这两个机械臂可达的BM
-#                 access_buffer_module1 = [l for l in access_module1 if l in buffer_module]
-#                 access_buffer_module2 = [l for l in access_module2 if l in buffer_module]
-#                 bm = [l for l in access_buffer_module1 if l in access_buffer_module2]
-#                 print('access_buffer_module1', access_buffer_module1)
-#                 print('access_buffer_module2', access_buffer_module2)
-#                 print('bm', bm)
-#                 if bm == []:
-#                     print('当前路径存在断路,请检查机台结构')
-#                     exit()
-#                 # 将BM信息插入json文件中，若有多个BM可选则只插入第一个
-#                 # TODO 考虑同时有多个BM的情况，如BM6-1/BM6-2
-#                 bm_info = {
-#                     "processModule": [bm[0]],
-#                     "processTime": 0
-#                 }
-#                 # print(bm_info)
-#                 new_recipe.insert(i+1, bm_info)
-#
-#         print(new_recipe)
-#         waferGroup['recipe'] = new_recipe
-#         new_wafer_json_data.append(waferGroup)
-#     print(new_wafer_json_data)
-
 # a = {1}
 # b = {0}
 # c = a & b

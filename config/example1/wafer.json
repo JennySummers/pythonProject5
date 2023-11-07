@@ -11,7 +11,8 @@
             },
             {
                 "processModule": [
-                    "BM2-1"
+                    "BM2-1",
+                    "BM2-2"
                 ],
                 "processTime": 0
             },
@@ -65,7 +66,8 @@
             },
             {
                 "processModule": [
-                    "BM6-1"
+                    "BM6-1",
+                    "BM6-2"
                 ],
                 "processTime": 0
             },
@@ -83,7 +85,8 @@
             },
             {
                 "processModule": [
-                    "BM6-1"
+                    "BM6-1",
+                    "BM6-2"
                 ],
                 "processTime": 0
             },
@@ -95,7 +98,8 @@
             },
             {
                 "processModule": [
-                    "BM6-11"
+                    "BM6-11",
+                    "BM6-12"
                 ],
                 "processTime": 0
             },
@@ -107,7 +111,8 @@
             },
             {
                 "processModule": [
-                    "BM6-11"
+                    "BM6-11",
+                    "BM6-12"
                 ],
                 "processTime": 0
             },
@@ -131,7 +136,8 @@
             },
             {
                 "processModule": [
-                    "BM2-1"
+                    "BM2-1",
+                    "BM2-2"
                 ],
                 "processTime": 0
             },

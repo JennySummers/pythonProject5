@@ -75,12 +75,16 @@ class Read_json:
                                 if bm:  # 非空
                                     flag = True
                                     # 将BM信息插入json文件中，若有多个BM可选则只插入第一个
-                                    # TODO 需要考虑同时有多个BM的情况，如BM6-1/BM6-2,当前是选第一个，且在recipe中写死
+                                    # 需要考虑同时有多个BM的情况，如BM6-1/BM6-2,当前是选第一个，且在recipe中写死
                                     bm_info = {
-                                        "processModule": [bm[0]],
+                                        "processModule": bm,
                                         "processTime": 0
                                     }
-                                    # print(bm_info)
+                                    # bm_info = {
+                                    #     "processModule": [bm[0]],
+                                    #     "processTime": 0
+                                    # }
+                                    print(bm_info)
                                     new_recipe.insert(index + 1, bm_info)
                                     index = index + 1
                                     break
