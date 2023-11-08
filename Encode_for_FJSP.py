@@ -53,7 +53,7 @@ class Encode:
         for i in range(self.GS_num):
             # Machine_time = np.zeros(self.M_num, dtype=float)  # 机器时间初始化，使用当前机器运行情况初始化
             Machine_time = [x for x in self.Machine_status]  # 机器时间初始化，使用当前机器运行情况初始化
-            random.shuffle(OS_list)  # 生成工序排序部分
+            # random.shuffle(OS_list)  # 生成工序排序部分
             OS[i] = np.array(OS_list)
             GJ_list = [i for i in range(self.J_num)]  # GJ_list表示
             random.shuffle(GJ_list)

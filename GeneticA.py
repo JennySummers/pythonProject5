@@ -4,6 +4,7 @@ import random
 from Decode_for_FJSP import Decode, Gantt_Machine, Gantt_Job
 from Encode_for_FJSP import Encode
 from read_Json import INVALID
+from Jobs import Job
 from copy import *
 import itertools
 import matplotlib.pyplot as plt
@@ -147,7 +148,7 @@ class GA:
                                p=Fit / (Fit.sum()))
         return idx
 
-    def get_State(self, time):
+    def get_M_State(self, time):
         cur_state = []
         for m in self.Best_Machine:
             sec = 0
@@ -163,6 +164,28 @@ class GA:
             else:
                 cur_state.append(0)
         return cur_state
+
+    def get_W_State(self, time):
+        jobs = []
+        for i in range(len(self.Best_Job)):
+            new_s = 0
+            while self.Best_Job[i].J_end[new_s] < time and new_s < self.Best_Job[i].Operation_num:
+                new_s += 1
+            if new_s >= self.Best_Job[i].Operation_num:
+                continue
+            job = Job(self.Best_Job[i].Job_index, self.Best_Job[i].Operation_num - new_s)
+            for j in range(new_s, self.Best_Job[i].Operation_num):
+                if self.Best_Job[i].J_start[j] < time:
+                    job.J_start.append(0)
+                else:
+                    job.J_start.append(self.Best_Job[i].J_start[j] - time)
+                job.J_end.append(self.Best_Job[i].J_end[j] - time)
+                job.J_machine.append(self.Best_Job[i].J_machine[j])
+            job.Last_Processing_end_time = self.Best_Job[i].Last_Processing_end_time - time
+            job.Last_Processing_Machine= self.Best_Job[i].Last_Processing_Machine
+            jobs.append(job)
+        return jobs
+
 
     def main(self, processing_time, J_O, m_num, j_num, o_num):
         start_time = datetime.datetime.now()
@@ -218,7 +241,15 @@ class GA:
                     Fit = []
                     for i in range(len(offspring)):
                         d = Decode(J_O, processing_time, m_num, self.Machine_status)
-                        Fit.append(d.Decode_1(offspring[i], Len_Chromo))
+                        flg = True
+                        jobs = d.Jobs
+                        for a in range(len(jobs) - 1):
+                            if jobs[a].Last_Processing_end_time > jobs[a + 1].Last_Processing_end_time:
+                                flg = False
+                        if flg:
+                            Fit.append(d.Decode_1(offspring[i], Len_Chromo))
+                        else:
+                            Fit.append(INVALID)
                     C[j] = offspring[Fit.index(min(Fit))]
             cur_time = datetime.datetime.now()
             print("current time : ", cur_time)
@@ -234,5 +265,6 @@ class GA:
         plt.show()
         stop_time = datetime.datetime.now()
         print("end time : ", stop_time)
-        cur_state = self.get_State(20)
-        # print(cur_state)
+        cur_state = self.get_M_State(20)
+        jos = self.get_W_State(20)
+        print(cur_state)
