@@ -56,7 +56,7 @@ class Encode:
             # random.shuffle(OS_list)  # 生成工序排序部分
             OS[i] = np.array(OS_list)
             GJ_list = [i for i in range(self.J_num)]  # GJ_list表示
-            random.shuffle(GJ_list)
+            # random.shuffle(GJ_list)
             for g in GJ_list:  # 随机选择工件集的第一个工件,从工件集中剔除这个工件
                 h = self.Matrix[g]  # 第一个工件含有的工序，self.Matrix[g]表示第g个工件的工序集合和可处理的机器及其对应的处理时间
                 for j in range(len(h)):  # 从工件的第一个工序开始选择机器
