@@ -16,6 +16,7 @@ if __name__ == '__main__':
     wafer_path = "./config/example1/wafer.json"
     wafer_noBM_path = "./config/example1/wafer_noBM.json"
     r = get_Recipe(layout_path, wafer_path, wafer_noBM_path)
-    g = GA(r.Machine_status)
-    g.main(r.Processing_time, r.J, r.M_num, r.J_num, r.O_num)
-    # g.main(Processing_time, J, M_num, J_num, O_num, Machine_status)
+    # g = GA(r.Machine_status)
+    # g.main(r.Processing_time, r.J, r.M_num, r.J_num, r.O_num)
+    g = GA(Machine_status)
+    g.main(Processing_time, J, M_num, J_num, O_num)

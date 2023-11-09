@@ -182,10 +182,9 @@ class GA:
                 job.J_end.append(self.Best_Job[i].J_end[j] - time)
                 job.J_machine.append(self.Best_Job[i].J_machine[j])
             job.Last_Processing_end_time = self.Best_Job[i].Last_Processing_end_time - time
-            job.Last_Processing_Machine= self.Best_Job[i].Last_Processing_Machine
+            job.Last_Processing_Machine = self.Best_Job[i].Last_Processing_Machine
             jobs.append(job)
         return jobs
-
 
     def main(self, processing_time, J_O, m_num, j_num, o_num):
         start_time = datetime.datetime.now()
@@ -265,6 +264,10 @@ class GA:
         plt.show()
         stop_time = datetime.datetime.now()
         print("end time : ", stop_time)
-        cur_state = self.get_M_State(20)
-        jos = self.get_W_State(20)
+        cur_state = self.get_M_State(10)
+        jos = self.get_W_State(10)
+        for i in range(len(jos)):
+            print(jos[i].J_start)
+            print(jos[i].J_end)
+            print(jos[i].J_machine)
         print(cur_state)
