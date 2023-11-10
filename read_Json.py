@@ -19,6 +19,8 @@ class Read_json:
         self.group_elements_index = {}  # 各group在list中的起始索引位；例CM1=0,PG1=4,则一个list中0-3位的数字表示CM1的时间
         self.all_elements_num = 0  # CM/PM含有的处理单元(elements)总个数，即每个step的list中的元素个数
         self.buffer_module = []  # 存放所有的BM，以供判断
+        self.graph = {}     # 邻接矩阵
+        self.circle = []    # 存放找到的环路
 
         # 机械臂相关
         self.transfer_time = []  # 每个机械臂的取放时间
@@ -214,6 +216,62 @@ class Read_json:
         # print('wafer_num:', self.wafer_num)
         # print('wafer_num:', len(self.wafer_num))
 
+    def DFS(self, v, vis, trace):
+        if v in vis:
+            if v in trace:
+                v_index = trace.index(v)
+                print("有环：")
+                road = []
+                for i in range(v_index, len(trace)):
+                    print(trace[i] + ' ', end='')
+                    road.append(trace[i])
+                print(v)
+                road.append(v)
+                self.circle.append(road)
+                print("\n")
+                return
+            return
+
+        vis.append(v)
+        trace.append(v)
+        for vs in self.graph[v]:
+            self.DFS(vs, vis, trace)
+        trace.pop()
+
+    def findCircle(self):
+        vis = []
+        trace = []
+        with open(self.wafer_path, 'r', encoding='utf-8') as file:
+            wafer_json_data = json.load(file)
+            # 有多个recipe时
+            for waferGroup in wafer_json_data:
+                recipe = list(waferGroup['recipe'])
+                for i in range(len(recipe) - 1):
+                    processModule1 = recipe[i]['processModule']
+                    processModule2 = recipe[i + 1]['processModule']
+                    for module in processModule1:
+                        self.graph[module] = processModule2
+
+        with open(self.layout_path, 'r', encoding='utf-8') as file:
+            layout_json_data = json.load(file)
+            TM = list(layout_json_data['TM'])
+            for TG in TM:
+                # 加入TM->module的数据
+                groupName = TG['groupName']
+                self.graph[groupName] = TG['accessibleList']
+
+                # # TODO 加入module->TM的数据，存疑
+                # for module in TG['accessibleList']:
+                #     # print(graph[module])
+                #     if module in self.graph:
+                #         self.graph[module].append(groupName)
+                #     else:
+                #         list_module = [module]
+                #         self.graph[module] = list_module
+                #     # print(self.graph[module])
+
+        self.DFS(list(self.graph.keys())[0], vis, trace)
+        print(self.circle)
 
 '''
 J 表示各个工件对应的工序数。用键值对来表示。
@@ -231,6 +289,7 @@ class get_Recipe:
         j.get_Layout_Info()
         j.add_BM()
         j.get_Wafer_Info()
+        j.findCircle()
         # self.M_num = j.all_elements_num  # 配方的可用机器数
         self.M_num = j.all_elements_num + len(j.transfer_time)  # 配方的可用机器数,要考虑TM
         self.O_Max_len = 0  # 表示最大的工序数目

@@ -12,7 +12,7 @@ import datetime
 
 
 class GA:
-    def __init__(self, M_status, pop_size=100, p_c=0.8, p_m=0.3, p_v=0.5, p_w=0.95, max_iteration=10):
+    def __init__(self, M_status, pop_size=100, p_c=0.8, p_m=0.3, p_v=0.5, p_w=0.95, max_iteration=2):
         self.Best_Job = None
         self.Best_Machine = None
         self.Pop_size = pop_size  # 种群数量
@@ -254,6 +254,7 @@ class GA:
             print("current time : ", cur_time)
         Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
         Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图
+        '''
         plt.rcParams['figure.figsize'] = (8, 6)
         plt.plot(x, self.Best_fit, '-k')
         plt.xticks(np.arange(0, 10, 2))
@@ -262,6 +263,7 @@ class GA:
         plt.ylabel('Cmax')
         plt.xlabel('Test Num')
         plt.show()
+        '''
         stop_time = datetime.datetime.now()
         print("end time : ", stop_time)
         cur_state = self.get_M_State(10)
