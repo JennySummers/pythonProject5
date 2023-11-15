@@ -37,11 +37,14 @@ class Encode:
     # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def Site(self, Job, Operation):  # 第job个工件的第operation道工序在染色体中机器选择部分的位置。机器选择部分的下标对应一道确定的工序。
         O_num = 0
-        for i in range(len(self.J)):
-            if i == Job:
+        # for i in range(len(self.J)):
+        for k, v in self.J.items():
+            # if i == Job:
+            if k-1 == Job:
                 return O_num + Operation
             else:
-                O_num = O_num + self.J[i + 1]
+                # O_num = O_num + self.J[i + 1]
+                O_num = O_num + v
         return O_num
 
     # 全局选择初始化

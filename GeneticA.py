@@ -1,4 +1,4 @@
-import profile
+from memory_profiler import profile
 import numpy as np
 import random
 from Decode_for_FJSP import Decode, Gantt_Machine, Gantt_Job
@@ -11,8 +11,9 @@ import matplotlib.pyplot as plt
 import datetime
 
 
+
 class GA:
-    def __init__(self, M_status, pop_size=100, p_c=0.8, p_m=0.3, p_v=0.5, p_w=0.95, max_iteration=2):
+    def __init__(self, M_status, pop_size=10, p_c=0.8, p_m=0.3, p_v=0.5, p_w=0.95, max_iteration=5):
         self.Best_Job = None
         self.Best_Machine = None
         self.Pop_size = pop_size  # 种群数量
@@ -33,6 +34,7 @@ class GA:
         return Fit
 
     # 机器部分交叉
+    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def Crossover_Machine(self, CHS1, CHS2, T0):
         T_r = [j for j in range(T0)]
         r = random.randint(1, 10)  # 在区间[1,T0]内产生一个整数r
@@ -89,6 +91,7 @@ class GA:
         return Job, O_number
 
     # 机器变异部分
+    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def Variation_Machine(self, CHS, O, T0, J, Machine_stat):  # CHS表示，O表示处理时间矩阵，T0表示，J表示工件对应工序数
         Tr = [i_num for i_num in range(T0)]
         MS = CHS[0:T0]
@@ -113,6 +116,7 @@ class GA:
         return CHS
 
     # 工序变异部分
+    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def Variation_Operation(self, CHS, T0, J_number, J_v, Process_time, M_number):
         MS = CHS[0:T0]
         OS = list(CHS[T0:2 * T0])
@@ -164,27 +168,6 @@ class GA:
             else:
                 cur_state.append(0)
         return cur_state
-
-    def get_W_State(self, time):
-        jobs = []
-        for i in range(len(self.Best_Job)):
-            new_s = 0
-            while self.Best_Job[i].J_end[new_s] < time and new_s < self.Best_Job[i].Operation_num:
-                new_s += 1
-            if new_s >= self.Best_Job[i].Operation_num:
-                continue
-            job = Job(self.Best_Job[i].Job_index, self.Best_Job[i].Operation_num - new_s)
-            for j in range(new_s, self.Best_Job[i].Operation_num):
-                if self.Best_Job[i].J_start[j] < time:
-                    job.J_start.append(0)
-                else:
-                    job.J_start.append(self.Best_Job[i].J_start[j] - time)
-                job.J_end.append(self.Best_Job[i].J_end[j] - time)
-                job.J_machine.append(self.Best_Job[i].J_machine[j])
-            job.Last_Processing_end_time = self.Best_Job[i].Last_Processing_end_time - time
-            job.Last_Processing_Machine = self.Best_Job[i].Last_Processing_Machine
-            jobs.append(job)
-        return jobs
 
     def main(self, processing_time, J_O, m_num, j_num, o_num):
         start_time = datetime.datetime.now()
@@ -254,22 +237,14 @@ class GA:
             print("current time : ", cur_time)
         Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
         Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图
-        '''
-        plt.rcParams['figure.figsize'] = (8, 6)
-        plt.plot(x, self.Best_fit, '-k')
-        plt.xticks(np.arange(0, 10, 2))
-        plt.title(
-            'the maximum completion time of each iteration for flexible job shop scheduling problem')
-        plt.ylabel('Cmax')
-        plt.xlabel('Test Num')
-        plt.show()
-        '''
+        # plt.rcParams['figure.figsize'] = (8, 6)
+        # plt.plot(x, self.Best_fit, '-k')
+        # plt.xticks(np.arange(0, 10, 2))
+        # plt.title(
+        #     'the maximum completion time of each iteration for flexible job shop scheduling problem')
+        # plt.ylabel('Cmax')
+        # plt.xlabel('Test Num')
+        # plt.show()
         stop_time = datetime.datetime.now()
         print("end time : ", stop_time)
         cur_state = self.get_M_State(10)
-        jos = self.get_W_State(10)
-        for i in range(len(jos)):
-            print(jos[i].J_start)
-            print(jos[i].J_end)
-            print(jos[i].J_machine)
-        print(cur_state)

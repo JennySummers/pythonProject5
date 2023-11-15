@@ -13,7 +13,7 @@ def Gantt_Machine(Machines):
          'SlateBlue', 'RoyalBlue', 'Cyan', 'Aqua', 'floralwhite', 'ghostwhite', 'goldenrod', 'mediumslateblue',
          'navajowhite',
          'navy', 'sandybrown', 'moccasin']
-    plt.rcParams['figure.figsize'] = (38, 60)
+    # plt.rcParams['figure.figsize'] = (38, 60)
     for i in range(len(Machines)):
         Machine = Machines[i]
         Start_time = Machine.O_start
@@ -37,7 +37,7 @@ def Gantt_Job(Jobs):
          'SlateBlue', 'RoyalBlue', 'Cyan', 'Aqua', 'floralwhite', 'ghostwhite', 'goldenrod', 'mediumslateblue',
          'navajowhite',
          'navy', 'sandybrown', 'moccasin']
-    plt.rcParams['figure.figsize'] = (80, 6)
+    # plt.rcParams['figure.figsize'] = (80, 6)
     for i in range(len(Jobs)):
         job = Jobs[i]
         # print(job.J_machine)
