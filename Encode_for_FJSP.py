@@ -37,14 +37,14 @@ class Encode:
     # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def Site(self, Job, Operation):  # 第job个工件的第operation道工序在染色体中机器选择部分的位置。机器选择部分的下标对应一道确定的工序。
         O_num = 0
-        # for i in range(len(self.J)):
-        for k, v in self.J.items():
-            # if i == Job:
-            if k-1 == Job:
+        # for k, v in self.J.items():
+        for i in range(len(self.J)):
+            # if k-1 == Job:
+            if i == Job:
                 return O_num + Operation
             else:
-                # O_num = O_num + self.J[i + 1]
-                O_num = O_num + v
+                O_num = O_num + self.J[i + 1]
+                # O_num = O_num + v
         return O_num
 
     # 全局选择初始化
@@ -76,7 +76,7 @@ class Encode:
                     # print(Machine_Select)
                     Min_time = min(Machine_Select)
                     K = Machine_Select.index(Min_time)  # K表示可选机器集中的第几台机器
-                    I = List_Machine_position[K]    # I表示这台机器实际的编号
+                    I = List_Machine_position[K]  # I表示这台机器实际的编号
                     Machine_time[I] += D[I]  # 使用当前工件在这台机器加工的时间来更新机器时间
                     # Machine_time[I] += Min_time
                     site = self.Site(g, j)
@@ -114,7 +114,8 @@ class Encode:
                             List_Machine_weizhi.append(k)
                     Machine_Select = []
                     for Machine_add in List_Machine_weizhi:  # 将这道工序的可用机器时间和以前积累的机器时间相加
-                        Machine_time[Machine_add] = Machine_time[Machine_add] + D[Machine_add]  # 比较可用机器的时间加上以前累计的机器时间的时间值，并选出时间最小
+                        Machine_time[Machine_add] = Machine_time[Machine_add] + D[
+                            Machine_add]  # 比较可用机器的时间加上以前累计的机器时间的时间值，并选出时间最小
                         Machine_Select.append(Machine_time[Machine_add])
                     Machine_Index_add = Machine_Select.index(min(Machine_Select))
                     site = self.Site(g, j)

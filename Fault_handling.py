@@ -68,8 +68,8 @@ class Fault:
         cnt = 0
         for i in range(len(jobs)):
             if jobs[i] != -1:
-                self.New_J[i+1] = self.pres_jobs[i].Operation_num - jobs[i]
-                self.New_O_num += self.New_J[i+1]
+                self.New_J[cnt+1] = self.pres_jobs[i].Operation_num - jobs[i]
+                self.New_O_num += self.New_J[cnt+1]
                 self.New_J_num += 1
                 self.New_Processing_time.append([])
                 if cur_m[i] != -1:
@@ -91,7 +91,7 @@ class Fault:
 if __name__ == '__main__':
     g = GA(Machine_status)
     g.main(Processing_time, J, M_num, J_num, O_num)
-    mes = Message(1, 4, 10)
+    mes = Message(1, 4, 20)
     f = Fault(mes)
     f.set_pres_machines(g.Best_Machine)
     f.set_pres_jobs(g.Best_Job)
