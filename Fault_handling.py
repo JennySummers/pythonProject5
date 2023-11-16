@@ -10,8 +10,10 @@ from Messages import Message
 class Fault:
     def __init__(self, message):
         self.fault_type = message.fault_type  # 故障类型，0代表机器故障但可以将其中的片取出，1代表机器故障且不可将其中的片取出
-        self.fault_pos = message.fault_pos  # 故障位置
+        self.fault_pos = message.fault_pos  # 故障机器位置
         self.fault_time = message.fault_time  # 故障时间
+        self.fault_wafer = None  # 故障发生时的晶圆编号
+        self.fault_op = None  # 故障发生时的工序编号
         self.pres_jobs = None  # 当前正在处理的晶圆的加工工艺序列
         self.pres_machines = None  # 当前调度方案的机器加工状态
         self.New_Processing_time = []  # 故障发生后新产生的各个晶圆处理时间矩阵
@@ -41,7 +43,12 @@ class Fault:
                 res_t.append(0)
                 continue
             if self.pres_jobs[i].J_start[new_s] <= self.fault_time:  # 当前工艺已经开始加工
-                jobs.append(new_s)
+                if self.pres_jobs[i].J_machine[new_s] == self.fault_pos:
+                    jobs.append(-1)
+                    self.fault_wafer = i
+                    self.fault_op = new_s
+                else:
+                    jobs.append(new_s)
                 cur_m.append(self.pres_jobs[i].J_machine[new_s])
                 res_t.append(self.pres_jobs[i].J_end[new_s] - self.fault_time)
             else:  # 当前工艺尚未开始加工
@@ -61,8 +68,8 @@ class Fault:
         cnt = 0
         for i in range(len(jobs)):
             if jobs[i] != -1:
-                self.New_J[i] = self.pres_jobs[i].Operation_num - jobs[i]
-                self.New_O_num += self.New_J[i]
+                self.New_J[i+1] = self.pres_jobs[i].Operation_num - jobs[i]
+                self.New_O_num += self.New_J[i+1]
                 self.New_J_num += 1
                 self.New_Processing_time.append([])
                 if cur_m[i] != -1:
@@ -89,5 +96,6 @@ if __name__ == '__main__':
     f.set_pres_machines(g.Best_Machine)
     f.set_pres_jobs(g.Best_Job)
     f.Fault_Handle(Processing_time, M_num)
+    g.main(f.New_Processing_time, f.New_J, f.New_M_num, f.New_J_num, f.New_O_num)
     print("1")
 
