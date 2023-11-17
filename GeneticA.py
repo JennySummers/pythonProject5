@@ -1,4 +1,5 @@
 from memory_profiler import profile
+import gc
 import numpy as np
 import random
 from Decode_for_FJSP import Decode, Gantt_Machine, Gantt_Job
@@ -11,9 +12,79 @@ import matplotlib.pyplot as plt
 import datetime
 
 
+# 机器部分交叉
+# @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
+def Crossover_Machine(CHS1, CHS2, T0):
+    T_r = [j for j in range(T0)]
+    r = random.randint(1, 10)  # 在区间[1,T0]内产生一个整数r
+    random.shuffle(T_r)
+    R = T_r[0:r]  # 按照随机数r产生r个互不相等的整数
+    # 将父代的染色体复制到子代中去，保持他们的顺序和位置
+    OS_1 = CHS1[T0:2 * T0]
+    OS_2 = CHS2[T0:2 * T0]
+    C_1 = CHS2[0:T0]
+    C_2 = CHS1[0:T0]
+    for i in R:
+        K, K_2 = C_1[i], C_2[i]
+        C_1[i], C_2[i] = K_2, K
+    CHS1 = np.hstack((C_1, OS_1))
+    CHS2 = np.hstack((C_2, OS_2))
+    return CHS1, CHS2
+
+
+# 工序交叉部分
+def Crossover_Operation(CHS1, CHS2, T0, J_number):
+    OS_1 = CHS1[T0:2 * T0]
+    OS_2 = CHS2[T0:2 * T0]
+    MS_1 = CHS1[0:T0]
+    MS_2 = CHS2[0:T0]
+    Job_list = [i for i in range(J_number)]
+    random.shuffle(Job_list)
+    r = random.randint(1, J_number - 1)
+    Set1 = Job_list[0:r]
+    Set2 = Job_list[r:J_number]
+    new_os = list(np.zeros(T0, dtype=int))
+    for k, v in enumerate(OS_1):
+        if v in Set1:
+            new_os[k] = v + 1
+    for i in OS_2:
+        if i not in Set1:
+            Site = new_os.index(0)
+            new_os[Site] = i + 1
+    new_os = np.array([j - 1 for j in new_os])
+    CHS1 = np.hstack((MS_1, new_os))
+    CHS2 = np.hstack((MS_2, new_os))
+    return CHS1, CHS2
+
+
+def reduction(num, J_r, T0):
+    T0 = [j for j in range(T0)]
+    K = []
+    Site = 0
+    for k, v in J_r.items():
+        K.append(T0[Site:Site + v])
+        Site += v
+    for i in range(len(K)):
+        if num in K[i]:
+            job = i
+            O_number = K[i].index(num)
+            break
+    return job, O_number
+
+
+def Select(Fit_value):
+    Fit = []
+    for i in range(len(Fit_value)):
+        fit = 1 / Fit_value[i]
+        Fit.append(fit)
+    Fit = np.array(Fit)
+    idx = np.random.choice(np.arange(len(Fit_value)), size=len(Fit_value), replace=True,
+                           p=Fit / (Fit.sum()))
+    return idx
+
 
 class GA:
-    def __init__(self, M_status, pop_size=10, p_c=0.8, p_m=0.3, p_v=0.5, p_w=0.95, max_iteration=5):
+    def __init__(self, M_status, pop_size=100, p_c=0.8, p_m=0.3, p_v=0.5, p_w=0.95, max_iteration=3):
         self.Best_Job = None
         self.Best_Machine = None
         self.Pop_size = pop_size  # 种群数量
@@ -33,63 +104,6 @@ class GA:
             Fit.append(d.Decode_1(CHS[i], Len))
         return Fit
 
-    # 机器部分交叉
-    # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
-    def Crossover_Machine(self, CHS1, CHS2, T0):
-        T_r = [j for j in range(T0)]
-        r = random.randint(1, 10)  # 在区间[1,T0]内产生一个整数r
-        random.shuffle(T_r)
-        R = T_r[0:r]  # 按照随机数r产生r个互不相等的整数
-        # 将父代的染色体复制到子代中去，保持他们的顺序和位置
-        OS_1 = CHS1[T0:2 * T0]
-        OS_2 = CHS2[T0:2 * T0]
-        C_1 = CHS2[0:T0]
-        C_2 = CHS1[0:T0]
-        for i in R:
-            K, K_2 = C_1[i], C_2[i]
-            C_1[i], C_2[i] = K_2, K
-        CHS1 = np.hstack((C_1, OS_1))
-        CHS2 = np.hstack((C_2, OS_2))
-        return CHS1, CHS2
-
-    # 工序交叉部分
-    def Crossover_Operation(self, CHS1, CHS2, T0, J_number):
-        OS_1 = CHS1[T0:2 * T0]
-        OS_2 = CHS2[T0:2 * T0]
-        MS_1 = CHS1[0:T0]
-        MS_2 = CHS2[0:T0]
-        Job_list = [i for i in range(J_number)]
-        random.shuffle(Job_list)
-        r = random.randint(1, J_number - 1)
-        Set1 = Job_list[0:r]
-        Set2 = Job_list[r:J_number]
-        new_os = list(np.zeros(T0, dtype=int))
-        for k, v in enumerate(OS_1):
-            if v in Set1:
-                new_os[k] = v + 1
-        for i in OS_2:
-            if i not in Set1:
-                Site = new_os.index(0)
-                new_os[Site] = i + 1
-        new_os = np.array([j - 1 for j in new_os])
-        CHS1 = np.hstack((MS_1, new_os))
-        CHS2 = np.hstack((MS_2, new_os))
-        return CHS1, CHS2
-
-    def reduction(self, num, J_r, T0):
-        T0 = [j for j in range(T0)]
-        K = []
-        Site = 0
-        for k, v in J_r.items():
-            K.append(T0[Site:Site + v])
-            Site += v
-        for i in range(len(K)):
-            if num in K[i]:
-                Job = i
-                O_number = K[i].index(num)
-                break
-        return Job, O_number
-
     # 机器变异部分
     # @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
     def Variation_Machine(self, CHS, O, T0, J, Machine_stat):  # CHS表示，O表示处理时间矩阵，T0表示，J表示工件对应工序数
@@ -101,7 +115,7 @@ class GA:
         random.shuffle(Tr)
         T_r = Tr[0:r]
         for i in T_r:
-            Job = self.reduction(i, J, T0)
+            Job = reduction(i, J, T0)
             O_i = Job[0]
             O_j = Job[1]
             Machine_using = O[O_i][O_j]
@@ -120,7 +134,7 @@ class GA:
     def Variation_Operation(self, CHS, T0, J_number, J_v, Process_time, M_number):
         MS = CHS[0:T0]
         OS = list(CHS[T0:2 * T0])
-        r = random.randint(1, J_number - 1)
+        r = random.randint(1, (J_number - 1)/2)
         Tr = [i for i in range(J_number)]
         random.shuffle(Tr)
         Tr = Tr[0:r]
@@ -136,21 +150,13 @@ class GA:
                 OS[Site[j]] = A[i][j]
             C_I = np.hstack((MS, OS))
             A_CHS.append(C_I)
+            gc.collect()
         Fit = []
         for i in range(len(A_CHS)):
             d = Decode(J_v, Process_time, M_number, self.Machine_status)
             Fit.append(d.Decode_1(CHS, T0))
+        gc.collect()
         return A_CHS[Fit.index(min(Fit))]
-
-    def Select(self, Fit_value):
-        Fit = []
-        for i in range(len(Fit_value)):
-            fit = 1 / Fit_value[i]
-            Fit.append(fit)
-        Fit = np.array(Fit)
-        idx = np.random.choice(np.arange(len(Fit_value)), size=len(Fit_value), replace=True,
-                               p=Fit / (Fit.sum()))
-        return idx
 
     def get_M_State(self, time):
         cur_state = []
@@ -206,10 +212,10 @@ class GA:
                 if random.random() < self.P_c:
                     N_i = random.choice(np.arange(len(C)))
                     if random.random() < self.P_v:
-                        Crossover = self.Crossover_Machine(C[j], C[N_i], Len_Chromo)
+                        Crossover = Crossover_Machine(C[j], C[N_i], Len_Chromo)
                         # print('Cov1----->>>>>',len(Crossover[0]),len(Crossover[1]))
                     else:
-                        Crossover = self.Crossover_Operation(C[j], C[N_i], Len_Chromo, j_num)
+                        Crossover = Crossover_Operation(C[j], C[N_i], Len_Chromo, j_num)
                     offspring.append(Crossover[0])
                     offspring.append(Crossover[1])
                     offspring.append(C[j])

@@ -4,7 +4,7 @@ from Instance import Processing_time, J, M_num, J_num, O_num, Machine_status
 import numpy as np
 
 from read_Json import INVALID
-from Messages import Message
+from Messages import Fault_Message
 
 
 class Fault:
@@ -91,7 +91,7 @@ class Fault:
 if __name__ == '__main__':
     g = GA(Machine_status)
     g.main(Processing_time, J, M_num, J_num, O_num)
-    mes = Message(1, 4, 20)
+    mes = Fault_Message(1, 4, 20)
     f = Fault(mes)
     f.set_pres_machines(g.Best_Machine)
     f.set_pres_jobs(g.Best_Job)
