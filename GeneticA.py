@@ -134,7 +134,7 @@ class GA:
     def Variation_Operation(self, CHS, T0, J_number, J_v, Process_time, M_number):
         MS = CHS[0:T0]
         OS = list(CHS[T0:2 * T0])
-        r = random.randint(1, (J_number - 1)/2)
+        r = random.randint(1, J_number - 1)
         Tr = [i for i in range(J_number)]
         random.shuffle(Tr)
         Tr = Tr[0:r]
