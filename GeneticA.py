@@ -254,3 +254,15 @@ class GA:
         stop_time = datetime.datetime.now()
         print("end time : ", stop_time)
         cur_state = self.get_M_State(10)
+
+    # 逻辑参考函数：def Gantt_Machine(Machines)
+    def get_TM_Move_List(self, M_num, TM_num, group_name_index):
+        # for i in range(len(self.Best_Machine)):
+        for i in range(M_num - TM_num, M_num):
+            print('i:' + str(i))
+            print('TM Name:' + group_name_index[i])
+            Machine = self.Best_Machine[i]
+            Start_time = Machine.O_start
+            End_time = Machine.O_end
+            for j in range(len(End_time)):
+                print('step' + str(j) + ': Start_time:' + str(Start_time[j]) + ' End_time:' + str(End_time[j]))

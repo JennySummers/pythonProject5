@@ -21,6 +21,7 @@ class Read_json:
         self.buffer_module = []  # 存放所有的BM，以供判断
         self.graph = {}     # 邻接矩阵
         self.circle = []    # 存放找到的环路
+        self.TM_num = 0  # 记录TM（机械臂）的总数量
 
         # 机械臂相关
         self.transfer_time = []  # 每个机械臂的取放时间
@@ -60,7 +61,7 @@ class Read_json:
                         # print('i=', i)
                         # print('accessibleTM1', accessibleTM1)
                         # print('accessibleTM2', accessibleTM2)
-                        # TODO 有多个可选的BM怎么处理(采用双层循环？)
+                        # 有多个可选的BM怎么处理(采用双层循环？)
                         flag = False
                         for j in accessibleTM1:
                             access_module1 = TM[j]['accessibleList']
@@ -86,7 +87,7 @@ class Read_json:
                                     #     "processModule": [bm[0]],
                                     #     "processTime": 0
                                     # }
-                                    print(bm_info)
+                                    # print(bm_info)
                                     new_recipe.insert(index + 1, bm_info)
                                     index = index + 1
                                     break
@@ -100,7 +101,7 @@ class Read_json:
                 # print(new_recipe)
                 waferGroup['recipe'] = new_recipe
                 new_wafer_json_data.append(waferGroup)
-            print(new_wafer_json_data)
+            # print(new_wafer_json_data)
 
         with open(self.wafer_path, 'w+', encoding='utf-8') as file:
             json.dump(new_wafer_json_data, file, indent=4)
@@ -148,7 +149,16 @@ class Read_json:
 
             self.accessibleList = [set() for i in range(self.all_elements_num)]
             TM = self.layout_json_data['TM']
+            # TM_num = 0  # 记录TM（机械臂）的总数量
             for TG in TM:  # 遍历顺序是TM1,TM2,TM3,TM4,TM6,TM8,TM7,TM5
+                self.TM_num = self.TM_num + 1
+                groupName = TG['groupName']
+                self.buffer_module.append(groupName)
+                len_group = len(TG['elements'])
+                # self.all_elements_num += len_group    # 不清楚TM这部分代码的具体情况，暂不修改所有元素的数量
+                self.group_elements_index[groupName] = index
+                index += len_group
+                self.group_elements_num[groupName] = len_group
                 count = len(TG['elements'])  # 该机械臂组所包含的元素数
                 base = len(self.transfer_time)  # 该组之前已有的机械臂元素总数
                 temp_accessible_set = {x for x in range(base, base + count)}  # 可访问集合列表
@@ -161,10 +171,10 @@ class Read_json:
                 for accessibleModule in TG['accessibleList']:
                     if self.group_elements_index.__contains__(
                             accessibleModule):  # 由于暂未将BM添加进group_elements_index中，故添加此判断条件来跳过BM
-                        index = self.group_elements_index[accessibleModule]
+                        index0 = self.group_elements_index[accessibleModule]
                         num = self.group_elements_num[accessibleModule]
                         for i in range(num):
-                            self.accessibleList[i + index] |= temp_accessible_set
+                            self.accessibleList[i + index0] |= temp_accessible_set
 
         print('group_elements_num', self.group_elements_num)
         print('group_elements_index', self.group_elements_index)
@@ -271,7 +281,7 @@ class Read_json:
                 #     # print(self.graph[module])
 
         self.DFS(list(self.graph.keys())[0], vis, trace)
-        print(self.circle)
+        # print(self.circle)
 
 '''
 J 表示各个工件对应的工序数。用键值对来表示。
@@ -307,11 +317,16 @@ class get_Recipe:
             self.O_Max_len = max(self.O_Max_len, len(j.Processing_time[i]))
         self.Processing_time = self.modify_processing(j.Processing_time)
         self.Machine_status = np.zeros(self.M_num, dtype=float)
+        self.TM_num = j.TM_num  # 记录TM（机械臂）的总数量
+        # 将字典的key，value调换(此字典value为编号，唯一）
+        self.group_name_index = {v : k for k, v in j.group_elements_index.items()}  # 编号与对应名称的映射
         print(self.M_num)
         print(self.O_Max_len)
         print(self.J_num)
         print(self.O_num)
         print(self.J)
+        print(self.TM_num)
+        print(self.group_name_index)
 
     def modify_processing(self, processing_time):
         tmp = copy.deepcopy(processing_time)

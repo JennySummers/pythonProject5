@@ -18,5 +18,6 @@ if __name__ == '__main__':
     r = get_Recipe(layout_path, wafer_path, wafer_noBM_path)
     g = GA(r.Machine_status)
     g.main(r.Processing_time, r.J, r.M_num, r.J_num, r.O_num)
+    g.get_TM_Move_List(r.M_num, r.TM_num, r.group_name_index)   # 打印TM机械臂操作列表
     # g = GA(Machine_status)
     # g.main(Processing_time, J, M_num, J_num, O_num)
