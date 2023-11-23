@@ -4,10 +4,11 @@ import numpy as np
 import random
 from Decode_for_FJSP import Decode, Gantt_Machine, Gantt_Job
 from Encode_for_FJSP import Encode
-from read_Json import INVALID
+from read_Json import INVALID, pick_time, put_time
 from Jobs import Job
 from copy import *
 import itertools
+from Messages import Arm_Message
 import matplotlib.pyplot as plt
 import datetime
 
@@ -84,9 +85,10 @@ def Select(Fit_value):
 
 
 class GA:
-    def __init__(self, M_status, pop_size=100, p_c=0.8, p_m=0.3, p_v=0.5, p_w=0.95, max_iteration=3):
-        self.Best_Job = None
-        self.Best_Machine = None
+    def __init__(self, M_status, pop_size=10, p_c=0.8, p_m=0.3, p_v=0.5, p_w=0.95, max_iteration=3):
+        self.Best_Job = None  # 最优的晶圆加工调度结果
+        self.Best_Machine = None  # 最优的加工单元调度结果
+        self.TM_msg = []  # 机械臂指令集合
         self.Pop_size = pop_size  # 种群数量
         self.P_c = p_c  # 交叉概率
         self.P_m = p_m  # 变异概率
@@ -95,6 +97,7 @@ class GA:
         self.Max_Iterations = max_iteration  # 最大迭代次数
         self.Machine_status = [x for x in M_status]
         self.Best_fit = []
+        self.TM_List = []  # 机械臂编号集合
 
     # 适应度
     def fitness(self, CHS, J_f, Processing_t, M_number, Len):
@@ -158,6 +161,22 @@ class GA:
         gc.collect()
         return A_CHS[Fit.index(min(Fit))]
 
+    def set_TM_Message(self, M_num, TM_num, group_name_index):
+        for i in range(M_num - TM_num, M_num):
+            self.TM_List.append(i)
+        for i in self.TM_List:
+            Machine = self.Best_Machine[i]
+            Start_time = Machine.O_start
+            End_time = Machine.O_end
+            for i_1 in range(len(End_time)):
+                j = Machine.assigned_task[i_1][0]-1
+                o = Machine.assigned_task[i_1][1]-1
+                pre = self.Best_Job[j].J_machine[o-1]
+                nxt = self.Best_Job[j].J_machine[o+1]
+                self.TM_msg.append(Arm_Message(i, Start_time[i_1], 0, pre, nxt))  # 机械臂取片指令
+                self.TM_msg.append(Arm_Message(i, Start_time[i_1] + pick_time, 0, pre, nxt))  # 机械臂移动指令
+                self.TM_msg.append(Arm_Message(i, End_time[i_1] - put_time, 0, pre, nxt))  # 机械臂放片指令
+
     def get_M_State(self, time):
         cur_state = []
         for m in self.Best_Machine:
@@ -175,7 +194,7 @@ class GA:
                 cur_state.append(0)
         return cur_state
 
-    def main(self, processing_time, J_O, m_num, j_num, o_num):
+    def main(self, processing_time, J_O, m_num, j_num, o_num, TM_num, group_name_index):
         start_time = datetime.datetime.now()
         print("start time is : ", start_time)
         e = Encode(processing_time, self.Pop_size, J_O, j_num, m_num, self.Machine_status)
@@ -241,6 +260,8 @@ class GA:
                     C[j] = offspring[Fit.index(min(Fit))]
             cur_time = datetime.datetime.now()
             print("current time : ", cur_time)
+        self.set_TM_Message(m_num, TM_num, group_name_index)
+        stop_time = datetime.datetime.now()
         Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
         Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图
         # plt.rcParams['figure.figsize'] = (8, 6)
@@ -251,9 +272,10 @@ class GA:
         # plt.ylabel('Cmax')
         # plt.xlabel('Test Num')
         # plt.show()
-        stop_time = datetime.datetime.now()
-        print("end time : ", stop_time)
+        print("Running time : ", stop_time - start_time)
         cur_state = self.get_M_State(10)
+        print("在时间10时，机台上各个机器的状态：")
+        print(cur_state)
 
     # 逻辑参考函数：def Gantt_Machine(Machines)
     def get_TM_Move_List(self, M_num, TM_num, group_name_index):

@@ -98,4 +98,3 @@ if __name__ == '__main__':
     f.Fault_Handle(Processing_time, M_num)
     g.main(f.New_Processing_time, f.New_J, f.New_M_num, f.New_J_num, f.New_O_num)
     print("1")
-
