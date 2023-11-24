@@ -22,11 +22,39 @@ class Read_json:
         self.buffer_module = []  # 存放所有的BM，以供判断
         self.graph = {}     # 邻接矩阵
         self.circle = []    # 存放找到的环路
-        self.TM_num = 0  # 记录TM（机械臂）的总数量
+        self.TM_num = 0     # 记录TM（机械臂）的总数量
+        self.CM_num = 0     # 记录CM的槽位数量
+        self.wafer_sum = 0  # 记录wafer_sum的总数量
+        self.CM_name_list = []
 
         # 机械臂相关
         self.transfer_time = []  # 每个机械臂的取放时间
         self.accessibleList = []  # 每个PM/CM的可交互机械臂列表在transfer_time中的索引
+
+    # 判断输入的CM的槽位是否小于wafer数量，若是，则报错退出
+    def check_waferNum(self):
+        CM_num = 0
+        wafer_sum = 0
+        with open(self.layout_path, 'r', encoding='utf-8') as layout_file:
+            layout_json_data = json.load(layout_file)
+            CM = layout_json_data['CM']
+            for CG in CM:
+                CM_num = len(CG['elements'])
+                self.CM_name_list.append(CG['groupName'])
+        with open(self.wafer_noBM_path, 'r', encoding='utf-8') as file:
+            wafer_json_data = json.load(file)
+            for waferGroup in wafer_json_data:
+                num = waferGroup['waferNum']
+                wafer_sum = wafer_sum + num
+
+        self.CM_num = CM_num
+        self.wafer_sum = wafer_sum
+        print('CM_num:' + str(CM_num))
+        print('wafer_sum:' + str(wafer_sum))
+        # print(self.CM_name_list)
+        if CM_num < wafer_sum:
+            print('CM的槽位数小于输入的wafer数量，请重新检查')
+            exit()
 
     # 自动添加buffer到wafer.json
     def add_BM(self):
@@ -210,6 +238,10 @@ class Read_json:
                         for i in range(num):
                             list_step[index + i] = copy.deepcopy(processTime)
                             now_transfer |= self.accessibleList[index + i]  # 记录与当前工序相关联的机械臂
+                        # 令空出来的槽位=INVALID
+                        if name in self.CM_name_list:
+                            for i in range(self.CM_num - self.wafer_sum):
+                                list_step[index + self.wafer_sum + i] = INVALID
                     # 在工序列表中添加机械臂行
                     if last_transfer:  # 第一个工序不需要添加前置机械臂
                         transfer = last_transfer & now_transfer  # 选取前一道工序和当前工序关联机械臂的交集
@@ -297,6 +329,7 @@ O_num 表示所有工件的所有工序总数
 class get_Recipe:
     def __init__(self, layout_path, wafer_path, wafer_noBM_path):
         j = Read_json(layout_path, wafer_path, wafer_noBM_path)
+        j.check_waferNum()    # 判断输入的CM的槽位是否小于wafer数量，若是,则报错退出
         j.get_Layout_Info()
         j.add_BM()
         j.get_Wafer_Info()
