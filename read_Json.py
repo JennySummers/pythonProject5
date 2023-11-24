@@ -3,8 +3,8 @@ import numpy as np
 import copy
 
 INVALID = 99999999
-pick_time = 2
-put_time = 2
+pick_time = 0
+put_time = 0
 
 class Read_json:
     def __init__(self, layout_path, wafer_path, wafer_noBM_path):

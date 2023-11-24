@@ -200,8 +200,8 @@ class GA:
                 print('Machine:', x.machine_no, ' Time:', x.cmd_time, ' pick from:', x.move_from)
             if x.move_type == 1:
                 print('Machine:', x.machine_no, ' Time:', x.cmd_time, ' put to:', x.move_to)
-            if x.move_type == 2:
-                print('Machine:', x.machine_no, ' Time:', x.cmd_time, ' move from:', x.move_from, ' to:', x.move_to)
+            # if x.move_type == 2:
+            #     print('Machine:', x.machine_no, ' Time:', x.cmd_time, ' move from:', x.move_from, ' to:', x.move_to)
 
     def main(self, processing_time, J_O, m_num, j_num, o_num, TM_num, group_name_index):
         start_time = datetime.datetime.now()

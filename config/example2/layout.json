@@ -1,0 +1,70 @@
+{
+  "VERSION": "1.0",
+  "CM": [
+    {
+      "groupName": "CM1",
+      "elements": [
+        "CM1-1-1",
+        "CM1-1-2",
+        "CM1-1-3",
+        "CM1-1-4",
+        "CM1-1-5",
+        "CM1-1-6",
+        "CM1-1-7",
+        "CM1-1-8"
+      ]
+    }
+  ],
+  "PM": [
+    {
+      "groupName": "PG1",
+      "elements": [
+        "PM2-3A"
+      ]
+    },
+    {
+      "groupName": "PG2",
+      "elements": [
+        "PM3-2A"
+      ]
+    }
+  ],
+  "TM": [
+    {
+      "groupName": "TM1",
+      "elements": [
+        "TM1"
+      ],
+      "accessibleList": [
+        "CM1",
+        "PG1"
+      ],
+      "transferTime": 3
+    },
+    {
+      "groupName": "TM2",
+      "elements": [
+        "TM2"
+      ],
+      "accessibleList": [
+        "PG1",
+        "PG2"
+      ],
+      "transferTime": 3
+    },
+    {
+      "groupName": "TM3",
+      "elements": [
+        "TM3"
+      ],
+      "accessibleList": [
+        "PG2",
+        "CM1"
+      ],
+      "transferTime": 3
+    }
+  ],
+  "BM": [
+
+  ]
+}
