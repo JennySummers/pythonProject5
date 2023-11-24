@@ -174,8 +174,8 @@ class GA:
                 pre = self.Best_Job[j].J_machine[o - 1]
                 nxt = self.Best_Job[j].J_machine[o + 1]
                 self.TM_msg.append(Arm_Message(i, Start_time[i_1], 0, pre, nxt))  # 机械臂取片指令
-                self.TM_msg.append(Arm_Message(i, Start_time[i_1] + pick_time, 0, pre, nxt))  # 机械臂移动指令
-                self.TM_msg.append(Arm_Message(i, End_time[i_1] - put_time, 0, pre, nxt))  # 机械臂放片指令
+                self.TM_msg.append(Arm_Message(i, Start_time[i_1] + pick_time, 2, pre, nxt))  # 机械臂移动指令
+                self.TM_msg.append(Arm_Message(i, End_time[i_1] - put_time, 1, pre, nxt))  # 机械臂放片指令
 
     def get_M_State(self, time):
         cur_state = []
