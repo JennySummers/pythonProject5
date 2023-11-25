@@ -3,8 +3,8 @@ import numpy as np
 import copy
 
 INVALID = 99999999
-pick_time = 0
-put_time = 0
+pick_time = 1
+put_time = 1
 
 class Read_json:
     def __init__(self, layout_path, wafer_path, wafer_noBM_path):
@@ -316,6 +316,7 @@ class get_Recipe:
             self.O_num = self.O_num + len(j.Processing_time[i])
             # self.O_Max_len = max(self.O_Max_len, j.process_list[i])
             self.O_Max_len = max(self.O_Max_len, len(j.Processing_time[i]))
+
         self.Processing_time = self.modify_processing(j.Processing_time)
         self.Machine_status = np.zeros(self.M_num, dtype=float)
         self.TM_num = j.TM_num  # 记录TM（机械臂）的总数量

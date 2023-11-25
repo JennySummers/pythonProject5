@@ -230,6 +230,7 @@ class GA:
                 Fit.append(d.Decode_1(Optimal_CHS, Len_Chromo))
                 self.Best_Machine = deepcopy(d.Machines)
                 self.Best_Job = deepcopy(d.Jobs)
+                del d
                 # Gantt_Machine(d.Machines)  # 根据机器调度结果，绘制调度结果的甘特图
                 # Gantt_Job(d.Jobs)  # 根据工件调度结果，绘制调度结果的甘特图
             else:
@@ -266,6 +267,8 @@ class GA:
                             Fit.append(d.Decode_1(offspring[i], Len_Chromo))
                         else:
                             Fit.append(INVALID)
+                        del d
+                        del jobs
                     C[j] = offspring[Fit.index(min(Fit))]
             cur_time = datetime.datetime.now()
             print("current time : ", cur_time)

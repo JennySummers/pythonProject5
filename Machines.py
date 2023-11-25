@@ -8,8 +8,9 @@ class Machine_Time_window:
         self.Machine_index = Machine_index
         self.assigned_task = []
         self.worker_for_task = []
-        self.O_start = []
-        self.O_end = []
+        self.O_start = []  # 分配在这台机器上的晶圆加工工艺的开始时间
+        self.O_end = []  # 分配在这台机器上的晶圆加工工艺的结束时间
+        self.O_next = []  # 分配在这台机器上的加工晶圆被取走的时间
         # self.End_time = 0
         self.End_time = machine_state
         self.Machine_state = machine_state
@@ -34,7 +35,7 @@ class Machine_Time_window:
         if time_window_end is not None:
             len_time_window = [time_window_end[i] - time_window_start[i] for i in range(len(time_window_end))]
         return time_window_start, time_window_end, len_time_window  # 返回0.当前机器的空闲时窗的开始时间，1.结束时间，2.时窗长度
-
+    '''
     def Machine_Burden(self):
         if len(self.O_start) == 0:
             burden = 0
@@ -43,6 +44,7 @@ class Machine_Time_window:
             processing_time = [self.O_end[i] - self.O_start[i] for i in range(len(self.O_start))]
             burden = sum(processing_time)
         return burden
+    '''
 
     def _Input(self, Job, M_Earliest, P_t, O_num):  # 参数含义:工件编号，工件的工序最早开始时间，处理时间，工序编号
         if self.O_end:
@@ -60,3 +62,4 @@ class Machine_Time_window:
         self.O_end.append(M_Earliest + P_t)
         self.O_end.sort()
         self.End_time = self.O_end[-1]
+
