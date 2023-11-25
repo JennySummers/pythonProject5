@@ -1,0 +1,32 @@
+[
+    {
+        "waferGroupName": "inputGroup1",
+        "waferNum": 5,
+        "recipe": [
+            {
+                "processModule": [
+                    "CM1"
+                ],
+                "processTime": 0
+            },
+            {
+                "processModule": [
+                    "PG1"
+                ],
+                "processTime": 5
+            },
+            {
+                "processModule": [
+                    "PG2"
+                ],
+                "processTime": 5
+            },
+            {
+                "processModule": [
+                    "CM1"
+                ],
+                "processTime": 5
+            }
+        ]
+    }
+]
