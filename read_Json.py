@@ -26,6 +26,7 @@ class Read_json:
         self.CM_num = 0     # 记录CM的槽位数量
         self.wafer_sum = 0  # 记录wafer_sum的总数量
         self.CM_name_list = []
+        self.elements_name_list=[]
 
         # 机械臂相关
         self.transfer_time = []  # 每个机械臂的取放时间
@@ -155,6 +156,8 @@ class Read_json:
                 index += len_group
                 # 该group含有的处理单元(elements)数量
                 self.group_elements_num[groupName] = len_group
+                # 记录每个元素的名称
+                self.append_elements_name(CG)
             # 将PM的各个group含有的处理单元(elements)个数、数组中的索引位添加到字典
             PM = self.layout_json_data['PM']
             for PG in PM:
@@ -164,6 +167,8 @@ class Read_json:
                 self.group_elements_index[groupName] = index
                 index += len_group
                 self.group_elements_num[groupName] = len_group
+                # 记录每个元素的名称
+                self.append_elements_name(PG)
 
             BM = self.layout_json_data['BM']
             for BG in BM:
@@ -174,6 +179,8 @@ class Read_json:
                 self.group_elements_index[groupName] = index
                 index += len_group
                 self.group_elements_num[groupName] = len_group
+                # 记录每个元素的名称
+                self.append_elements_name(BG)
             # print(self.buffer_module)
 
             self.accessibleList = [set() for i in range(self.all_elements_num)]
@@ -191,6 +198,8 @@ class Read_json:
                 count = len(TG['elements'])  # 该机械臂组所包含的元素数
                 base = len(self.transfer_time)  # 该组之前已有的机械臂元素总数
                 temp_accessible_set = {x for x in range(base, base + count)}  # 可访问集合列表
+                # 记录每个元素的名称
+                self.append_elements_name(TG)
 
                 # 存储每个机械臂的运动时间
                 for i in range(count):
@@ -209,7 +218,6 @@ class Read_json:
         print('group_elements_index', self.group_elements_index)
         print('all_elements_num', self.all_elements_num)
 
-    # TODO 当前此函数生成的路径存在断路（如Processing_time[0][1]中所有时间均是9999），因为没有考虑BM，有些转移不能依靠单个机械臂完成，需要在此种情况下自动插入BM step
     def get_Wafer_Info(self):
         with open(self.wafer_path, 'r', encoding='utf-8') as file:
             wafer_json_data = json.load(file)
@@ -316,6 +324,10 @@ class Read_json:
         self.DFS(list(self.graph.keys())[0], vis, trace)
         # print(self.circle)
 
+    def append_elements_name(self,module_group):
+        for element in module_group['elements']:
+            self.elements_name_list.append(element)
+
 '''
 J 表示各个工件对应的工序数。用键值对来表示。
 Machine_status 表示当前状态下各个机器还需要Machine_status[i]个单位时间达到空闲状态。
@@ -341,6 +353,7 @@ class get_Recipe:
         self.J_num = len(j.Processing_time)  # 表示工件数目
         self.O_num = 0  # 表示所有工件的所有工序总数
         self.J = {}  # 表示各个工件对应的工序数，用键值对来表示
+        self.elements_name=j.elements_name_list
         # for i in range(len(j.process_list)):
         for i in range(len(j.Processing_time)):
             # self.J[i] = j.process_list[i]
