@@ -199,12 +199,14 @@ class GA:
                 cur_state.append(0)
         return cur_state
 
-    def print_TM_cmd(self):
+    def print_TM_cmd(self, elements_name):
         for x in self.TM_msg:
             if x.move_type == 0:
-                print('Machine:', x.machine_no, ' Time:', x.cmd_time, ' pick from:', x.move_from)
+                print('Machine:', elements_name[x.machine_no], ' Time:', x.cmd_time, ' pick from:',
+                      elements_name[x.move_from])
             if x.move_type == 1:
-                print('Machine:', x.machine_no, ' Time:', x.cmd_time, ' put to:', x.move_to)
+                print('Machine:', elements_name[x.machine_no], ' Time:', x.cmd_time, ' put to:',
+                      elements_name[x.move_to])
             # if x.move_type == 2:
             #     print('Machine:', x.machine_no, ' Time:', x.cmd_time, ' move from:', x.move_from, ' to:', x.move_to)
 
@@ -279,7 +281,7 @@ class GA:
             cur_time = datetime.datetime.now()
             print("current time : ", cur_time)
         self.set_TM_Message(m_num, TM_num, group_name_index)
-        self.print_TM_cmd()
+        self.print_TM_cmd(elements_name)
         stop_time = datetime.datetime.now()
         Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
         Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图
