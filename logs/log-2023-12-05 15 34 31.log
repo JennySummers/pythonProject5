@@ -14,11 +14,11 @@ CM1 PG1 PG2 CM1
 {1: 7, 2: 7, 3: 7, 4: 7, 5: 7}
 3
 {0: 'CM1', 5: 'PG1', 6: 'PG2', 7: 'TM1', 8: 'TM2', 9: 'TM3'}
-start time is :  2023-12-05 10:42:16.470518
+start time is :  2023-12-05 15:34:31.036499
 best_fitness 44
-current time :  2023-12-05 10:42:16.522517
-current time :  2023-12-05 10:42:16.735079
-current time :  2023-12-05 10:42:16.783084
+current time :  2023-12-05 15:34:31.091260
+current time :  2023-12-05 15:34:31.379105
+current time :  2023-12-05 15:34:31.422188
 Machine: 7  Time: 0  pick from: 0
 Machine: 7  Time: 2  put to: 5
 Machine: 7  Time: 3  pick from: 1
@@ -49,4 +49,4 @@ Machine: 9  Time: 31  pick from: 6
 Machine: 9  Time: 33  put to: 3
 Machine: 9  Time: 36  pick from: 6
 Machine: 9  Time: 38  put to: 4
-Running time :  0:00:00.312566
+Running time :  0.386689

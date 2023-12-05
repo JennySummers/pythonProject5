@@ -96,6 +96,7 @@ class GA:
         self.P_v = p_v  # 选择何种方式进行交叉
         self.P_w = p_w  # 采用何种方式进行变异
         self.Max_Iterations = max_iteration  # 最大迭代次数
+        self.d = None  # 解码对象
         self.Machine_status = [x for x in M_status]
         self.Best_fit = []
         self.TM_List = []  # 机械臂编号集合
@@ -104,8 +105,10 @@ class GA:
     def fitness(self, CHS, J_f, Processing_t, M_number, Len):
         Fit = []
         for i in range(len(CHS)):
-            d = Decode(J_f, Processing_t, M_number, self.Machine_status)
-            Fit.append(d.Decode_1(CHS[i], Len))
+            self.d.reset()
+            # d = Decode(J_f, Processing_t, M_number, self.Machine_status)
+            Fit.append(self.d.Decode_1(CHS[i], Len))
+
         return Fit
 
     # 机器变异部分
@@ -157,8 +160,9 @@ class GA:
             gc.collect()
         Fit = []
         for i in range(len(A_CHS)):
-            d = Decode(J_v, Process_time, M_number, self.Machine_status)
-            Fit.append(d.Decode_1(CHS, T0))
+            # d = Decode(J_v, Process_time, M_number, self.Machine_status)
+            self.d.reset()
+            Fit.append(self.d.Decode_1(CHS, T0))
         gc.collect()
         return A_CHS[Fit.index(min(Fit))]
 
@@ -218,6 +222,7 @@ class GA:
         Optimal_fit = INVALID
         Optimal_CHS = 0
         x = np.linspace(1, 10, 10)
+        self.d = Decode(J_O, processing_time, m_num, self.Machine_status)
         for i in range(self.Max_Iterations):
             Fit = self.fitness(C, J_O, processing_time, m_num, Len_Chromo)
             Best = C[Fit.index(min(Fit))]
@@ -227,11 +232,11 @@ class GA:
                 Optimal_CHS = Best
                 self.Best_fit.append(Optimal_fit)
                 print('best_fitness', best_fitness)
-                d = Decode(J_O, processing_time, m_num, self.Machine_status)
-                Fit.append(d.Decode_1(Optimal_CHS, Len_Chromo))
-                self.Best_Machine = deepcopy(d.Machines)
-                self.Best_Job = deepcopy(d.Jobs)
-                del d
+                # d = Decode(J_O, processing_time, m_num, self.Machine_status)
+                self.d.reset()
+                Fit.append(self.d.Decode_1(Optimal_CHS, Len_Chromo))
+                self.Best_Machine = deepcopy(self.d.Machines)
+                self.Best_Job = deepcopy(self.d.Jobs)
                 # Gantt_Machine(d.Machines)  # 根据机器调度结果，绘制调度结果的甘特图
                 # Gantt_Job(d.Jobs)  # 根据工件调度结果，绘制调度结果的甘特图
             else:
@@ -258,17 +263,17 @@ class GA:
                 if offspring:
                     Fit = []
                     for i in range(len(offspring)):
-                        d = Decode(J_O, processing_time, m_num, self.Machine_status)
+                        # d = Decode(J_O, processing_time, m_num, self.Machine_status)
+                        self.d.reset()
                         flg = True
-                        jobs = d.Jobs
+                        jobs = self.d.Jobs
                         for a in range(len(jobs) - 1):
                             if jobs[a].Last_Processing_end_time > jobs[a + 1].Last_Processing_end_time:
                                 flg = False
                         if flg:
-                            Fit.append(d.Decode_1(offspring[i], Len_Chromo))
+                            Fit.append(self.d.Decode_1(offspring[i], Len_Chromo))
                         else:
                             Fit.append(INVALID)
-                        del d
                         del jobs
                     C[j] = offspring[Fit.index(min(Fit))]
             cur_time = datetime.datetime.now()
@@ -286,8 +291,8 @@ class GA:
         # plt.ylabel('Cmax')
         # plt.xlabel('Test Num')
         # plt.show()
-        print("Running time : ", stop_time - start_time)
-        cur_state = self.get_M_State(10)
+        r_time = stop_time - start_time
+        print("Running time : ", r_time.total_seconds(), 'seconds')
 
     # 逻辑参考函数：def Gantt_Machine(Machines)
     def get_TM_Move_List(self, M_num, TM_num, group_name_index):

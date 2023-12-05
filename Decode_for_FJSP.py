@@ -22,6 +22,15 @@ class Decode:
         for k, v in J.items():
             self.Jobs.append(Job(k, v))
 
+    def reset(self):
+        self.Machines.clear()
+        self.fitness = 0
+        self.Jobs.clear()
+        for j in range(self.M_num):
+            self.Machines.append(Machine_Time_window(j, self.Machine_time[j]))  # 为每个机器分配一个机器类，并对其进行编号
+        for k, v in self.J.items():
+            self.Jobs.append(Job(k, v))
+
     # 时间顺序矩阵和机器顺序矩阵
     def Order_Matrix(self, MS):  # MS为机器选择部分，对机器选择部分进行解码,从左到右依次读取并转换成机器顺序矩阵JM和时间顺序矩阵T。
         JM = []  # 机器顺序矩阵，JM[i][j]表示工件i的第j道工序在机器JM[i][j]上加工
