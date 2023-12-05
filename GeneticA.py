@@ -85,7 +85,7 @@ def Select(Fit_value):
 
 
 class GA:
-    def __init__(self, M_status, pop_size=10, p_c=0.8, p_m=0.3, p_v=0.5, p_w=0.95, max_iteration=3):
+    def __init__(self, M_status, pop_size=100, p_c=0.8, p_m=0.3, p_v=0.5, p_w=0.95, max_iteration=3):
         self.Best_Job = None  # 最优的晶圆加工调度结果
         self.Best_Machine = None  # 最优的加工单元调度结果
         self.TM_msg = []  # 机械臂指令集合
@@ -203,7 +203,7 @@ class GA:
             # if x.move_type == 2:
             #     print('Machine:', x.machine_no, ' Time:', x.cmd_time, ' move from:', x.move_from, ' to:', x.move_to)
 
-    def main(self, processing_time, J_O, m_num, j_num, o_num, TM_num, group_name_index):
+    def main(self, processing_time, J_O, m_num, j_num, o_num, TM_num, group_name_index, elements_name):
         start_time = datetime.datetime.now()
         print("start time is : ", start_time)
         e = Encode(processing_time, self.Pop_size, J_O, j_num, m_num, self.Machine_status)
@@ -287,8 +287,6 @@ class GA:
         # plt.show()
         print("Running time : ", stop_time - start_time)
         cur_state = self.get_M_State(10)
-        print("在时间10时，机台上各个机器的状态：")
-        print(cur_state)
 
     # 逻辑参考函数：def Gantt_Machine(Machines)
     def get_TM_Move_List(self, M_num, TM_num, group_name_index):
