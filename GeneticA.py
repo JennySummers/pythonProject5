@@ -2,7 +2,8 @@ from memory_profiler import profile
 import gc
 import numpy as np
 import random
-from Decode_for_FJSP import Decode, Gantt_Machine, Gantt_Job
+from Decode_for_FJSP import Decode
+from GanttChart import Gantt_Machine, Gantt_Job
 from Encode_for_FJSP import Encode
 from read_Json import INVALID, pick_time, put_time
 from Jobs import Job

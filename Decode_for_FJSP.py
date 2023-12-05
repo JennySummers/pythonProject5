@@ -3,57 +3,7 @@ from Jobs import Job
 from Machines import Machine_Time_window
 from Instance import put_time, pick_time, switch_time, INVALID
 import numpy as np
-
 from memory_profiler import profile
-
-
-# @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
-def Gantt_Machine(Machines):
-    M = ['red', 'blue', 'yellow', 'orange', 'green', 'palegoldenrod', 'purple', 'pink', 'Thistle', 'Magenta',
-         'SlateBlue', 'RoyalBlue', 'Cyan', 'Aqua', 'floralwhite', 'ghostwhite', 'goldenrod', 'mediumslateblue',
-         'navajowhite',
-         'navy', 'sandybrown', 'moccasin']
-    plt.rcParams['figure.figsize'] = (38, 60)
-    for i in range(len(Machines)):
-        Machine = Machines[i]
-        Start_time = Machine.O_start
-        End_time = Machine.O_end
-        for i_1 in range(len(End_time)):
-            # plt.barh(i, width=End_time[i_1] - Start_time[i_1], height=0.8, left=Start_time[i_1], color=M[Machine.assigned_task[i_1][0]], edgecolor='black')
-            # plt.text(x=Start_time[i_1] + 0.1, y=i, s=Machine.assigned_task[i_1])
-            plt.barh(i, width=End_time[i_1] - Start_time[i_1], height=0.8, left=Start_time[i_1], color='white',
-                     edgecolor='black')
-            plt.text(x=Start_time[i_1] + 0.1, y=i, s=Machine.assigned_task[i_1])
-    plt.yticks(np.arange(i + 1), np.arange(1, i + 2))
-    plt.title('Scheduling Gantt chart')
-    plt.ylabel('Machines')
-    plt.xlabel('Time(s)')
-    plt.show()
-
-
-# @profile(precision=4, stream=open('memory_profiler.log', 'w+'))
-def Gantt_Job(Jobs):
-    M = ['red', 'blue', 'yellow', 'orange', 'green', 'palegoldenrod', 'purple', 'pink', 'Thistle', 'Magenta',
-         'SlateBlue', 'RoyalBlue', 'Cyan', 'Aqua', 'floralwhite', 'ghostwhite', 'goldenrod', 'mediumslateblue',
-         'navajowhite',
-         'navy', 'sandybrown', 'moccasin']
-    plt.rcParams['figure.figsize'] = (80, 6)
-    for i in range(len(Jobs)):
-        job = Jobs[i]
-        # print(job.J_machine)
-        Start_time = job.J_start
-        End_time = job.J_end
-        for j in range(len(End_time)):
-            # plt.barh(i, width=End_time[j] - Start_time[j], height=0.8, left=Start_time[j], color=M[job.J_machine[j]], edgecolor='black')
-            # plt.text(x=Start_time[j] + 0.1, y=i, s=job.J_machine[j]+1)
-            plt.barh(i, width=End_time[j] - Start_time[j], height=0.8, left=Start_time[j], color='white',
-                     edgecolor='black')
-            plt.text(x=Start_time[j] + 0.1, y=i, s=job.J_machine[j] + 1)
-    plt.yticks(np.arange(i + 1), np.arange(1, i + 2))
-    plt.title('Scheduling Gantt chart')
-    plt.ylabel('Jobs')
-    plt.xlabel('Time(s)')
-    plt.show()
 
 
 class Decode:
@@ -139,12 +89,14 @@ class Decode:
             Job_i = i  # 当前处理的工件编号
             O_num = self.Jobs[Job_i].Current_Processed()  # 当前处理的工件的工序编号
             Machine = JM[Job_i][O_num]
-            Para = self.Earliest_Start(Job_i, O_num, Machine)  # 0.工件的工序最早开始时间，1.选择的机器号，2.处理时间，3.工序编号，4.上一道工序结束时间，5.当前工序结束时间
+            Para = self.Earliest_Start(Job_i, O_num,
+                                       Machine)  # 0.工件的工序最早开始时间，1.选择的机器号，2.处理时间，3.工序编号，4.上一道工序结束时间，5.当前工序结束时间
             self.Jobs[Job_i]._Input(Para[0], Para[5], Para[1])  # 参数含义:工件的工序最早开始时间，当前工序结束时间，选择的机器号
             if Para[5] > self.fitness:
                 self.fitness = Para[5]
             if O_num > 0:
-                self.Machines[pre_machine]._Input(pre_job, pre_st, Para[0] - pre_st, pre_op)  # 参数含义:工件编号，工件的工序最早开始时间，处理时间，工序编号
+                self.Machines[pre_machine]._Input(pre_job, pre_st, Para[0] - pre_st,
+                                                  pre_op)  # 参数含义:工件编号，工件的工序最早开始时间，处理时间，工序编号
             if O_num == self.Jobs[Job_i].Operation_num - 1:
                 self.Machines[Machine]._Input(Job_i, Para[0], Para[2], Para[3])  # 参数含义:工件编号，工件的工序最早开始时间，处理时间，工序编号
             pre_machine = Machine
