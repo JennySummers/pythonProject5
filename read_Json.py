@@ -18,6 +18,7 @@ class Read_json:
         self.wafer_num = []  # wafer的数量
         self.group_elements_num = {}  # 各group含有的处理单元(elements)数量
         self.group_elements_index = {}  # 各group在list中的起始索引位；例CM1=0,PG1=4,则一个list中0-3位的数字表示CM1的时间
+        self.all_elements_index = {}  # 所有elements在list中的索引位
         self.all_elements_num = 0  # CM/PM含有的处理单元(elements)总个数，即每个step的list中的元素个数
         self.buffer_module = []  # 存放所有的BM，以供判断
         self.graph = {}     # 邻接矩阵
@@ -145,6 +146,7 @@ class Read_json:
             self.layout_json_data = json.load(file)
             # 将CM的各个group含有的处理单元(elements)个数、数组中的索引位添加到字典
             index = 0  # 各group在list中的起始索引位
+            element_index = 0
             CM = self.layout_json_data['CM']
             for CG in CM:
                 groupName = CG['groupName']
@@ -158,6 +160,10 @@ class Read_json:
                 self.group_elements_num[groupName] = len_group
                 # 记录每个元素的名称
                 self.append_elements_name(CG)
+                # 各单元在数组(list)中的索引位
+                for element in CG['elements']:
+                    self.all_elements_index[element] = element_index
+                    element_index = element_index + 1
             # 将PM的各个group含有的处理单元(elements)个数、数组中的索引位添加到字典
             PM = self.layout_json_data['PM']
             for PG in PM:
@@ -169,6 +175,10 @@ class Read_json:
                 self.group_elements_num[groupName] = len_group
                 # 记录每个元素的名称
                 self.append_elements_name(PG)
+                # 各单元在数组(list)中的索引位
+                for element in PG['elements']:
+                    self.all_elements_index[element] = element_index
+                    element_index = element_index + 1
 
             BM = self.layout_json_data['BM']
             for BG in BM:
@@ -181,6 +191,10 @@ class Read_json:
                 self.group_elements_num[groupName] = len_group
                 # 记录每个元素的名称
                 self.append_elements_name(BG)
+                # 各单元在数组(list)中的索引位
+                for element in BG['elements']:
+                    self.all_elements_index[element] = element_index
+                    element_index = element_index + 1
             # print(self.buffer_module)
 
             self.accessibleList = [set() for i in range(self.all_elements_num)]
@@ -200,6 +214,10 @@ class Read_json:
                 temp_accessible_set = {x for x in range(base, base + count)}  # 可访问集合列表
                 # 记录每个元素的名称
                 self.append_elements_name(TG)
+                # 各单元在数组(list)中的索引位
+                for element in TG['elements']:
+                    self.all_elements_index[element] = element_index
+                    element_index = element_index + 1
 
                 # 存储每个机械臂的运动时间
                 for i in range(count):
@@ -216,6 +234,7 @@ class Read_json:
 
         print('group_elements_num', self.group_elements_num)
         print('group_elements_index', self.group_elements_index)
+        print('all_elements_index', self.all_elements_index)
         print('all_elements_num', self.all_elements_num)
 
     def get_Wafer_Info(self):
@@ -368,7 +387,7 @@ class get_Recipe:
         self.Machine_status = np.zeros(self.M_num, dtype=float)
         self.TM_num = j.TM_num  # 记录TM（机械臂）的总数量
         # 将字典的key，value调换(此字典value为编号，唯一）
-        self.group_name_index = {v : k for k, v in j.group_elements_index.items()}  # 编号与对应名称的映射
+        self.group_name_index = {v : k for k, v in j.all_elements_index.items()}  # 编号与对应名称的映射
         print(self.M_num)
         print(self.O_Max_len)
         print(self.J_num)
