@@ -19,6 +19,7 @@ class Read_json:
         self.group_elements_num = {}  # 各group含有的处理单元(elements)数量
         self.group_elements_index = {}  # 各group在list中的起始索引位；例CM1=0,PG1=4,则一个list中0-3位的数字表示CM1的时间
         self.all_elements_index = {}  # 所有elements在list中的索引位
+        self.type_index = {}        # 按CM/PM/TM/BM分类的index
         self.all_elements_num = 0  # CM/PM含有的处理单元(elements)总个数，即每个step的list中的元素个数
         self.buffer_module = []  # 存放所有的BM，以供判断
         self.graph = {}     # 邻接矩阵
@@ -41,7 +42,8 @@ class Read_json:
             layout_json_data = json.load(layout_file)
             CM = layout_json_data['CM']
             for CG in CM:
-                CM_num = len(CG['elements'])
+                num = len(CG['elements'])
+                CM_num = CM_num + num
                 self.CM_name_list.append(CG['groupName'])
         with open(self.wafer_noBM_path, 'r', encoding='utf-8') as file:
             wafer_json_data = json.load(file)
@@ -144,10 +146,12 @@ class Read_json:
     def get_Layout_Info(self):
         with open(self.layout_path, 'r', encoding='utf-8') as file:
             self.layout_json_data = json.load(file)
-            # 将CM的各个group含有的处理单元(elements)个数、数组中的索引位添加到字典
             index = 0  # 各group在list中的起始索引位
             element_index = 0
+
+            # 将CM的各个group含有的处理单元(elements)个数、数组中的索引位添加到字典
             CM = self.layout_json_data['CM']
+            self.type_index['CM'] = index
             for CG in CM:
                 groupName = CG['groupName']
                 len_group = len(CG['elements'])
@@ -164,8 +168,11 @@ class Read_json:
                 for element in CG['elements']:
                     self.all_elements_index[element] = element_index
                     element_index = element_index + 1
+            self.type_index['CM_end'] = index - 1
+
             # 将PM的各个group含有的处理单元(elements)个数、数组中的索引位添加到字典
             PM = self.layout_json_data['PM']
+            self.type_index['PM'] = index
             for PG in PM:
                 groupName = PG['groupName']
                 len_group = len(PG['elements'])
@@ -179,8 +186,10 @@ class Read_json:
                 for element in PG['elements']:
                     self.all_elements_index[element] = element_index
                     element_index = element_index + 1
+            self.type_index['PM_end'] = index - 1
 
             BM = self.layout_json_data['BM']
+            self.type_index['BM'] = index
             for BG in BM:
                 groupName = BG['groupName']
                 self.buffer_module.append(groupName)
@@ -195,10 +204,11 @@ class Read_json:
                 for element in BG['elements']:
                     self.all_elements_index[element] = element_index
                     element_index = element_index + 1
-            # print(self.buffer_module)
+            self.type_index['BM_end'] = index - 1
 
             self.accessibleList = [set() for i in range(self.all_elements_num)]
             TM = self.layout_json_data['TM']
+            self.type_index['TM'] = index
             # TM_num = 0  # 记录TM（机械臂）的总数量
             for TG in TM:  # 遍历顺序是TM1,TM2,TM3,TM4,TM6,TM8,TM7,TM5
                 self.TM_num = self.TM_num + 1
@@ -231,10 +241,12 @@ class Read_json:
                         num = self.group_elements_num[accessibleModule]
                         for i in range(num):
                             self.accessibleList[i + index0] |= temp_accessible_set
+            self.type_index['TM_end'] = index - 1
 
         print('group_elements_num', self.group_elements_num)
         print('group_elements_index', self.group_elements_index)
         print('all_elements_index', self.all_elements_index)
+        print('type_index', self.type_index)
         print('all_elements_num', self.all_elements_num)
 
     def get_Wafer_Info(self):
@@ -388,6 +400,7 @@ class get_Recipe:
         self.TM_num = j.TM_num  # 记录TM（机械臂）的总数量
         # 将字典的key，value调换(此字典value为编号，唯一）
         self.group_name_index = {v : k for k, v in j.all_elements_index.items()}  # 编号与对应名称的映射
+        self.type_index = j.type_index
         print(self.M_num)
         print(self.O_Max_len)
         print(self.J_num)
