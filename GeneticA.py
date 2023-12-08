@@ -27,10 +27,21 @@ def Crossover_Machine(CHS1, CHS2, T0):
     C_1 = CHS2[0:T0]
     C_2 = CHS1[0:T0]
     for i in R:
-        K, K_2 = C_1[i], C_2[i]
-        C_1[i], C_2[i] = K_2, K
+        C_1[i] = C_1[i] + C_2[i]
+        C_2[i] = C_1[i] - C_2[i]
+        C_1[i] = C_1[i] - C_2[i]
+        # K, K_2 = C_1[i], C_2[i]
+        # C_1[i], C_2[i] = K_2, K
     CHS1 = np.hstack((C_1, OS_1))
     CHS2 = np.hstack((C_2, OS_2))
+    # 删除临时变量
+    del T_r
+    del r
+    del R
+    del OS_1
+    del OS_2
+    del C_1
+    del C_2
     return CHS1, CHS2
 
 
@@ -44,7 +55,7 @@ def Crossover_Operation(CHS1, CHS2, T0, J_number):
     random.shuffle(Job_list)
     r = random.randint(1, J_number - 1)
     Set1 = Job_list[0:r]
-    Set2 = Job_list[r:J_number]
+    # Set2 = Job_list[r:J_number]
     new_os = list(np.zeros(T0, dtype=int))
     for k, v in enumerate(OS_1):
         if v in Set1:
@@ -56,6 +67,16 @@ def Crossover_Operation(CHS1, CHS2, T0, J_number):
     new_os = np.array([j - 1 for j in new_os])
     CHS1 = np.hstack((MS_1, new_os))
     CHS2 = np.hstack((MS_2, new_os))
+    # 删除临时变量
+    del OS_1
+    del OS_2
+    del MS_1
+    del MS_2
+    del Job_list
+    del r
+    del Set1
+    del new_os
+    # 删除代码结束
     return CHS1, CHS2
 
 
@@ -71,6 +92,10 @@ def reduction(num, J_r, T0):
             job = i
             O_number = K[i].index(num)
             break
+    # 删除临时变量
+    del T0
+    del K
+    del Site
     return job, O_number
 
 
@@ -82,11 +107,13 @@ def Select(Fit_value):
     Fit = np.array(Fit)
     idx = np.random.choice(np.arange(len(Fit_value)), size=len(Fit_value), replace=True,
                            p=Fit / (Fit.sum()))
+    # 删除临时变量
+    del Fit
     return idx
 
 
 class GA:
-    def __init__(self, M_status, pop_size=100, p_c=0.8, p_m=0.3, p_v=0.5, p_w=0.95, max_iteration=3):
+    def __init__(self, M_status, pop_size=10, p_c=0.8, p_m=0.3, p_v=0.5, p_w=0.95, max_iteration=3):
         self.Best_Job = None  # 最优的晶圆加工调度结果
         self.Best_Machine = None  # 最优的加工单元调度结果
         self.TM_msg = []  # 机械臂指令集合
@@ -108,7 +135,6 @@ class GA:
             self.d.reset()
             # d = Decode(J_f, Processing_t, M_number, self.Machine_status)
             Fit.append(self.d.Decode_1(CHS[i], Len))
-
         return Fit
 
     # 机器变异部分
@@ -122,18 +148,28 @@ class GA:
         random.shuffle(Tr)
         T_r = Tr[0:r]
         for i in T_r:
-            Job = reduction(i, J, T0)
-            O_i = Job[0]
-            O_j = Job[1]
-            Machine_using = O[O_i][O_j]
+            job = reduction(i, J, T0)
+            # O_i = job[0]
+            # O_j = job[1]
+            Machine_using = O[job[0]][job[1]]
             Machine_time = []
             for j in range(len(Machine_using)):
                 if Machine_using[j] != INVALID:
                     Machine_time.append(Machine_using[j] + Machine_stat[j])
-            Min_index = Machine_time.index(min(Machine_time))
+            MS[i] = Machine_time.index(min(Machine_time))  # MS[i] = Min_index
             # print(Machine_time)
-            MS[i] = Min_index
+            # MS[i] = Min_index
+            # 删除临时变量
+            del job
+            del Machine_using
+            del Machine_time
         CHS = np.hstack((MS, OS))
+        # 删除临时变量
+        del Tr
+        del MS
+        del OS
+        del r
+        del T_r
         return CHS
 
     # 工序变异部分
@@ -145,8 +181,8 @@ class GA:
         Tr = [i for i in range(J_number)]
         random.shuffle(Tr)
         Tr = Tr[0:r]
-        J_os = dict(enumerate(OS))  # 随机选择r个不同的基因
-        J_os = sorted(J_os.items(), key=lambda d: d[1])
+        # J_os = dict(enumerate(OS))  # 随机选择r个不同的基因
+        # J_os = sorted(J_os.items(), key=lambda d: d[1])
         Site = []
         for i in range(r):
             Site.append(OS.index(Tr[i]))
@@ -163,7 +199,8 @@ class GA:
             # d = Decode(J_v, Process_time, M_number, self.Machine_status)
             self.d.reset()
             Fit.append(self.d.Decode_1(CHS, T0))
-        gc.collect()
+        # 删除临时变量
+
         return A_CHS[Fit.index(min(Fit))]
 
     def set_TM_Message(self, M_num, TM_num, group_name_index):
@@ -214,7 +251,7 @@ class GA:
         start_time = datetime.datetime.now()
         print("start time is : ", start_time)
         e = Encode(processing_time, self.Pop_size, J_O, j_num, m_num, self.Machine_status)
-        OS_List = e.OS_List()
+        # OS_List = e.OS_List()
         Len_Chromo = e.Len_Chromo
         CHS1 = e.Global_initial()
         # CHS2 = e.Random_initial()
@@ -222,8 +259,7 @@ class GA:
         # C = np.vstack((CHS1, CHS2, CHS3))
         C = CHS1
         Optimal_fit = INVALID
-        Optimal_CHS = 0
-        x = np.linspace(1, 10, 10)
+        # Optimal_CHS = 0
         self.d = Decode(J_O, processing_time, m_num, self.Machine_status)
         for i in range(self.Max_Iterations):
             Fit = self.fitness(C, J_O, processing_time, m_num, Len_Chromo)
@@ -285,14 +321,6 @@ class GA:
         stop_time = datetime.datetime.now()
         Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
         Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图
-        # plt.rcParams['figure.figsize'] = (8, 6)
-        # plt.plot(x, self.Best_fit, '-k')
-        # plt.xticks(np.arange(0, 10, 2))
-        # plt.title(
-        #     'the maximum completion time of each iteration for flexible job shop scheduling problem')
-        # plt.ylabel('Cmax')
-        # plt.xlabel('Test Num')
-        # plt.show()
         r_time = stop_time - start_time
         print("Running time : ", r_time.total_seconds(), 'seconds')
 

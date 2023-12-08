@@ -382,8 +382,8 @@ class get_Recipe:
             # self.O_Max_len = max(self.O_Max_len, j.process_list[i])
             self.O_Max_len = max(self.O_Max_len, len(j.Processing_time[i]))
 
-        # self.Processing_time = self.modify_processing(j.Processing_time)  # 修改晶圆在CM中的时间
-        self.Processing_time = j.Processing_time
+        self.Processing_time = self.modify_processing(j.Processing_time)  # 修改晶圆在CM中的时间
+        # self.Processing_time = j.Processing_time
         self.Machine_status = np.zeros(self.M_num, dtype=float)
         self.TM_num = j.TM_num  # 记录TM（机械臂）的总数量
         # 将字典的key，value调换(此字典value为编号，唯一）

@@ -59,19 +59,21 @@ class Decode:
                 T_i.append(T_ij[Ms_decompose[i][j]])
             JM.append(JM_i)
             T.append(T_i)
+        # 删除临时变量
+        del Ms_decompose
+        del Site
         return JM, T
 
-    def Earliest_Start(self, job, O_num, Machine):
-        P_t = self.Processing_time[job][O_num][Machine]
+    def Earliest_Start(self, job, O_num, Selected_Machine):   # 选中的机器即为当前的机器编号
+        P_t = self.Processing_time[job][O_num][Selected_Machine]
         last_O_end = self.Jobs[job].Last_Processing_end_time  # 上道工序结束时间
-        Selected_Machine = Machine  # 选中的机器即为当前的机器编号
-        M_window = self.Machines[Selected_Machine].Empty_time_window()
-        M_Tstart = M_window[0]  # 当前机器的空闲时窗的开始时间
-        M_Tend = M_window[1]  # 当前机器的空闲时窗的结束时间
-        M_Tlen = M_window[2]  # 当前机器的空闲时窗的时窗长度
-        Machine_end_time = self.Machines[Selected_Machine].End_time  # 当前选中的机器在哪个时刻达到空闲状态
+        M_Tstart, M_Tend, M_Tlen = self.Machines[Selected_Machine].Empty_time_window()
+        # M_Tstart = M_window[0]  # 当前机器的空闲时窗的开始时间
+        # M_Tend = M_window[1]  # 当前机器的空闲时窗的结束时间
+        # M_Tlen = M_window[2]  # 当前机器的空闲时窗的时窗长度
+        # Machine_end_time = self.Machines[Selected_Machine].End_time  # 当前选中的机器在哪个时刻达到空闲状态
         # earliest_start = max(last_O_end, Machine_end_time)  # 当前工序的最早开始时间为上一道工序完成时间与机器到达空闲状态时间取最大值
-        earliest_start = max(last_O_end, Machine_end_time)  # 当前工序的最早开始时间为上一道工序完成时间与机器到达空闲状态时间取最大值
+        earliest_start = max(last_O_end, self.Machines[Selected_Machine].End_time)  # 当前工序的最早开始时间为上一道工序完成时间与机器到达空闲状态时间取最大值
         if M_Tlen is not None:  # 此处为全插入时窗
             for le_i in range(len(M_Tlen)):
                 if M_Tlen[le_i] >= P_t:
@@ -81,9 +83,9 @@ class Decode:
                     if M_Tstart[le_i] < last_O_end and M_Tend[le_i] - last_O_end >= P_t:
                         earliest_start = last_O_end
                         break
-        M_Earliest = earliest_start
-        End_work_time = M_Earliest + P_t
-        return M_Earliest, Selected_Machine, P_t, O_num, last_O_end, End_work_time  # 返回0.工件的工序最早开始时间，1.选择的机器号，2.处理时间，3.工序编号，4.上一工序结束时间，5.当前工序结束时间
+        # M_Earliest = earliest_start
+        # End_work_time = earliest_start + P_t
+        return earliest_start, Selected_Machine, P_t, O_num, last_O_end, earliest_start + P_t  # 返回0.工件的工序最早开始时间，1.选择的机器号，2.处理时间，3.工序编号，4.上一工序结束时间，5.当前工序结束时间
 
     # 解码
     def Decode_1(self, CHS, Len_Chromo):
@@ -95,21 +97,29 @@ class Decode:
         pre_op = 0
         pre_st = 0
         for i in OS:
-            Job_i = i  # 当前处理的工件编号
-            O_num = self.Jobs[Job_i].Current_Processed()  # 当前处理的工件的工序编号
-            Machine = JM[Job_i][O_num]
-            Para = self.Earliest_Start(Job_i, O_num,
+            # Job_i = i  # 当前处理的工件编号
+            O_num = self.Jobs[i].Current_Processed()  # 当前处理的工件的工序编号
+            Machine = JM[i][O_num]
+            Para = self.Earliest_Start(i, O_num,
                                        Machine)  # 0.工件的工序最早开始时间，1.选择的机器号，2.处理时间，3.工序编号，4.上一道工序结束时间，5.当前工序结束时间
-            self.Jobs[Job_i]._Input(Para[0], Para[5], Para[1])  # 参数含义:工件的工序最早开始时间，当前工序结束时间，选择的机器号
+            self.Jobs[i]._Input(Para[0], Para[5], Para[1])  # 参数含义:工件的工序最早开始时间，当前工序结束时间，选择的机器号
             if Para[5] > self.fitness:
                 self.fitness = Para[5]
             if O_num > 0:
                 self.Machines[pre_machine]._Input(pre_job, pre_st, Para[0] - pre_st,
                                                   pre_op)  # 参数含义:工件编号，工件的工序最早开始时间，处理时间，工序编号
-            if O_num == self.Jobs[Job_i].Operation_num - 1:
-                self.Machines[Machine]._Input(Job_i, Para[0], Para[2], Para[3])  # 参数含义:工件编号，工件的工序最早开始时间，处理时间，工序编号
+            if O_num == self.Jobs[i].Operation_num - 1:
+                self.Machines[Machine]._Input(i, Para[0], Para[2], Para[3])  # 参数含义:工件编号，工件的工序最早开始时间，处理时间，工序编号
             pre_machine = Machine
-            pre_job = Job_i
+            pre_job = i
             pre_op = O_num
             pre_st = Para[0]
+            del O_num
+        # 删除临时变量
+        del MS
+        del OS
+        del JM
+        del pre_job
+        del pre_op
+        del pre_st
         return self.fitness

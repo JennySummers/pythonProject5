@@ -1,0 +1,52 @@
+CM_num:5
+wafer_sum:5
+group_elements_num {'CM1': 5, 'PG1': 1, 'PG2': 1, 'TM1': 1, 'TM2': 1, 'TM3': 1}
+group_elements_index {'CM1': 0, 'PG1': 5, 'PG2': 6, 'TM1': 7, 'TM2': 8, 'TM3': 9}
+all_elements_num 7
+There are loops in the path:
+CM1 PG1 PG2 CM1
+
+
+10
+7
+5
+35
+{1: 7, 2: 7, 3: 7, 4: 7, 5: 7}
+3
+{0: 'CM1', 5: 'PG1', 6: 'PG2', 7: 'TM1', 8: 'TM2', 9: 'TM3'}
+start time is :  2023-12-08 09:28:20.156383
+best_fitness 44
+current time :  2023-12-08 09:28:20.238726
+current time :  2023-12-08 09:28:20.292464
+current time :  2023-12-08 09:28:20.361464
+Machine: 7  Time: 0  pick from: 0
+Machine: 7  Time: 2  put to: 5
+Machine: 7  Time: 3  pick from: 1
+Machine: 7  Time: 7  put to: 5
+Machine: 7  Time: 8  pick from: 2
+Machine: 7  Time: 12  put to: 5
+Machine: 7  Time: 13  pick from: 3
+Machine: 7  Time: 17  put to: 5
+Machine: 7  Time: 18  pick from: 4
+Machine: 7  Time: 22  put to: 5
+Machine: 8  Time: 8  pick from: 5
+Machine: 8  Time: 10  put to: 6
+Machine: 8  Time: 13  pick from: 5
+Machine: 8  Time: 15  put to: 6
+Machine: 8  Time: 18  pick from: 5
+Machine: 8  Time: 20  put to: 6
+Machine: 8  Time: 23  pick from: 5
+Machine: 8  Time: 25  put to: 6
+Machine: 8  Time: 28  pick from: 5
+Machine: 8  Time: 30  put to: 6
+Machine: 9  Time: 16  pick from: 6
+Machine: 9  Time: 18  put to: 0
+Machine: 9  Time: 21  pick from: 6
+Machine: 9  Time: 23  put to: 1
+Machine: 9  Time: 26  pick from: 6
+Machine: 9  Time: 28  put to: 2
+Machine: 9  Time: 31  pick from: 6
+Machine: 9  Time: 33  put to: 3
+Machine: 9  Time: 36  pick from: 6
+Machine: 9  Time: 38  put to: 4
+Running time :  0.20608 seconds
