@@ -28,7 +28,7 @@ if __name__ == '__main__':
     sys.stderr = Logger(log_file_name)  # 记录traceback异常信息
     r = get_Recipe(layout_path, wafer_path, wafer_noBM_path)
     g = GA(r.Machine_status)
-    g.main(r.Processing_time, r.J, r.M_num, r.J_num, r.O_num, r.TM_num, r.group_name_index, r.elements_name)
+    g.main(r.Processing_time, r.J, r.M_num, r.J_num, r.O_num, r.TM_num, r.group_name_index, r.elements_name, r.type_index)
     logging.info('complete')
     del r
     del g

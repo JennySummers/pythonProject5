@@ -1,0 +1,824 @@
+CM_num:30
+wafer_sum:5
+group_elements_num {'CM1': 30, 'PG1': 10, 'PG2': 2, 'PG3': 8, 'PG4': 2, 'PG5': 2, 'PG6': 8, 'PG7': 2, 'PG8': 8, 'PG9': 6, 'PG10': 3, 'PG11': 2, 'PG12': 8, 'PG13': 2, 'PG14': 8, 'PG15': 2, 'BM2-1': 2, 'BM2-2': 2, 'BM6-3': 2, 'BM6-1': 2, 'BM6-2': 2, 'BM8-1': 1, 'BM8-2': 1, 'BM6-11': 2, 'BM6-12': 2, 'TM1': 1, 'TM2': 1, 'TM3': 1, 'TM4': 1, 'TM6': 1, 'TM8': 1, 'TM7': 1, 'TM5': 1}
+group_elements_index {'CM1': 0, 'PG1': 30, 'PG2': 40, 'PG3': 42, 'PG4': 50, 'PG5': 52, 'PG6': 54, 'PG7': 62, 'PG8': 64, 'PG9': 72, 'PG10': 78, 'PG11': 81, 'PG12': 83, 'PG13': 91, 'PG14': 93, 'PG15': 101, 'BM2-1': 103, 'BM2-2': 105, 'BM6-3': 107, 'BM6-1': 109, 'BM6-2': 111, 'BM8-1': 113, 'BM8-2': 114, 'BM6-11': 115, 'BM6-12': 117, 'TM1': 119, 'TM2': 120, 'TM3': 121, 'TM4': 122, 'TM6': 123, 'TM8': 124, 'TM7': 125, 'TM5': 126}
+all_elements_index {'CM1-1-1': 0, 'CM1-1-2': 1, 'CM1-1-3': 2, 'CM1-1-4': 3, 'CM1-1-5': 4, 'CM1-1-6': 5, 'CM1-1-7': 6, 'CM1-1-8': 7, 'CM1-1-9': 8, 'CM1-1-10': 9, 'CM1-1-11': 10, 'CM1-1-12': 11, 'CM1-1-13': 12, 'CM1-1-14': 13, 'CM1-1-15': 14, 'CM1-1-16': 15, 'CM1-1-17': 16, 'CM1-1-18': 17, 'CM1-1-19': 18, 'CM1-1-20': 19, 'CM1-1-21': 20, 'CM1-1-22': 21, 'CM1-1-23': 22, 'CM1-1-24': 23, 'CM1-1-25': 24, 'CM1-1-26': 25, 'CM1-1-27': 26, 'CM1-1-28': 27, 'CM1-1-29': 28, 'CM1-1-30': 29, 'PM2-3A': 30, 'PM2-4A': 31, 'PM2-5A': 32, 'PM2-6A': 33, 'PM2-7A': 34, 'PM2-3B': 35, 'PM2-4B': 36, 'PM2-5B': 37, 'PM2-6B': 38, 'PM2-7B': 39, 'PM3-2A': 40, 'PM3-2B': 41, 'PM3-1A': 42, 'PM3-4A': 43, 'PM3-5A': 44, 'PM3-7A': 45, 'PM3-3B': 51, 'PM3-4B': 47, 'PM3-5B': 48, 'PM3-7B': 49, 'PM3-3A': 50, 'PM4-2A': 52, 'PM4-2B': 53, 'PM4-1A': 54, 'PM4-4A': 55, 'PM4-5A': 56, 'PM4-7A': 57, 'PM4-3B': 58, 'PM4-4B': 59, 'PM4-5B': 60, 'PM4-7B': 61, 'PM4-8A': 62, 'PM4-8B': 63, 'PM6-4A': 64, 'PM6-5A': 65, 'PM6-6A': 66, 'PM6-7A': 67, 'PM6-4B': 68, 'PM6-5B': 69, 'PM6-6B': 70, 'PM6-7B': 71, 'PM6-8A': 72, 'PM6-9A': 73, 'PM6-10A': 74, 'PM6-8B': 75, 'PM6-9B': 76, 'PM6-10B': 77, 'PM8-3': 78, 'PM8-4': 79, 'PM8-5': 80, 'ExposerIn8-6': 81, 'ExposerOut8-7': 82, 'PM7-1A': 83, 'PM7-2A': 84, 'PM7-3A': 85, 'PM7-4A': 86, 'PM7-1B': 87, 'PM7-2B': 88, 'PM7-3B': 89, 'PM7-4B': 90, 'PM5-9A': 91, 'PM5-9B': 92, 'PM5-1A': 93, 'PM5-4A': 94, 'PM5-5A': 95, 'PM5-7A': 96, 'PM5-3B': 102, 'PM5-4B': 98, 'PM5-5B': 99, 'PM5-7B': 100, 'PM5-3A': 101, 'BM2-1A': 103, 'BM2-1B': 104, 'BM2-2A': 105, 'BM2-2B': 106, 'BM6-3A': 107, 'BM6-3B': 108, 'BM6-1A': 109, 'BM6-1B': 110, 'BM6-2A': 111, 'BM6-2B': 112, 'BM8-1': 113, 'BM8-2': 114, 'BM6-11A': 115, 'BM6-11B': 116, 'BM6-12A': 117, 'BM6-12B': 118, 'TM1': 119, 'TM2': 120, 'TM3': 121, 'TM4': 122, 'TM6': 123, 'TM8': 124, 'TM7': 125, 'TM5': 126}
+type_index {'CM': 0, 'CM_end': 29, 'PM': 30, 'PM_end': 102, 'BM': 103, 'BM_end': 118, 'TM': 119, 'TM_end': 126}
+all_elements_num 119
+There are loops in the path:
+CM1 BM2-1 PG1 PG4 PG3 PG2 PG5 PG6 PG7 PG8 BM6-11 PG12 BM6-12 PG13 PG14 PG15 BM2-2 CM1
+
+
+127
+45
+5
+205
+{1: 45, 2: 45, 3: 45, 4: 35, 5: 35}
+8
+{0: 'CM1-1-1', 1: 'CM1-1-2', 2: 'CM1-1-3', 3: 'CM1-1-4', 4: 'CM1-1-5', 5: 'CM1-1-6', 6: 'CM1-1-7', 7: 'CM1-1-8', 8: 'CM1-1-9', 9: 'CM1-1-10', 10: 'CM1-1-11', 11: 'CM1-1-12', 12: 'CM1-1-13', 13: 'CM1-1-14', 14: 'CM1-1-15', 15: 'CM1-1-16', 16: 'CM1-1-17', 17: 'CM1-1-18', 18: 'CM1-1-19', 19: 'CM1-1-20', 20: 'CM1-1-21', 21: 'CM1-1-22', 22: 'CM1-1-23', 23: 'CM1-1-24', 24: 'CM1-1-25', 25: 'CM1-1-26', 26: 'CM1-1-27', 27: 'CM1-1-28', 28: 'CM1-1-29', 29: 'CM1-1-30', 30: 'PM2-3A', 31: 'PM2-4A', 32: 'PM2-5A', 33: 'PM2-6A', 34: 'PM2-7A', 35: 'PM2-3B', 36: 'PM2-4B', 37: 'PM2-5B', 38: 'PM2-6B', 39: 'PM2-7B', 40: 'PM3-2A', 41: 'PM3-2B', 42: 'PM3-1A', 43: 'PM3-4A', 44: 'PM3-5A', 45: 'PM3-7A', 51: 'PM3-3B', 47: 'PM3-4B', 48: 'PM3-5B', 49: 'PM3-7B', 50: 'PM3-3A', 52: 'PM4-2A', 53: 'PM4-2B', 54: 'PM4-1A', 55: 'PM4-4A', 56: 'PM4-5A', 57: 'PM4-7A', 58: 'PM4-3B', 59: 'PM4-4B', 60: 'PM4-5B', 61: 'PM4-7B', 62: 'PM4-8A', 63: 'PM4-8B', 64: 'PM6-4A', 65: 'PM6-5A', 66: 'PM6-6A', 67: 'PM6-7A', 68: 'PM6-4B', 69: 'PM6-5B', 70: 'PM6-6B', 71: 'PM6-7B', 72: 'PM6-8A', 73: 'PM6-9A', 74: 'PM6-10A', 75: 'PM6-8B', 76: 'PM6-9B', 77: 'PM6-10B', 78: 'PM8-3', 79: 'PM8-4', 80: 'PM8-5', 81: 'ExposerIn8-6', 82: 'ExposerOut8-7', 83: 'PM7-1A', 84: 'PM7-2A', 85: 'PM7-3A', 86: 'PM7-4A', 87: 'PM7-1B', 88: 'PM7-2B', 89: 'PM7-3B', 90: 'PM7-4B', 91: 'PM5-9A', 92: 'PM5-9B', 93: 'PM5-1A', 94: 'PM5-4A', 95: 'PM5-5A', 96: 'PM5-7A', 102: 'PM5-3B', 98: 'PM5-4B', 99: 'PM5-5B', 100: 'PM5-7B', 101: 'PM5-3A', 103: 'BM2-1A', 104: 'BM2-1B', 105: 'BM2-2A', 106: 'BM2-2B', 107: 'BM6-3A', 108: 'BM6-3B', 109: 'BM6-1A', 110: 'BM6-1B', 111: 'BM6-2A', 112: 'BM6-2B', 113: 'BM8-1', 114: 'BM8-2', 115: 'BM6-11A', 116: 'BM6-11B', 117: 'BM6-12A', 118: 'BM6-12B', 119: 'TM1', 120: 'TM2', 121: 'TM3', 122: 'TM4', 123: 'TM6', 124: 'TM8', 125: 'TM7', 126: 'TM5'}
+start time is :  2023-12-08 10:53:17.451699
+best_fitness 174
+current time :  2023-12-08 10:53:17.514973
+current time :  2023-12-08 10:53:17.558973
+current time :  2023-12-08 10:53:17.603975
+Machine: TM1  Time: 0  pick from: CM1-1-1
+Machine: TM1  Time: 2  put to: BM2-1A
+Machine: TM1  Time: 3  pick from: CM1-1-2
+Machine: TM1  Time: 5  put to: BM2-1A
+Machine: TM1  Time: 6  pick from: CM1-1-3
+Machine: TM1  Time: 8  put to: BM2-1A
+Machine: TM1  Time: 9  pick from: CM1-1-4
+Machine: TM1  Time: 16  put to: BM2-1A
+Machine: TM1  Time: 17  pick from: CM1-1-5
+Machine: TM1  Time: 19  put to: BM2-1A
+Machine: TM1  Time: 138  pick from: BM2-1A
+Machine: TM1  Time: 140  put to: CM1-1-1
+Machine: TM1  Time: 141  pick from: BM2-1A
+Machine: TM1  Time: 143  put to: CM1-1-1
+Machine: TM1  Time: 155  pick from: BM2-2A
+Machine: TM1  Time: 157  put to: CM1-1-1
+Machine: TM1  Time: 166  pick from: BM2-1A
+Machine: TM1  Time: 168  put to: CM1-1-1
+Machine: TM1  Time: 171  pick from: BM2-2A
+Machine: TM1  Time: 173  put to: CM1-1-1
+Machine: TM2  Time: 3  pick from: BM2-1A
+Machine: TM2  Time: 5  put to: PM2-3A
+Machine: TM2  Time: 6  pick from: BM2-1A
+Machine: TM2  Time: 8  put to: PM2-4A
+Machine: TM2  Time: 11  pick from: PM2-3A
+Machine: TM2  Time: 13  put to: PM3-2A
+Machine: TM2  Time: 14  pick from: PM2-4A
+Machine: TM2  Time: 16  put to: PM3-2B
+Machine: TM2  Time: 17  pick from: BM2-1A
+Machine: TM2  Time: 19  put to: PM2-5A
+Machine: TM2  Time: 20  pick from: BM2-1A
+Machine: TM2  Time: 22  put to: PM2-6A
+Machine: TM2  Time: 25  pick from: PM2-5A
+Machine: TM2  Time: 27  put to: PM3-2A
+Machine: TM2  Time: 28  pick from: PM2-6A
+Machine: TM2  Time: 37  put to: PM3-3B
+Machine: TM2  Time: 35  pick from: PM3-3A
+Machine: TM2  Time: 37  put to: PM4-2A
+Machine: TM2  Time: 38  pick from: PM3-3B
+Machine: TM2  Time: 40  put to: PM4-2B
+Machine: TM2  Time: 41  pick from: BM2-1A
+Machine: TM2  Time: 43  put to: PM2-7A
+Machine: TM2  Time: 49  pick from: PM3-3A
+Machine: TM2  Time: 51  put to: PM4-2A
+Machine: TM2  Time: 52  pick from: PM2-7A
+Machine: TM2  Time: 54  put to: PM3-3A
+Machine: TM2  Time: 60  pick from: PM3-2B
+Machine: TM2  Time: 62  put to: PM4-2B
+Machine: TM2  Time: 76  pick from: PM3-2A
+Machine: TM2  Time: 78  put to: PM4-2A
+Machine: TM2  Time: 135  pick from: PM5-3A
+Machine: TM2  Time: 137  put to: BM2-1A
+Machine: TM2  Time: 138  pick from: PM5-3B
+Machine: TM2  Time: 140  put to: BM2-1A
+Machine: TM2  Time: 152  pick from: PM5-3B
+Machine: TM2  Time: 154  put to: BM2-2A
+Machine: TM2  Time: 163  pick from: PM5-3A
+Machine: TM2  Time: 165  put to: BM2-1A
+Machine: TM2  Time: 168  pick from: PM5-3A
+Machine: TM2  Time: 170  put to: BM2-2A
+Machine: TM3  Time: 19  pick from: PM3-2A
+Machine: TM3  Time: 21  put to: PM3-1A
+Machine: TM3  Time: 22  pick from: PM3-2B
+Machine: TM3  Time: 24  put to: PM3-4A
+Machine: TM3  Time: 27  pick from: PM3-1A
+Machine: TM3  Time: 29  put to: PM3-3A
+Machine: TM3  Time: 30  pick from: PM3-4A
+Machine: TM3  Time: 32  put to: PM3-3B
+Machine: TM3  Time: 33  pick from: PM3-2A
+Machine: TM3  Time: 35  put to: PM3-5A
+Machine: TM3  Time: 41  pick from: PM3-5A
+Machine: TM3  Time: 43  put to: PM3-3A
+Machine: TM3  Time: 44  pick from: PM3-3B
+Machine: TM3  Time: 46  put to: PM3-7A
+Machine: TM3  Time: 52  pick from: PM3-7A
+Machine: TM3  Time: 54  put to: PM3-2B
+Machine: TM3  Time: 60  pick from: PM3-3A
+Machine: TM3  Time: 62  put to: PM3-3B
+Machine: TM3  Time: 68  pick from: PM3-3B
+Machine: TM3  Time: 70  put to: PM3-2A
+Machine: TM4  Time: 43  pick from: PM4-2A
+Machine: TM4  Time: 45  put to: PM4-1A
+Machine: TM4  Time: 46  pick from: PM4-2B
+Machine: TM4  Time: 48  put to: PM4-4A
+Machine: TM4  Time: 51  pick from: PM4-1A
+Machine: TM4  Time: 53  put to: PM4-8A
+Machine: TM4  Time: 54  pick from: PM4-4A
+Machine: TM4  Time: 56  put to: PM4-8B
+Machine: TM4  Time: 57  pick from: PM4-2A
+Machine: TM4  Time: 59  put to: PM4-5A
+Machine: TM4  Time: 65  pick from: PM4-5A
+Machine: TM4  Time: 67  put to: PM4-8A
+Machine: TM4  Time: 68  pick from: PM4-2B
+Machine: TM4  Time: 70  put to: PM4-7A
+Machine: TM4  Time: 76  pick from: PM4-7A
+Machine: TM4  Time: 78  put to: PM4-8B
+Machine: TM4  Time: 84  pick from: PM4-2A
+Machine: TM4  Time: 86  put to: PM4-3B
+Machine: TM4  Time: 92  pick from: PM4-3B
+Machine: TM4  Time: 94  put to: PM4-8A
+Machine: TM6  Time: 59  pick from: PM4-8A
+Machine: TM6  Time: 61  put to: PM6-4A
+Machine: TM6  Time: 62  pick from: PM4-8B
+Machine: TM6  Time: 64  put to: PM6-5A
+Machine: TM6  Time: 67  pick from: PM6-4A
+Machine: TM6  Time: 69  put to: BM6-1A
+Machine: TM6  Time: 70  pick from: PM6-5A
+Machine: TM6  Time: 72  put to: BM6-1A
+Machine: TM6  Time: 73  pick from: PM4-8A
+Machine: TM6  Time: 75  put to: PM6-6A
+Machine: TM6  Time: 81  pick from: PM6-6A
+Machine: TM6  Time: 83  put to: BM6-1A
+Machine: TM6  Time: 84  pick from: PM4-8B
+Machine: TM6  Time: 86  put to: PM6-7A
+Machine: TM6  Time: 89  pick from: BM6-1A
+Machine: TM6  Time: 91  put to: PM6-8A
+Machine: TM6  Time: 92  pick from: BM6-1A
+Machine: TM6  Time: 94  put to: PM6-9A
+Machine: TM6  Time: 97  pick from: PM6-8A
+Machine: TM6  Time: 99  put to: BM6-11A
+Machine: TM6  Time: 100  pick from: PM6-9A
+Machine: TM6  Time: 102  put to: BM6-11A
+Machine: TM6  Time: 103  pick from: PM6-7A
+Machine: TM6  Time: 105  put to: BM6-11A
+Machine: TM6  Time: 106  pick from: PM4-8A
+Machine: TM6  Time: 108  put to: PM6-4B
+Machine: TM6  Time: 111  pick from: BM6-11A
+Machine: TM6  Time: 113  put to: PM5-9A
+Machine: TM6  Time: 114  pick from: BM6-11A
+Machine: TM6  Time: 116  put to: PM5-9B
+Machine: TM6  Time: 117  pick from: BM6-1A
+Machine: TM6  Time: 119  put to: PM6-10A
+Machine: TM6  Time: 120  pick from: PM6-4B
+Machine: TM6  Time: 122  put to: BM6-11A
+Machine: TM6  Time: 125  pick from: PM6-10A
+Machine: TM6  Time: 127  put to: BM6-11A
+Machine: TM6  Time: 128  pick from: BM6-12A
+Machine: TM6  Time: 130  put to: PM5-9B
+Machine: TM6  Time: 136  pick from: BM6-12A
+Machine: TM6  Time: 141  put to: PM5-9A
+Machine: TM6  Time: 139  pick from: BM6-11A
+Machine: TM6  Time: 146  put to: PM5-9A
+Machine: TM8  Time: 70  pick from: BM6-1A
+Machine: TM8  Time: 72  put to: PM8-3
+Machine: TM8  Time: 73  pick from: BM6-1A
+Machine: TM8  Time: 75  put to: PM8-4
+Machine: TM8  Time: 78  pick from: PM8-3
+Machine: TM8  Time: 80  put to: ExposerIn8-6
+Machine: TM8  Time: 81  pick from: PM8-4
+Machine: TM8  Time: 83  put to: ExposerOut8-7
+Machine: TM8  Time: 86  pick from: ExposerIn8-6
+Machine: TM8  Time: 88  put to: BM6-1A
+Machine: TM8  Time: 89  pick from: ExposerOut8-7
+Machine: TM8  Time: 91  put to: BM6-1A
+Machine: TM8  Time: 92  pick from: BM6-1A
+Machine: TM8  Time: 94  put to: PM8-5
+Machine: TM8  Time: 100  pick from: PM8-5
+Machine: TM8  Time: 102  put to: ExposerIn8-6
+Machine: TM8  Time: 108  pick from: ExposerIn8-6
+Machine: TM8  Time: 110  put to: BM6-1A
+Machine: TM7  Time: 100  pick from: BM6-11A
+Machine: TM7  Time: 102  put to: PM7-1A
+Machine: TM7  Time: 103  pick from: BM6-11A
+Machine: TM7  Time: 105  put to: PM7-2A
+Machine: TM7  Time: 108  pick from: PM7-1A
+Machine: TM7  Time: 110  put to: BM6-11A
+Machine: TM7  Time: 111  pick from: PM7-2A
+Machine: TM7  Time: 113  put to: BM6-11A
+Machine: TM7  Time: 114  pick from: BM6-11A
+Machine: TM7  Time: 116  put to: PM7-4A
+Machine: TM7  Time: 122  pick from: PM7-4A
+Machine: TM7  Time: 124  put to: BM6-12A
+Machine: TM7  Time: 125  pick from: BM6-11A
+Machine: TM7  Time: 127  put to: PM7-1B
+Machine: TM7  Time: 128  pick from: BM6-11A
+Machine: TM7  Time: 130  put to: PM7-3A
+Machine: TM7  Time: 133  pick from: PM7-1B
+Machine: TM7  Time: 135  put to: BM6-12A
+Machine: TM7  Time: 136  pick from: PM7-3A
+Machine: TM7  Time: 138  put to: BM6-11A
+Machine: TM5  Time: 119  pick from: PM5-9A
+Machine: TM5  Time: 121  put to: PM5-1A
+Machine: TM5  Time: 122  pick from: PM5-9B
+Machine: TM5  Time: 124  put to: PM5-4A
+Machine: TM5  Time: 127  pick from: PM5-1A
+Machine: TM5  Time: 129  put to: PM5-3A
+Machine: TM5  Time: 130  pick from: PM5-4A
+Machine: TM5  Time: 132  put to: PM5-3B
+Machine: TM5  Time: 136  pick from: PM5-9B
+Machine: TM5  Time: 138  put to: PM5-7A
+Machine: TM5  Time: 144  pick from: PM5-7A
+Machine: TM5  Time: 146  put to: PM5-3B
+Machine: TM5  Time: 147  pick from: PM5-9A
+Machine: TM5  Time: 149  put to: PM5-5A
+Machine: TM5  Time: 152  pick from: PM5-9A
+Machine: TM5  Time: 154  put to: PM5-3B
+Machine: TM5  Time: 155  pick from: PM5-5A
+Machine: TM5  Time: 157  put to: PM5-3A
+Machine: TM5  Time: 160  pick from: PM5-3B
+Machine: TM5  Time: 162  put to: PM5-3A
+Time: 0   CM1-1-1 : PREPARE_SEND
+Time: 0   TM1 : PICK_WAFER
+Time: 0   CM1-1-1 : POST_SEND
+Time: 2   BM2-1A : PREPARE_RECV
+Time: 2   TM1 : PLACE_WAFER
+Time: 2   BM2-1A : POST_RECV
+Time: 3   CM1-1-2 : PREPARE_SEND
+Time: 3   TM1 : PICK_WAFER
+Time: 3   CM1-1-2 : POST_SEND
+Time: 5   BM2-1A : PREPARE_RECV
+Time: 5   TM1 : PLACE_WAFER
+Time: 5   BM2-1A : POST_RECV
+Time: 6   CM1-1-3 : PREPARE_SEND
+Time: 6   TM1 : PICK_WAFER
+Time: 6   CM1-1-3 : POST_SEND
+Time: 8   BM2-1A : PREPARE_RECV
+Time: 8   TM1 : PLACE_WAFER
+Time: 8   BM2-1A : POST_RECV
+Time: 9   CM1-1-4 : PREPARE_SEND
+Time: 9   TM1 : PICK_WAFER
+Time: 9   CM1-1-4 : POST_SEND
+Time: 16   BM2-1A : PREPARE_RECV
+Time: 16   TM1 : PLACE_WAFER
+Time: 16   BM2-1A : POST_RECV
+Time: 17   CM1-1-5 : PREPARE_SEND
+Time: 17   TM1 : PICK_WAFER
+Time: 17   CM1-1-5 : POST_SEND
+Time: 19   BM2-1A : PREPARE_RECV
+Time: 19   TM1 : PLACE_WAFER
+Time: 19   BM2-1A : POST_RECV
+Time: 138   BM2-1A : PREPARE_SEND
+Time: 138   TM1 : PICK_WAFER
+Time: 138   BM2-1A : POST_SEND
+Time: 140   CM1-1-1 : PREPARE_RECV
+Time: 140   TM1 : PLACE_WAFER
+Time: 140   CM1-1-1 : POST_RECV
+Time: 141   BM2-1A : PREPARE_SEND
+Time: 141   TM1 : PICK_WAFER
+Time: 141   BM2-1A : POST_SEND
+Time: 143   CM1-1-1 : PREPARE_RECV
+Time: 143   TM1 : PLACE_WAFER
+Time: 143   CM1-1-1 : POST_RECV
+Time: 155   BM2-2A : PREPARE_SEND
+Time: 155   TM1 : PICK_WAFER
+Time: 155   BM2-2A : POST_SEND
+Time: 157   CM1-1-1 : PREPARE_RECV
+Time: 157   TM1 : PLACE_WAFER
+Time: 157   CM1-1-1 : POST_RECV
+Time: 166   BM2-1A : PREPARE_SEND
+Time: 166   TM1 : PICK_WAFER
+Time: 166   BM2-1A : POST_SEND
+Time: 168   CM1-1-1 : PREPARE_RECV
+Time: 168   TM1 : PLACE_WAFER
+Time: 168   CM1-1-1 : POST_RECV
+Time: 171   BM2-2A : PREPARE_SEND
+Time: 171   TM1 : PICK_WAFER
+Time: 171   BM2-2A : POST_SEND
+Time: 173   CM1-1-1 : PREPARE_RECV
+Time: 173   TM1 : PLACE_WAFER
+Time: 173   CM1-1-1 : POST_RECV
+Time: 3   BM2-1A : PREPARE_SEND
+Time: 3   TM2 : PICK_WAFER
+Time: 3   BM2-1A : POST_SEND
+Time: 5   PM2-3A : PREPARE_RECV
+Time: 5   TM2 : PLACE_WAFER
+Time: 5   PM2-3A : POST_RECV
+Time: 6   BM2-1A : PREPARE_SEND
+Time: 6   TM2 : PICK_WAFER
+Time: 6   BM2-1A : POST_SEND
+Time: 8   PM2-4A : PREPARE_RECV
+Time: 8   TM2 : PLACE_WAFER
+Time: 8   PM2-4A : POST_RECV
+Time: 11   PM2-3A : PREPARE_SEND
+Time: 11   TM2 : PICK_WAFER
+Time: 11   PM2-3A : POST_SEND
+Time: 13   PM3-2A : PREPARE_RECV
+Time: 13   TM2 : PLACE_WAFER
+Time: 13   PM3-2A : POST_RECV
+Time: 14   PM2-4A : PREPARE_SEND
+Time: 14   TM2 : PICK_WAFER
+Time: 14   PM2-4A : POST_SEND
+Time: 16   PM3-2B : PREPARE_RECV
+Time: 16   TM2 : PLACE_WAFER
+Time: 16   PM3-2B : POST_RECV
+Time: 17   BM2-1A : PREPARE_SEND
+Time: 17   TM2 : PICK_WAFER
+Time: 17   BM2-1A : POST_SEND
+Time: 19   PM2-5A : PREPARE_RECV
+Time: 19   TM2 : PLACE_WAFER
+Time: 19   PM2-5A : POST_RECV
+Time: 20   BM2-1A : PREPARE_SEND
+Time: 20   TM2 : PICK_WAFER
+Time: 20   BM2-1A : POST_SEND
+Time: 22   PM2-6A : PREPARE_RECV
+Time: 22   TM2 : PLACE_WAFER
+Time: 22   PM2-6A : POST_RECV
+Time: 25   PM2-5A : PREPARE_SEND
+Time: 25   TM2 : PICK_WAFER
+Time: 25   PM2-5A : POST_SEND
+Time: 27   PM3-2A : PREPARE_RECV
+Time: 27   TM2 : PLACE_WAFER
+Time: 27   PM3-2A : POST_RECV
+Time: 28   PM2-6A : PREPARE_SEND
+Time: 28   TM2 : PICK_WAFER
+Time: 28   PM2-6A : POST_SEND
+Time: 37   PM3-3B : PREPARE_RECV
+Time: 37   TM2 : PLACE_WAFER
+Time: 37   PM3-3B : POST_RECV
+Time: 35   PM3-3A : PREPARE_SEND
+Time: 35   TM2 : PICK_WAFER
+Time: 35   PM3-3A : POST_SEND
+Time: 37   PM4-2A : PREPARE_RECV
+Time: 37   TM2 : PLACE_WAFER
+Time: 37   PM4-2A : POST_RECV
+Time: 38   PM3-3B : PREPARE_SEND
+Time: 38   TM2 : PICK_WAFER
+Time: 38   PM3-3B : POST_SEND
+Time: 40   PM4-2B : PREPARE_RECV
+Time: 40   TM2 : PLACE_WAFER
+Time: 40   PM4-2B : POST_RECV
+Time: 41   BM2-1A : PREPARE_SEND
+Time: 41   TM2 : PICK_WAFER
+Time: 41   BM2-1A : POST_SEND
+Time: 43   PM2-7A : PREPARE_RECV
+Time: 43   TM2 : PLACE_WAFER
+Time: 43   PM2-7A : POST_RECV
+Time: 49   PM3-3A : PREPARE_SEND
+Time: 49   TM2 : PICK_WAFER
+Time: 49   PM3-3A : POST_SEND
+Time: 51   PM4-2A : PREPARE_RECV
+Time: 51   TM2 : PLACE_WAFER
+Time: 51   PM4-2A : POST_RECV
+Time: 52   PM2-7A : PREPARE_SEND
+Time: 52   TM2 : PICK_WAFER
+Time: 52   PM2-7A : POST_SEND
+Time: 54   PM3-3A : PREPARE_RECV
+Time: 54   TM2 : PLACE_WAFER
+Time: 54   PM3-3A : POST_RECV
+Time: 60   PM3-2B : PREPARE_SEND
+Time: 60   TM2 : PICK_WAFER
+Time: 60   PM3-2B : POST_SEND
+Time: 62   PM4-2B : PREPARE_RECV
+Time: 62   TM2 : PLACE_WAFER
+Time: 62   PM4-2B : POST_RECV
+Time: 76   PM3-2A : PREPARE_SEND
+Time: 76   TM2 : PICK_WAFER
+Time: 76   PM3-2A : POST_SEND
+Time: 78   PM4-2A : PREPARE_RECV
+Time: 78   TM2 : PLACE_WAFER
+Time: 78   PM4-2A : POST_RECV
+Time: 135   PM5-3A : PREPARE_SEND
+Time: 135   TM2 : PICK_WAFER
+Time: 135   PM5-3A : POST_SEND
+Time: 137   BM2-1A : PREPARE_RECV
+Time: 137   TM2 : PLACE_WAFER
+Time: 137   BM2-1A : POST_RECV
+Time: 138   PM5-3B : PREPARE_SEND
+Time: 138   TM2 : PICK_WAFER
+Time: 138   PM5-3B : POST_SEND
+Time: 140   BM2-1A : PREPARE_RECV
+Time: 140   TM2 : PLACE_WAFER
+Time: 140   BM2-1A : POST_RECV
+Time: 152   PM5-3B : PREPARE_SEND
+Time: 152   TM2 : PICK_WAFER
+Time: 152   PM5-3B : POST_SEND
+Time: 154   BM2-2A : PREPARE_RECV
+Time: 154   TM2 : PLACE_WAFER
+Time: 154   BM2-2A : POST_RECV
+Time: 163   PM5-3A : PREPARE_SEND
+Time: 163   TM2 : PICK_WAFER
+Time: 163   PM5-3A : POST_SEND
+Time: 165   BM2-1A : PREPARE_RECV
+Time: 165   TM2 : PLACE_WAFER
+Time: 165   BM2-1A : POST_RECV
+Time: 168   PM5-3A : PREPARE_SEND
+Time: 168   TM2 : PICK_WAFER
+Time: 168   PM5-3A : POST_SEND
+Time: 170   BM2-2A : PREPARE_RECV
+Time: 170   TM2 : PLACE_WAFER
+Time: 170   BM2-2A : POST_RECV
+Time: 19   PM3-2A : PREPARE_SEND
+Time: 19   TM3 : PICK_WAFER
+Time: 19   PM3-2A : POST_SEND
+Time: 21   PM3-1A : PREPARE_RECV
+Time: 21   TM3 : PLACE_WAFER
+Time: 21   PM3-1A : POST_RECV
+Time: 22   PM3-2B : PREPARE_SEND
+Time: 22   TM3 : PICK_WAFER
+Time: 22   PM3-2B : POST_SEND
+Time: 24   PM3-4A : PREPARE_RECV
+Time: 24   TM3 : PLACE_WAFER
+Time: 24   PM3-4A : POST_RECV
+Time: 27   PM3-1A : PREPARE_SEND
+Time: 27   TM3 : PICK_WAFER
+Time: 27   PM3-1A : POST_SEND
+Time: 29   PM3-3A : PREPARE_RECV
+Time: 29   TM3 : PLACE_WAFER
+Time: 29   PM3-3A : POST_RECV
+Time: 30   PM3-4A : PREPARE_SEND
+Time: 30   TM3 : PICK_WAFER
+Time: 30   PM3-4A : POST_SEND
+Time: 32   PM3-3B : PREPARE_RECV
+Time: 32   TM3 : PLACE_WAFER
+Time: 32   PM3-3B : POST_RECV
+Time: 33   PM3-2A : PREPARE_SEND
+Time: 33   TM3 : PICK_WAFER
+Time: 33   PM3-2A : POST_SEND
+Time: 35   PM3-5A : PREPARE_RECV
+Time: 35   TM3 : PLACE_WAFER
+Time: 35   PM3-5A : POST_RECV
+Time: 41   PM3-5A : PREPARE_SEND
+Time: 41   TM3 : PICK_WAFER
+Time: 41   PM3-5A : POST_SEND
+Time: 43   PM3-3A : PREPARE_RECV
+Time: 43   TM3 : PLACE_WAFER
+Time: 43   PM3-3A : POST_RECV
+Time: 44   PM3-3B : PREPARE_SEND
+Time: 44   TM3 : PICK_WAFER
+Time: 44   PM3-3B : POST_SEND
+Time: 46   PM3-7A : PREPARE_RECV
+Time: 46   TM3 : PLACE_WAFER
+Time: 46   PM3-7A : POST_RECV
+Time: 52   PM3-7A : PREPARE_SEND
+Time: 52   TM3 : PICK_WAFER
+Time: 52   PM3-7A : POST_SEND
+Time: 54   PM3-2B : PREPARE_RECV
+Time: 54   TM3 : PLACE_WAFER
+Time: 54   PM3-2B : POST_RECV
+Time: 60   PM3-3A : PREPARE_SEND
+Time: 60   TM3 : PICK_WAFER
+Time: 60   PM3-3A : POST_SEND
+Time: 62   PM3-3B : PREPARE_RECV
+Time: 62   TM3 : PLACE_WAFER
+Time: 62   PM3-3B : POST_RECV
+Time: 68   PM3-3B : PREPARE_SEND
+Time: 68   TM3 : PICK_WAFER
+Time: 68   PM3-3B : POST_SEND
+Time: 70   PM3-2A : PREPARE_RECV
+Time: 70   TM3 : PLACE_WAFER
+Time: 70   PM3-2A : POST_RECV
+Time: 43   PM4-2A : PREPARE_SEND
+Time: 43   TM4 : PICK_WAFER
+Time: 43   PM4-2A : POST_SEND
+Time: 45   PM4-1A : PREPARE_RECV
+Time: 45   TM4 : PLACE_WAFER
+Time: 45   PM4-1A : POST_RECV
+Time: 46   PM4-2B : PREPARE_SEND
+Time: 46   TM4 : PICK_WAFER
+Time: 46   PM4-2B : POST_SEND
+Time: 48   PM4-4A : PREPARE_RECV
+Time: 48   TM4 : PLACE_WAFER
+Time: 48   PM4-4A : POST_RECV
+Time: 51   PM4-1A : PREPARE_SEND
+Time: 51   TM4 : PICK_WAFER
+Time: 51   PM4-1A : POST_SEND
+Time: 53   PM4-8A : PREPARE_RECV
+Time: 53   TM4 : PLACE_WAFER
+Time: 53   PM4-8A : POST_RECV
+Time: 54   PM4-4A : PREPARE_SEND
+Time: 54   TM4 : PICK_WAFER
+Time: 54   PM4-4A : POST_SEND
+Time: 56   PM4-8B : PREPARE_RECV
+Time: 56   TM4 : PLACE_WAFER
+Time: 56   PM4-8B : POST_RECV
+Time: 57   PM4-2A : PREPARE_SEND
+Time: 57   TM4 : PICK_WAFER
+Time: 57   PM4-2A : POST_SEND
+Time: 59   PM4-5A : PREPARE_RECV
+Time: 59   TM4 : PLACE_WAFER
+Time: 59   PM4-5A : POST_RECV
+Time: 65   PM4-5A : PREPARE_SEND
+Time: 65   TM4 : PICK_WAFER
+Time: 65   PM4-5A : POST_SEND
+Time: 67   PM4-8A : PREPARE_RECV
+Time: 67   TM4 : PLACE_WAFER
+Time: 67   PM4-8A : POST_RECV
+Time: 68   PM4-2B : PREPARE_SEND
+Time: 68   TM4 : PICK_WAFER
+Time: 68   PM4-2B : POST_SEND
+Time: 70   PM4-7A : PREPARE_RECV
+Time: 70   TM4 : PLACE_WAFER
+Time: 70   PM4-7A : POST_RECV
+Time: 76   PM4-7A : PREPARE_SEND
+Time: 76   TM4 : PICK_WAFER
+Time: 76   PM4-7A : POST_SEND
+Time: 78   PM4-8B : PREPARE_RECV
+Time: 78   TM4 : PLACE_WAFER
+Time: 78   PM4-8B : POST_RECV
+Time: 84   PM4-2A : PREPARE_SEND
+Time: 84   TM4 : PICK_WAFER
+Time: 84   PM4-2A : POST_SEND
+Time: 86   PM4-3B : PREPARE_RECV
+Time: 86   TM4 : PLACE_WAFER
+Time: 86   PM4-3B : POST_RECV
+Time: 92   PM4-3B : PREPARE_SEND
+Time: 92   TM4 : PICK_WAFER
+Time: 92   PM4-3B : POST_SEND
+Time: 94   PM4-8A : PREPARE_RECV
+Time: 94   TM4 : PLACE_WAFER
+Time: 94   PM4-8A : POST_RECV
+Time: 59   PM4-8A : PREPARE_SEND
+Time: 59   TM6 : PICK_WAFER
+Time: 59   PM4-8A : POST_SEND
+Time: 61   PM6-4A : PREPARE_RECV
+Time: 61   TM6 : PLACE_WAFER
+Time: 61   PM6-4A : POST_RECV
+Time: 62   PM4-8B : PREPARE_SEND
+Time: 62   TM6 : PICK_WAFER
+Time: 62   PM4-8B : POST_SEND
+Time: 64   PM6-5A : PREPARE_RECV
+Time: 64   TM6 : PLACE_WAFER
+Time: 64   PM6-5A : POST_RECV
+Time: 67   PM6-4A : PREPARE_SEND
+Time: 67   TM6 : PICK_WAFER
+Time: 67   PM6-4A : POST_SEND
+Time: 69   BM6-1A : PREPARE_RECV
+Time: 69   TM6 : PLACE_WAFER
+Time: 69   BM6-1A : POST_RECV
+Time: 70   PM6-5A : PREPARE_SEND
+Time: 70   TM6 : PICK_WAFER
+Time: 70   PM6-5A : POST_SEND
+Time: 72   BM6-1A : PREPARE_RECV
+Time: 72   TM6 : PLACE_WAFER
+Time: 72   BM6-1A : POST_RECV
+Time: 73   PM4-8A : PREPARE_SEND
+Time: 73   TM6 : PICK_WAFER
+Time: 73   PM4-8A : POST_SEND
+Time: 75   PM6-6A : PREPARE_RECV
+Time: 75   TM6 : PLACE_WAFER
+Time: 75   PM6-6A : POST_RECV
+Time: 81   PM6-6A : PREPARE_SEND
+Time: 81   TM6 : PICK_WAFER
+Time: 81   PM6-6A : POST_SEND
+Time: 83   BM6-1A : PREPARE_RECV
+Time: 83   TM6 : PLACE_WAFER
+Time: 83   BM6-1A : POST_RECV
+Time: 84   PM4-8B : PREPARE_SEND
+Time: 84   TM6 : PICK_WAFER
+Time: 84   PM4-8B : POST_SEND
+Time: 86   PM6-7A : PREPARE_RECV
+Time: 86   TM6 : PLACE_WAFER
+Time: 86   PM6-7A : POST_RECV
+Time: 89   BM6-1A : PREPARE_SEND
+Time: 89   TM6 : PICK_WAFER
+Time: 89   BM6-1A : POST_SEND
+Time: 91   PM6-8A : PREPARE_RECV
+Time: 91   TM6 : PLACE_WAFER
+Time: 91   PM6-8A : POST_RECV
+Time: 92   BM6-1A : PREPARE_SEND
+Time: 92   TM6 : PICK_WAFER
+Time: 92   BM6-1A : POST_SEND
+Time: 94   PM6-9A : PREPARE_RECV
+Time: 94   TM6 : PLACE_WAFER
+Time: 94   PM6-9A : POST_RECV
+Time: 97   PM6-8A : PREPARE_SEND
+Time: 97   TM6 : PICK_WAFER
+Time: 97   PM6-8A : POST_SEND
+Time: 99   BM6-11A : PREPARE_RECV
+Time: 99   TM6 : PLACE_WAFER
+Time: 99   BM6-11A : POST_RECV
+Time: 100   PM6-9A : PREPARE_SEND
+Time: 100   TM6 : PICK_WAFER
+Time: 100   PM6-9A : POST_SEND
+Time: 102   BM6-11A : PREPARE_RECV
+Time: 102   TM6 : PLACE_WAFER
+Time: 102   BM6-11A : POST_RECV
+Time: 103   PM6-7A : PREPARE_SEND
+Time: 103   TM6 : PICK_WAFER
+Time: 103   PM6-7A : POST_SEND
+Time: 105   BM6-11A : PREPARE_RECV
+Time: 105   TM6 : PLACE_WAFER
+Time: 105   BM6-11A : POST_RECV
+Time: 106   PM4-8A : PREPARE_SEND
+Time: 106   TM6 : PICK_WAFER
+Time: 106   PM4-8A : POST_SEND
+Time: 108   PM6-4B : PREPARE_RECV
+Time: 108   TM6 : PLACE_WAFER
+Time: 108   PM6-4B : POST_RECV
+Time: 111   BM6-11A : PREPARE_SEND
+Time: 111   TM6 : PICK_WAFER
+Time: 111   BM6-11A : POST_SEND
+Time: 113   PM5-9A : PREPARE_RECV
+Time: 113   TM6 : PLACE_WAFER
+Time: 113   PM5-9A : POST_RECV
+Time: 114   BM6-11A : PREPARE_SEND
+Time: 114   TM6 : PICK_WAFER
+Time: 114   BM6-11A : POST_SEND
+Time: 116   PM5-9B : PREPARE_RECV
+Time: 116   TM6 : PLACE_WAFER
+Time: 116   PM5-9B : POST_RECV
+Time: 117   BM6-1A : PREPARE_SEND
+Time: 117   TM6 : PICK_WAFER
+Time: 117   BM6-1A : POST_SEND
+Time: 119   PM6-10A : PREPARE_RECV
+Time: 119   TM6 : PLACE_WAFER
+Time: 119   PM6-10A : POST_RECV
+Time: 120   PM6-4B : PREPARE_SEND
+Time: 120   TM6 : PICK_WAFER
+Time: 120   PM6-4B : POST_SEND
+Time: 122   BM6-11A : PREPARE_RECV
+Time: 122   TM6 : PLACE_WAFER
+Time: 122   BM6-11A : POST_RECV
+Time: 125   PM6-10A : PREPARE_SEND
+Time: 125   TM6 : PICK_WAFER
+Time: 125   PM6-10A : POST_SEND
+Time: 127   BM6-11A : PREPARE_RECV
+Time: 127   TM6 : PLACE_WAFER
+Time: 127   BM6-11A : POST_RECV
+Time: 128   BM6-12A : PREPARE_SEND
+Time: 128   TM6 : PICK_WAFER
+Time: 128   BM6-12A : POST_SEND
+Time: 130   PM5-9B : PREPARE_RECV
+Time: 130   TM6 : PLACE_WAFER
+Time: 130   PM5-9B : POST_RECV
+Time: 136   BM6-12A : PREPARE_SEND
+Time: 136   TM6 : PICK_WAFER
+Time: 136   BM6-12A : POST_SEND
+Time: 141   PM5-9A : PREPARE_RECV
+Time: 141   TM6 : PLACE_WAFER
+Time: 141   PM5-9A : POST_RECV
+Time: 139   BM6-11A : PREPARE_SEND
+Time: 139   TM6 : PICK_WAFER
+Time: 139   BM6-11A : POST_SEND
+Time: 146   PM5-9A : PREPARE_RECV
+Time: 146   TM6 : PLACE_WAFER
+Time: 146   PM5-9A : POST_RECV
+Time: 70   BM6-1A : PREPARE_SEND
+Time: 70   TM8 : PICK_WAFER
+Time: 70   BM6-1A : POST_SEND
+Time: 72   PM8-3 : PREPARE_RECV
+Time: 72   TM8 : PLACE_WAFER
+Time: 72   PM8-3 : POST_RECV
+Time: 73   BM6-1A : PREPARE_SEND
+Time: 73   TM8 : PICK_WAFER
+Time: 73   BM6-1A : POST_SEND
+Time: 75   PM8-4 : PREPARE_RECV
+Time: 75   TM8 : PLACE_WAFER
+Time: 75   PM8-4 : POST_RECV
+Time: 78   PM8-3 : PREPARE_SEND
+Time: 78   TM8 : PICK_WAFER
+Time: 78   PM8-3 : POST_SEND
+Time: 80   ExposerIn8-6 : PREPARE_RECV
+Time: 80   TM8 : PLACE_WAFER
+Time: 80   ExposerIn8-6 : POST_RECV
+Time: 81   PM8-4 : PREPARE_SEND
+Time: 81   TM8 : PICK_WAFER
+Time: 81   PM8-4 : POST_SEND
+Time: 83   ExposerOut8-7 : PREPARE_RECV
+Time: 83   TM8 : PLACE_WAFER
+Time: 83   ExposerOut8-7 : POST_RECV
+Time: 86   ExposerIn8-6 : PREPARE_SEND
+Time: 86   TM8 : PICK_WAFER
+Time: 86   ExposerIn8-6 : POST_SEND
+Time: 88   BM6-1A : PREPARE_RECV
+Time: 88   TM8 : PLACE_WAFER
+Time: 88   BM6-1A : POST_RECV
+Time: 89   ExposerOut8-7 : PREPARE_SEND
+Time: 89   TM8 : PICK_WAFER
+Time: 89   ExposerOut8-7 : POST_SEND
+Time: 91   BM6-1A : PREPARE_RECV
+Time: 91   TM8 : PLACE_WAFER
+Time: 91   BM6-1A : POST_RECV
+Time: 92   BM6-1A : PREPARE_SEND
+Time: 92   TM8 : PICK_WAFER
+Time: 92   BM6-1A : POST_SEND
+Time: 94   PM8-5 : PREPARE_RECV
+Time: 94   TM8 : PLACE_WAFER
+Time: 94   PM8-5 : POST_RECV
+Time: 100   PM8-5 : PREPARE_SEND
+Time: 100   TM8 : PICK_WAFER
+Time: 100   PM8-5 : POST_SEND
+Time: 102   ExposerIn8-6 : PREPARE_RECV
+Time: 102   TM8 : PLACE_WAFER
+Time: 102   ExposerIn8-6 : POST_RECV
+Time: 108   ExposerIn8-6 : PREPARE_SEND
+Time: 108   TM8 : PICK_WAFER
+Time: 108   ExposerIn8-6 : POST_SEND
+Time: 110   BM6-1A : PREPARE_RECV
+Time: 110   TM8 : PLACE_WAFER
+Time: 110   BM6-1A : POST_RECV
+Time: 100   BM6-11A : PREPARE_SEND
+Time: 100   TM7 : PICK_WAFER
+Time: 100   BM6-11A : POST_SEND
+Time: 102   PM7-1A : PREPARE_RECV
+Time: 102   TM7 : PLACE_WAFER
+Time: 102   PM7-1A : POST_RECV
+Time: 103   BM6-11A : PREPARE_SEND
+Time: 103   TM7 : PICK_WAFER
+Time: 103   BM6-11A : POST_SEND
+Time: 105   PM7-2A : PREPARE_RECV
+Time: 105   TM7 : PLACE_WAFER
+Time: 105   PM7-2A : POST_RECV
+Time: 108   PM7-1A : PREPARE_SEND
+Time: 108   TM7 : PICK_WAFER
+Time: 108   PM7-1A : POST_SEND
+Time: 110   BM6-11A : PREPARE_RECV
+Time: 110   TM7 : PLACE_WAFER
+Time: 110   BM6-11A : POST_RECV
+Time: 111   PM7-2A : PREPARE_SEND
+Time: 111   TM7 : PICK_WAFER
+Time: 111   PM7-2A : POST_SEND
+Time: 113   BM6-11A : PREPARE_RECV
+Time: 113   TM7 : PLACE_WAFER
+Time: 113   BM6-11A : POST_RECV
+Time: 114   BM6-11A : PREPARE_SEND
+Time: 114   TM7 : PICK_WAFER
+Time: 114   BM6-11A : POST_SEND
+Time: 116   PM7-4A : PREPARE_RECV
+Time: 116   TM7 : PLACE_WAFER
+Time: 116   PM7-4A : POST_RECV
+Time: 122   PM7-4A : PREPARE_SEND
+Time: 122   TM7 : PICK_WAFER
+Time: 122   PM7-4A : POST_SEND
+Time: 124   BM6-12A : PREPARE_RECV
+Time: 124   TM7 : PLACE_WAFER
+Time: 124   BM6-12A : POST_RECV
+Time: 125   BM6-11A : PREPARE_SEND
+Time: 125   TM7 : PICK_WAFER
+Time: 125   BM6-11A : POST_SEND
+Time: 127   PM7-1B : PREPARE_RECV
+Time: 127   TM7 : PLACE_WAFER
+Time: 127   PM7-1B : POST_RECV
+Time: 128   BM6-11A : PREPARE_SEND
+Time: 128   TM7 : PICK_WAFER
+Time: 128   BM6-11A : POST_SEND
+Time: 130   PM7-3A : PREPARE_RECV
+Time: 130   TM7 : PLACE_WAFER
+Time: 130   PM7-3A : POST_RECV
+Time: 133   PM7-1B : PREPARE_SEND
+Time: 133   TM7 : PICK_WAFER
+Time: 133   PM7-1B : POST_SEND
+Time: 135   BM6-12A : PREPARE_RECV
+Time: 135   TM7 : PLACE_WAFER
+Time: 135   BM6-12A : POST_RECV
+Time: 136   PM7-3A : PREPARE_SEND
+Time: 136   TM7 : PICK_WAFER
+Time: 136   PM7-3A : POST_SEND
+Time: 138   BM6-11A : PREPARE_RECV
+Time: 138   TM7 : PLACE_WAFER
+Time: 138   BM6-11A : POST_RECV
+Time: 119   PM5-9A : PREPARE_SEND
+Time: 119   TM5 : PICK_WAFER
+Time: 119   PM5-9A : POST_SEND
+Time: 121   PM5-1A : PREPARE_RECV
+Time: 121   TM5 : PLACE_WAFER
+Time: 121   PM5-1A : POST_RECV
+Time: 122   PM5-9B : PREPARE_SEND
+Time: 122   TM5 : PICK_WAFER
+Time: 122   PM5-9B : POST_SEND
+Time: 124   PM5-4A : PREPARE_RECV
+Time: 124   TM5 : PLACE_WAFER
+Time: 124   PM5-4A : POST_RECV
+Time: 127   PM5-1A : PREPARE_SEND
+Time: 127   TM5 : PICK_WAFER
+Time: 127   PM5-1A : POST_SEND
+Time: 129   PM5-3A : PREPARE_RECV
+Time: 129   TM5 : PLACE_WAFER
+Time: 129   PM5-3A : POST_RECV
+Time: 130   PM5-4A : PREPARE_SEND
+Time: 130   TM5 : PICK_WAFER
+Time: 130   PM5-4A : POST_SEND
+Time: 132   PM5-3B : PREPARE_RECV
+Time: 132   TM5 : PLACE_WAFER
+Time: 132   PM5-3B : POST_RECV
+Time: 136   PM5-9B : PREPARE_SEND
+Time: 136   TM5 : PICK_WAFER
+Time: 136   PM5-9B : POST_SEND
+Time: 138   PM5-7A : PREPARE_RECV
+Time: 138   TM5 : PLACE_WAFER
+Time: 138   PM5-7A : POST_RECV
+Time: 144   PM5-7A : PREPARE_SEND
+Time: 144   TM5 : PICK_WAFER
+Time: 144   PM5-7A : POST_SEND
+Time: 146   PM5-3B : PREPARE_RECV
+Time: 146   TM5 : PLACE_WAFER
+Time: 146   PM5-3B : POST_RECV
+Time: 147   PM5-9A : PREPARE_SEND
+Time: 147   TM5 : PICK_WAFER
+Time: 147   PM5-9A : POST_SEND
+Time: 149   PM5-5A : PREPARE_RECV
+Time: 149   TM5 : PLACE_WAFER
+Time: 149   PM5-5A : POST_RECV
+Time: 152   PM5-9A : PREPARE_SEND
+Time: 152   TM5 : PICK_WAFER
+Time: 152   PM5-9A : POST_SEND
+Time: 154   PM5-3B : PREPARE_RECV
+Time: 154   TM5 : PLACE_WAFER
+Time: 154   PM5-3B : POST_RECV
+Time: 155   PM5-5A : PREPARE_SEND
+Time: 155   TM5 : PICK_WAFER
+Time: 155   PM5-5A : POST_SEND
+Time: 157   PM5-3A : PREPARE_RECV
+Time: 157   TM5 : PLACE_WAFER
+Time: 157   PM5-3A : POST_RECV
+Time: 160   PM5-3B : PREPARE_SEND
+Time: 160   TM5 : PICK_WAFER
+Time: 160   PM5-3B : POST_SEND
+Time: 162   PM5-3A : PREPARE_RECV
+Time: 162   TM5 : PLACE_WAFER
+Time: 162   PM5-3A : POST_RECV
+Running time :  0.212331 seconds
