@@ -200,7 +200,13 @@ class GA:
             self.d.reset()
             Fit.append(self.d.Decode_1(CHS, T0))
         # 删除临时变量
-
+        del Tr
+        del MS
+        del OS
+        del r
+        del Site
+        del A
+        del Fit
         return A_CHS[Fit.index(min(Fit))]
 
     def set_TM_Message(self, M_num, TM_num, group_name_index):
