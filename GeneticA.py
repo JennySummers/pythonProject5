@@ -253,7 +253,24 @@ class GA:
             # if x.move_type == 2:
             #     print('Machine:', x.machine_no, ' Time:', x.cmd_time, ' move from:', x.move_from, ' to:', x.move_to)
 
-    def main(self, processing_time, J_O, m_num, j_num, o_num, TM_num, group_name_index, elements_name):
+    # 打印word中的红字指令
+    def print_Message_Flow(self, elements_name, type_index):
+        for x in self.TM_msg:
+            if x.move_type == 0:
+                # 从CM取片
+                # if type_index['CM'] <= x.move_from <= type_index['CM_end']:
+                #     print(elements_name[x.move_from], ':', 'PREPARE_SEND')
+                print('Time:', x.cmd_time, ' ', elements_name[x.move_from], ':', 'PREPARE_SEND')
+                print('Time:', x.cmd_time, ' ', elements_name[x.machine_no], ':', 'PICK_WAFER')
+                print('Time:', x.cmd_time, ' ', elements_name[x.move_from], ':', 'POST_SEND')
+            if x.move_type == 1:
+                print('Time:', x.cmd_time, ' ', elements_name[x.move_to], ':', 'PREPARE_RECV')
+                print('Time:', x.cmd_time, ' ', elements_name[x.machine_no], ':', 'PLACE_WAFER')
+                print('Time:', x.cmd_time, ' ', elements_name[x.move_to], ':', 'POST_RECV')
+            # if x.move_type == 2:
+            #     print('Machine:', x.machine_no, ' Time:', x.cmd_time, ' move from:', x.move_from, ' to:', x.move_to)
+
+    def main(self, processing_time, J_O, m_num, j_num, o_num, TM_num, group_name_index, elements_name, type_index):
         start_time = datetime.datetime.now()
         print("start time is : ", start_time)
         e = Encode(processing_time, self.Pop_size, J_O, j_num, m_num, self.Machine_status)
@@ -324,6 +341,7 @@ class GA:
             print("current time : ", cur_time)
         self.set_TM_Message(m_num, TM_num, group_name_index)
         self.print_TM_cmd(elements_name)
+        self.print_Message_Flow(elements_name, type_index)
         stop_time = datetime.datetime.now()
         Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
         Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图

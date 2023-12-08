@@ -23,13 +23,15 @@ if __name__ == '__main__':
     log_path = './logs/'
     if not os.path.exists(log_path):
         os.makedirs(log_path)
-    # log_file_name = log_path + 'log-' + time.strftime("%Y-%m-%d %H %M %S", time.localtime()) + '.log'
-    # sys.stdout = Logger(log_file_name)  # 记录正常控制台输出结果
-    # sys.stderr = Logger(log_file_name)  # 记录traceback异常信息
+    log_file_name = log_path + 'log-' + time.strftime("%Y-%m-%d %H %M %S", time.localtime()) + '.log'
+    sys.stdout = Logger(log_file_name)  # 记录正常控制台输出结果
+    sys.stderr = Logger(log_file_name)  # 记录traceback异常信息
     r = get_Recipe(layout_path, wafer_path, wafer_noBM_path)
     g = GA(r.Machine_status)
     g.main(r.Processing_time, r.J, r.M_num, r.J_num, r.O_num, r.TM_num, r.group_name_index, r.elements_name)
-    # logging.info('complete')
+    logging.info('complete')
     del r
     del g
     gc.collect()
+    # g = GA(Machine_status)
+    # g.main(Processing_time, J, M_num, J_num, O_num, 0, 0)
