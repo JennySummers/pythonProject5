@@ -5,13 +5,22 @@ import random
 from Decode_for_FJSP import Decode
 from GanttChart import Gantt_Machine, Gantt_Job
 from Encode_for_FJSP import Encode
-from read_Json import INVALID, pick_time, put_time
+from read_Json import INVALID, pick_time, put_time, unit_time
 from Jobs import Job
 from copy import *
 import itertools
 from Messages import Arm_Message
 import matplotlib.pyplot as plt
 import datetime
+import math
+
+
+def Timestep2Time(cur_time, time_step, time_decay=0):  # 将单位时间转换为实际的时间
+    return cur_time + datetime.timedelta(milliseconds=(time_step + time_decay) * unit_time)
+
+
+def Time2Timestep(start_time, cur_time):  # 将实际的时间转换为单位时间
+    return math.ceil(((cur_time - start_time)/datetime.timedelta(milliseconds=1)) / unit_time)
 
 
 # 机器部分交叉
@@ -113,10 +122,9 @@ def Select(Fit_value):
 
 
 class GA:
-    def __init__(self, M_status, pop_size=10, p_c=0.8, p_m=0.3, p_v=0.5, p_w=0.95, max_iteration=3):
+    def __init__(self, M_status, pop_size=2, p_c=0.8, p_m=0.3, p_v=0.5, p_w=0.95, max_iteration=1):
         self.Best_Job = None  # 最优的晶圆加工调度结果
         self.Best_Machine = None  # 最优的加工单元调度结果
-        self.TM_msg = []  # 机械臂指令集合
         self.Pop_size = pop_size  # 种群数量
         self.P_c = p_c  # 交叉概率
         self.P_m = p_m  # 变异概率
@@ -126,6 +134,7 @@ class GA:
         self.d = None  # 解码对象
         self.Machine_status = [x for x in M_status]
         self.Best_fit = []
+        self.TM_msg = []  # 机械臂指令集合
         self.TM_List = []  # 机械臂编号集合
 
     # 适应度
@@ -200,6 +209,7 @@ class GA:
             self.d.reset()
             Fit.append(self.d.Decode_1(CHS, T0))
         # 删除临时变量
+        index = Fit.index(min(Fit))
         del Tr
         del MS
         del OS
@@ -207,9 +217,9 @@ class GA:
         del Site
         del A
         del Fit
-        return A_CHS[Fit.index(min(Fit))]
+        return A_CHS[index]
 
-    def set_TM_Message(self, M_num, TM_num, group_name_index):
+    def set_TM_Message(self, M_num, TM_num, group_name_index, cur_time):
         for i in range(M_num - TM_num, M_num):
             self.TM_List.append(i)
         for i in self.TM_List:
@@ -221,9 +231,22 @@ class GA:
                 o = Machine.assigned_task[i_1][1] - 1
                 pre = self.Best_Job[j].J_machine[o - 1]
                 nxt = self.Best_Job[j].J_machine[o + 1]
-                self.TM_msg.append(Arm_Message(i, Start_time[i_1], 0, pre, nxt))  # 机械臂取片指令
-                self.TM_msg.append(Arm_Message(i, Start_time[i_1] + pick_time, 2, pre, nxt))  # 机械臂移动指令
-                self.TM_msg.append(Arm_Message(i, End_time[i_1] - put_time, 1, pre, nxt))  # 机械臂放片指令
+                time_1 = Timestep2Time(cur_time, Start_time[i_1])
+                time_2 = Timestep2Time(cur_time, Start_time[i_1] + pick_time)
+                time_3 = Timestep2Time(cur_time, End_time[i_1] - put_time)
+                self.TM_msg.append(Arm_Message(i, time_1, 0, pre, nxt))  # 机械臂取片指令
+                self.TM_msg.append(Arm_Message(i, time_2, 2, pre, nxt))  # 机械臂移动指令
+                self.TM_msg.append(Arm_Message(i, time_3, 1, pre, nxt))  # 机械臂放片指令
+                # 删除临时变量
+                del j
+                del o
+                del pre
+                del nxt
+            self.TM_msg.sort(key=lambda TM_msg: TM_msg.cmd_time)  # 根据机械臂指令的时间，对指令进行排序
+            # 删除临时变量
+            del Machine
+            del Start_time
+            del End_time
 
     def get_M_State(self, time):
         cur_state = []
@@ -337,16 +360,25 @@ class GA:
                             Fit.append(INVALID)
                         del jobs
                     C[j] = offspring[Fit.index(min(Fit))]
-            cur_time = datetime.datetime.now()
-            print("current time : ", cur_time)
-        self.set_TM_Message(m_num, TM_num, group_name_index)
+            print("current time : ", datetime.datetime.now())
+        stop_time = datetime.datetime.now()
+        self.set_TM_Message(m_num, TM_num, group_name_index, stop_time)
         self.print_TM_cmd(elements_name)
         self.print_Message_Flow(elements_name, type_index)
-        stop_time = datetime.datetime.now()
         Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
         Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图
         r_time = stop_time - start_time
         print("Running time : ", r_time.total_seconds(), 'seconds')
+        print("Time steps = ", Time2Timestep(start_time, stop_time))
+        # 删除临时变量
+        del start_time
+        del e
+        del Len_Chromo
+        del CHS1
+        del C
+        del Optimal_fit
+        del stop_time
+        del r_time
 
     # 逻辑参考函数：def Gantt_Machine(Machines)
     def get_TM_Move_List(self, M_num, TM_num, group_name_index):

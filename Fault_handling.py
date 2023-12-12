@@ -35,7 +35,7 @@ class Fault:
         res_t = []  # 剩余处理时间，已完成则为0
         for i in range(len(self.pres_jobs)):
             new_s = 0
-            while self.pres_jobs[i].J_end[new_s] < self.fault_time and new_s < self.pres_jobs[i].Operation_num:
+            while new_s < self.pres_jobs[i].Operation_num and self.pres_jobs[i].J_end[new_s] < self.join_time:
                 new_s += 1
             if new_s >= self.pres_jobs[i].Operation_num:  # 当前晶圆的所有工艺都已加工完成
                 jobs.append(-1)

@@ -85,6 +85,11 @@ class Decode:
                         break
         # M_Earliest = earliest_start
         # End_work_time = earliest_start + P_t
+        # 删除临时变量
+        del M_Tstart
+        del M_Tend
+        del M_Tlen
+
         return earliest_start, Selected_Machine, P_t, O_num, last_O_end, earliest_start + P_t  # 返回0.工件的工序最早开始时间，1.选择的机器号，2.处理时间，3.工序编号，4.上一工序结束时间，5.当前工序结束时间
 
     # 解码
@@ -122,4 +127,5 @@ class Decode:
         del pre_job
         del pre_op
         del pre_st
+
         return self.fitness
