@@ -10,6 +10,7 @@ from GeneticA import GA
 from Logs import Logger
 from New_join import new_join
 from Fault_handling import Fault
+from Instance import Machine_status, Processing_time, J, M_num, J_num, O_num
 
 '''
 将晶圆在CM中的处理时间设置成晶圆需要等待之前的晶圆被取走的时间。
@@ -35,6 +36,7 @@ def first_scheduler():
 
 
 if __name__ == '__main__':
+    sys.setrecursionlimit(2000)
     log_path = './logs/'
     if not os.path.exists(log_path):
         os.makedirs(log_path)
@@ -52,4 +54,4 @@ if __name__ == '__main__':
 
     gc.collect()
     # g = GA(Machine_status)
-    # g.main(Processing_time, J, M_num, J_num, O_num, 0, 0)
+    # g.main(Processing_time, J, M_num, J_num, O_num, 2, 0, 0, 0)
