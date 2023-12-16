@@ -1,0 +1,2055 @@
+CM_num:30
+wafer_sum:12
+group_elements_num {'CM1': 30, 'PG1': 10, 'PG2': 2, 'PG3': 8, 'PG4': 2, 'PG5': 2, 'PG6': 8, 'PG7': 2, 'PG8': 8, 'PG9': 6, 'PG10': 3, 'PG11': 2, 'PG12': 8, 'PG13': 2, 'PG14': 8, 'PG15': 2, 'BM2-1': 2, 'BM2-2': 2, 'BM6-3': 2, 'BM6-1': 2, 'BM6-2': 2, 'BM8-1': 1, 'BM8-2': 1, 'BM6-11': 2, 'BM6-12': 2, 'TM1': 1, 'TM2': 1, 'TM3': 1, 'TM4': 1, 'TM6': 1, 'TM8': 1, 'TM7': 1, 'TM5': 1}
+group_elements_index {'CM1': 0, 'PG1': 30, 'PG2': 40, 'PG3': 42, 'PG4': 50, 'PG5': 52, 'PG6': 54, 'PG7': 62, 'PG8': 64, 'PG9': 72, 'PG10': 78, 'PG11': 81, 'PG12': 83, 'PG13': 91, 'PG14': 93, 'PG15': 101, 'BM2-1': 103, 'BM2-2': 105, 'BM6-3': 107, 'BM6-1': 109, 'BM6-2': 111, 'BM8-1': 113, 'BM8-2': 114, 'BM6-11': 115, 'BM6-12': 117, 'TM1': 119, 'TM2': 120, 'TM3': 121, 'TM4': 122, 'TM6': 123, 'TM8': 124, 'TM7': 125, 'TM5': 126}
+all_elements_index {'CM1-1-1': 0, 'CM1-1-2': 1, 'CM1-1-3': 2, 'CM1-1-4': 3, 'CM1-1-5': 4, 'CM1-1-6': 5, 'CM1-1-7': 6, 'CM1-1-8': 7, 'CM1-1-9': 8, 'CM1-1-10': 9, 'CM1-1-11': 10, 'CM1-1-12': 11, 'CM1-1-13': 12, 'CM1-1-14': 13, 'CM1-1-15': 14, 'CM1-1-16': 15, 'CM1-1-17': 16, 'CM1-1-18': 17, 'CM1-1-19': 18, 'CM1-1-20': 19, 'CM1-1-21': 20, 'CM1-1-22': 21, 'CM1-1-23': 22, 'CM1-1-24': 23, 'CM1-1-25': 24, 'CM1-1-26': 25, 'CM1-1-27': 26, 'CM1-1-28': 27, 'CM1-1-29': 28, 'CM1-1-30': 29, 'PM2-3A': 30, 'PM2-4A': 31, 'PM2-5A': 32, 'PM2-6A': 33, 'PM2-7A': 34, 'PM2-3B': 35, 'PM2-4B': 36, 'PM2-5B': 37, 'PM2-6B': 38, 'PM2-7B': 39, 'PM3-2A': 40, 'PM3-2B': 41, 'PM3-1A': 42, 'PM3-4A': 43, 'PM3-5A': 44, 'PM3-7A': 45, 'PM3-3B': 51, 'PM3-4B': 47, 'PM3-5B': 48, 'PM3-7B': 49, 'PM3-3A': 50, 'PM4-2A': 52, 'PM4-2B': 53, 'PM4-1A': 54, 'PM4-4A': 55, 'PM4-5A': 56, 'PM4-7A': 57, 'PM4-3B': 58, 'PM4-4B': 59, 'PM4-5B': 60, 'PM4-7B': 61, 'PM4-8A': 62, 'PM4-8B': 63, 'PM6-4A': 64, 'PM6-5A': 65, 'PM6-6A': 66, 'PM6-7A': 67, 'PM6-4B': 68, 'PM6-5B': 69, 'PM6-6B': 70, 'PM6-7B': 71, 'PM6-8A': 72, 'PM6-9A': 73, 'PM6-10A': 74, 'PM6-8B': 75, 'PM6-9B': 76, 'PM6-10B': 77, 'PM8-3': 78, 'PM8-4': 79, 'PM8-5': 80, 'ExposerIn8-6': 81, 'ExposerOut8-7': 82, 'PM7-1A': 83, 'PM7-2A': 84, 'PM7-3A': 85, 'PM7-4A': 86, 'PM7-1B': 87, 'PM7-2B': 88, 'PM7-3B': 89, 'PM7-4B': 90, 'PM5-9A': 91, 'PM5-9B': 92, 'PM5-1A': 93, 'PM5-4A': 94, 'PM5-5A': 95, 'PM5-7A': 96, 'PM5-3B': 102, 'PM5-4B': 98, 'PM5-5B': 99, 'PM5-7B': 100, 'PM5-3A': 101, 'BM2-1A': 103, 'BM2-1B': 104, 'BM2-2A': 105, 'BM2-2B': 106, 'BM6-3A': 107, 'BM6-3B': 108, 'BM6-1A': 109, 'BM6-1B': 110, 'BM6-2A': 111, 'BM6-2B': 112, 'BM8-1': 113, 'BM8-2': 114, 'BM6-11A': 115, 'BM6-11B': 116, 'BM6-12A': 117, 'BM6-12B': 118, 'TM1': 119, 'TM2': 120, 'TM3': 121, 'TM4': 122, 'TM6': 123, 'TM8': 124, 'TM7': 125, 'TM5': 126}
+type_index {'CM': 0, 'CM_end': 29, 'PM': 30, 'PM_end': 102, 'BM': 103, 'BM_end': 118, 'TM': 119, 'TM_end': 126}
+all_elements_num 119
+There are loops in the path:
+CM1 BM2-1 PG1 PG4 PG3 PG2 PG5 PG6 PG7 PG8 BM6-11 PG12 BM6-12 PG13 PG14 PG15 BM2-2 CM1
+
+
+127
+45
+12
+520
+{1: 45, 2: 45, 3: 45, 4: 45, 5: 45, 6: 45, 7: 45, 8: 45, 9: 45, 10: 45, 11: 35, 12: 35}
+8
+{0: 'CM1-1-1', 1: 'CM1-1-2', 2: 'CM1-1-3', 3: 'CM1-1-4', 4: 'CM1-1-5', 5: 'CM1-1-6', 6: 'CM1-1-7', 7: 'CM1-1-8', 8: 'CM1-1-9', 9: 'CM1-1-10', 10: 'CM1-1-11', 11: 'CM1-1-12', 12: 'CM1-1-13', 13: 'CM1-1-14', 14: 'CM1-1-15', 15: 'CM1-1-16', 16: 'CM1-1-17', 17: 'CM1-1-18', 18: 'CM1-1-19', 19: 'CM1-1-20', 20: 'CM1-1-21', 21: 'CM1-1-22', 22: 'CM1-1-23', 23: 'CM1-1-24', 24: 'CM1-1-25', 25: 'CM1-1-26', 26: 'CM1-1-27', 27: 'CM1-1-28', 28: 'CM1-1-29', 29: 'CM1-1-30', 30: 'PM2-3A', 31: 'PM2-4A', 32: 'PM2-5A', 33: 'PM2-6A', 34: 'PM2-7A', 35: 'PM2-3B', 36: 'PM2-4B', 37: 'PM2-5B', 38: 'PM2-6B', 39: 'PM2-7B', 40: 'PM3-2A', 41: 'PM3-2B', 42: 'PM3-1A', 43: 'PM3-4A', 44: 'PM3-5A', 45: 'PM3-7A', 51: 'PM3-3B', 47: 'PM3-4B', 48: 'PM3-5B', 49: 'PM3-7B', 50: 'PM3-3A', 52: 'PM4-2A', 53: 'PM4-2B', 54: 'PM4-1A', 55: 'PM4-4A', 56: 'PM4-5A', 57: 'PM4-7A', 58: 'PM4-3B', 59: 'PM4-4B', 60: 'PM4-5B', 61: 'PM4-7B', 62: 'PM4-8A', 63: 'PM4-8B', 64: 'PM6-4A', 65: 'PM6-5A', 66: 'PM6-6A', 67: 'PM6-7A', 68: 'PM6-4B', 69: 'PM6-5B', 70: 'PM6-6B', 71: 'PM6-7B', 72: 'PM6-8A', 73: 'PM6-9A', 74: 'PM6-10A', 75: 'PM6-8B', 76: 'PM6-9B', 77: 'PM6-10B', 78: 'PM8-3', 79: 'PM8-4', 80: 'PM8-5', 81: 'ExposerIn8-6', 82: 'ExposerOut8-7', 83: 'PM7-1A', 84: 'PM7-2A', 85: 'PM7-3A', 86: 'PM7-4A', 87: 'PM7-1B', 88: 'PM7-2B', 89: 'PM7-3B', 90: 'PM7-4B', 91: 'PM5-9A', 92: 'PM5-9B', 93: 'PM5-1A', 94: 'PM5-4A', 95: 'PM5-5A', 96: 'PM5-7A', 102: 'PM5-3B', 98: 'PM5-4B', 99: 'PM5-5B', 100: 'PM5-7B', 101: 'PM5-3A', 103: 'BM2-1A', 104: 'BM2-1B', 105: 'BM2-2A', 106: 'BM2-2B', 107: 'BM6-3A', 108: 'BM6-3B', 109: 'BM6-1A', 110: 'BM6-1B', 111: 'BM6-2A', 112: 'BM6-2B', 113: 'BM8-1', 114: 'BM8-2', 115: 'BM6-11A', 116: 'BM6-11B', 117: 'BM6-12A', 118: 'BM6-12B', 119: 'TM1', 120: 'TM2', 121: 'TM3', 122: 'TM4', 123: 'TM6', 124: 'TM8', 125: 'TM7', 126: 'TM5'}
+start time is :  2023-12-16 22:54:56.754091
+best_fitness 302
+current time :  2023-12-16 22:54:56.788264
+Machine: TM1  Time: 2023-12-16 22:54:56.788264  pick from: CM1-1-1
+Machine: TM1  Time: 2023-12-16 22:54:56.790264  put to: BM2-1A
+Machine: TM1  Time: 2023-12-16 22:54:56.791264  pick from: CM1-1-2
+Machine: TM2  Time: 2023-12-16 22:54:56.791264  pick from: BM2-1A
+Machine: TM1  Time: 2023-12-16 22:54:56.793264  put to: BM2-2A
+Machine: TM2  Time: 2023-12-16 22:54:56.793264  put to: PM2-3A
+Machine: TM1  Time: 2023-12-16 22:54:56.794264  pick from: CM1-1-3
+Machine: TM2  Time: 2023-12-16 22:54:56.794264  pick from: BM2-2A
+Machine: TM1  Time: 2023-12-16 22:54:56.796264  put to: BM2-1A
+Machine: TM2  Time: 2023-12-16 22:54:56.796264  put to: PM2-4A
+Machine: TM1  Time: 2023-12-16 22:54:56.797264  pick from: CM1-1-4
+Machine: TM1  Time: 2023-12-16 22:54:56.799264  put to: BM2-2A
+Machine: TM2  Time: 2023-12-16 22:54:56.799264  pick from: PM2-3A
+Machine: TM2  Time: 2023-12-16 22:54:56.801264  put to: PM3-2A
+Machine: TM1  Time: 2023-12-16 22:54:56.802264  pick from: CM1-1-5
+Machine: TM2  Time: 2023-12-16 22:54:56.802264  pick from: PM2-4A
+Machine: TM1  Time: 2023-12-16 22:54:56.804264  put to: BM2-1A
+Machine: TM2  Time: 2023-12-16 22:54:56.804264  put to: PM3-2B
+Machine: TM1  Time: 2023-12-16 22:54:56.805264  pick from: CM1-1-6
+Machine: TM2  Time: 2023-12-16 22:54:56.805264  pick from: BM2-1A
+Machine: TM1  Time: 2023-12-16 22:54:56.807264  put to: BM2-2A
+Machine: TM2  Time: 2023-12-16 22:54:56.807264  put to: PM2-5A
+Machine: TM3  Time: 2023-12-16 22:54:56.807264  pick from: PM3-2A
+Machine: TM1  Time: 2023-12-16 22:54:56.808264  pick from: CM1-1-12
+Machine: TM2  Time: 2023-12-16 22:54:56.808264  pick from: BM2-2A
+Machine: TM3  Time: 2023-12-16 22:54:56.809264  put to: PM3-1A
+Machine: TM1  Time: 2023-12-16 22:54:56.810264  put to: BM2-1B
+Machine: TM2  Time: 2023-12-16 22:54:56.810264  put to: PM2-6A
+Machine: TM3  Time: 2023-12-16 22:54:56.810264  pick from: PM3-2B
+Machine: TM3  Time: 2023-12-16 22:54:56.812264  put to: PM3-4A
+Machine: TM2  Time: 2023-12-16 22:54:56.813264  pick from: PM2-5A
+Machine: TM2  Time: 2023-12-16 22:54:56.815264  put to: PM3-2A
+Machine: TM3  Time: 2023-12-16 22:54:56.815264  pick from: PM3-1A
+Machine: TM1  Time: 2023-12-16 22:54:56.816264  pick from: CM1-1-7
+Machine: TM2  Time: 2023-12-16 22:54:56.816264  pick from: PM2-6A
+Machine: TM3  Time: 2023-12-16 22:54:56.817264  put to: PM3-3A
+Machine: TM1  Time: 2023-12-16 22:54:56.818264  put to: BM2-1A
+Machine: TM2  Time: 2023-12-16 22:54:56.818264  put to: PM3-2B
+Machine: TM3  Time: 2023-12-16 22:54:56.818264  pick from: PM3-4A
+Machine: TM2  Time: 2023-12-16 22:54:56.819264  pick from: BM2-1A
+Machine: TM3  Time: 2023-12-16 22:54:56.820264  put to: PM3-3B
+Machine: TM2  Time: 2023-12-16 22:54:56.821264  put to: PM2-7A
+Machine: TM3  Time: 2023-12-16 22:54:56.821264  pick from: PM3-2A
+Machine: TM2  Time: 2023-12-16 22:54:56.823264  pick from: PM3-3A
+Machine: TM3  Time: 2023-12-16 22:54:56.823264  put to: PM3-5A
+Machine: TM3  Time: 2023-12-16 22:54:56.824264  pick from: PM3-2B
+Machine: TM2  Time: 2023-12-16 22:54:56.825264  put to: PM4-2A
+Machine: TM2  Time: 2023-12-16 22:54:56.826264  pick from: PM3-3B
+Machine: TM3  Time: 2023-12-16 22:54:56.826264  put to: PM3-7A
+Machine: TM2  Time: 2023-12-16 22:54:56.828264  put to: PM4-2B
+Machine: TM1  Time: 2023-12-16 22:54:56.829264  pick from: CM1-1-8
+Machine: TM2  Time: 2023-12-16 22:54:56.829264  pick from: PM2-7A
+Machine: TM3  Time: 2023-12-16 22:54:56.829264  pick from: PM3-5A
+Machine: TM1  Time: 2023-12-16 22:54:56.831264  put to: BM2-2A
+Machine: TM2  Time: 2023-12-16 22:54:56.831264  put to: PM3-2A
+Machine: TM3  Time: 2023-12-16 22:54:56.831264  put to: PM3-3A
+Machine: TM4  Time: 2023-12-16 22:54:56.831264  pick from: PM4-2A
+Machine: TM2  Time: 2023-12-16 22:54:56.832264  pick from: BM2-2A
+Machine: TM3  Time: 2023-12-16 22:54:56.832264  pick from: PM3-7A
+Machine: TM4  Time: 2023-12-16 22:54:56.833264  put to: PM4-1A
+Machine: TM2  Time: 2023-12-16 22:54:56.834264  put to: PM2-3B
+Machine: TM3  Time: 2023-12-16 22:54:56.834264  put to: PM3-3B
+Machine: TM4  Time: 2023-12-16 22:54:56.834264  pick from: PM4-2B
+Machine: TM4  Time: 2023-12-16 22:54:56.836264  put to: PM4-4A
+Machine: TM2  Time: 2023-12-16 22:54:56.837264  pick from: PM3-3A
+Machine: TM3  Time: 2023-12-16 22:54:56.837264  pick from: PM3-2A
+Machine: TM2  Time: 2023-12-16 22:54:56.839264  put to: PM4-2A
+Machine: TM3  Time: 2023-12-16 22:54:56.839264  put to: PM3-3B
+Machine: TM4  Time: 2023-12-16 22:54:56.839264  pick from: PM4-1A
+Machine: TM2  Time: 2023-12-16 22:54:56.840264  pick from: PM3-3B
+Machine: TM4  Time: 2023-12-16 22:54:56.841264  put to: PM4-8A
+Machine: TM2  Time: 2023-12-16 22:54:56.842264  put to: PM4-2B
+Machine: TM4  Time: 2023-12-16 22:54:56.842264  pick from: PM4-4A
+Machine: TM1  Time: 2023-12-16 22:54:56.843264  pick from: CM1-1-9
+Machine: TM2  Time: 2023-12-16 22:54:56.843264  pick from: PM2-3B
+Machine: TM4  Time: 2023-12-16 22:54:56.844264  put to: PM4-8B
+Machine: TM1  Time: 2023-12-16 22:54:56.845264  put to: BM2-1A
+Machine: TM2  Time: 2023-12-16 22:54:56.845264  put to: PM3-2B
+Machine: TM3  Time: 2023-12-16 22:54:56.845264  pick from: PM3-3B
+Machine: TM4  Time: 2023-12-16 22:54:56.845264  pick from: PM4-2A
+Machine: TM1  Time: 2023-12-16 22:54:56.846264  pick from: CM1-1-10
+Machine: TM2  Time: 2023-12-16 22:54:56.846264  pick from: BM2-1A
+Machine: TM3  Time: 2023-12-16 22:54:56.847264  put to: PM3-3A
+Machine: TM4  Time: 2023-12-16 22:54:56.847264  put to: PM4-5A
+Machine: TM6  Time: 2023-12-16 22:54:56.847264  pick from: PM4-8A
+Machine: TM1  Time: 2023-12-16 22:54:56.848264  put to: BM2-2A
+Machine: TM2  Time: 2023-12-16 22:54:56.848264  put to: PM2-4B
+Machine: TM4  Time: 2023-12-16 22:54:56.848264  pick from: PM4-2B
+Machine: TM2  Time: 2023-12-16 22:54:56.849264  pick from: BM2-2A
+Machine: TM6  Time: 2023-12-16 22:54:56.849264  put to: PM6-4A
+Machine: TM4  Time: 2023-12-16 22:54:56.850264  put to: PM4-7A
+Machine: TM6  Time: 2023-12-16 22:54:56.850264  pick from: PM4-8B
+Machine: TM2  Time: 2023-12-16 22:54:56.851264  put to: PM2-5B
+Machine: TM3  Time: 2023-12-16 22:54:56.851264  pick from: PM3-2B
+Machine: TM6  Time: 2023-12-16 22:54:56.852264  put to: PM6-5A
+Machine: TM2  Time: 2023-12-16 22:54:56.853264  pick from: PM3-3A
+Machine: TM3  Time: 2023-12-16 22:54:56.853264  put to: PM3-4B
+Machine: TM4  Time: 2023-12-16 22:54:56.853264  pick from: PM4-5A
+Machine: TM2  Time: 2023-12-16 22:54:56.855264  put to: PM4-2A
+Machine: TM4  Time: 2023-12-16 22:54:56.855264  put to: PM4-8A
+Machine: TM6  Time: 2023-12-16 22:54:56.855264  pick from: PM6-4A
+Machine: TM2  Time: 2023-12-16 22:54:56.856264  pick from: PM2-4B
+Machine: TM4  Time: 2023-12-16 22:54:56.856264  pick from: PM4-7A
+Machine: TM6  Time: 2023-12-16 22:54:56.857264  put to: BM6-1A
+Machine: TM2  Time: 2023-12-16 22:54:56.858264  put to: PM3-2A
+Machine: TM4  Time: 2023-12-16 22:54:56.858264  put to: PM4-8B
+Machine: TM6  Time: 2023-12-16 22:54:56.858264  pick from: PM6-5A
+Machine: TM8  Time: 2023-12-16 22:54:56.858264  pick from: BM6-1A
+Machine: TM1  Time: 2023-12-16 22:54:56.859264  pick from: CM1-1-11
+Machine: TM2  Time: 2023-12-16 22:54:56.859264  pick from: PM2-5B
+Machine: TM3  Time: 2023-12-16 22:54:56.859264  pick from: PM3-4B
+Machine: TM6  Time: 2023-12-16 22:54:56.860264  put to: BM6-2A
+Machine: TM8  Time: 2023-12-16 22:54:56.860264  put to: PM8-3
+Machine: TM1  Time: 2023-12-16 22:54:56.861264  put to: BM2-1A
+Machine: TM2  Time: 2023-12-16 22:54:56.861264  put to: PM3-2B
+Machine: TM3  Time: 2023-12-16 22:54:56.861264  put to: PM3-3B
+Machine: TM4  Time: 2023-12-16 22:54:56.861264  pick from: PM4-2A
+Machine: TM6  Time: 2023-12-16 22:54:56.861264  pick from: PM4-8A
+Machine: TM8  Time: 2023-12-16 22:54:56.861264  pick from: BM6-2A
+Machine: TM2  Time: 2023-12-16 22:54:56.862264  pick from: BM2-1A
+Machine: TM4  Time: 2023-12-16 22:54:56.863264  put to: PM4-3B
+Machine: TM6  Time: 2023-12-16 22:54:56.863264  put to: PM6-6A
+Machine: TM8  Time: 2023-12-16 22:54:56.863264  put to: PM8-4
+Machine: TM2  Time: 2023-12-16 22:54:56.864264  put to: PM2-6B
+Machine: TM3  Time: 2023-12-16 22:54:56.864264  pick from: PM3-2A
+Machine: TM6  Time: 2023-12-16 22:54:56.864264  pick from: PM4-8B
+Machine: TM3  Time: 2023-12-16 22:54:56.866264  put to: PM3-5B
+Machine: TM6  Time: 2023-12-16 22:54:56.866264  put to: PM6-7A
+Machine: TM8  Time: 2023-12-16 22:54:56.866264  pick from: PM8-3
+Machine: TM2  Time: 2023-12-16 22:54:56.867264  pick from: PM3-3B
+Machine: TM3  Time: 2023-12-16 22:54:56.867264  pick from: PM3-2B
+Machine: TM8  Time: 2023-12-16 22:54:56.868264  put to: ExposerIn8-6
+Machine: TM2  Time: 2023-12-16 22:54:56.869264  put to: PM4-2B
+Machine: TM3  Time: 2023-12-16 22:54:56.869264  put to: PM3-7B
+Machine: TM4  Time: 2023-12-16 22:54:56.869264  pick from: PM4-3B
+Machine: TM6  Time: 2023-12-16 22:54:56.869264  pick from: PM6-6A
+Machine: TM8  Time: 2023-12-16 22:54:56.869264  pick from: PM8-4
+Machine: TM2  Time: 2023-12-16 22:54:56.870264  pick from: PM2-6B
+Machine: TM4  Time: 2023-12-16 22:54:56.871264  put to: PM4-8A
+Machine: TM6  Time: 2023-12-16 22:54:56.871264  put to: BM6-1A
+Machine: TM8  Time: 2023-12-16 22:54:56.871264  put to: ExposerOut8-7
+Machine: TM2  Time: 2023-12-16 22:54:56.872264  put to: PM3-2A
+Machine: TM3  Time: 2023-12-16 22:54:56.872264  pick from: PM3-5B
+Machine: TM6  Time: 2023-12-16 22:54:56.872264  pick from: PM6-7A
+Machine: TM2  Time: 2023-12-16 22:54:56.873264  pick from: BM2-2A
+Machine: TM3  Time: 2023-12-16 22:54:56.874264  put to: PM3-3A
+Machine: TM6  Time: 2023-12-16 22:54:56.874264  put to: BM6-2A
+Machine: TM8  Time: 2023-12-16 22:54:56.874264  pick from: ExposerIn8-6
+Machine: TM2  Time: 2023-12-16 22:54:56.875264  put to: PM2-7B
+Machine: TM3  Time: 2023-12-16 22:54:56.875264  pick from: PM3-7B
+Machine: TM4  Time: 2023-12-16 22:54:56.875264  pick from: PM4-2B
+Machine: TM2  Time: 2023-12-16 22:54:56.876264  pick from: BM2-1A
+Machine: TM8  Time: 2023-12-16 22:54:56.876264  put to: BM6-1B
+Machine: TM3  Time: 2023-12-16 22:54:56.877264  put to: PM3-3B
+Machine: TM4  Time: 2023-12-16 22:54:56.877264  put to: PM4-4B
+Machine: TM6  Time: 2023-12-16 22:54:56.877264  pick from: BM6-1B
+Machine: TM8  Time: 2023-12-16 22:54:56.877264  pick from: ExposerOut8-7
+Machine: TM2  Time: 2023-12-16 22:54:56.878264  put to: PM2-3A
+Machine: TM3  Time: 2023-12-16 22:54:56.878264  pick from: PM3-2A
+Machine: TM6  Time: 2023-12-16 22:54:56.879264  put to: PM6-8A
+Machine: TM8  Time: 2023-12-16 22:54:56.879264  put to: BM6-2B
+Machine: TM2  Time: 2023-12-16 22:54:56.880264  pick from: PM3-3A
+Machine: TM3  Time: 2023-12-16 22:54:56.880264  put to: PM3-1A
+Machine: TM6  Time: 2023-12-16 22:54:56.880264  pick from: BM6-2B
+Machine: TM8  Time: 2023-12-16 22:54:56.880264  pick from: BM6-1A
+Machine: TM2  Time: 2023-12-16 22:54:56.882264  put to: PM4-2A
+Machine: TM6  Time: 2023-12-16 22:54:56.882264  put to: PM6-9A
+Machine: TM8  Time: 2023-12-16 22:54:56.882264  put to: PM8-5
+Machine: TM2  Time: 2023-12-16 22:54:56.883264  pick from: PM3-3B
+Machine: TM4  Time: 2023-12-16 22:54:56.883264  pick from: PM4-4B
+Machine: TM8  Time: 2023-12-16 22:54:56.883264  pick from: BM6-2A
+Machine: TM2  Time: 2023-12-16 22:54:56.885264  put to: PM4-2B
+Machine: TM4  Time: 2023-12-16 22:54:56.885264  put to: PM4-8B
+Machine: TM6  Time: 2023-12-16 22:54:56.885264  pick from: PM6-8A
+Machine: TM8  Time: 2023-12-16 22:54:56.885264  put to: PM8-3
+Machine: TM2  Time: 2023-12-16 22:54:56.886264  pick from: PM2-7B
+Machine: TM3  Time: 2023-12-16 22:54:56.886264  pick from: PM3-1A
+Machine: TM6  Time: 2023-12-16 22:54:56.887264  put to: BM6-11A
+Machine: TM2  Time: 2023-12-16 22:54:56.888264  put to: PM3-2B
+Machine: TM3  Time: 2023-12-16 22:54:56.888264  put to: PM3-3A
+Machine: TM4  Time: 2023-12-16 22:54:56.888264  pick from: PM4-2A
+Machine: TM6  Time: 2023-12-16 22:54:56.888264  pick from: PM6-9A
+Machine: TM8  Time: 2023-12-16 22:54:56.888264  pick from: PM8-5
+Machine: TM7  Time: 2023-12-16 22:54:56.888264  pick from: BM6-11A
+Machine: TM4  Time: 2023-12-16 22:54:56.890264  put to: PM4-5B
+Machine: TM6  Time: 2023-12-16 22:54:56.890264  put to: BM6-12A
+Machine: TM8  Time: 2023-12-16 22:54:56.890264  put to: ExposerIn8-6
+Machine: TM7  Time: 2023-12-16 22:54:56.890264  put to: PM7-1A
+Machine: TM2  Time: 2023-12-16 22:54:56.891264  pick from: PM2-3A
+Machine: TM4  Time: 2023-12-16 22:54:56.891264  pick from: PM4-2B
+Machine: TM6  Time: 2023-12-16 22:54:56.891264  pick from: PM4-8A
+Machine: TM8  Time: 2023-12-16 22:54:56.891264  pick from: PM8-3
+Machine: TM7  Time: 2023-12-16 22:54:56.891264  pick from: BM6-12A
+Machine: TM2  Time: 2023-12-16 22:54:56.893264  put to: PM3-3A
+Machine: TM4  Time: 2023-12-16 22:54:56.893264  put to: PM4-7B
+Machine: TM6  Time: 2023-12-16 22:54:56.893264  put to: PM6-4B
+Machine: TM8  Time: 2023-12-16 22:54:56.893264  put to: ExposerOut8-7
+Machine: TM7  Time: 2023-12-16 22:54:56.893264  put to: PM7-2A
+Machine: TM2  Time: 2023-12-16 22:54:56.894264  pick from: PM3-3A
+Machine: TM3  Time: 2023-12-16 22:54:56.894264  pick from: PM3-2B
+Machine: TM6  Time: 2023-12-16 22:54:56.894264  pick from: PM4-8B
+Machine: TM2  Time: 2023-12-16 22:54:56.896264  put to: PM4-2A
+Machine: TM3  Time: 2023-12-16 22:54:56.896264  put to: PM3-4A
+Machine: TM4  Time: 2023-12-16 22:54:56.896264  pick from: PM4-5B
+Machine: TM6  Time: 2023-12-16 22:54:56.896264  put to: PM6-5B
+Machine: TM8  Time: 2023-12-16 22:54:56.896264  pick from: ExposerIn8-6
+Machine: TM7  Time: 2023-12-16 22:54:56.896264  pick from: PM7-1A
+Machine: TM2  Time: 2023-12-16 22:54:56.897264  pick from: BM2-1B
+Machine: TM4  Time: 2023-12-16 22:54:56.898264  put to: PM4-8A
+Machine: TM8  Time: 2023-12-16 22:54:56.898264  put to: BM6-1B
+Machine: TM7  Time: 2023-12-16 22:54:56.898264  put to: BM6-11B
+Machine: TM2  Time: 2023-12-16 22:54:56.899264  put to: PM2-4A
+Machine: TM3  Time: 2023-12-16 22:54:56.899264  pick from: PM3-3A
+Machine: TM4  Time: 2023-12-16 22:54:56.899264  pick from: PM4-7B
+Machine: TM6  Time: 2023-12-16 22:54:56.899264  pick from: BM6-11B
+Machine: TM8  Time: 2023-12-16 22:54:56.899264  pick from: ExposerOut8-7
+Machine: TM7  Time: 2023-12-16 22:54:56.899264  pick from: PM7-2A
+Machine: TM3  Time: 2023-12-16 22:54:56.901264  put to: PM3-5A
+Machine: TM4  Time: 2023-12-16 22:54:56.901264  put to: PM4-8B
+Machine: TM6  Time: 2023-12-16 22:54:56.901264  put to: PM5-9A
+Machine: TM8  Time: 2023-12-16 22:54:56.901264  put to: BM6-2B
+Machine: TM7  Time: 2023-12-16 22:54:56.901264  put to: BM6-12B
+Machine: TM3  Time: 2023-12-16 22:54:56.902264  pick from: PM3-4A
+Machine: TM4  Time: 2023-12-16 22:54:56.902264  pick from: PM4-2A
+Machine: TM6  Time: 2023-12-16 22:54:56.902264  pick from: BM6-12B
+Machine: TM3  Time: 2023-12-16 22:54:56.904264  put to: PM3-3B
+Machine: TM4  Time: 2023-12-16 22:54:56.904264  put to: PM4-1A
+Machine: TM6  Time: 2023-12-16 22:54:56.904264  put to: PM5-9B
+Machine: TM6  Time: 2023-12-16 22:54:56.905264  pick from: BM6-1B
+Machine: TM2  Time: 2023-12-16 22:54:56.907264  pick from: PM2-4A
+Machine: TM3  Time: 2023-12-16 22:54:56.907264  pick from: PM3-5A
+Machine: TM6  Time: 2023-12-16 22:54:56.907264  put to: PM6-10A
+Machine: TM5  Time: 2023-12-16 22:54:56.907264  pick from: PM5-9A
+Machine: TM6  Time: 2023-12-16 22:54:56.908264  pick from: BM6-2B
+Machine: TM2  Time: 2023-12-16 22:54:56.909264  put to: PM3-3B
+Machine: TM3  Time: 2023-12-16 22:54:56.909264  put to: PM3-2A
+Machine: TM5  Time: 2023-12-16 22:54:56.909264  put to: PM5-1A
+Machine: TM2  Time: 2023-12-16 22:54:56.910264  pick from: PM3-3B
+Machine: TM6  Time: 2023-12-16 22:54:56.910264  put to: PM6-8B
+Machine: TM5  Time: 2023-12-16 22:54:56.910264  pick from: PM5-9B
+Machine: TM2  Time: 2023-12-16 22:54:56.912264  put to: PM4-2B
+Machine: TM5  Time: 2023-12-16 22:54:56.912264  put to: PM5-4A
+Machine: TM6  Time: 2023-12-16 22:54:56.913264  pick from: PM6-10A
+Machine: TM2  Time: 2023-12-16 22:54:56.915264  pick from: PM3-2A
+Machine: TM3  Time: 2023-12-16 22:54:56.915264  pick from: PM3-3B
+Machine: TM6  Time: 2023-12-16 22:54:56.915264  put to: BM6-11A
+Machine: TM5  Time: 2023-12-16 22:54:56.915264  pick from: PM5-1A
+Machine: TM6  Time: 2023-12-16 22:54:56.916264  pick from: PM6-8B
+Machine: TM7  Time: 2023-12-16 22:54:56.916264  pick from: BM6-11A
+Machine: TM2  Time: 2023-12-16 22:54:56.917264  put to: PM4-2A
+Machine: TM3  Time: 2023-12-16 22:54:56.917264  put to: PM3-7A
+Machine: TM5  Time: 2023-12-16 22:54:56.917264  put to: PM5-3A
+Machine: TM4  Time: 2023-12-16 22:54:56.918264  pick from: PM4-2B
+Machine: TM6  Time: 2023-12-16 22:54:56.918264  put to: BM6-12A
+Machine: TM7  Time: 2023-12-16 22:54:56.918264  put to: PM7-3A
+Machine: TM5  Time: 2023-12-16 22:54:56.918264  pick from: PM5-4A
+Machine: TM6  Time: 2023-12-16 22:54:56.919264  pick from: PM6-4B
+Machine: TM7  Time: 2023-12-16 22:54:56.919264  pick from: BM6-12A
+Machine: TM4  Time: 2023-12-16 22:54:56.920264  put to: PM4-4A
+Machine: TM5  Time: 2023-12-16 22:54:56.920264  put to: PM5-3B
+Machine: TM6  Time: 2023-12-16 22:54:56.921264  put to: BM6-1A
+Machine: TM7  Time: 2023-12-16 22:54:56.921264  put to: PM7-4A
+Machine: TM6  Time: 2023-12-16 22:54:56.922264  pick from: PM6-5B
+Machine: TM8  Time: 2023-12-16 22:54:56.922264  pick from: BM6-1A
+Machine: TM2  Time: 2023-12-16 22:54:56.923264  pick from: PM5-3A
+Machine: TM3  Time: 2023-12-16 22:54:56.923264  pick from: PM3-7A
+Machine: TM4  Time: 2023-12-16 22:54:56.923264  pick from: PM4-2A
+Machine: TM6  Time: 2023-12-16 22:54:56.924264  put to: BM6-2A
+Machine: TM8  Time: 2023-12-16 22:54:56.924264  put to: PM8-4
+Machine: TM7  Time: 2023-12-16 22:54:56.924264  pick from: PM7-3A
+Machine: TM2  Time: 2023-12-16 22:54:56.925264  put to: BM2-1B
+Machine: TM3  Time: 2023-12-16 22:54:56.925264  put to: PM3-2B
+Machine: TM4  Time: 2023-12-16 22:54:56.925264  put to: PM4-5A
+Machine: TM8  Time: 2023-12-16 22:54:56.925264  pick from: BM6-2A
+Machine: TM1  Time: 2023-12-16 22:54:56.926264  pick from: BM2-1B
+Machine: TM2  Time: 2023-12-16 22:54:56.926264  pick from: PM5-3B
+Machine: TM7  Time: 2023-12-16 22:54:56.926264  put to: BM6-11B
+Machine: TM6  Time: 2023-12-16 22:54:56.927264  pick from: BM6-11B
+Machine: TM8  Time: 2023-12-16 22:54:56.927264  put to: PM8-5
+Machine: TM7  Time: 2023-12-16 22:54:56.927264  pick from: PM7-4A
+Machine: TM1  Time: 2023-12-16 22:54:56.928264  put to: CM1-1-2
+Machine: TM2  Time: 2023-12-16 22:54:56.928264  put to: BM2-2B
+Machine: TM1  Time: 2023-12-16 22:54:56.929264  pick from: BM2-2B
+Machine: TM6  Time: 2023-12-16 22:54:56.929264  put to: PM5-9A
+Machine: TM7  Time: 2023-12-16 22:54:56.929264  put to: BM6-12B
+Machine: TM4  Time: 2023-12-16 22:54:56.930264  pick from: PM4-1A
+Machine: TM6  Time: 2023-12-16 22:54:56.930264  pick from: BM6-12B
+Machine: TM8  Time: 2023-12-16 22:54:56.930264  pick from: PM8-4
+Machine: TM1  Time: 2023-12-16 22:54:56.931264  put to: CM1-1-3
+Machine: TM2  Time: 2023-12-16 22:54:56.931264  pick from: PM3-2B
+Machine: TM4  Time: 2023-12-16 22:54:56.932264  put to: PM4-8A
+Machine: TM6  Time: 2023-12-16 22:54:56.932264  put to: PM5-9B
+Machine: TM8  Time: 2023-12-16 22:54:56.932264  put to: ExposerIn8-6
+Machine: TM2  Time: 2023-12-16 22:54:56.933264  put to: PM4-2B
+Machine: TM4  Time: 2023-12-16 22:54:56.933264  pick from: PM4-4A
+Machine: TM6  Time: 2023-12-16 22:54:56.933264  pick from: PM4-8A
+Machine: TM8  Time: 2023-12-16 22:54:56.933264  pick from: PM8-5
+Machine: TM4  Time: 2023-12-16 22:54:56.935264  put to: PM4-8B
+Machine: TM6  Time: 2023-12-16 22:54:56.935264  put to: PM6-6B
+Machine: TM8  Time: 2023-12-16 22:54:56.935264  put to: ExposerOut8-7
+Machine: TM5  Time: 2023-12-16 22:54:56.935264  pick from: PM5-9A
+Machine: TM6  Time: 2023-12-16 22:54:56.936264  pick from: PM4-8B
+Machine: TM5  Time: 2023-12-16 22:54:56.937264  put to: PM5-5A
+Machine: TM6  Time: 2023-12-16 22:54:56.938264  put to: PM6-7B
+Machine: TM8  Time: 2023-12-16 22:54:56.938264  pick from: ExposerIn8-6
+Machine: TM5  Time: 2023-12-16 22:54:56.938264  pick from: PM5-9B
+Machine: TM4  Time: 2023-12-16 22:54:56.939264  pick from: PM4-2B
+Machine: TM8  Time: 2023-12-16 22:54:56.940264  put to: BM6-1B
+Machine: TM5  Time: 2023-12-16 22:54:56.940264  put to: PM5-7A
+Machine: TM4  Time: 2023-12-16 22:54:56.941264  put to: PM4-7A
+Machine: TM6  Time: 2023-12-16 22:54:56.941264  pick from: BM6-1B
+Machine: TM8  Time: 2023-12-16 22:54:56.941264  pick from: ExposerOut8-7
+Machine: TM6  Time: 2023-12-16 22:54:56.943264  put to: PM6-9B
+Machine: TM8  Time: 2023-12-16 22:54:56.943264  put to: BM6-2B
+Machine: TM5  Time: 2023-12-16 22:54:56.943264  pick from: PM5-5A
+Machine: TM6  Time: 2023-12-16 22:54:56.944264  pick from: BM6-2B
+Machine: TM5  Time: 2023-12-16 22:54:56.945264  put to: PM5-3A
+Machine: TM6  Time: 2023-12-16 22:54:56.946264  put to: PM6-10B
+Machine: TM5  Time: 2023-12-16 22:54:56.946264  pick from: PM5-7A
+Machine: TM5  Time: 2023-12-16 22:54:56.948264  put to: PM5-3B
+Machine: TM6  Time: 2023-12-16 22:54:56.949264  pick from: PM6-9B
+Machine: TM2  Time: 2023-12-16 22:54:56.951264  pick from: PM5-3A
+Machine: TM6  Time: 2023-12-16 22:54:56.951264  put to: BM6-11A
+Machine: TM6  Time: 2023-12-16 22:54:56.952264  pick from: PM6-10B
+Machine: TM7  Time: 2023-12-16 22:54:56.952264  pick from: BM6-11A
+Machine: TM2  Time: 2023-12-16 22:54:56.953264  put to: BM2-1B
+Machine: TM1  Time: 2023-12-16 22:54:56.954264  pick from: BM2-1B
+Machine: TM2  Time: 2023-12-16 22:54:56.954264  pick from: PM5-3B
+Machine: TM6  Time: 2023-12-16 22:54:56.954264  put to: BM6-12A
+Machine: TM7  Time: 2023-12-16 22:54:56.954264  put to: PM7-1B
+Machine: TM6  Time: 2023-12-16 22:54:56.955264  pick from: PM6-6B
+Machine: TM7  Time: 2023-12-16 22:54:56.955264  pick from: BM6-12A
+Machine: TM1  Time: 2023-12-16 22:54:56.956264  put to: CM1-1-4
+Machine: TM2  Time: 2023-12-16 22:54:56.956264  put to: BM2-2B
+Machine: TM1  Time: 2023-12-16 22:54:56.957264  pick from: BM2-2B
+Machine: TM6  Time: 2023-12-16 22:54:56.957264  put to: BM6-1A
+Machine: TM7  Time: 2023-12-16 22:54:56.957264  put to: PM7-2B
+Machine: TM6  Time: 2023-12-16 22:54:56.958264  pick from: PM6-7B
+Machine: TM8  Time: 2023-12-16 22:54:56.958264  pick from: BM6-1A
+Machine: TM1  Time: 2023-12-16 22:54:56.959264  put to: CM1-1-5
+Machine: TM6  Time: 2023-12-16 22:54:56.960264  put to: BM6-2A
+Machine: TM8  Time: 2023-12-16 22:54:56.960264  put to: PM8-3
+Machine: TM7  Time: 2023-12-16 22:54:56.960264  pick from: PM7-1B
+Machine: TM8  Time: 2023-12-16 22:54:56.961264  pick from: BM6-2A
+Machine: TM7  Time: 2023-12-16 22:54:56.962264  put to: BM6-11B
+Machine: TM6  Time: 2023-12-16 22:54:56.963264  pick from: BM6-11B
+Machine: TM8  Time: 2023-12-16 22:54:56.963264  put to: PM8-4
+Machine: TM7  Time: 2023-12-16 22:54:56.963264  pick from: PM7-2B
+Machine: TM6  Time: 2023-12-16 22:54:56.965264  put to: PM5-9A
+Machine: TM7  Time: 2023-12-16 22:54:56.965264  put to: BM6-12B
+Machine: TM4  Time: 2023-12-16 22:54:56.966264  pick from: PM4-5A
+Machine: TM6  Time: 2023-12-16 22:54:56.966264  pick from: BM6-12B
+Machine: TM8  Time: 2023-12-16 22:54:56.966264  pick from: PM8-3
+Machine: TM4  Time: 2023-12-16 22:54:56.968264  put to: PM4-8A
+Machine: TM6  Time: 2023-12-16 22:54:56.968264  put to: PM5-9B
+Machine: TM8  Time: 2023-12-16 22:54:56.968264  put to: ExposerIn8-6
+Machine: TM4  Time: 2023-12-16 22:54:56.969264  pick from: PM4-7A
+Machine: TM6  Time: 2023-12-16 22:54:56.969264  pick from: PM4-8A
+Machine: TM8  Time: 2023-12-16 22:54:56.969264  pick from: PM8-4
+Machine: TM4  Time: 2023-12-16 22:54:56.971264  put to: PM4-8B
+Machine: TM6  Time: 2023-12-16 22:54:56.971264  put to: PM6-4A
+Machine: TM8  Time: 2023-12-16 22:54:56.971264  put to: ExposerOut8-7
+Machine: TM5  Time: 2023-12-16 22:54:56.971264  pick from: PM5-9A
+Machine: TM6  Time: 2023-12-16 22:54:56.972264  pick from: PM4-8B
+Machine: TM5  Time: 2023-12-16 22:54:56.973264  put to: PM5-3B
+Machine: TM6  Time: 2023-12-16 22:54:56.974264  put to: PM6-5A
+Machine: TM8  Time: 2023-12-16 22:54:56.974264  pick from: ExposerIn8-6
+Machine: TM5  Time: 2023-12-16 22:54:56.974264  pick from: PM5-9B
+Machine: TM8  Time: 2023-12-16 22:54:56.976264  put to: BM6-1B
+Machine: TM5  Time: 2023-12-16 22:54:56.976264  put to: PM5-4B
+Machine: TM6  Time: 2023-12-16 22:54:56.977264  pick from: BM6-1B
+Machine: TM8  Time: 2023-12-16 22:54:56.977264  pick from: ExposerOut8-7
+Machine: TM6  Time: 2023-12-16 22:54:56.979264  put to: PM6-8A
+Machine: TM8  Time: 2023-12-16 22:54:56.979264  put to: BM6-2B
+Machine: TM5  Time: 2023-12-16 22:54:56.979264  pick from: PM5-3B
+Machine: TM6  Time: 2023-12-16 22:54:56.980264  pick from: BM6-2B
+Machine: TM5  Time: 2023-12-16 22:54:56.981264  put to: PM5-3A
+Machine: TM6  Time: 2023-12-16 22:54:56.982264  put to: PM6-9A
+Machine: TM5  Time: 2023-12-16 22:54:56.982264  pick from: PM5-4B
+Machine: TM5  Time: 2023-12-16 22:54:56.984264  put to: PM5-3B
+Machine: TM6  Time: 2023-12-16 22:54:56.985264  pick from: PM6-8A
+Machine: TM2  Time: 2023-12-16 22:54:56.987264  pick from: PM5-3A
+Machine: TM6  Time: 2023-12-16 22:54:56.987264  put to: BM6-11A
+Machine: TM6  Time: 2023-12-16 22:54:56.988264  pick from: PM6-9A
+Machine: TM7  Time: 2023-12-16 22:54:56.988264  pick from: BM6-11A
+Machine: TM2  Time: 2023-12-16 22:54:56.989264  put to: BM2-1B
+Machine: TM1  Time: 2023-12-16 22:54:56.990264  pick from: BM2-1B
+Machine: TM2  Time: 2023-12-16 22:54:56.990264  pick from: PM5-3B
+Machine: TM6  Time: 2023-12-16 22:54:56.990264  put to: BM6-12A
+Machine: TM7  Time: 2023-12-16 22:54:56.990264  put to: PM7-3B
+Machine: TM6  Time: 2023-12-16 22:54:56.991264  pick from: PM6-4A
+Machine: TM7  Time: 2023-12-16 22:54:56.991264  pick from: BM6-12A
+Machine: TM1  Time: 2023-12-16 22:54:56.992264  put to: CM1-1-6
+Machine: TM2  Time: 2023-12-16 22:54:56.992264  put to: BM2-2B
+Machine: TM1  Time: 2023-12-16 22:54:56.993264  pick from: BM2-2B
+Machine: TM6  Time: 2023-12-16 22:54:56.993264  put to: BM6-1A
+Machine: TM7  Time: 2023-12-16 22:54:56.993264  put to: PM7-4B
+Machine: TM6  Time: 2023-12-16 22:54:56.994264  pick from: PM6-5A
+Machine: TM8  Time: 2023-12-16 22:54:56.994264  pick from: BM6-1A
+Machine: TM1  Time: 2023-12-16 22:54:56.995264  put to: CM1-1-7
+Machine: TM6  Time: 2023-12-16 22:54:56.996264  put to: BM6-2A
+Machine: TM8  Time: 2023-12-16 22:54:56.996264  put to: PM8-5
+Machine: TM7  Time: 2023-12-16 22:54:56.996264  pick from: PM7-3B
+Machine: TM8  Time: 2023-12-16 22:54:56.997264  pick from: BM6-2A
+Machine: TM7  Time: 2023-12-16 22:54:56.998264  put to: BM6-11B
+Machine: TM6  Time: 2023-12-16 22:54:56.999264  pick from: BM6-11B
+Machine: TM8  Time: 2023-12-16 22:54:56.999264  put to: PM8-3
+Machine: TM7  Time: 2023-12-16 22:54:56.999264  pick from: PM7-4B
+Machine: TM6  Time: 2023-12-16 22:54:57.001264  put to: PM5-9A
+Machine: TM7  Time: 2023-12-16 22:54:57.001264  put to: BM6-12B
+Machine: TM6  Time: 2023-12-16 22:54:57.002264  pick from: BM6-12B
+Machine: TM8  Time: 2023-12-16 22:54:57.002264  pick from: PM8-5
+Machine: TM6  Time: 2023-12-16 22:54:57.004264  put to: PM5-9B
+Machine: TM8  Time: 2023-12-16 22:54:57.004264  put to: ExposerIn8-6
+Machine: TM6  Time: 2023-12-16 22:54:57.005264  pick from: PM4-8A
+Machine: TM8  Time: 2023-12-16 22:54:57.005264  pick from: PM8-3
+Machine: TM6  Time: 2023-12-16 22:54:57.007264  put to: PM6-6A
+Machine: TM8  Time: 2023-12-16 22:54:57.007264  put to: ExposerOut8-7
+Machine: TM5  Time: 2023-12-16 22:54:57.007264  pick from: PM5-9A
+Machine: TM6  Time: 2023-12-16 22:54:57.008264  pick from: PM4-8B
+Machine: TM5  Time: 2023-12-16 22:54:57.009264  put to: PM5-5B
+Machine: TM6  Time: 2023-12-16 22:54:57.010264  put to: PM6-7A
+Machine: TM8  Time: 2023-12-16 22:54:57.010264  pick from: ExposerIn8-6
+Machine: TM5  Time: 2023-12-16 22:54:57.010264  pick from: PM5-9B
+Machine: TM8  Time: 2023-12-16 22:54:57.012264  put to: BM6-1B
+Machine: TM5  Time: 2023-12-16 22:54:57.012264  put to: PM5-7B
+Machine: TM6  Time: 2023-12-16 22:54:57.013264  pick from: BM6-1B
+Machine: TM8  Time: 2023-12-16 22:54:57.013264  pick from: ExposerOut8-7
+Machine: TM6  Time: 2023-12-16 22:54:57.015264  put to: PM6-10A
+Machine: TM8  Time: 2023-12-16 22:54:57.015264  put to: BM6-2B
+Machine: TM5  Time: 2023-12-16 22:54:57.015264  pick from: PM5-5B
+Machine: TM6  Time: 2023-12-16 22:54:57.016264  pick from: BM6-2B
+Machine: TM5  Time: 2023-12-16 22:54:57.017264  put to: PM5-3A
+Machine: TM6  Time: 2023-12-16 22:54:57.018264  put to: PM6-8B
+Machine: TM5  Time: 2023-12-16 22:54:57.018264  pick from: PM5-7B
+Machine: TM5  Time: 2023-12-16 22:54:57.020264  put to: PM5-3B
+Machine: TM6  Time: 2023-12-16 22:54:57.021264  pick from: PM6-10A
+Machine: TM2  Time: 2023-12-16 22:54:57.023264  pick from: PM5-3A
+Machine: TM6  Time: 2023-12-16 22:54:57.023264  put to: BM6-11A
+Machine: TM6  Time: 2023-12-16 22:54:57.024264  pick from: PM6-8B
+Machine: TM7  Time: 2023-12-16 22:54:57.024264  pick from: BM6-11A
+Machine: TM2  Time: 2023-12-16 22:54:57.025264  put to: BM2-1B
+Machine: TM1  Time: 2023-12-16 22:54:57.026264  pick from: BM2-1B
+Machine: TM2  Time: 2023-12-16 22:54:57.026264  pick from: PM5-3B
+Machine: TM6  Time: 2023-12-16 22:54:57.026264  put to: BM6-12A
+Machine: TM7  Time: 2023-12-16 22:54:57.026264  put to: PM7-1A
+Machine: TM6  Time: 2023-12-16 22:54:57.027264  pick from: PM6-6A
+Machine: TM7  Time: 2023-12-16 22:54:57.027264  pick from: BM6-12A
+Machine: TM1  Time: 2023-12-16 22:54:57.028264  put to: CM1-1-8
+Machine: TM2  Time: 2023-12-16 22:54:57.028264  put to: BM2-2B
+Machine: TM1  Time: 2023-12-16 22:54:57.029264  pick from: BM2-2B
+Machine: TM6  Time: 2023-12-16 22:54:57.029264  put to: BM6-11A
+Machine: TM7  Time: 2023-12-16 22:54:57.029264  put to: PM7-2A
+Machine: TM1  Time: 2023-12-16 22:54:57.031264  put to: CM1-1-9
+Machine: TM7  Time: 2023-12-16 22:54:57.032264  pick from: PM7-1A
+Machine: TM7  Time: 2023-12-16 22:54:57.034264  put to: BM6-11B
+Machine: TM6  Time: 2023-12-16 22:54:57.035264  pick from: BM6-11B
+Machine: TM7  Time: 2023-12-16 22:54:57.035264  pick from: PM7-2A
+Machine: TM6  Time: 2023-12-16 22:54:57.037264  put to: PM5-9A
+Machine: TM7  Time: 2023-12-16 22:54:57.037264  put to: BM6-12B
+Machine: TM6  Time: 2023-12-16 22:54:57.038264  pick from: BM6-12B
+Machine: TM7  Time: 2023-12-16 22:54:57.038264  pick from: BM6-11A
+Machine: TM6  Time: 2023-12-16 22:54:57.040264  put to: PM5-9B
+Machine: TM7  Time: 2023-12-16 22:54:57.040264  put to: PM7-3A
+Machine: TM6  Time: 2023-12-16 22:54:57.041264  pick from: PM6-7A
+Machine: TM6  Time: 2023-12-16 22:54:57.043264  put to: BM6-11B
+Machine: TM5  Time: 2023-12-16 22:54:57.043264  pick from: PM5-9A
+Machine: TM5  Time: 2023-12-16 22:54:57.045264  put to: PM5-1A
+Machine: TM7  Time: 2023-12-16 22:54:57.046264  pick from: PM7-3A
+Machine: TM5  Time: 2023-12-16 22:54:57.046264  pick from: PM5-9B
+Machine: TM7  Time: 2023-12-16 22:54:57.048264  put to: BM6-12A
+Machine: TM5  Time: 2023-12-16 22:54:57.048264  put to: PM5-4A
+Machine: TM6  Time: 2023-12-16 22:54:57.049264  pick from: BM6-12A
+Machine: TM7  Time: 2023-12-16 22:54:57.049264  pick from: BM6-11B
+Machine: TM6  Time: 2023-12-16 22:54:57.051264  put to: PM5-9A
+Machine: TM7  Time: 2023-12-16 22:54:57.051264  put to: PM7-4A
+Machine: TM5  Time: 2023-12-16 22:54:57.051264  pick from: PM5-1A
+Machine: TM5  Time: 2023-12-16 22:54:57.053264  put to: PM5-3A
+Machine: TM5  Time: 2023-12-16 22:54:57.054264  pick from: PM5-4A
+Machine: TM5  Time: 2023-12-16 22:54:57.056264  put to: PM5-3B
+Machine: TM7  Time: 2023-12-16 22:54:57.057264  pick from: PM7-4A
+Machine: TM5  Time: 2023-12-16 22:54:57.057264  pick from: PM5-9A
+Machine: TM2  Time: 2023-12-16 22:54:57.059264  pick from: PM5-3A
+Machine: TM7  Time: 2023-12-16 22:54:57.059264  put to: BM6-12B
+Machine: TM5  Time: 2023-12-16 22:54:57.059264  put to: PM5-5A
+Machine: TM6  Time: 2023-12-16 22:54:57.060264  pick from: BM6-12B
+Machine: TM2  Time: 2023-12-16 22:54:57.061264  put to: BM2-1B
+Machine: TM1  Time: 2023-12-16 22:54:57.062264  pick from: BM2-1B
+Machine: TM2  Time: 2023-12-16 22:54:57.062264  pick from: PM5-3B
+Machine: TM6  Time: 2023-12-16 22:54:57.062264  put to: PM5-9B
+Machine: TM1  Time: 2023-12-16 22:54:57.064264  put to: CM1-1-10
+Machine: TM2  Time: 2023-12-16 22:54:57.064264  put to: BM2-2B
+Machine: TM1  Time: 2023-12-16 22:54:57.065264  pick from: BM2-2B
+Machine: TM5  Time: 2023-12-16 22:54:57.065264  pick from: PM5-5A
+Machine: TM1  Time: 2023-12-16 22:54:57.067264  put to: CM1-1-11
+Machine: TM5  Time: 2023-12-16 22:54:57.067264  put to: PM5-3A
+Machine: TM5  Time: 2023-12-16 22:54:57.068264  pick from: PM5-9B
+Machine: TM5  Time: 2023-12-16 22:54:57.070264  put to: PM5-7A
+Machine: TM2  Time: 2023-12-16 22:54:57.073264  pick from: PM5-3A
+Machine: TM2  Time: 2023-12-16 22:54:57.075264  put to: BM2-2A
+Machine: TM1  Time: 2023-12-16 22:54:57.076264  pick from: BM2-2A
+Machine: TM5  Time: 2023-12-16 22:54:57.076264  pick from: PM5-7A
+Machine: TM1  Time: 2023-12-16 22:54:57.078264  put to: CM1-1-12
+Machine: TM5  Time: 2023-12-16 22:54:57.078264  put to: PM5-3B
+Machine: TM2  Time: 2023-12-16 22:54:57.084264  pick from: PM5-3B
+Machine: TM2  Time: 2023-12-16 22:54:57.086264  put to: BM2-2B
+Machine: TM1  Time: 2023-12-16 22:54:57.087264  pick from: BM2-2B
+Machine: TM1  Time: 2023-12-16 22:54:57.089264  put to: CM1-1-1
+Time: 2023-12-16 22:54:56.788264   CM1-1-1 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.788264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:56.788264   CM1-1-1 : POST_SEND
+Time: 2023-12-16 22:54:56.790264   BM2-1A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.790264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.790264   BM2-1A : POST_RECV
+Time: 2023-12-16 22:54:56.791264   CM1-1-2 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.791264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:56.791264   CM1-1-2 : POST_SEND
+Time: 2023-12-16 22:54:56.791264   BM2-1A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.791264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.791264   BM2-1A : POST_SEND
+Time: 2023-12-16 22:54:56.793264   BM2-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.793264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.793264   BM2-2A : POST_RECV
+Time: 2023-12-16 22:54:56.793264   PM2-3A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.793264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.793264   PM2-3A : POST_RECV
+Time: 2023-12-16 22:54:56.794264   CM1-1-3 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.794264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:56.794264   CM1-1-3 : POST_SEND
+Time: 2023-12-16 22:54:56.794264   BM2-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.794264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.794264   BM2-2A : POST_SEND
+Time: 2023-12-16 22:54:56.796264   BM2-1A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.796264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.796264   BM2-1A : POST_RECV
+Time: 2023-12-16 22:54:56.796264   PM2-4A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.796264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.796264   PM2-4A : POST_RECV
+Time: 2023-12-16 22:54:56.797264   CM1-1-4 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.797264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:56.797264   CM1-1-4 : POST_SEND
+Time: 2023-12-16 22:54:56.799264   BM2-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.799264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.799264   BM2-2A : POST_RECV
+Time: 2023-12-16 22:54:56.799264   PM2-3A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.799264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.799264   PM2-3A : POST_SEND
+Time: 2023-12-16 22:54:56.801264   PM3-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.801264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.801264   PM3-2A : POST_RECV
+Time: 2023-12-16 22:54:56.802264   CM1-1-5 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.802264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:56.802264   CM1-1-5 : POST_SEND
+Time: 2023-12-16 22:54:56.802264   PM2-4A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.802264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.802264   PM2-4A : POST_SEND
+Time: 2023-12-16 22:54:56.804264   BM2-1A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.804264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.804264   BM2-1A : POST_RECV
+Time: 2023-12-16 22:54:56.804264   PM3-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.804264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.804264   PM3-2B : POST_RECV
+Time: 2023-12-16 22:54:56.805264   CM1-1-6 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.805264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:56.805264   CM1-1-6 : POST_SEND
+Time: 2023-12-16 22:54:56.805264   BM2-1A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.805264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.805264   BM2-1A : POST_SEND
+Time: 2023-12-16 22:54:56.807264   BM2-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.807264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.807264   BM2-2A : POST_RECV
+Time: 2023-12-16 22:54:56.807264   PM2-5A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.807264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.807264   PM2-5A : POST_RECV
+Time: 2023-12-16 22:54:56.807264   PM3-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.807264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.807264   PM3-2A : POST_SEND
+Time: 2023-12-16 22:54:56.808264   CM1-1-12 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.808264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:56.808264   CM1-1-12 : POST_SEND
+Time: 2023-12-16 22:54:56.808264   BM2-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.808264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.808264   BM2-2A : POST_SEND
+Time: 2023-12-16 22:54:56.809264   PM3-1A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.809264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.809264   PM3-1A : POST_RECV
+Time: 2023-12-16 22:54:56.810264   BM2-1B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.810264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.810264   BM2-1B : POST_RECV
+Time: 2023-12-16 22:54:56.810264   PM2-6A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.810264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.810264   PM2-6A : POST_RECV
+Time: 2023-12-16 22:54:56.810264   PM3-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.810264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.810264   PM3-2B : POST_SEND
+Time: 2023-12-16 22:54:56.812264   PM3-4A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.812264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.812264   PM3-4A : POST_RECV
+Time: 2023-12-16 22:54:56.813264   PM2-5A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.813264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.813264   PM2-5A : POST_SEND
+Time: 2023-12-16 22:54:56.815264   PM3-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.815264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.815264   PM3-2A : POST_RECV
+Time: 2023-12-16 22:54:56.815264   PM3-1A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.815264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.815264   PM3-1A : POST_SEND
+Time: 2023-12-16 22:54:56.816264   CM1-1-7 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.816264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:56.816264   CM1-1-7 : POST_SEND
+Time: 2023-12-16 22:54:56.816264   PM2-6A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.816264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.816264   PM2-6A : POST_SEND
+Time: 2023-12-16 22:54:56.817264   PM3-3A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.817264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.817264   PM3-3A : POST_RECV
+Time: 2023-12-16 22:54:56.818264   BM2-1A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.818264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.818264   BM2-1A : POST_RECV
+Time: 2023-12-16 22:54:56.818264   PM3-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.818264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.818264   PM3-2B : POST_RECV
+Time: 2023-12-16 22:54:56.818264   PM3-4A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.818264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.818264   PM3-4A : POST_SEND
+Time: 2023-12-16 22:54:56.819264   BM2-1A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.819264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.819264   BM2-1A : POST_SEND
+Time: 2023-12-16 22:54:56.820264   PM3-3B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.820264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.820264   PM3-3B : POST_RECV
+Time: 2023-12-16 22:54:56.821264   PM2-7A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.821264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.821264   PM2-7A : POST_RECV
+Time: 2023-12-16 22:54:56.821264   PM3-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.821264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.821264   PM3-2A : POST_SEND
+Time: 2023-12-16 22:54:56.823264   PM3-3A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.823264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.823264   PM3-3A : POST_SEND
+Time: 2023-12-16 22:54:56.823264   PM3-5A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.823264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.823264   PM3-5A : POST_RECV
+Time: 2023-12-16 22:54:56.824264   PM3-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.824264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.824264   PM3-2B : POST_SEND
+Time: 2023-12-16 22:54:56.825264   PM4-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.825264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.825264   PM4-2A : POST_RECV
+Time: 2023-12-16 22:54:56.826264   PM3-3B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.826264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.826264   PM3-3B : POST_SEND
+Time: 2023-12-16 22:54:56.826264   PM3-7A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.826264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.826264   PM3-7A : POST_RECV
+Time: 2023-12-16 22:54:56.828264   PM4-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.828264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.828264   PM4-2B : POST_RECV
+Time: 2023-12-16 22:54:56.829264   CM1-1-8 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.829264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:56.829264   CM1-1-8 : POST_SEND
+Time: 2023-12-16 22:54:56.829264   PM2-7A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.829264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.829264   PM2-7A : POST_SEND
+Time: 2023-12-16 22:54:56.829264   PM3-5A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.829264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.829264   PM3-5A : POST_SEND
+Time: 2023-12-16 22:54:56.831264   BM2-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.831264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.831264   BM2-2A : POST_RECV
+Time: 2023-12-16 22:54:56.831264   PM3-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.831264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.831264   PM3-2A : POST_RECV
+Time: 2023-12-16 22:54:56.831264   PM3-3A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.831264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.831264   PM3-3A : POST_RECV
+Time: 2023-12-16 22:54:56.831264   PM4-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.831264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.831264   PM4-2A : POST_SEND
+Time: 2023-12-16 22:54:56.832264   BM2-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.832264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.832264   BM2-2A : POST_SEND
+Time: 2023-12-16 22:54:56.832264   PM3-7A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.832264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.832264   PM3-7A : POST_SEND
+Time: 2023-12-16 22:54:56.833264   PM4-1A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.833264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.833264   PM4-1A : POST_RECV
+Time: 2023-12-16 22:54:56.834264   PM2-3B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.834264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.834264   PM2-3B : POST_RECV
+Time: 2023-12-16 22:54:56.834264   PM3-3B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.834264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.834264   PM3-3B : POST_RECV
+Time: 2023-12-16 22:54:56.834264   PM4-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.834264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.834264   PM4-2B : POST_SEND
+Time: 2023-12-16 22:54:56.836264   PM4-4A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.836264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.836264   PM4-4A : POST_RECV
+Time: 2023-12-16 22:54:56.837264   PM3-3A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.837264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.837264   PM3-3A : POST_SEND
+Time: 2023-12-16 22:54:56.837264   PM3-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.837264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.837264   PM3-2A : POST_SEND
+Time: 2023-12-16 22:54:56.839264   PM4-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.839264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.839264   PM4-2A : POST_RECV
+Time: 2023-12-16 22:54:56.839264   PM3-3B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.839264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.839264   PM3-3B : POST_RECV
+Time: 2023-12-16 22:54:56.839264   PM4-1A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.839264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.839264   PM4-1A : POST_SEND
+Time: 2023-12-16 22:54:56.840264   PM3-3B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.840264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.840264   PM3-3B : POST_SEND
+Time: 2023-12-16 22:54:56.841264   PM4-8A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.841264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.841264   PM4-8A : POST_RECV
+Time: 2023-12-16 22:54:56.842264   PM4-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.842264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.842264   PM4-2B : POST_RECV
+Time: 2023-12-16 22:54:56.842264   PM4-4A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.842264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.842264   PM4-4A : POST_SEND
+Time: 2023-12-16 22:54:56.843264   CM1-1-9 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.843264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:56.843264   CM1-1-9 : POST_SEND
+Time: 2023-12-16 22:54:56.843264   PM2-3B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.843264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.843264   PM2-3B : POST_SEND
+Time: 2023-12-16 22:54:56.844264   PM4-8B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.844264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.844264   PM4-8B : POST_RECV
+Time: 2023-12-16 22:54:56.845264   BM2-1A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.845264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.845264   BM2-1A : POST_RECV
+Time: 2023-12-16 22:54:56.845264   PM3-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.845264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.845264   PM3-2B : POST_RECV
+Time: 2023-12-16 22:54:56.845264   PM3-3B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.845264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.845264   PM3-3B : POST_SEND
+Time: 2023-12-16 22:54:56.845264   PM4-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.845264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.845264   PM4-2A : POST_SEND
+Time: 2023-12-16 22:54:56.846264   CM1-1-10 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.846264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:56.846264   CM1-1-10 : POST_SEND
+Time: 2023-12-16 22:54:56.846264   BM2-1A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.846264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.846264   BM2-1A : POST_SEND
+Time: 2023-12-16 22:54:56.847264   PM3-3A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.847264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.847264   PM3-3A : POST_RECV
+Time: 2023-12-16 22:54:56.847264   PM4-5A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.847264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.847264   PM4-5A : POST_RECV
+Time: 2023-12-16 22:54:56.847264   PM4-8A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.847264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.847264   PM4-8A : POST_SEND
+Time: 2023-12-16 22:54:56.848264   BM2-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.848264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.848264   BM2-2A : POST_RECV
+Time: 2023-12-16 22:54:56.848264   PM2-4B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.848264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.848264   PM2-4B : POST_RECV
+Time: 2023-12-16 22:54:56.848264   PM4-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.848264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.848264   PM4-2B : POST_SEND
+Time: 2023-12-16 22:54:56.849264   BM2-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.849264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.849264   BM2-2A : POST_SEND
+Time: 2023-12-16 22:54:56.849264   PM6-4A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.849264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.849264   PM6-4A : POST_RECV
+Time: 2023-12-16 22:54:56.850264   PM4-7A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.850264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.850264   PM4-7A : POST_RECV
+Time: 2023-12-16 22:54:56.850264   PM4-8B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.850264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.850264   PM4-8B : POST_SEND
+Time: 2023-12-16 22:54:56.851264   PM2-5B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.851264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.851264   PM2-5B : POST_RECV
+Time: 2023-12-16 22:54:56.851264   PM3-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.851264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.851264   PM3-2B : POST_SEND
+Time: 2023-12-16 22:54:56.852264   PM6-5A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.852264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.852264   PM6-5A : POST_RECV
+Time: 2023-12-16 22:54:56.853264   PM3-3A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.853264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.853264   PM3-3A : POST_SEND
+Time: 2023-12-16 22:54:56.853264   PM3-4B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.853264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.853264   PM3-4B : POST_RECV
+Time: 2023-12-16 22:54:56.853264   PM4-5A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.853264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.853264   PM4-5A : POST_SEND
+Time: 2023-12-16 22:54:56.855264   PM4-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.855264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.855264   PM4-2A : POST_RECV
+Time: 2023-12-16 22:54:56.855264   PM4-8A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.855264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.855264   PM4-8A : POST_RECV
+Time: 2023-12-16 22:54:56.855264   PM6-4A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.855264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.855264   PM6-4A : POST_SEND
+Time: 2023-12-16 22:54:56.856264   PM2-4B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.856264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.856264   PM2-4B : POST_SEND
+Time: 2023-12-16 22:54:56.856264   PM4-7A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.856264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.856264   PM4-7A : POST_SEND
+Time: 2023-12-16 22:54:56.857264   BM6-1A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.857264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.857264   BM6-1A : POST_RECV
+Time: 2023-12-16 22:54:56.858264   PM3-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.858264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.858264   PM3-2A : POST_RECV
+Time: 2023-12-16 22:54:56.858264   PM4-8B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.858264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.858264   PM4-8B : POST_RECV
+Time: 2023-12-16 22:54:56.858264   PM6-5A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.858264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.858264   PM6-5A : POST_SEND
+Time: 2023-12-16 22:54:56.858264   BM6-1A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.858264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.858264   BM6-1A : POST_SEND
+Time: 2023-12-16 22:54:56.859264   CM1-1-11 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.859264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:56.859264   CM1-1-11 : POST_SEND
+Time: 2023-12-16 22:54:56.859264   PM2-5B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.859264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.859264   PM2-5B : POST_SEND
+Time: 2023-12-16 22:54:56.859264   PM3-4B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.859264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.859264   PM3-4B : POST_SEND
+Time: 2023-12-16 22:54:56.860264   BM6-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.860264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.860264   BM6-2A : POST_RECV
+Time: 2023-12-16 22:54:56.860264   PM8-3 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.860264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.860264   PM8-3 : POST_RECV
+Time: 2023-12-16 22:54:56.861264   BM2-1A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.861264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.861264   BM2-1A : POST_RECV
+Time: 2023-12-16 22:54:56.861264   PM3-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.861264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.861264   PM3-2B : POST_RECV
+Time: 2023-12-16 22:54:56.861264   PM3-3B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.861264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.861264   PM3-3B : POST_RECV
+Time: 2023-12-16 22:54:56.861264   PM4-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.861264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.861264   PM4-2A : POST_SEND
+Time: 2023-12-16 22:54:56.861264   PM4-8A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.861264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.861264   PM4-8A : POST_SEND
+Time: 2023-12-16 22:54:56.861264   BM6-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.861264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.861264   BM6-2A : POST_SEND
+Time: 2023-12-16 22:54:56.862264   BM2-1A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.862264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.862264   BM2-1A : POST_SEND
+Time: 2023-12-16 22:54:56.863264   PM4-3B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.863264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.863264   PM4-3B : POST_RECV
+Time: 2023-12-16 22:54:56.863264   PM6-6A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.863264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.863264   PM6-6A : POST_RECV
+Time: 2023-12-16 22:54:56.863264   PM8-4 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.863264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.863264   PM8-4 : POST_RECV
+Time: 2023-12-16 22:54:56.864264   PM2-6B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.864264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.864264   PM2-6B : POST_RECV
+Time: 2023-12-16 22:54:56.864264   PM3-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.864264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.864264   PM3-2A : POST_SEND
+Time: 2023-12-16 22:54:56.864264   PM4-8B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.864264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.864264   PM4-8B : POST_SEND
+Time: 2023-12-16 22:54:56.866264   PM3-5B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.866264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.866264   PM3-5B : POST_RECV
+Time: 2023-12-16 22:54:56.866264   PM6-7A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.866264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.866264   PM6-7A : POST_RECV
+Time: 2023-12-16 22:54:56.866264   PM8-3 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.866264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.866264   PM8-3 : POST_SEND
+Time: 2023-12-16 22:54:56.867264   PM3-3B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.867264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.867264   PM3-3B : POST_SEND
+Time: 2023-12-16 22:54:56.867264   PM3-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.867264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.867264   PM3-2B : POST_SEND
+Time: 2023-12-16 22:54:56.868264   ExposerIn8-6 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.868264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.868264   ExposerIn8-6 : POST_RECV
+Time: 2023-12-16 22:54:56.869264   PM4-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.869264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.869264   PM4-2B : POST_RECV
+Time: 2023-12-16 22:54:56.869264   PM3-7B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.869264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.869264   PM3-7B : POST_RECV
+Time: 2023-12-16 22:54:56.869264   PM4-3B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.869264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.869264   PM4-3B : POST_SEND
+Time: 2023-12-16 22:54:56.869264   PM6-6A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.869264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.869264   PM6-6A : POST_SEND
+Time: 2023-12-16 22:54:56.869264   PM8-4 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.869264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.869264   PM8-4 : POST_SEND
+Time: 2023-12-16 22:54:56.870264   PM2-6B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.870264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.870264   PM2-6B : POST_SEND
+Time: 2023-12-16 22:54:56.871264   PM4-8A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.871264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.871264   PM4-8A : POST_RECV
+Time: 2023-12-16 22:54:56.871264   BM6-1A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.871264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.871264   BM6-1A : POST_RECV
+Time: 2023-12-16 22:54:56.871264   ExposerOut8-7 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.871264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.871264   ExposerOut8-7 : POST_RECV
+Time: 2023-12-16 22:54:56.872264   PM3-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.872264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.872264   PM3-2A : POST_RECV
+Time: 2023-12-16 22:54:56.872264   PM3-5B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.872264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.872264   PM3-5B : POST_SEND
+Time: 2023-12-16 22:54:56.872264   PM6-7A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.872264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.872264   PM6-7A : POST_SEND
+Time: 2023-12-16 22:54:56.873264   BM2-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.873264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.873264   BM2-2A : POST_SEND
+Time: 2023-12-16 22:54:56.874264   PM3-3A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.874264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.874264   PM3-3A : POST_RECV
+Time: 2023-12-16 22:54:56.874264   BM6-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.874264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.874264   BM6-2A : POST_RECV
+Time: 2023-12-16 22:54:56.874264   ExposerIn8-6 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.874264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.874264   ExposerIn8-6 : POST_SEND
+Time: 2023-12-16 22:54:56.875264   PM2-7B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.875264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.875264   PM2-7B : POST_RECV
+Time: 2023-12-16 22:54:56.875264   PM3-7B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.875264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.875264   PM3-7B : POST_SEND
+Time: 2023-12-16 22:54:56.875264   PM4-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.875264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.875264   PM4-2B : POST_SEND
+Time: 2023-12-16 22:54:56.876264   BM2-1A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.876264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.876264   BM2-1A : POST_SEND
+Time: 2023-12-16 22:54:56.876264   BM6-1B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.876264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.876264   BM6-1B : POST_RECV
+Time: 2023-12-16 22:54:56.877264   PM3-3B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.877264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.877264   PM3-3B : POST_RECV
+Time: 2023-12-16 22:54:56.877264   PM4-4B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.877264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.877264   PM4-4B : POST_RECV
+Time: 2023-12-16 22:54:56.877264   BM6-1B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.877264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.877264   BM6-1B : POST_SEND
+Time: 2023-12-16 22:54:56.877264   ExposerOut8-7 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.877264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.877264   ExposerOut8-7 : POST_SEND
+Time: 2023-12-16 22:54:56.878264   PM2-3A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.878264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.878264   PM2-3A : POST_RECV
+Time: 2023-12-16 22:54:56.878264   PM3-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.878264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.878264   PM3-2A : POST_SEND
+Time: 2023-12-16 22:54:56.879264   PM6-8A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.879264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.879264   PM6-8A : POST_RECV
+Time: 2023-12-16 22:54:56.879264   BM6-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.879264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.879264   BM6-2B : POST_RECV
+Time: 2023-12-16 22:54:56.880264   PM3-3A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.880264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.880264   PM3-3A : POST_SEND
+Time: 2023-12-16 22:54:56.880264   PM3-1A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.880264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.880264   PM3-1A : POST_RECV
+Time: 2023-12-16 22:54:56.880264   BM6-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.880264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.880264   BM6-2B : POST_SEND
+Time: 2023-12-16 22:54:56.880264   BM6-1A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.880264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.880264   BM6-1A : POST_SEND
+Time: 2023-12-16 22:54:56.882264   PM4-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.882264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.882264   PM4-2A : POST_RECV
+Time: 2023-12-16 22:54:56.882264   PM6-9A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.882264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.882264   PM6-9A : POST_RECV
+Time: 2023-12-16 22:54:56.882264   PM8-5 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.882264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.882264   PM8-5 : POST_RECV
+Time: 2023-12-16 22:54:56.883264   PM3-3B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.883264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.883264   PM3-3B : POST_SEND
+Time: 2023-12-16 22:54:56.883264   PM4-4B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.883264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.883264   PM4-4B : POST_SEND
+Time: 2023-12-16 22:54:56.883264   BM6-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.883264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.883264   BM6-2A : POST_SEND
+Time: 2023-12-16 22:54:56.885264   PM4-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.885264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.885264   PM4-2B : POST_RECV
+Time: 2023-12-16 22:54:56.885264   PM4-8B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.885264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.885264   PM4-8B : POST_RECV
+Time: 2023-12-16 22:54:56.885264   PM6-8A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.885264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.885264   PM6-8A : POST_SEND
+Time: 2023-12-16 22:54:56.885264   PM8-3 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.885264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.885264   PM8-3 : POST_RECV
+Time: 2023-12-16 22:54:56.886264   PM2-7B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.886264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.886264   PM2-7B : POST_SEND
+Time: 2023-12-16 22:54:56.886264   PM3-1A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.886264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.886264   PM3-1A : POST_SEND
+Time: 2023-12-16 22:54:56.887264   BM6-11A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.887264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.887264   BM6-11A : POST_RECV
+Time: 2023-12-16 22:54:56.888264   PM3-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.888264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.888264   PM3-2B : POST_RECV
+Time: 2023-12-16 22:54:56.888264   PM3-3A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.888264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.888264   PM3-3A : POST_RECV
+Time: 2023-12-16 22:54:56.888264   PM4-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.888264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.888264   PM4-2A : POST_SEND
+Time: 2023-12-16 22:54:56.888264   PM6-9A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.888264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.888264   PM6-9A : POST_SEND
+Time: 2023-12-16 22:54:56.888264   PM8-5 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.888264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.888264   PM8-5 : POST_SEND
+Time: 2023-12-16 22:54:56.888264   BM6-11A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.888264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:56.888264   BM6-11A : POST_SEND
+Time: 2023-12-16 22:54:56.890264   PM4-5B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.890264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.890264   PM4-5B : POST_RECV
+Time: 2023-12-16 22:54:56.890264   BM6-12A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.890264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.890264   BM6-12A : POST_RECV
+Time: 2023-12-16 22:54:56.890264   ExposerIn8-6 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.890264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.890264   ExposerIn8-6 : POST_RECV
+Time: 2023-12-16 22:54:56.890264   PM7-1A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.890264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.890264   PM7-1A : POST_RECV
+Time: 2023-12-16 22:54:56.891264   PM2-3A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.891264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.891264   PM2-3A : POST_SEND
+Time: 2023-12-16 22:54:56.891264   PM4-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.891264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.891264   PM4-2B : POST_SEND
+Time: 2023-12-16 22:54:56.891264   PM4-8A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.891264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.891264   PM4-8A : POST_SEND
+Time: 2023-12-16 22:54:56.891264   PM8-3 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.891264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.891264   PM8-3 : POST_SEND
+Time: 2023-12-16 22:54:56.891264   BM6-12A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.891264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:56.891264   BM6-12A : POST_SEND
+Time: 2023-12-16 22:54:56.893264   PM3-3A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.893264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.893264   PM3-3A : POST_RECV
+Time: 2023-12-16 22:54:56.893264   PM4-7B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.893264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.893264   PM4-7B : POST_RECV
+Time: 2023-12-16 22:54:56.893264   PM6-4B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.893264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.893264   PM6-4B : POST_RECV
+Time: 2023-12-16 22:54:56.893264   ExposerOut8-7 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.893264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.893264   ExposerOut8-7 : POST_RECV
+Time: 2023-12-16 22:54:56.893264   PM7-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.893264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.893264   PM7-2A : POST_RECV
+Time: 2023-12-16 22:54:56.894264   PM3-3A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.894264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.894264   PM3-3A : POST_SEND
+Time: 2023-12-16 22:54:56.894264   PM3-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.894264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.894264   PM3-2B : POST_SEND
+Time: 2023-12-16 22:54:56.894264   PM4-8B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.894264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.894264   PM4-8B : POST_SEND
+Time: 2023-12-16 22:54:56.896264   PM4-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.896264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.896264   PM4-2A : POST_RECV
+Time: 2023-12-16 22:54:56.896264   PM3-4A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.896264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.896264   PM3-4A : POST_RECV
+Time: 2023-12-16 22:54:56.896264   PM4-5B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.896264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.896264   PM4-5B : POST_SEND
+Time: 2023-12-16 22:54:56.896264   PM6-5B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.896264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.896264   PM6-5B : POST_RECV
+Time: 2023-12-16 22:54:56.896264   ExposerIn8-6 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.896264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.896264   ExposerIn8-6 : POST_SEND
+Time: 2023-12-16 22:54:56.896264   PM7-1A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.896264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:56.896264   PM7-1A : POST_SEND
+Time: 2023-12-16 22:54:56.897264   BM2-1B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.897264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.897264   BM2-1B : POST_SEND
+Time: 2023-12-16 22:54:56.898264   PM4-8A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.898264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.898264   PM4-8A : POST_RECV
+Time: 2023-12-16 22:54:56.898264   BM6-1B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.898264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.898264   BM6-1B : POST_RECV
+Time: 2023-12-16 22:54:56.898264   BM6-11B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.898264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.898264   BM6-11B : POST_RECV
+Time: 2023-12-16 22:54:56.899264   PM2-4A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.899264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.899264   PM2-4A : POST_RECV
+Time: 2023-12-16 22:54:56.899264   PM3-3A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.899264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.899264   PM3-3A : POST_SEND
+Time: 2023-12-16 22:54:56.899264   PM4-7B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.899264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.899264   PM4-7B : POST_SEND
+Time: 2023-12-16 22:54:56.899264   BM6-11B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.899264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.899264   BM6-11B : POST_SEND
+Time: 2023-12-16 22:54:56.899264   ExposerOut8-7 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.899264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.899264   ExposerOut8-7 : POST_SEND
+Time: 2023-12-16 22:54:56.899264   PM7-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.899264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:56.899264   PM7-2A : POST_SEND
+Time: 2023-12-16 22:54:56.901264   PM3-5A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.901264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.901264   PM3-5A : POST_RECV
+Time: 2023-12-16 22:54:56.901264   PM4-8B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.901264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.901264   PM4-8B : POST_RECV
+Time: 2023-12-16 22:54:56.901264   PM5-9A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.901264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.901264   PM5-9A : POST_RECV
+Time: 2023-12-16 22:54:56.901264   BM6-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.901264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.901264   BM6-2B : POST_RECV
+Time: 2023-12-16 22:54:56.901264   BM6-12B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.901264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.901264   BM6-12B : POST_RECV
+Time: 2023-12-16 22:54:56.902264   PM3-4A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.902264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.902264   PM3-4A : POST_SEND
+Time: 2023-12-16 22:54:56.902264   PM4-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.902264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.902264   PM4-2A : POST_SEND
+Time: 2023-12-16 22:54:56.902264   BM6-12B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.902264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.902264   BM6-12B : POST_SEND
+Time: 2023-12-16 22:54:56.904264   PM3-3B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.904264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.904264   PM3-3B : POST_RECV
+Time: 2023-12-16 22:54:56.904264   PM4-1A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.904264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.904264   PM4-1A : POST_RECV
+Time: 2023-12-16 22:54:56.904264   PM5-9B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.904264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.904264   PM5-9B : POST_RECV
+Time: 2023-12-16 22:54:56.905264   BM6-1B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.905264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.905264   BM6-1B : POST_SEND
+Time: 2023-12-16 22:54:56.907264   PM2-4A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.907264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.907264   PM2-4A : POST_SEND
+Time: 2023-12-16 22:54:56.907264   PM3-5A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.907264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.907264   PM3-5A : POST_SEND
+Time: 2023-12-16 22:54:56.907264   PM6-10A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.907264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.907264   PM6-10A : POST_RECV
+Time: 2023-12-16 22:54:56.907264   PM5-9A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.907264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:56.907264   PM5-9A : POST_SEND
+Time: 2023-12-16 22:54:56.908264   BM6-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.908264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.908264   BM6-2B : POST_SEND
+Time: 2023-12-16 22:54:56.909264   PM3-3B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.909264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.909264   PM3-3B : POST_RECV
+Time: 2023-12-16 22:54:56.909264   PM3-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.909264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.909264   PM3-2A : POST_RECV
+Time: 2023-12-16 22:54:56.909264   PM5-1A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.909264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.909264   PM5-1A : POST_RECV
+Time: 2023-12-16 22:54:56.910264   PM3-3B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.910264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.910264   PM3-3B : POST_SEND
+Time: 2023-12-16 22:54:56.910264   PM6-8B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.910264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.910264   PM6-8B : POST_RECV
+Time: 2023-12-16 22:54:56.910264   PM5-9B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.910264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:56.910264   PM5-9B : POST_SEND
+Time: 2023-12-16 22:54:56.912264   PM4-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.912264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.912264   PM4-2B : POST_RECV
+Time: 2023-12-16 22:54:56.912264   PM5-4A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.912264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.912264   PM5-4A : POST_RECV
+Time: 2023-12-16 22:54:56.913264   PM6-10A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.913264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.913264   PM6-10A : POST_SEND
+Time: 2023-12-16 22:54:56.915264   PM3-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.915264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.915264   PM3-2A : POST_SEND
+Time: 2023-12-16 22:54:56.915264   PM3-3B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.915264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.915264   PM3-3B : POST_SEND
+Time: 2023-12-16 22:54:56.915264   BM6-11A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.915264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.915264   BM6-11A : POST_RECV
+Time: 2023-12-16 22:54:56.915264   PM5-1A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.915264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:56.915264   PM5-1A : POST_SEND
+Time: 2023-12-16 22:54:56.916264   PM6-8B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.916264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.916264   PM6-8B : POST_SEND
+Time: 2023-12-16 22:54:56.916264   BM6-11A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.916264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:56.916264   BM6-11A : POST_SEND
+Time: 2023-12-16 22:54:56.917264   PM4-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.917264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.917264   PM4-2A : POST_RECV
+Time: 2023-12-16 22:54:56.917264   PM3-7A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.917264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.917264   PM3-7A : POST_RECV
+Time: 2023-12-16 22:54:56.917264   PM5-3A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.917264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.917264   PM5-3A : POST_RECV
+Time: 2023-12-16 22:54:56.918264   PM4-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.918264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.918264   PM4-2B : POST_SEND
+Time: 2023-12-16 22:54:56.918264   BM6-12A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.918264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.918264   BM6-12A : POST_RECV
+Time: 2023-12-16 22:54:56.918264   PM7-3A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.918264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.918264   PM7-3A : POST_RECV
+Time: 2023-12-16 22:54:56.918264   PM5-4A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.918264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:56.918264   PM5-4A : POST_SEND
+Time: 2023-12-16 22:54:56.919264   PM6-4B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.919264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.919264   PM6-4B : POST_SEND
+Time: 2023-12-16 22:54:56.919264   BM6-12A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.919264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:56.919264   BM6-12A : POST_SEND
+Time: 2023-12-16 22:54:56.920264   PM4-4A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.920264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.920264   PM4-4A : POST_RECV
+Time: 2023-12-16 22:54:56.920264   PM5-3B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.920264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.920264   PM5-3B : POST_RECV
+Time: 2023-12-16 22:54:56.921264   BM6-1A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.921264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.921264   BM6-1A : POST_RECV
+Time: 2023-12-16 22:54:56.921264   PM7-4A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.921264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.921264   PM7-4A : POST_RECV
+Time: 2023-12-16 22:54:56.922264   PM6-5B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.922264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.922264   PM6-5B : POST_SEND
+Time: 2023-12-16 22:54:56.922264   BM6-1A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.922264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.922264   BM6-1A : POST_SEND
+Time: 2023-12-16 22:54:56.923264   PM5-3A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.923264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.923264   PM5-3A : POST_SEND
+Time: 2023-12-16 22:54:56.923264   PM3-7A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.923264   TM3 : PICK_WAFER
+Time: 2023-12-16 22:54:56.923264   PM3-7A : POST_SEND
+Time: 2023-12-16 22:54:56.923264   PM4-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.923264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.923264   PM4-2A : POST_SEND
+Time: 2023-12-16 22:54:56.924264   BM6-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.924264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.924264   BM6-2A : POST_RECV
+Time: 2023-12-16 22:54:56.924264   PM8-4 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.924264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.924264   PM8-4 : POST_RECV
+Time: 2023-12-16 22:54:56.924264   PM7-3A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.924264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:56.924264   PM7-3A : POST_SEND
+Time: 2023-12-16 22:54:56.925264   BM2-1B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.925264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.925264   BM2-1B : POST_RECV
+Time: 2023-12-16 22:54:56.925264   PM3-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.925264   TM3 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.925264   PM3-2B : POST_RECV
+Time: 2023-12-16 22:54:56.925264   PM4-5A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.925264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.925264   PM4-5A : POST_RECV
+Time: 2023-12-16 22:54:56.925264   BM6-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.925264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.925264   BM6-2A : POST_SEND
+Time: 2023-12-16 22:54:56.926264   BM2-1B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.926264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:56.926264   BM2-1B : POST_SEND
+Time: 2023-12-16 22:54:56.926264   PM5-3B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.926264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.926264   PM5-3B : POST_SEND
+Time: 2023-12-16 22:54:56.926264   BM6-11B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.926264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.926264   BM6-11B : POST_RECV
+Time: 2023-12-16 22:54:56.927264   BM6-11B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.927264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.927264   BM6-11B : POST_SEND
+Time: 2023-12-16 22:54:56.927264   PM8-5 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.927264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.927264   PM8-5 : POST_RECV
+Time: 2023-12-16 22:54:56.927264   PM7-4A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.927264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:56.927264   PM7-4A : POST_SEND
+Time: 2023-12-16 22:54:56.928264   CM1-1-2 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.928264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.928264   CM1-1-2 : POST_RECV
+Time: 2023-12-16 22:54:56.928264   BM2-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.928264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.928264   BM2-2B : POST_RECV
+Time: 2023-12-16 22:54:56.929264   BM2-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.929264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:56.929264   BM2-2B : POST_SEND
+Time: 2023-12-16 22:54:56.929264   PM5-9A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.929264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.929264   PM5-9A : POST_RECV
+Time: 2023-12-16 22:54:56.929264   BM6-12B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.929264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.929264   BM6-12B : POST_RECV
+Time: 2023-12-16 22:54:56.930264   PM4-1A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.930264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.930264   PM4-1A : POST_SEND
+Time: 2023-12-16 22:54:56.930264   BM6-12B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.930264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.930264   BM6-12B : POST_SEND
+Time: 2023-12-16 22:54:56.930264   PM8-4 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.930264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.930264   PM8-4 : POST_SEND
+Time: 2023-12-16 22:54:56.931264   CM1-1-3 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.931264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.931264   CM1-1-3 : POST_RECV
+Time: 2023-12-16 22:54:56.931264   PM3-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.931264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.931264   PM3-2B : POST_SEND
+Time: 2023-12-16 22:54:56.932264   PM4-8A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.932264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.932264   PM4-8A : POST_RECV
+Time: 2023-12-16 22:54:56.932264   PM5-9B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.932264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.932264   PM5-9B : POST_RECV
+Time: 2023-12-16 22:54:56.932264   ExposerIn8-6 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.932264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.932264   ExposerIn8-6 : POST_RECV
+Time: 2023-12-16 22:54:56.933264   PM4-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.933264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.933264   PM4-2B : POST_RECV
+Time: 2023-12-16 22:54:56.933264   PM4-4A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.933264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.933264   PM4-4A : POST_SEND
+Time: 2023-12-16 22:54:56.933264   PM4-8A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.933264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.933264   PM4-8A : POST_SEND
+Time: 2023-12-16 22:54:56.933264   PM8-5 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.933264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.933264   PM8-5 : POST_SEND
+Time: 2023-12-16 22:54:56.935264   PM4-8B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.935264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.935264   PM4-8B : POST_RECV
+Time: 2023-12-16 22:54:56.935264   PM6-6B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.935264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.935264   PM6-6B : POST_RECV
+Time: 2023-12-16 22:54:56.935264   ExposerOut8-7 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.935264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.935264   ExposerOut8-7 : POST_RECV
+Time: 2023-12-16 22:54:56.935264   PM5-9A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.935264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:56.935264   PM5-9A : POST_SEND
+Time: 2023-12-16 22:54:56.936264   PM4-8B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.936264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.936264   PM4-8B : POST_SEND
+Time: 2023-12-16 22:54:56.937264   PM5-5A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.937264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.937264   PM5-5A : POST_RECV
+Time: 2023-12-16 22:54:56.938264   PM6-7B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.938264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.938264   PM6-7B : POST_RECV
+Time: 2023-12-16 22:54:56.938264   ExposerIn8-6 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.938264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.938264   ExposerIn8-6 : POST_SEND
+Time: 2023-12-16 22:54:56.938264   PM5-9B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.938264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:56.938264   PM5-9B : POST_SEND
+Time: 2023-12-16 22:54:56.939264   PM4-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.939264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.939264   PM4-2B : POST_SEND
+Time: 2023-12-16 22:54:56.940264   BM6-1B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.940264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.940264   BM6-1B : POST_RECV
+Time: 2023-12-16 22:54:56.940264   PM5-7A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.940264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.940264   PM5-7A : POST_RECV
+Time: 2023-12-16 22:54:56.941264   PM4-7A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.941264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.941264   PM4-7A : POST_RECV
+Time: 2023-12-16 22:54:56.941264   BM6-1B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.941264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.941264   BM6-1B : POST_SEND
+Time: 2023-12-16 22:54:56.941264   ExposerOut8-7 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.941264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.941264   ExposerOut8-7 : POST_SEND
+Time: 2023-12-16 22:54:56.943264   PM6-9B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.943264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.943264   PM6-9B : POST_RECV
+Time: 2023-12-16 22:54:56.943264   BM6-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.943264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.943264   BM6-2B : POST_RECV
+Time: 2023-12-16 22:54:56.943264   PM5-5A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.943264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:56.943264   PM5-5A : POST_SEND
+Time: 2023-12-16 22:54:56.944264   BM6-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.944264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.944264   BM6-2B : POST_SEND
+Time: 2023-12-16 22:54:56.945264   PM5-3A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.945264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.945264   PM5-3A : POST_RECV
+Time: 2023-12-16 22:54:56.946264   PM6-10B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.946264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.946264   PM6-10B : POST_RECV
+Time: 2023-12-16 22:54:56.946264   PM5-7A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.946264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:56.946264   PM5-7A : POST_SEND
+Time: 2023-12-16 22:54:56.948264   PM5-3B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.948264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.948264   PM5-3B : POST_RECV
+Time: 2023-12-16 22:54:56.949264   PM6-9B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.949264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.949264   PM6-9B : POST_SEND
+Time: 2023-12-16 22:54:56.951264   PM5-3A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.951264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.951264   PM5-3A : POST_SEND
+Time: 2023-12-16 22:54:56.951264   BM6-11A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.951264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.951264   BM6-11A : POST_RECV
+Time: 2023-12-16 22:54:56.952264   PM6-10B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.952264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.952264   PM6-10B : POST_SEND
+Time: 2023-12-16 22:54:56.952264   BM6-11A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.952264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:56.952264   BM6-11A : POST_SEND
+Time: 2023-12-16 22:54:56.953264   BM2-1B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.953264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.953264   BM2-1B : POST_RECV
+Time: 2023-12-16 22:54:56.954264   BM2-1B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.954264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:56.954264   BM2-1B : POST_SEND
+Time: 2023-12-16 22:54:56.954264   PM5-3B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.954264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.954264   PM5-3B : POST_SEND
+Time: 2023-12-16 22:54:56.954264   BM6-12A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.954264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.954264   BM6-12A : POST_RECV
+Time: 2023-12-16 22:54:56.954264   PM7-1B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.954264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.954264   PM7-1B : POST_RECV
+Time: 2023-12-16 22:54:56.955264   PM6-6B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.955264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.955264   PM6-6B : POST_SEND
+Time: 2023-12-16 22:54:56.955264   BM6-12A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.955264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:56.955264   BM6-12A : POST_SEND
+Time: 2023-12-16 22:54:56.956264   CM1-1-4 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.956264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.956264   CM1-1-4 : POST_RECV
+Time: 2023-12-16 22:54:56.956264   BM2-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.956264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.956264   BM2-2B : POST_RECV
+Time: 2023-12-16 22:54:56.957264   BM2-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.957264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:56.957264   BM2-2B : POST_SEND
+Time: 2023-12-16 22:54:56.957264   BM6-1A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.957264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.957264   BM6-1A : POST_RECV
+Time: 2023-12-16 22:54:56.957264   PM7-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.957264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.957264   PM7-2B : POST_RECV
+Time: 2023-12-16 22:54:56.958264   PM6-7B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.958264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.958264   PM6-7B : POST_SEND
+Time: 2023-12-16 22:54:56.958264   BM6-1A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.958264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.958264   BM6-1A : POST_SEND
+Time: 2023-12-16 22:54:56.959264   CM1-1-5 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.959264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.959264   CM1-1-5 : POST_RECV
+Time: 2023-12-16 22:54:56.960264   BM6-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.960264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.960264   BM6-2A : POST_RECV
+Time: 2023-12-16 22:54:56.960264   PM8-3 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.960264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.960264   PM8-3 : POST_RECV
+Time: 2023-12-16 22:54:56.960264   PM7-1B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.960264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:56.960264   PM7-1B : POST_SEND
+Time: 2023-12-16 22:54:56.961264   BM6-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.961264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.961264   BM6-2A : POST_SEND
+Time: 2023-12-16 22:54:56.962264   BM6-11B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.962264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.962264   BM6-11B : POST_RECV
+Time: 2023-12-16 22:54:56.963264   BM6-11B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.963264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.963264   BM6-11B : POST_SEND
+Time: 2023-12-16 22:54:56.963264   PM8-4 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.963264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.963264   PM8-4 : POST_RECV
+Time: 2023-12-16 22:54:56.963264   PM7-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.963264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:56.963264   PM7-2B : POST_SEND
+Time: 2023-12-16 22:54:56.965264   PM5-9A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.965264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.965264   PM5-9A : POST_RECV
+Time: 2023-12-16 22:54:56.965264   BM6-12B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.965264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.965264   BM6-12B : POST_RECV
+Time: 2023-12-16 22:54:56.966264   PM4-5A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.966264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.966264   PM4-5A : POST_SEND
+Time: 2023-12-16 22:54:56.966264   BM6-12B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.966264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.966264   BM6-12B : POST_SEND
+Time: 2023-12-16 22:54:56.966264   PM8-3 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.966264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.966264   PM8-3 : POST_SEND
+Time: 2023-12-16 22:54:56.968264   PM4-8A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.968264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.968264   PM4-8A : POST_RECV
+Time: 2023-12-16 22:54:56.968264   PM5-9B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.968264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.968264   PM5-9B : POST_RECV
+Time: 2023-12-16 22:54:56.968264   ExposerIn8-6 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.968264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.968264   ExposerIn8-6 : POST_RECV
+Time: 2023-12-16 22:54:56.969264   PM4-7A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.969264   TM4 : PICK_WAFER
+Time: 2023-12-16 22:54:56.969264   PM4-7A : POST_SEND
+Time: 2023-12-16 22:54:56.969264   PM4-8A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.969264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.969264   PM4-8A : POST_SEND
+Time: 2023-12-16 22:54:56.969264   PM8-4 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.969264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.969264   PM8-4 : POST_SEND
+Time: 2023-12-16 22:54:56.971264   PM4-8B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.971264   TM4 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.971264   PM4-8B : POST_RECV
+Time: 2023-12-16 22:54:56.971264   PM6-4A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.971264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.971264   PM6-4A : POST_RECV
+Time: 2023-12-16 22:54:56.971264   ExposerOut8-7 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.971264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.971264   ExposerOut8-7 : POST_RECV
+Time: 2023-12-16 22:54:56.971264   PM5-9A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.971264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:56.971264   PM5-9A : POST_SEND
+Time: 2023-12-16 22:54:56.972264   PM4-8B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.972264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.972264   PM4-8B : POST_SEND
+Time: 2023-12-16 22:54:56.973264   PM5-3B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.973264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.973264   PM5-3B : POST_RECV
+Time: 2023-12-16 22:54:56.974264   PM6-5A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.974264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.974264   PM6-5A : POST_RECV
+Time: 2023-12-16 22:54:56.974264   ExposerIn8-6 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.974264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.974264   ExposerIn8-6 : POST_SEND
+Time: 2023-12-16 22:54:56.974264   PM5-9B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.974264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:56.974264   PM5-9B : POST_SEND
+Time: 2023-12-16 22:54:56.976264   BM6-1B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.976264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.976264   BM6-1B : POST_RECV
+Time: 2023-12-16 22:54:56.976264   PM5-4B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.976264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.976264   PM5-4B : POST_RECV
+Time: 2023-12-16 22:54:56.977264   BM6-1B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.977264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.977264   BM6-1B : POST_SEND
+Time: 2023-12-16 22:54:56.977264   ExposerOut8-7 : PREPARE_SEND
+Time: 2023-12-16 22:54:56.977264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.977264   ExposerOut8-7 : POST_SEND
+Time: 2023-12-16 22:54:56.979264   PM6-8A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.979264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.979264   PM6-8A : POST_RECV
+Time: 2023-12-16 22:54:56.979264   BM6-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.979264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.979264   BM6-2B : POST_RECV
+Time: 2023-12-16 22:54:56.979264   PM5-3B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.979264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:56.979264   PM5-3B : POST_SEND
+Time: 2023-12-16 22:54:56.980264   BM6-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.980264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.980264   BM6-2B : POST_SEND
+Time: 2023-12-16 22:54:56.981264   PM5-3A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.981264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.981264   PM5-3A : POST_RECV
+Time: 2023-12-16 22:54:56.982264   PM6-9A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.982264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.982264   PM6-9A : POST_RECV
+Time: 2023-12-16 22:54:56.982264   PM5-4B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.982264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:56.982264   PM5-4B : POST_SEND
+Time: 2023-12-16 22:54:56.984264   PM5-3B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.984264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.984264   PM5-3B : POST_RECV
+Time: 2023-12-16 22:54:56.985264   PM6-8A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.985264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.985264   PM6-8A : POST_SEND
+Time: 2023-12-16 22:54:56.987264   PM5-3A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.987264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.987264   PM5-3A : POST_SEND
+Time: 2023-12-16 22:54:56.987264   BM6-11A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.987264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.987264   BM6-11A : POST_RECV
+Time: 2023-12-16 22:54:56.988264   PM6-9A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.988264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.988264   PM6-9A : POST_SEND
+Time: 2023-12-16 22:54:56.988264   BM6-11A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.988264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:56.988264   BM6-11A : POST_SEND
+Time: 2023-12-16 22:54:56.989264   BM2-1B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.989264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.989264   BM2-1B : POST_RECV
+Time: 2023-12-16 22:54:56.990264   BM2-1B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.990264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:56.990264   BM2-1B : POST_SEND
+Time: 2023-12-16 22:54:56.990264   PM5-3B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.990264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:56.990264   PM5-3B : POST_SEND
+Time: 2023-12-16 22:54:56.990264   BM6-12A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.990264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.990264   BM6-12A : POST_RECV
+Time: 2023-12-16 22:54:56.990264   PM7-3B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.990264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.990264   PM7-3B : POST_RECV
+Time: 2023-12-16 22:54:56.991264   PM6-4A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.991264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.991264   PM6-4A : POST_SEND
+Time: 2023-12-16 22:54:56.991264   BM6-12A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.991264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:56.991264   BM6-12A : POST_SEND
+Time: 2023-12-16 22:54:56.992264   CM1-1-6 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.992264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.992264   CM1-1-6 : POST_RECV
+Time: 2023-12-16 22:54:56.992264   BM2-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.992264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.992264   BM2-2B : POST_RECV
+Time: 2023-12-16 22:54:56.993264   BM2-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.993264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:56.993264   BM2-2B : POST_SEND
+Time: 2023-12-16 22:54:56.993264   BM6-1A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.993264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.993264   BM6-1A : POST_RECV
+Time: 2023-12-16 22:54:56.993264   PM7-4B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.993264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.993264   PM7-4B : POST_RECV
+Time: 2023-12-16 22:54:56.994264   PM6-5A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.994264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.994264   PM6-5A : POST_SEND
+Time: 2023-12-16 22:54:56.994264   BM6-1A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.994264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.994264   BM6-1A : POST_SEND
+Time: 2023-12-16 22:54:56.995264   CM1-1-7 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.995264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.995264   CM1-1-7 : POST_RECV
+Time: 2023-12-16 22:54:56.996264   BM6-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:56.996264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.996264   BM6-2A : POST_RECV
+Time: 2023-12-16 22:54:56.996264   PM8-5 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.996264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.996264   PM8-5 : POST_RECV
+Time: 2023-12-16 22:54:56.996264   PM7-3B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.996264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:56.996264   PM7-3B : POST_SEND
+Time: 2023-12-16 22:54:56.997264   BM6-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:56.997264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:56.997264   BM6-2A : POST_SEND
+Time: 2023-12-16 22:54:56.998264   BM6-11B : PREPARE_RECV
+Time: 2023-12-16 22:54:56.998264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.998264   BM6-11B : POST_RECV
+Time: 2023-12-16 22:54:56.999264   BM6-11B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.999264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:56.999264   BM6-11B : POST_SEND
+Time: 2023-12-16 22:54:56.999264   PM8-3 : PREPARE_RECV
+Time: 2023-12-16 22:54:56.999264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:56.999264   PM8-3 : POST_RECV
+Time: 2023-12-16 22:54:56.999264   PM7-4B : PREPARE_SEND
+Time: 2023-12-16 22:54:56.999264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:56.999264   PM7-4B : POST_SEND
+Time: 2023-12-16 22:54:57.001264   PM5-9A : PREPARE_RECV
+Time: 2023-12-16 22:54:57.001264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.001264   PM5-9A : POST_RECV
+Time: 2023-12-16 22:54:57.001264   BM6-12B : PREPARE_RECV
+Time: 2023-12-16 22:54:57.001264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.001264   BM6-12B : POST_RECV
+Time: 2023-12-16 22:54:57.002264   BM6-12B : PREPARE_SEND
+Time: 2023-12-16 22:54:57.002264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:57.002264   BM6-12B : POST_SEND
+Time: 2023-12-16 22:54:57.002264   PM8-5 : PREPARE_SEND
+Time: 2023-12-16 22:54:57.002264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:57.002264   PM8-5 : POST_SEND
+Time: 2023-12-16 22:54:57.004264   PM5-9B : PREPARE_RECV
+Time: 2023-12-16 22:54:57.004264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.004264   PM5-9B : POST_RECV
+Time: 2023-12-16 22:54:57.004264   ExposerIn8-6 : PREPARE_RECV
+Time: 2023-12-16 22:54:57.004264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.004264   ExposerIn8-6 : POST_RECV
+Time: 2023-12-16 22:54:57.005264   PM4-8A : PREPARE_SEND
+Time: 2023-12-16 22:54:57.005264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:57.005264   PM4-8A : POST_SEND
+Time: 2023-12-16 22:54:57.005264   PM8-3 : PREPARE_SEND
+Time: 2023-12-16 22:54:57.005264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:57.005264   PM8-3 : POST_SEND
+Time: 2023-12-16 22:54:57.007264   PM6-6A : PREPARE_RECV
+Time: 2023-12-16 22:54:57.007264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.007264   PM6-6A : POST_RECV
+Time: 2023-12-16 22:54:57.007264   ExposerOut8-7 : PREPARE_RECV
+Time: 2023-12-16 22:54:57.007264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.007264   ExposerOut8-7 : POST_RECV
+Time: 2023-12-16 22:54:57.007264   PM5-9A : PREPARE_SEND
+Time: 2023-12-16 22:54:57.007264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:57.007264   PM5-9A : POST_SEND
+Time: 2023-12-16 22:54:57.008264   PM4-8B : PREPARE_SEND
+Time: 2023-12-16 22:54:57.008264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:57.008264   PM4-8B : POST_SEND
+Time: 2023-12-16 22:54:57.009264   PM5-5B : PREPARE_RECV
+Time: 2023-12-16 22:54:57.009264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.009264   PM5-5B : POST_RECV
+Time: 2023-12-16 22:54:57.010264   PM6-7A : PREPARE_RECV
+Time: 2023-12-16 22:54:57.010264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.010264   PM6-7A : POST_RECV
+Time: 2023-12-16 22:54:57.010264   ExposerIn8-6 : PREPARE_SEND
+Time: 2023-12-16 22:54:57.010264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:57.010264   ExposerIn8-6 : POST_SEND
+Time: 2023-12-16 22:54:57.010264   PM5-9B : PREPARE_SEND
+Time: 2023-12-16 22:54:57.010264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:57.010264   PM5-9B : POST_SEND
+Time: 2023-12-16 22:54:57.012264   BM6-1B : PREPARE_RECV
+Time: 2023-12-16 22:54:57.012264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.012264   BM6-1B : POST_RECV
+Time: 2023-12-16 22:54:57.012264   PM5-7B : PREPARE_RECV
+Time: 2023-12-16 22:54:57.012264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.012264   PM5-7B : POST_RECV
+Time: 2023-12-16 22:54:57.013264   BM6-1B : PREPARE_SEND
+Time: 2023-12-16 22:54:57.013264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:57.013264   BM6-1B : POST_SEND
+Time: 2023-12-16 22:54:57.013264   ExposerOut8-7 : PREPARE_SEND
+Time: 2023-12-16 22:54:57.013264   TM8 : PICK_WAFER
+Time: 2023-12-16 22:54:57.013264   ExposerOut8-7 : POST_SEND
+Time: 2023-12-16 22:54:57.015264   PM6-10A : PREPARE_RECV
+Time: 2023-12-16 22:54:57.015264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.015264   PM6-10A : POST_RECV
+Time: 2023-12-16 22:54:57.015264   BM6-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:57.015264   TM8 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.015264   BM6-2B : POST_RECV
+Time: 2023-12-16 22:54:57.015264   PM5-5B : PREPARE_SEND
+Time: 2023-12-16 22:54:57.015264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:57.015264   PM5-5B : POST_SEND
+Time: 2023-12-16 22:54:57.016264   BM6-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:57.016264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:57.016264   BM6-2B : POST_SEND
+Time: 2023-12-16 22:54:57.017264   PM5-3A : PREPARE_RECV
+Time: 2023-12-16 22:54:57.017264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.017264   PM5-3A : POST_RECV
+Time: 2023-12-16 22:54:57.018264   PM6-8B : PREPARE_RECV
+Time: 2023-12-16 22:54:57.018264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.018264   PM6-8B : POST_RECV
+Time: 2023-12-16 22:54:57.018264   PM5-7B : PREPARE_SEND
+Time: 2023-12-16 22:54:57.018264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:57.018264   PM5-7B : POST_SEND
+Time: 2023-12-16 22:54:57.020264   PM5-3B : PREPARE_RECV
+Time: 2023-12-16 22:54:57.020264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.020264   PM5-3B : POST_RECV
+Time: 2023-12-16 22:54:57.021264   PM6-10A : PREPARE_SEND
+Time: 2023-12-16 22:54:57.021264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:57.021264   PM6-10A : POST_SEND
+Time: 2023-12-16 22:54:57.023264   PM5-3A : PREPARE_SEND
+Time: 2023-12-16 22:54:57.023264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:57.023264   PM5-3A : POST_SEND
+Time: 2023-12-16 22:54:57.023264   BM6-11A : PREPARE_RECV
+Time: 2023-12-16 22:54:57.023264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.023264   BM6-11A : POST_RECV
+Time: 2023-12-16 22:54:57.024264   PM6-8B : PREPARE_SEND
+Time: 2023-12-16 22:54:57.024264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:57.024264   PM6-8B : POST_SEND
+Time: 2023-12-16 22:54:57.024264   BM6-11A : PREPARE_SEND
+Time: 2023-12-16 22:54:57.024264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:57.024264   BM6-11A : POST_SEND
+Time: 2023-12-16 22:54:57.025264   BM2-1B : PREPARE_RECV
+Time: 2023-12-16 22:54:57.025264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.025264   BM2-1B : POST_RECV
+Time: 2023-12-16 22:54:57.026264   BM2-1B : PREPARE_SEND
+Time: 2023-12-16 22:54:57.026264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:57.026264   BM2-1B : POST_SEND
+Time: 2023-12-16 22:54:57.026264   PM5-3B : PREPARE_SEND
+Time: 2023-12-16 22:54:57.026264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:57.026264   PM5-3B : POST_SEND
+Time: 2023-12-16 22:54:57.026264   BM6-12A : PREPARE_RECV
+Time: 2023-12-16 22:54:57.026264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.026264   BM6-12A : POST_RECV
+Time: 2023-12-16 22:54:57.026264   PM7-1A : PREPARE_RECV
+Time: 2023-12-16 22:54:57.026264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.026264   PM7-1A : POST_RECV
+Time: 2023-12-16 22:54:57.027264   PM6-6A : PREPARE_SEND
+Time: 2023-12-16 22:54:57.027264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:57.027264   PM6-6A : POST_SEND
+Time: 2023-12-16 22:54:57.027264   BM6-12A : PREPARE_SEND
+Time: 2023-12-16 22:54:57.027264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:57.027264   BM6-12A : POST_SEND
+Time: 2023-12-16 22:54:57.028264   CM1-1-8 : PREPARE_RECV
+Time: 2023-12-16 22:54:57.028264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.028264   CM1-1-8 : POST_RECV
+Time: 2023-12-16 22:54:57.028264   BM2-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:57.028264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.028264   BM2-2B : POST_RECV
+Time: 2023-12-16 22:54:57.029264   BM2-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:57.029264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:57.029264   BM2-2B : POST_SEND
+Time: 2023-12-16 22:54:57.029264   BM6-11A : PREPARE_RECV
+Time: 2023-12-16 22:54:57.029264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.029264   BM6-11A : POST_RECV
+Time: 2023-12-16 22:54:57.029264   PM7-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:57.029264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.029264   PM7-2A : POST_RECV
+Time: 2023-12-16 22:54:57.031264   CM1-1-9 : PREPARE_RECV
+Time: 2023-12-16 22:54:57.031264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.031264   CM1-1-9 : POST_RECV
+Time: 2023-12-16 22:54:57.032264   PM7-1A : PREPARE_SEND
+Time: 2023-12-16 22:54:57.032264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:57.032264   PM7-1A : POST_SEND
+Time: 2023-12-16 22:54:57.034264   BM6-11B : PREPARE_RECV
+Time: 2023-12-16 22:54:57.034264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.034264   BM6-11B : POST_RECV
+Time: 2023-12-16 22:54:57.035264   BM6-11B : PREPARE_SEND
+Time: 2023-12-16 22:54:57.035264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:57.035264   BM6-11B : POST_SEND
+Time: 2023-12-16 22:54:57.035264   PM7-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:57.035264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:57.035264   PM7-2A : POST_SEND
+Time: 2023-12-16 22:54:57.037264   PM5-9A : PREPARE_RECV
+Time: 2023-12-16 22:54:57.037264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.037264   PM5-9A : POST_RECV
+Time: 2023-12-16 22:54:57.037264   BM6-12B : PREPARE_RECV
+Time: 2023-12-16 22:54:57.037264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.037264   BM6-12B : POST_RECV
+Time: 2023-12-16 22:54:57.038264   BM6-12B : PREPARE_SEND
+Time: 2023-12-16 22:54:57.038264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:57.038264   BM6-12B : POST_SEND
+Time: 2023-12-16 22:54:57.038264   BM6-11A : PREPARE_SEND
+Time: 2023-12-16 22:54:57.038264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:57.038264   BM6-11A : POST_SEND
+Time: 2023-12-16 22:54:57.040264   PM5-9B : PREPARE_RECV
+Time: 2023-12-16 22:54:57.040264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.040264   PM5-9B : POST_RECV
+Time: 2023-12-16 22:54:57.040264   PM7-3A : PREPARE_RECV
+Time: 2023-12-16 22:54:57.040264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.040264   PM7-3A : POST_RECV
+Time: 2023-12-16 22:54:57.041264   PM6-7A : PREPARE_SEND
+Time: 2023-12-16 22:54:57.041264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:57.041264   PM6-7A : POST_SEND
+Time: 2023-12-16 22:54:57.043264   BM6-11B : PREPARE_RECV
+Time: 2023-12-16 22:54:57.043264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.043264   BM6-11B : POST_RECV
+Time: 2023-12-16 22:54:57.043264   PM5-9A : PREPARE_SEND
+Time: 2023-12-16 22:54:57.043264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:57.043264   PM5-9A : POST_SEND
+Time: 2023-12-16 22:54:57.045264   PM5-1A : PREPARE_RECV
+Time: 2023-12-16 22:54:57.045264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.045264   PM5-1A : POST_RECV
+Time: 2023-12-16 22:54:57.046264   PM7-3A : PREPARE_SEND
+Time: 2023-12-16 22:54:57.046264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:57.046264   PM7-3A : POST_SEND
+Time: 2023-12-16 22:54:57.046264   PM5-9B : PREPARE_SEND
+Time: 2023-12-16 22:54:57.046264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:57.046264   PM5-9B : POST_SEND
+Time: 2023-12-16 22:54:57.048264   BM6-12A : PREPARE_RECV
+Time: 2023-12-16 22:54:57.048264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.048264   BM6-12A : POST_RECV
+Time: 2023-12-16 22:54:57.048264   PM5-4A : PREPARE_RECV
+Time: 2023-12-16 22:54:57.048264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.048264   PM5-4A : POST_RECV
+Time: 2023-12-16 22:54:57.049264   BM6-12A : PREPARE_SEND
+Time: 2023-12-16 22:54:57.049264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:57.049264   BM6-12A : POST_SEND
+Time: 2023-12-16 22:54:57.049264   BM6-11B : PREPARE_SEND
+Time: 2023-12-16 22:54:57.049264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:57.049264   BM6-11B : POST_SEND
+Time: 2023-12-16 22:54:57.051264   PM5-9A : PREPARE_RECV
+Time: 2023-12-16 22:54:57.051264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.051264   PM5-9A : POST_RECV
+Time: 2023-12-16 22:54:57.051264   PM7-4A : PREPARE_RECV
+Time: 2023-12-16 22:54:57.051264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.051264   PM7-4A : POST_RECV
+Time: 2023-12-16 22:54:57.051264   PM5-1A : PREPARE_SEND
+Time: 2023-12-16 22:54:57.051264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:57.051264   PM5-1A : POST_SEND
+Time: 2023-12-16 22:54:57.053264   PM5-3A : PREPARE_RECV
+Time: 2023-12-16 22:54:57.053264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.053264   PM5-3A : POST_RECV
+Time: 2023-12-16 22:54:57.054264   PM5-4A : PREPARE_SEND
+Time: 2023-12-16 22:54:57.054264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:57.054264   PM5-4A : POST_SEND
+Time: 2023-12-16 22:54:57.056264   PM5-3B : PREPARE_RECV
+Time: 2023-12-16 22:54:57.056264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.056264   PM5-3B : POST_RECV
+Time: 2023-12-16 22:54:57.057264   PM7-4A : PREPARE_SEND
+Time: 2023-12-16 22:54:57.057264   TM7 : PICK_WAFER
+Time: 2023-12-16 22:54:57.057264   PM7-4A : POST_SEND
+Time: 2023-12-16 22:54:57.057264   PM5-9A : PREPARE_SEND
+Time: 2023-12-16 22:54:57.057264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:57.057264   PM5-9A : POST_SEND
+Time: 2023-12-16 22:54:57.059264   PM5-3A : PREPARE_SEND
+Time: 2023-12-16 22:54:57.059264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:57.059264   PM5-3A : POST_SEND
+Time: 2023-12-16 22:54:57.059264   BM6-12B : PREPARE_RECV
+Time: 2023-12-16 22:54:57.059264   TM7 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.059264   BM6-12B : POST_RECV
+Time: 2023-12-16 22:54:57.059264   PM5-5A : PREPARE_RECV
+Time: 2023-12-16 22:54:57.059264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.059264   PM5-5A : POST_RECV
+Time: 2023-12-16 22:54:57.060264   BM6-12B : PREPARE_SEND
+Time: 2023-12-16 22:54:57.060264   TM6 : PICK_WAFER
+Time: 2023-12-16 22:54:57.060264   BM6-12B : POST_SEND
+Time: 2023-12-16 22:54:57.061264   BM2-1B : PREPARE_RECV
+Time: 2023-12-16 22:54:57.061264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.061264   BM2-1B : POST_RECV
+Time: 2023-12-16 22:54:57.062264   BM2-1B : PREPARE_SEND
+Time: 2023-12-16 22:54:57.062264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:57.062264   BM2-1B : POST_SEND
+Time: 2023-12-16 22:54:57.062264   PM5-3B : PREPARE_SEND
+Time: 2023-12-16 22:54:57.062264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:57.062264   PM5-3B : POST_SEND
+Time: 2023-12-16 22:54:57.062264   PM5-9B : PREPARE_RECV
+Time: 2023-12-16 22:54:57.062264   TM6 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.062264   PM5-9B : POST_RECV
+Time: 2023-12-16 22:54:57.064264   CM1-1-10 : PREPARE_RECV
+Time: 2023-12-16 22:54:57.064264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.064264   CM1-1-10 : POST_RECV
+Time: 2023-12-16 22:54:57.064264   BM2-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:57.064264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.064264   BM2-2B : POST_RECV
+Time: 2023-12-16 22:54:57.065264   BM2-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:57.065264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:57.065264   BM2-2B : POST_SEND
+Time: 2023-12-16 22:54:57.065264   PM5-5A : PREPARE_SEND
+Time: 2023-12-16 22:54:57.065264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:57.065264   PM5-5A : POST_SEND
+Time: 2023-12-16 22:54:57.067264   CM1-1-11 : PREPARE_RECV
+Time: 2023-12-16 22:54:57.067264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.067264   CM1-1-11 : POST_RECV
+Time: 2023-12-16 22:54:57.067264   PM5-3A : PREPARE_RECV
+Time: 2023-12-16 22:54:57.067264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.067264   PM5-3A : POST_RECV
+Time: 2023-12-16 22:54:57.068264   PM5-9B : PREPARE_SEND
+Time: 2023-12-16 22:54:57.068264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:57.068264   PM5-9B : POST_SEND
+Time: 2023-12-16 22:54:57.070264   PM5-7A : PREPARE_RECV
+Time: 2023-12-16 22:54:57.070264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.070264   PM5-7A : POST_RECV
+Time: 2023-12-16 22:54:57.073264   PM5-3A : PREPARE_SEND
+Time: 2023-12-16 22:54:57.073264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:57.073264   PM5-3A : POST_SEND
+Time: 2023-12-16 22:54:57.075264   BM2-2A : PREPARE_RECV
+Time: 2023-12-16 22:54:57.075264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.075264   BM2-2A : POST_RECV
+Time: 2023-12-16 22:54:57.076264   BM2-2A : PREPARE_SEND
+Time: 2023-12-16 22:54:57.076264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:57.076264   BM2-2A : POST_SEND
+Time: 2023-12-16 22:54:57.076264   PM5-7A : PREPARE_SEND
+Time: 2023-12-16 22:54:57.076264   TM5 : PICK_WAFER
+Time: 2023-12-16 22:54:57.076264   PM5-7A : POST_SEND
+Time: 2023-12-16 22:54:57.078264   CM1-1-12 : PREPARE_RECV
+Time: 2023-12-16 22:54:57.078264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.078264   CM1-1-12 : POST_RECV
+Time: 2023-12-16 22:54:57.078264   PM5-3B : PREPARE_RECV
+Time: 2023-12-16 22:54:57.078264   TM5 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.078264   PM5-3B : POST_RECV
+Time: 2023-12-16 22:54:57.084264   PM5-3B : PREPARE_SEND
+Time: 2023-12-16 22:54:57.084264   TM2 : PICK_WAFER
+Time: 2023-12-16 22:54:57.084264   PM5-3B : POST_SEND
+Time: 2023-12-16 22:54:57.086264   BM2-2B : PREPARE_RECV
+Time: 2023-12-16 22:54:57.086264   TM2 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.086264   BM2-2B : POST_RECV
+Time: 2023-12-16 22:54:57.087264   BM2-2B : PREPARE_SEND
+Time: 2023-12-16 22:54:57.087264   TM1 : PICK_WAFER
+Time: 2023-12-16 22:54:57.087264   BM2-2B : POST_SEND
+Time: 2023-12-16 22:54:57.089264   CM1-1-1 : PREPARE_RECV
+Time: 2023-12-16 22:54:57.089264   TM1 : PLACE_WAFER
+Time: 2023-12-16 22:54:57.089264   CM1-1-1 : POST_RECV
+Running time :  0.034173 seconds
+Time steps =  35
