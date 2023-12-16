@@ -1,0 +1,80 @@
+[
+    {
+        "waferGroupName": "inputGroup0",
+        "waferNum": 25,
+        "recipe": [
+            {
+                "processModule": [
+                    "WPH_75S"
+                ],
+                "processTime": 75.0
+            },
+            {
+                "processModule": [
+                    "WPH_45S"
+                ],
+                "processTime": 45.0
+            },
+            {
+                "processModule": [
+                    "WPH57S"
+                ],
+                "processTime": 57.0
+            },
+            {
+                "processModule": [
+                    "110C110S"
+                ],
+                "processTime": 110.0
+            },
+            {
+                "processModule": [
+                    "WPH_45S"
+                ],
+                "processTime": 45.0
+            },
+            {
+                "processModule": [
+                    "WPH"
+                ],
+                "processTime": 10.0
+            },
+            {
+                "processModule": [
+                    "WPH_25S"
+                ],
+                "processTime": 25.0
+            },
+            {
+                "processModule": [
+                    "120C75S"
+                ],
+                "processTime": 75.0
+            },
+            {
+                "processModule": [
+                    "WPH_45S"
+                ],
+                "processTime": 45.0
+            },
+            {
+                "processModule": [
+                    "WPH164S"
+                ],
+                "processTime": 164.0
+            },
+            {
+                "processModule": [
+                    "120C75S"
+                ],
+                "processTime": 75.0
+            },
+            {
+                "processModule": [
+                    "WPH_45S"
+                ],
+                "processTime": 45.0
+            }
+        ]
+    }
+]
