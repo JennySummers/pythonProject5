@@ -72,12 +72,12 @@ class Encode:
                     Machine_Select = []
                     for Machine_add in List_Machine_position:  # 将这道工序的可用机器时间和以前积累的机器时间相加
                         #  比较可用机器的时间加上以前累计的机器时间的时间值，并选出时间最小
-                        Machine_Select.append(Machine_time[Machine_add] + D[Machine_add])
+                        Machine_Select.append(Machine_time[Machine_add] + (D[Machine_add] if D[Machine_add] > 0 else 1))
                     # print(Machine_Select)
                     Min_time = min(Machine_Select)
                     K = Machine_Select.index(Min_time)  # K表示可选机器集中的第几台机器
                     I = List_Machine_position[K]  # I表示这台机器实际的编号
-                    Machine_time[I] += D[I]  # 使用当前工件在这台机器加工的时间来更新机器时间
+                    Machine_time[I] += (D[I] if D[I] > 0 else 1)  # 使用当前工件在这台机器加工的时间来更新机器时间
                     # Machine_time[I] += Min_time
                     site = self.Site(g, j)
                     MS[i][site] = K

@@ -8,7 +8,7 @@ class Fault_Message:
 class Arm_Message:
     def __init__(self, machine_no, cmd_time, move_type, move_from=None, move_to=None):
         self.machine_no = machine_no  # 机器号
-        self.cmd_time = cmd_time  #
+        self.cmd_time = cmd_time  # 待执行的动作指令的时间
         self.move_type = move_type  # move_type表示机械臂指令的类型，0表示取片，1表示放片，2表示机械臂移动
         if self.move_type == 0:  # 当机械臂操作为取片，读取从哪台机器上取片
             self.move_from = move_from

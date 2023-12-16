@@ -5,6 +5,8 @@ import copy
 INVALID = 99999999
 pick_time = 1
 put_time = 1
+unit_time = 1  # 单位时间设定，单位为毫秒
+
 
 class Read_json:
     def __init__(self, layout_path, wafer_path, wafer_noBM_path):
@@ -19,16 +21,16 @@ class Read_json:
         self.group_elements_num = {}  # 各group含有的处理单元(elements)数量
         self.group_elements_index = {}  # 各group在list中的起始索引位；例CM1=0,PG1=4,则一个list中0-3位的数字表示CM1的时间
         self.all_elements_index = {}  # 所有elements在list中的索引位
-        self.type_index = {}        # 按CM/PM/TM/BM分类的index
+        self.type_index = {}  # 按CM/PM/TM/BM分类的index
         self.all_elements_num = 0  # CM/PM含有的处理单元(elements)总个数，即每个step的list中的元素个数
         self.buffer_module = []  # 存放所有的BM，以供判断
-        self.graph = {}     # 邻接矩阵
-        self.circle = []    # 存放找到的环路
-        self.TM_num = 0     # 记录TM（机械臂）的总数量
-        self.CM_num = 0     # 记录CM的槽位数量
+        self.graph = {}  # 邻接矩阵
+        self.circle = []  # 存放找到的环路
+        self.TM_num = 0  # 记录TM（机械臂）的总数量
+        self.CM_num = 0  # 记录CM的槽位数量
         self.wafer_sum = 0  # 记录wafer_sum的总数量
         self.CM_name_list = []
-        self.elements_name_list=[]
+        self.elements_name_list = []
 
         # 机械臂相关
         self.transfer_time = []  # 每个机械臂的取放时间
@@ -355,9 +357,10 @@ class Read_json:
         self.DFS(list(self.graph.keys())[0], vis, trace)
         # print(self.circle)
 
-    def append_elements_name(self,module_group):
+    def append_elements_name(self, module_group):
         for element in module_group['elements']:
             self.elements_name_list.append(element)
+
 
 '''
 J 表示各个工件对应的工序数。用键值对来表示。
@@ -372,7 +375,7 @@ O_num 表示所有工件的所有工序总数
 class get_Recipe:
     def __init__(self, layout_path, wafer_path, wafer_noBM_path):
         j = Read_json(layout_path, wafer_path, wafer_noBM_path)
-        j.check_waferNum()    # 判断输入的CM的槽位是否小于wafer数量，若是,则报错退出
+        j.check_waferNum()  # 判断输入的CM的槽位是否小于wafer数量，若是,则报错退出
         j.get_Layout_Info()
         j.add_BM()
         j.get_Wafer_Info()
@@ -384,7 +387,7 @@ class get_Recipe:
         self.J_num = len(j.Processing_time)  # 表示工件数目
         self.O_num = 0  # 表示所有工件的所有工序总数
         self.J = {}  # 表示各个工件对应的工序数，用键值对来表示
-        self.elements_name=j.elements_name_list
+        self.elements_name = j.elements_name_list
         # for i in range(len(j.process_list)):
         for i in range(len(j.Processing_time)):
             # self.J[i] = j.process_list[i]
@@ -399,7 +402,7 @@ class get_Recipe:
         self.Machine_status = np.zeros(self.M_num, dtype=float)
         self.TM_num = j.TM_num  # 记录TM（机械臂）的总数量
         # 将字典的key，value调换(此字典value为编号，唯一）
-        self.group_name_index = {v : k for k, v in j.all_elements_index.items()}  # 编号与对应名称的映射
+        self.group_name_index = {v: k for k, v in j.all_elements_index.items()}  # 编号与对应名称的映射
         self.type_index = j.type_index
         print(self.M_num)
         print(self.O_Max_len)
@@ -415,5 +418,6 @@ class get_Recipe:
             for j in range(self.J_num):
                 tmp[i][0][j] = INVALID
         for i in range(self.J_num):
-            tmp[i][0][i] = i * 3
+            # tmp[i][0][i] = i * 3
+            tmp[i][0][i] = 0
         return tmp

@@ -1,7 +1,7 @@
 [
     {
         "waferGroupName": "inputGroup1",
-        "waferNum": 10,
+        "waferNum": 3,
         "recipe": [
             {
                 "processModule": [
@@ -151,7 +151,7 @@
     },
     {
         "waferGroupName": "inputGroup2",
-        "waferNum": 2,
+        "waferNum": 5,
         "recipe": [
             {
                 "processModule": [
