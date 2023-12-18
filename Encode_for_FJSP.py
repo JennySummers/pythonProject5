@@ -2,9 +2,6 @@ import numpy as np
 import random
 from Instance import put_time, pick_time, switch_time, INVALID
 
-from memory_profiler import profile
-
-
 class Encode:
     def __init__(self, Matrix, Pop_size, J, J_num, M_num, M_status):
         self.Matrix = Matrix  # 工件各工序对应各机器加工时间矩阵

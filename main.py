@@ -20,8 +20,8 @@ from Instance import Machine_status, Processing_time, J, M_num, J_num, O_num
 '''
 
 
-def set_Wafer(layout_path="./config/example1/layout.json", wafer_path="./config/example1/wafer.json",
-              wafer_noBM_path="./config/example1/wafer_noBM.json"):
+def set_Wafer(layout_path="./config/example3/layout.json", wafer_path="./config/example3/wafer.json",
+              wafer_noBM_path="./config/example3/wafer_noBM.json"):
     return layout_path, wafer_path, wafer_noBM_path
 
 
