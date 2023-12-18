@@ -7,7 +7,7 @@ wafer_noBM_path = "./config/example3/wafer_noBM.json"
 # 将json读入后输出缩进格式
 with open(src_path, 'r', encoding='utf-8') as file:
     data = json.load(file)
-with open(src_path_new, 'w+', encoding='utf-8') as file:
+with open(wafer_noBM_path, 'w+', encoding='utf-8') as file:
     json.dump(data, file, indent=4)
 
 # new_data = []
