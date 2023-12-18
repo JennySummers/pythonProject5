@@ -9,10 +9,11 @@ unit_time = 1  # 单位时间设定，单位为毫秒
 
 
 class Read_json:
-    def __init__(self, layout_path, wafer_path, wafer_noBM_path):
+    def __init__(self, layout_path, layout_raw_path, wafer_path, wafer_noBM_path):
         # layout_path = "./config/example1/layout.json"
         # wafer_path = "./config/example1/wafer.json"
         self.layout_path = layout_path
+        self.layout_raw_path = layout_raw_path
         self.wafer_path = wafer_path
         self.wafer_noBM_path = wafer_noBM_path
         self.Processing_time = []
@@ -63,6 +64,42 @@ class Read_json:
             print('CM的槽位数小于输入的wafer数量，请重新检查')
             exit()
 
+    # 给layout.json的所有element添加groupName前缀
+    def layout_add_element_groupName(self):
+        with open(self.layout_raw_path, 'r', encoding='utf-8') as file:
+            layout_raw_data = json.load(file)
+            for CG in layout_raw_data['CM']:
+                new_element = []
+                for element in CG['elements']:
+                    element = CG['groupName'] + '-' + element
+                    new_element.append(element)
+                CG['elements'] = new_element
+
+            for PG in layout_raw_data['PM']:
+                new_element = []
+                for element in PG['elements']:
+                    element = PG['groupName'] + '-' + element
+                    new_element.append(element)
+                PG['elements'] = new_element
+
+            for BG in layout_raw_data['BM']:
+                new_element = []
+                for element in BG['elements']:
+                    element = BG['groupName'] + '-' + element
+                    new_element.append(element)
+                BG['elements'] = new_element
+
+            for TG in layout_raw_data['TM']:
+                new_element = []
+                for element in TG['elements']:
+                    element = TG['groupName'] + '-' + element
+                    new_element.append(element)
+                TG['elements'] = new_element
+
+            with open(self.layout_path, 'w+', encoding='utf-8') as file2:
+            # with open("./config/example3/layout_TEST.json", 'w+', encoding='utf-8') as file2:
+                json.dump(layout_raw_data, file2, indent=4)
+
     # 自动添加buffer到wafer.json
     def add_BM(self):
         new_wafer_json_data = []
@@ -112,7 +149,7 @@ class Read_json:
                                     }
                                     new_recipe.insert(index + 1, bm_info)
                                     index = index + 1
-                                    print('添加BM', bm)
+                                    # print('添加BM', bm)
                                     break
                             if flag:
                                 break
@@ -374,9 +411,10 @@ O_num 表示所有工件的所有工序总数
 
 
 class get_Recipe:
-    def __init__(self, layout_path, wafer_path, wafer_noBM_path):
-        j = Read_json(layout_path, wafer_path, wafer_noBM_path)
+    def __init__(self, layout_path, layout_raw_path, wafer_path, wafer_noBM_path):
+        j = Read_json(layout_path, layout_raw_path, wafer_path, wafer_noBM_path)
         j.check_waferNum()  # 判断输入的CM的槽位是否小于wafer数量，若是,则报错退出
+        j.layout_add_element_groupName()
         j.get_Layout_Info()
         j.add_BM()
         j.get_Wafer_Info()
