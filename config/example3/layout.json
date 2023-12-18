@@ -748,6 +748,60 @@
             "elements": [
                 "1","2"
             ]
+        },
+        {
+            "groupName": "BM7",
+            "elements": [
+                "1","2"
+            ]
+        },
+        {
+            "groupName": "BM8",
+            "elements": [
+                "1","2"
+            ]
+        },
+        {
+            "groupName": "BM9",
+            "elements": [
+                "1","2"
+            ]
+        },
+        {
+            "groupName": "BM10",
+            "elements": [
+                "1","2"
+            ]
+        },
+        {
+            "groupName": "BM11",
+            "elements": [
+                "1","2"
+            ]
+        },
+        {
+            "groupName": "BM12",
+            "elements": [
+                "1","2"
+            ]
+        },
+        {
+            "groupName": "BM13",
+            "elements": [
+                "1","2"
+            ]
+        },
+        {
+            "groupName": "BM14",
+            "elements": [
+                "1","2"
+            ]
+        },
+        {
+            "groupName": "BM15",
+            "elements": [
+                "1","2"
+            ]
         }
     ],
     "TM": [
@@ -914,7 +968,8 @@
                 "PM87",
                 "PM88",
                 "PM74",
-                "BM10"
+                "BM10",
+                "BM11"
             ],
             "transferTime": 3
         },

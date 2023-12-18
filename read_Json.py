@@ -35,6 +35,7 @@ class Read_json:
         # 机械臂相关
         self.transfer_time = []  # 每个机械臂的取放时间
         self.accessibleList = []  # 每个PM/CM的可交互机械臂列表在transfer_time中的索引
+        self.TM_element_to_group = {}   # 将element的序号与TM group的序号对应
 
     # 判断输入的CM的槽位是否小于wafer数量，若是，则报错退出
     def check_waferNum(self):
@@ -79,31 +80,22 @@ class Read_json:
                 for i in range(step_num - 1):
                     moduleName1 = recipe[i]['processModule'][0]
                     moduleName2 = recipe[i + 1]['processModule'][0]
-                    # print('moduleName1', moduleName1)
+
                     moduleName1_index = self.group_elements_index[moduleName1]
                     moduleName2_index = self.group_elements_index[moduleName2]
                     # 相邻的两个processModule的可达的机械臂(的编号)：
                     accessibleTM1 = self.accessibleList[moduleName1_index]
                     accessibleTM2 = self.accessibleList[moduleName2_index]
-                    # print('i=', i)
-                    # print('index=', index)
-                    # print(moduleName1, self.accessibleList[moduleName1_index])
-                    # print(moduleName2, self.accessibleList[moduleName2_index])
-                    # print()
+
                     transfer = accessibleTM1 & accessibleTM2
                     if transfer == set():  # 若两个processModule不在同一个TM下(交集为空)，则需要找这两组TM的accessibleList中共同的BM
-                        # print('moduleName1:', moduleName1)
-                        # print('i=', i)
-                        # print('accessibleTM1', accessibleTM1)
-                        # print('accessibleTM2', accessibleTM2)
                         # 有多个可选的BM怎么处理(采用双层循环？)
                         flag = False
                         for j in accessibleTM1:
-                            access_module1 = TM[j]['accessibleList']
-                            # print('access_module1', access_module1)
+                            access_module1 = TM[self.TM_element_to_group[j]]['accessibleList']
+                            # 当前逻辑是找到一组能用的BM就不再进行遍历
                             for k in accessibleTM2:
-                                access_module2 = TM[k]['accessibleList']
-                                # print('access_module2', access_module2)
+                                access_module2 = TM[self.TM_element_to_group[k]]['accessibleList']
 
                                 # 找出这两个机械臂可达的BM
                                 access_buffer_module1 = [l for l in access_module1 if l in self.buffer_module]
@@ -113,18 +105,14 @@ class Read_json:
                                 if bm:  # 非空
                                     flag = True
                                     # 将BM信息插入json文件中，若有多个BM可选则只插入第一个
-                                    # 需要考虑同时有多个BM的情况，如BM6-1/BM6-2,当前是选第一个，且在recipe中写死
+                                    # 需要考虑同时有多个BM的情况，如BM6-1/BM6-2
                                     bm_info = {
                                         "processModule": bm,
                                         "processTime": 0
                                     }
-                                    # bm_info = {
-                                    #     "processModule": [bm[0]],
-                                    #     "processTime": 0
-                                    # }
-                                    # print(bm_info)
                                     new_recipe.insert(index + 1, bm_info)
                                     index = index + 1
+                                    print('添加BM', bm)
                                     break
                             if flag:
                                 break
@@ -211,11 +199,12 @@ class Read_json:
             self.accessibleList = [set() for i in range(self.all_elements_num)]
             TM = self.layout_json_data['TM']
             self.type_index['TM'] = index
+            TM_elements_num = 0     # 具体的element从0开始编号
+            TM_group_num = 0        # TM group从0开始编号
             # TM_num = 0  # 记录TM（机械臂）的总数量
-            for TG in TM:  # 遍历顺序是TM1,TM2,TM3,TM4,TM6,TM8,TM7,TM5
+            for TG in TM:  # 遍历顺序是TM1,TM2,TM3,TM4,TM6,TM8,TM7,TM5(当前不是此顺序)
                 self.TM_num = self.TM_num + 1
                 groupName = TG['groupName']
-                self.buffer_module.append(groupName)
                 len_group = len(TG['elements'])
                 # self.all_elements_num += len_group    # 不清楚TM这部分代码的具体情况，暂不修改所有元素的数量
                 self.group_elements_index[groupName] = index
@@ -230,6 +219,14 @@ class Read_json:
                 for element in TG['elements']:
                     self.all_elements_index[element] = element_index
                     element_index = element_index + 1
+
+                # TM中各element在self.accessibleList中的索引
+                # key是element在self.accessibleList中的索引，value是self.layout_json_data['TM']按序下来的编号
+                # 用于add_BM函数
+                for element in TG['elements']:
+                    self.TM_element_to_group[TM_elements_num] = TM_group_num
+                    TM_elements_num = TM_elements_num + 1
+                TM_group_num = TM_group_num + 1
 
                 # 存储每个机械臂的运动时间
                 for i in range(count):
@@ -250,6 +247,7 @@ class Read_json:
         print('all_elements_index', self.all_elements_index)
         print('type_index', self.type_index)
         print('all_elements_num', self.all_elements_num)
+        print('TM_element_to_group', self.TM_element_to_group)
 
     def get_Wafer_Info(self):
         with open(self.wafer_path, 'r', encoding='utf-8') as file:
@@ -335,6 +333,10 @@ class Read_json:
                     processModule2 = recipe[i + 1]['processModule']
                     for module in processModule1:
                         self.graph[module] = processModule2
+                for module in recipe[len(recipe)-1]['processModule']:
+                    # 遍历到最后，有向图有点只有入边
+                    if module not in self.graph:
+                        self.graph[module] = []
 
         with open(self.layout_path, 'r', encoding='utf-8') as file:
             layout_json_data = json.load(file)
@@ -355,7 +357,6 @@ class Read_json:
                 #     # print(self.graph[module])
 
         self.DFS(list(self.graph.keys())[0], vis, trace)
-        # print(self.circle)
 
     def append_elements_name(self, module_group):
         for element in module_group['elements']:
