@@ -3,7 +3,6 @@ from Jobs import Job
 from Machines import Machine_Time_window
 from Instance import put_time, pick_time, switch_time, INVALID
 import numpy as np
-from memory_profiler import profile
 
 bias = 1
 
