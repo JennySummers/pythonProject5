@@ -279,6 +279,7 @@ class GA:
 
     # 打印word中的红字指令
     def print_Message_Flow(self, elements_name, type_index):
+        self.TM_msg.sort(key=lambda y: y.cmd_time)  # 按时间进行排序
         for x in self.TM_msg:
             if x.move_type == 0:
                 # 从CM取片
@@ -364,7 +365,7 @@ class GA:
             print("current time : ", datetime.datetime.now())
         stop_time = datetime.datetime.now()
         self.set_TM_Message(m_num, TM_num, group_name_index, stop_time)
-        self.print_TM_cmd(elements_name)
+        # self.print_TM_cmd(elements_name)
         self.print_Message_Flow(elements_name, type_index)
         Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
         Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图
