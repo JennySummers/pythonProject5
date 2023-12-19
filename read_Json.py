@@ -240,9 +240,10 @@ class Read_json:
             TM_group_num = 0        # TM group从0开始编号
             # TM_num = 0  # 记录TM（机械臂）的总数量
             for TG in TM:  # 遍历顺序是TM1,TM2,TM3,TM4,TM6,TM8,TM7,TM5(当前不是此顺序)
-                self.TM_num = self.TM_num + 1
+                # self.TM_num = self.TM_num + 1
                 groupName = TG['groupName']
                 len_group = len(TG['elements'])
+                self.TM_num = self.TM_num + len_group   # 记录TM（机械臂）的总数量
                 # self.all_elements_num += len_group    # 不清楚TM这部分代码的具体情况，暂不修改所有元素的数量
                 self.group_elements_index[groupName] = index
                 index += len_group
