@@ -237,9 +237,9 @@ class GA:
                 # time_1 = Timestep2Time(cur_time, Start_time[i_1])  # 设置时间格式为具体时间格式
                 # time_2 = Timestep2Time(cur_time, Start_time[i_1] + pick_time)  # 设置时间格式为具体时间格式
                 # time_3 = Timestep2Time(cur_time, End_time[i_1] - put_time)  # 设置时间格式为具体时间格式
-                self.TM_msg.append(Arm_Message(i, time_1, 0, pre, nxt))  # 机械臂取片指令
-                self.TM_msg.append(Arm_Message(i, time_2, 2, pre, nxt))  # 机械臂移动指令
-                self.TM_msg.append(Arm_Message(i, time_3, 1, pre, nxt))  # 机械臂放片指令
+                self.TM_msg.append(Arm_Message(i, j+1, o+1, time_1, 0, pre, nxt))  # 机械臂取片指令
+                self.TM_msg.append(Arm_Message(i, j+1, o+1, time_2, 2, pre, nxt))  # 机械臂移动指令
+                self.TM_msg.append(Arm_Message(i, j+1, o+1, time_3, 1, pre, nxt))  # 机械臂放片指令
                 # 删除临时变量
                 del j
                 del o
