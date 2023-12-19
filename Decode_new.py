@@ -21,6 +21,8 @@ class Decode:
         self.JM = []  # 机器顺序矩阵，JM[i][j]表示工件i的第j道工序在机器JM[i][j]上加工
         self.T = []  # 时间顺序矩阵，T[i][j]表示工件i的第j道工序在机器JM[i][j]上加工的加工时间为T[i][j]
         self.TM_List = M_num - TM_num  # 机械臂列表
+        self.first_pick = 0  # 保证按序取片的最早可以开始时间
+        self.decay = 5  # 晶圆在机械臂上最长可以停留的时间
         for j in range(M_num):
             self.Machines.append(Machine_Time_window(j, self.Machine_time[j]))  # 为每个机器分配一个机器类，并对其进行编号
         for k, v in J.items():
@@ -100,23 +102,13 @@ class Decode:
         self.Order_Matrix(MS)
         for k, v in self.J.items():
             LT = self.DFS_for_jobs(k - 1, 0, v, [], [], [])  # early 和 late 为空表示第一道工序开始时间和结束时间无限制
-            st = int(0)
-            et = int(0)
-            for ti in range(len(LT)):
+            for ti in range(len(LT) - 1):
                 machine = self.JM[k-1][ti]
                 P_t = self.T[k-1][ti]
                 st = LT[ti]
-                if ti + 1 < len(LT):
-                    et = LT[ti + 1]
-                else:
-                    et = st + P_t
-                if machine >= self.TM_List:  # 机械臂的处理
-                    et = LT[ti+1]
-                    st = LT[ti+1] - P_t
-                else:  #处理单元的处理
-                    if ti + 2 < v:
-                        st = LT[ti]
-                        et = LT[ti+2] - self.T[k-1][ti+1]
+                et = LT[ti + 1]
+                if ti == 1:
+                    self.first_pick = max(self.first_pick, st)
                 self.Jobs[k-1]._Input(st, et, machine)  # 参数含义:工件的工序最早开始时间，当前工序结束时间，选择的机器号
                 if et > self.fitness:
                     self.fitness = et
@@ -129,23 +121,26 @@ class Decode:
             early = int(0)
         else:
             early = early_s[-1]
+        if op == 1:
+            early = max(early, self.first_pick)
         if not late_s:
             late = int(-1)
         else:
             late = late_s[-1]
         if op == sop:
+            LT.append(early)
             return LT
         machine = self.JM[job][op]  # JM[i][j]表示工件i的第j道工序在机器JM[i][j]上加工
         P_t = self.T[job][op]  # T[i][j]表示工件i的第j道工序的加工时间为T[i][j]
         while 1:
             earliest_start, nxt_early, nxt_late = self.Earliest_Start(job, op, machine, early, late)
-            '''
+            '''如果当前机器为机械臂的处理方法'''
             if machine >= self.TM_List:
                 nxt_early = earliest_start + P_t
-                nxt_late = late + P_t
+                nxt_late = min(late + P_t + self.decay, nxt_late)
                 if late == -1:
                     nxt_late = -1
-            '''
+            '''如果当前机器为机械臂的处理方法'''
             # 得到下一道工序的最早开始时间，和最晚开始时间
             if late == -1 or early <= earliest_start <= late:
                 LT.append(earliest_start)
