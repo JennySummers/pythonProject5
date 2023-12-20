@@ -289,17 +289,17 @@ class GA:
                 # if type_index['CM'] <= x.move_from <= type_index['CM_end']:
                 #     print(elements_name[x.move_from], ':', 'PREPARE_SEND')
                 print('RobotActionCmdType::Pick')
-                print('nSlot/ModuleSlot=', x.wafer_no, '  (PREPARE_SEND)')
-                print('TargetModule=',  x.move_from,  elements_name[x.move_from])   # 应该存编号？nArm是啥
+                print('nSlot/ModuleSlot=', elements_name[x.wafer_no], 'index:', x.wafer_no, '  (PREPARE_SEND)')
+                print('TargetModule=', elements_name[x.move_from], 'index:', x.move_from)  # 应该存编号？nArm是啥
                 print('Time:', x.cmd_time, ' ', elements_name[x.move_from], ':', 'PREPARE_SEND')
-                print('Time:', x.cmd_time, ' ', elements_name[x.machine_no], ':', 'PICK_WAFER')
+                print('Time:', x.cmd_time, ' ', elements_name[x.machine_no], ':', 'PICK_WAFER', 'index:', x.machine_no)
                 print('Time:', x.cmd_time, ' ', elements_name[x.move_from], ':', 'POST_SEND')
             if x.move_type == 1:    # 机械臂操作为放片，place
                 print('RobotActionCmdType::Place')
-                print('nSlot/ModuleSlot=', x.wafer_no, '  (PREPARE_RECV)')
-                print('TargetModule=', x.move_to, elements_name[x.move_to])  # 应该存编号？nArm是啥
+                print('nSlot/ModuleSlot=', elements_name[x.wafer_no], 'index:', x.wafer_no, '  (PREPARE_RECV)')
+                print('TargetModule=', elements_name[x.move_to], 'index:', x.move_to)  # 应该存编号？nArm是啥
                 print('Time:', x.cmd_time, ' ', elements_name[x.move_to], ':', 'PREPARE_RECV')
-                print('Time:', x.cmd_time, ' ', elements_name[x.machine_no], ':', 'PLACE_WAFER')
+                print('Time:', x.cmd_time, ' ', elements_name[x.machine_no], ':', 'PLACE_WAFER', 'index:', x.machine_no)
                 print('Time:', x.cmd_time, ' ', elements_name[x.move_to], ':', 'POST_RECV')
             # if x.move_type == 2:
             #     print('Machine:', x.machine_no, ' Time:', x.cmd_time, ' move from:', x.move_from, ' to:', x.move_to)
@@ -374,7 +374,7 @@ class GA:
             print("current time : ", datetime.datetime.now())
         stop_time = datetime.datetime.now()
         self.set_TM_Message(m_num, TM_num, group_name_index, stop_time)
-        # self.print_TM_cmd(elements_name)
+        self.print_TM_cmd(elements_name)
         self.print_Message_Flow(elements_name, type_index)
         Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
         Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图

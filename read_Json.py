@@ -286,6 +286,7 @@ class Read_json:
         print('type_index', self.type_index)
         print('all_elements_num', self.all_elements_num)
         print('TM_element_to_group', self.TM_element_to_group)
+        # print('accessibleList', self.accessibleList)
 
     def get_Wafer_Info(self):
         with open(self.wafer_path, 'r', encoding='utf-8') as file:
@@ -395,6 +396,7 @@ class Read_json:
                 #     # print(self.graph[module])
 
         self.DFS(list(self.graph.keys())[0], vis, trace)
+        # print(self.graph)
 
     def append_elements_name(self, module_group):
         for element in module_group['elements']:

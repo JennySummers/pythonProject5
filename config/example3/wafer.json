@@ -4,6 +4,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -146,6 +159,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -155,6 +181,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -297,6 +336,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -306,6 +358,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -448,6 +513,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -457,6 +535,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -599,6 +690,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -608,6 +712,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -750,6 +867,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -759,6 +889,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -901,6 +1044,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -910,6 +1066,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -1052,6 +1221,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -1061,6 +1243,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -1203,6 +1398,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -1212,6 +1420,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -1354,6 +1575,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -1363,6 +1597,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -1505,6 +1752,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -1514,6 +1774,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -1656,6 +1929,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -1665,6 +1951,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -1807,6 +2106,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -1816,6 +2128,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -1958,6 +2283,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -1967,6 +2305,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -2109,6 +2460,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -2118,6 +2482,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -2260,6 +2637,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -2269,6 +2659,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -2411,6 +2814,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -2420,6 +2836,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -2562,6 +2991,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -2571,6 +3013,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -2713,6 +3168,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -2722,6 +3190,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -2864,6 +3345,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -2873,6 +3367,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -3015,6 +3522,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -3024,6 +3544,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -3166,6 +3699,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -3175,6 +3721,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -3317,6 +3876,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -3326,6 +3898,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -3468,6 +4053,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -3477,6 +4075,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -3619,6 +4230,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
@@ -3628,6 +4252,19 @@
         "waferNum": 1,
         "recipe": [
             {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
                 "processTime": 75.0,
                 "processModule": [
                     "PM1",
@@ -3770,6 +4407,19 @@
                     "PM88",
                     "PM91",
                     "PM92"
+                ]
+            },
+            {
+                "processModule": [
+                    "BM5",
+                    "BM6"
+                ],
+                "processTime": 0
+            },
+            {
+                "processTime": 0,
+                "processModule": [
+                    "CM1"
                 ]
             }
         ]
