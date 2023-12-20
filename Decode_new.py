@@ -31,6 +31,7 @@ class Decode:
     def reset(self):
         self.Machines.clear()
         self.fitness = 0
+        self.first_pick = 0
         self.Jobs.clear()
         for j in range(self.M_num):
             self.Machines.append(Machine_Time_window(j, self.Machine_time[j]))  # 为每个机器分配一个机器类，并对其进行编号
