@@ -13,6 +13,7 @@ from Messages import Arm_Message
 import matplotlib.pyplot as plt
 import datetime
 import math
+import json
 
 
 def Timestep2Time(cur_time, time_step, time_decay=0):  # 将单位时间转换为实际的时间
@@ -304,7 +305,29 @@ class GA:
             # if x.move_type == 2:
             #     print('Machine:', x.machine_no, ' Time:', x.cmd_time, ' move from:', x.move_from, ' to:', x.move_to)
 
-    def main(self, processing_time, J_O, m_num, j_num, o_num, TM_num, group_name_index, elements_name, type_index):
+    # 将cmd命令所需的信息输出到json文件中
+    def output_Message_to_Json(self, elements_name, cmd_message_path):
+        Message_data = []
+        self.TM_msg.sort(key=lambda y: y.cmd_time)  # 按时间进行排序
+        for x in self.TM_msg:
+            msg = {}
+            if x.move_type == 0:    # 机械臂操作为取片，pick
+                msg['time'] = x.cmd_time
+                msg['type'] = 'pick'
+                msg['target'] = elements_name[x.move_from]
+                msg['TM'] = elements_name[x.machine_no]
+                Message_data.append(msg)
+            if x.move_type == 1:    # 机械臂操作为放片，place
+                msg['time'] = x.cmd_time
+                msg['type'] = 'place'
+                msg['target'] = elements_name[x.move_to]
+                msg['TM'] = elements_name[x.machine_no]
+                Message_data.append(msg)
+        with open(cmd_message_path, 'w+', encoding='utf-8') as file:
+            json.dump(Message_data, file, indent=4)
+        # print(Message_data)
+
+    def main(self, processing_time, J_O, m_num, j_num, o_num, TM_num, group_name_index, elements_name, type_index, cmd_message_path):
         start_time = datetime.datetime.now()
         print("start time is : ", start_time)
         e = Encode(processing_time, self.Pop_size, J_O, j_num, m_num, self.Machine_status)
@@ -374,8 +397,9 @@ class GA:
             print("current time : ", datetime.datetime.now())
         stop_time = datetime.datetime.now()
         self.set_TM_Message(m_num, TM_num, group_name_index, stop_time)
-        self.print_TM_cmd(elements_name)
-        self.print_Message_Flow(elements_name, type_index)
+        # self.print_TM_cmd(elements_name)
+        # self.print_Message_Flow(elements_name, type_index)
+        self.output_Message_to_Json(elements_name, cmd_message_path)  # 将cmd命令所需的信息输出到json文件中
         Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
         Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图
         r_time = stop_time - start_time

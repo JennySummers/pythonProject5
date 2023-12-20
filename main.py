@@ -23,16 +23,17 @@ from Instance import Machine_status, Processing_time, J, M_num, J_num, O_num
 def set_Wafer(layout_path="./config/example3/layout.json",
               layout_raw_path="./config/example3/layout_raw.json",
               wafer_path="./config/example3/wafer.json",
-              wafer_noBM_path="./config/example3/wafer_noBM.json"):
-    return layout_path, layout_raw_path, wafer_path, wafer_noBM_path
+              wafer_noBM_path="./config/example3/wafer_noBM.json",
+              cmd_message_path="./config/example3/cmd_message.json"):
+    return layout_path, layout_raw_path, wafer_path, wafer_noBM_path, cmd_message_path
 
 
 def first_scheduler():
-    Layout_path, layout_raw_path, Wafer_path, Wafer_noBM_path = set_Wafer()
+    Layout_path, layout_raw_path, Wafer_path, Wafer_noBM_path, Cmd_message_path = set_Wafer()
     r = get_Recipe(Layout_path, layout_raw_path, Wafer_path, Wafer_noBM_path)
     g = GA(r.Machine_status)
     g.main(r.Processing_time, r.J, r.M_num, r.J_num, r.O_num, r.TM_num, r.group_name_index, r.elements_name,
-           r.type_index)
+           r.type_index, Cmd_message_path)
     del r
     del g
 

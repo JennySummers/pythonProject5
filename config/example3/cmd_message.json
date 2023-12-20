@@ -1,0 +1,5102 @@
+[
+    {
+        "time": 237,
+        "type": "pick",
+        "target": "CM1-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 239,
+        "type": "place",
+        "target": "BM5-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 240,
+        "type": "pick",
+        "target": "CM1-2",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 240,
+        "type": "pick",
+        "target": "BM5-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 242,
+        "type": "place",
+        "target": "BM6-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 242,
+        "type": "place",
+        "target": "PM1-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 243,
+        "type": "pick",
+        "target": "CM1-3",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 243,
+        "type": "pick",
+        "target": "BM6-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 245,
+        "type": "place",
+        "target": "BM5-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 245,
+        "type": "place",
+        "target": "PM2-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 246,
+        "type": "pick",
+        "target": "CM1-4",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 246,
+        "type": "pick",
+        "target": "BM5-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 248,
+        "type": "place",
+        "target": "BM6-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 248,
+        "type": "place",
+        "target": "PM3-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 249,
+        "type": "pick",
+        "target": "CM1-5",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 249,
+        "type": "pick",
+        "target": "BM6-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 251,
+        "type": "place",
+        "target": "BM5-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 251,
+        "type": "place",
+        "target": "PM4-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 252,
+        "type": "pick",
+        "target": "CM1-6",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 252,
+        "type": "pick",
+        "target": "BM5-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 254,
+        "type": "place",
+        "target": "BM6-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 254,
+        "type": "place",
+        "target": "PM5-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 255,
+        "type": "pick",
+        "target": "CM1-7",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 255,
+        "type": "pick",
+        "target": "BM6-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 257,
+        "type": "place",
+        "target": "BM5-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 257,
+        "type": "place",
+        "target": "PM6-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 258,
+        "type": "pick",
+        "target": "CM1-8",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 258,
+        "type": "pick",
+        "target": "BM5-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 260,
+        "type": "place",
+        "target": "BM6-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 261,
+        "type": "pick",
+        "target": "CM1-9",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 263,
+        "type": "place",
+        "target": "BM5-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 264,
+        "type": "pick",
+        "target": "CM1-10",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 317,
+        "type": "place",
+        "target": "BM6-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 317,
+        "type": "place",
+        "target": "PM1-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 318,
+        "type": "pick",
+        "target": "CM1-11",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 318,
+        "type": "pick",
+        "target": "BM6-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 318,
+        "type": "pick",
+        "target": "PM1-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 320,
+        "type": "place",
+        "target": "BM5-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 320,
+        "type": "place",
+        "target": "PM2-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 320,
+        "type": "place",
+        "target": "PM81-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 321,
+        "type": "pick",
+        "target": "CM1-12",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 321,
+        "type": "pick",
+        "target": "BM5-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 321,
+        "type": "pick",
+        "target": "PM2-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 323,
+        "type": "place",
+        "target": "BM6-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 323,
+        "type": "place",
+        "target": "PM3-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 323,
+        "type": "place",
+        "target": "PM82-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 324,
+        "type": "pick",
+        "target": "CM1-13",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 324,
+        "type": "pick",
+        "target": "BM6-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 324,
+        "type": "pick",
+        "target": "PM3-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 326,
+        "type": "place",
+        "target": "BM5-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 326,
+        "type": "place",
+        "target": "PM4-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 326,
+        "type": "place",
+        "target": "PM83-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 327,
+        "type": "pick",
+        "target": "CM1-14",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 327,
+        "type": "pick",
+        "target": "BM5-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 327,
+        "type": "pick",
+        "target": "PM4-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 329,
+        "type": "place",
+        "target": "BM6-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 329,
+        "type": "place",
+        "target": "PM5-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 329,
+        "type": "place",
+        "target": "PM84-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 330,
+        "type": "pick",
+        "target": "CM1-15",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 330,
+        "type": "pick",
+        "target": "BM6-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 330,
+        "type": "pick",
+        "target": "PM5-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 365,
+        "type": "place",
+        "target": "BM5-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 365,
+        "type": "place",
+        "target": "PM6-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 365,
+        "type": "place",
+        "target": "PM81-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 366,
+        "type": "pick",
+        "target": "CM1-16",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 366,
+        "type": "pick",
+        "target": "BM5-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 366,
+        "type": "pick",
+        "target": "PM6-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 366,
+        "type": "pick",
+        "target": "PM81-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 368,
+        "type": "place",
+        "target": "PM82-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 368,
+        "type": "place",
+        "target": "PM21-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 369,
+        "type": "pick",
+        "target": "PM82-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 371,
+        "type": "place",
+        "target": "PM22-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 372,
+        "type": "pick",
+        "target": "PM83-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 374,
+        "type": "place",
+        "target": "PM23-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 375,
+        "type": "pick",
+        "target": "PM84-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 377,
+        "type": "place",
+        "target": "PM24-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 392,
+        "type": "place",
+        "target": "BM6-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 392,
+        "type": "place",
+        "target": "PM1-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 393,
+        "type": "pick",
+        "target": "CM1-17",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 393,
+        "type": "pick",
+        "target": "BM6-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 393,
+        "type": "pick",
+        "target": "PM1-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 395,
+        "type": "place",
+        "target": "BM5-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 395,
+        "type": "place",
+        "target": "PM2-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 395,
+        "type": "place",
+        "target": "PM83-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 396,
+        "type": "pick",
+        "target": "CM1-18",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 396,
+        "type": "pick",
+        "target": "BM5-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 396,
+        "type": "pick",
+        "target": "PM2-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 398,
+        "type": "place",
+        "target": "BM6-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 398,
+        "type": "place",
+        "target": "PM3-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 398,
+        "type": "place",
+        "target": "PM84-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 399,
+        "type": "pick",
+        "target": "CM1-19",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 399,
+        "type": "pick",
+        "target": "BM6-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 399,
+        "type": "pick",
+        "target": "PM3-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 410,
+        "type": "place",
+        "target": "BM5-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 410,
+        "type": "place",
+        "target": "PM4-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 410,
+        "type": "place",
+        "target": "PM81-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 411,
+        "type": "pick",
+        "target": "CM1-20",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 411,
+        "type": "pick",
+        "target": "BM5-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 411,
+        "type": "pick",
+        "target": "PM4-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 411,
+        "type": "pick",
+        "target": "PM81-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 413,
+        "type": "place",
+        "target": "BM6-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 413,
+        "type": "place",
+        "target": "PM5-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 413,
+        "type": "place",
+        "target": "PM82-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 413,
+        "type": "place",
+        "target": "PM25-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 414,
+        "type": "pick",
+        "target": "CM1-21",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 414,
+        "type": "pick",
+        "target": "BM6-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 414,
+        "type": "pick",
+        "target": "PM5-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 414,
+        "type": "pick",
+        "target": "PM82-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 416,
+        "type": "place",
+        "target": "PM26-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 426,
+        "type": "pick",
+        "target": "PM21-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 428,
+        "type": "place",
+        "target": "PM31-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 429,
+        "type": "pick",
+        "target": "PM22-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 431,
+        "type": "place",
+        "target": "PM32-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 432,
+        "type": "pick",
+        "target": "PM23-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 434,
+        "type": "place",
+        "target": "PM33-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 435,
+        "type": "pick",
+        "target": "PM24-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 437,
+        "type": "place",
+        "target": "PM34-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 440,
+        "type": "place",
+        "target": "BM5-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 440,
+        "type": "place",
+        "target": "PM6-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 440,
+        "type": "place",
+        "target": "PM83-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 441,
+        "type": "pick",
+        "target": "CM1-22",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 441,
+        "type": "pick",
+        "target": "BM5-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 441,
+        "type": "pick",
+        "target": "PM6-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 441,
+        "type": "pick",
+        "target": "PM83-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 443,
+        "type": "place",
+        "target": "PM84-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 443,
+        "type": "place",
+        "target": "PM21-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 444,
+        "type": "pick",
+        "target": "PM84-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 446,
+        "type": "place",
+        "target": "PM22-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 456,
+        "type": "pick",
+        "target": "PM81-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 458,
+        "type": "place",
+        "target": "PM23-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 459,
+        "type": "pick",
+        "target": "PM82-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 461,
+        "type": "place",
+        "target": "PM24-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 467,
+        "type": "place",
+        "target": "BM6-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 467,
+        "type": "place",
+        "target": "PM1-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 468,
+        "type": "pick",
+        "target": "CM1-23",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 468,
+        "type": "pick",
+        "target": "BM6-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 468,
+        "type": "pick",
+        "target": "PM1-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 470,
+        "type": "place",
+        "target": "BM5-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 470,
+        "type": "place",
+        "target": "PM2-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 470,
+        "type": "place",
+        "target": "PM81-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 471,
+        "type": "pick",
+        "target": "CM1-24",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 471,
+        "type": "pick",
+        "target": "BM5-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 471,
+        "type": "pick",
+        "target": "PM2-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 471,
+        "type": "pick",
+        "target": "PM25-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 473,
+        "type": "place",
+        "target": "BM6-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 473,
+        "type": "place",
+        "target": "PM3-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 473,
+        "type": "place",
+        "target": "PM82-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 473,
+        "type": "place",
+        "target": "PM35-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 474,
+        "type": "pick",
+        "target": "CM1-25",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 474,
+        "type": "pick",
+        "target": "BM6-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 474,
+        "type": "pick",
+        "target": "PM3-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 474,
+        "type": "pick",
+        "target": "PM26-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 476,
+        "type": "place",
+        "target": "PM36-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 485,
+        "type": "place",
+        "target": "BM5-1",
+        "TM": "TM1-1"
+    },
+    {
+        "time": 485,
+        "type": "place",
+        "target": "PM4-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 485,
+        "type": "place",
+        "target": "PM83-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 486,
+        "type": "pick",
+        "target": "BM5-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 486,
+        "type": "pick",
+        "target": "PM4-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 486,
+        "type": "pick",
+        "target": "PM83-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 488,
+        "type": "place",
+        "target": "PM5-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 488,
+        "type": "place",
+        "target": "PM84-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 488,
+        "type": "place",
+        "target": "PM25-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 489,
+        "type": "pick",
+        "target": "BM6-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 489,
+        "type": "pick",
+        "target": "PM5-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 489,
+        "type": "pick",
+        "target": "PM84-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 491,
+        "type": "place",
+        "target": "PM26-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 501,
+        "type": "pick",
+        "target": "PM21-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 503,
+        "type": "place",
+        "target": "PM37-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 504,
+        "type": "pick",
+        "target": "PM22-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 506,
+        "type": "place",
+        "target": "PM38-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 515,
+        "type": "place",
+        "target": "PM6-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 515,
+        "type": "place",
+        "target": "PM81-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 516,
+        "type": "pick",
+        "target": "BM5-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 516,
+        "type": "pick",
+        "target": "PM6-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 516,
+        "type": "pick",
+        "target": "PM81-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 516,
+        "type": "pick",
+        "target": "PM23-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 518,
+        "type": "place",
+        "target": "PM82-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 518,
+        "type": "place",
+        "target": "PM21-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 518,
+        "type": "place",
+        "target": "PM39-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 519,
+        "type": "pick",
+        "target": "PM24-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 519,
+        "type": "pick",
+        "target": "PM82-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 521,
+        "type": "place",
+        "target": "PM22-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 534,
+        "type": "pick",
+        "target": "PM84-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 536,
+        "type": "place",
+        "target": "PM24-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 538,
+        "type": "place",
+        "target": "PM31-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 539,
+        "type": "pick",
+        "target": "PM31-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 541,
+        "type": "place",
+        "target": "PM93-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 542,
+        "type": "place",
+        "target": "PM1-1",
+        "TM": "TM2-1"
+    },
+    {
+        "time": 542,
+        "type": "pick",
+        "target": "PM83-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 542,
+        "type": "pick",
+        "target": "PM32-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 543,
+        "type": "pick",
+        "target": "PM1-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 544,
+        "type": "place",
+        "target": "PM23-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 544,
+        "type": "place",
+        "target": "PM94-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 545,
+        "type": "place",
+        "target": "PM83-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 545,
+        "type": "pick",
+        "target": "PM33-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 546,
+        "type": "pick",
+        "target": "PM2-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 547,
+        "type": "place",
+        "target": "PM95-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 548,
+        "type": "place",
+        "target": "PM84-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 548,
+        "type": "pick",
+        "target": "PM34-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 549,
+        "type": "pick",
+        "target": "PM3-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 549,
+        "type": "pick",
+        "target": "PM26-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 550,
+        "type": "place",
+        "target": "PM96-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 551,
+        "type": "place",
+        "target": "PM33-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 551,
+        "type": "pick",
+        "target": "PM25-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 553,
+        "type": "place",
+        "target": "PM32-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 560,
+        "type": "place",
+        "target": "PM81-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 561,
+        "type": "pick",
+        "target": "PM4-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 561,
+        "type": "pick",
+        "target": "PM81-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 563,
+        "type": "place",
+        "target": "PM82-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 563,
+        "type": "place",
+        "target": "PM25-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 564,
+        "type": "pick",
+        "target": "PM5-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 564,
+        "type": "pick",
+        "target": "PM82-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 566,
+        "type": "place",
+        "target": "PM26-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 576,
+        "type": "pick",
+        "target": "PM21-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 578,
+        "type": "place",
+        "target": "PM34-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 579,
+        "type": "pick",
+        "target": "PM22-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 583,
+        "type": "place",
+        "target": "PM35-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 584,
+        "type": "pick",
+        "target": "PM35-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 586,
+        "type": "place",
+        "target": "PM93-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 587,
+        "type": "pick",
+        "target": "PM36-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 587,
+        "type": "pick",
+        "target": "PM93-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 590,
+        "type": "place",
+        "target": "PM83-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 591,
+        "type": "pick",
+        "target": "PM6-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 591,
+        "type": "pick",
+        "target": "PM83-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 591,
+        "type": "place",
+        "target": "PM94-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 591,
+        "type": "place",
+        "target": "PM71-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 592,
+        "type": "pick",
+        "target": "PM94-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 593,
+        "type": "place",
+        "target": "PM84-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 593,
+        "type": "place",
+        "target": "PM21-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 594,
+        "type": "pick",
+        "target": "PM24-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 594,
+        "type": "pick",
+        "target": "PM84-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 596,
+        "type": "place",
+        "target": "PM22-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 596,
+        "type": "place",
+        "target": "PM72-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 597,
+        "type": "pick",
+        "target": "PM95-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 601,
+        "type": "place",
+        "target": "PM73-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 602,
+        "type": "pick",
+        "target": "PM23-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 602,
+        "type": "pick",
+        "target": "PM96-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 602,
+        "type": "pick",
+        "target": "PM71-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 604,
+        "type": "place",
+        "target": "PM36-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 606,
+        "type": "place",
+        "target": "PM71-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 606,
+        "type": "place",
+        "target": "BM7-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 607,
+        "type": "pick",
+        "target": "BM7-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 607,
+        "type": "pick",
+        "target": "PM72-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 609,
+        "type": "pick",
+        "target": "PM82-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 611,
+        "type": "place",
+        "target": "PM24-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 611,
+        "type": "place",
+        "target": "PM97-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 611,
+        "type": "place",
+        "target": "BM7-2",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 612,
+        "type": "pick",
+        "target": "BM7-2",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 612,
+        "type": "pick",
+        "target": "PM73-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 613,
+        "type": "place",
+        "target": "PM37-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 614,
+        "type": "pick",
+        "target": "PM37-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 616,
+        "type": "place",
+        "target": "PM95-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 616,
+        "type": "place",
+        "target": "PM98-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 616,
+        "type": "place",
+        "target": "BM8-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 617,
+        "type": "pick",
+        "target": "PM81-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 617,
+        "type": "pick",
+        "target": "PM38-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 617,
+        "type": "pick",
+        "target": "BM8-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 617,
+        "type": "pick",
+        "target": "PM71-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 618,
+        "type": "pick",
+        "target": "PM1-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 619,
+        "type": "place",
+        "target": "PM23-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 619,
+        "type": "place",
+        "target": "PM96-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 620,
+        "type": "place",
+        "target": "PM81-1",
+        "TM": "TM2-2"
+    },
+    {
+        "time": 621,
+        "type": "pick",
+        "target": "PM25-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 621,
+        "type": "place",
+        "target": "BM8-2",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 623,
+        "type": "place",
+        "target": "PM38-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 624,
+        "type": "pick",
+        "target": "PM26-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 628,
+        "type": "place",
+        "target": "PM39-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 629,
+        "type": "pick",
+        "target": "PM39-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 631,
+        "type": "place",
+        "target": "PM93-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 632,
+        "type": "pick",
+        "target": "PM93-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 636,
+        "type": "pick",
+        "target": "PM83-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 636,
+        "type": "place",
+        "target": "PM97-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 636,
+        "type": "place",
+        "target": "PM72-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 637,
+        "type": "pick",
+        "target": "BM8-2",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 637,
+        "type": "pick",
+        "target": "PM97-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 637,
+        "type": "pick",
+        "target": "PM94-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 638,
+        "type": "place",
+        "target": "PM25-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 639,
+        "type": "pick",
+        "target": "PM84-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 641,
+        "type": "place",
+        "target": "PM26-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 641,
+        "type": "place",
+        "target": "PM98-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 641,
+        "type": "place",
+        "target": "BM11-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 641,
+        "type": "place",
+        "target": "PM73-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 642,
+        "type": "pick",
+        "target": "PM98-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 642,
+        "type": "pick",
+        "target": "BM11-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 644,
+        "type": "place",
+        "target": "PM11-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 646,
+        "type": "place",
+        "target": "BM11-2",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 647,
+        "type": "pick",
+        "target": "PM72-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 647,
+        "type": "pick",
+        "target": "BM11-2",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 649,
+        "type": "pick",
+        "target": "PM31-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 649,
+        "type": "place",
+        "target": "PM12-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 651,
+        "type": "place",
+        "target": "PM94-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 651,
+        "type": "place",
+        "target": "BM7-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 652,
+        "type": "pick",
+        "target": "PM21-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 652,
+        "type": "pick",
+        "target": "BM7-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 652,
+        "type": "pick",
+        "target": "PM73-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 654,
+        "type": "pick",
+        "target": "PM22-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 654,
+        "type": "place",
+        "target": "PM31-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 656,
+        "type": "place",
+        "target": "BM7-2",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 661,
+        "type": "place",
+        "target": "PM97-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 662,
+        "type": "pick",
+        "target": "PM33-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 662,
+        "type": "pick",
+        "target": "BM7-2",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 662,
+        "type": "pick",
+        "target": "PM97-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 662,
+        "type": "pick",
+        "target": "PM95-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 663,
+        "type": "place",
+        "target": "PM32-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 664,
+        "type": "pick",
+        "target": "PM32-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 666,
+        "type": "place",
+        "target": "PM95-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 666,
+        "type": "place",
+        "target": "PM96-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 666,
+        "type": "place",
+        "target": "PM98-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 666,
+        "type": "place",
+        "target": "BM11-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 666,
+        "type": "place",
+        "target": "PM71-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 667,
+        "type": "pick",
+        "target": "PM98-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 667,
+        "type": "pick",
+        "target": "PM96-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 667,
+        "type": "pick",
+        "target": "BM11-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 669,
+        "type": "pick",
+        "target": "PM24-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 669,
+        "type": "place",
+        "target": "PM13-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 671,
+        "type": "place",
+        "target": "BM11-2",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 671,
+        "type": "place",
+        "target": "PM72-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 672,
+        "type": "pick",
+        "target": "BM11-2",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 674,
+        "type": "place",
+        "target": "PM14-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 677,
+        "type": "pick",
+        "target": "PM23-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 677,
+        "type": "pick",
+        "target": "PM93-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 677,
+        "type": "pick",
+        "target": "PM71-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 679,
+        "type": "place",
+        "target": "PM33-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 681,
+        "type": "place",
+        "target": "PM73-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 681,
+        "type": "place",
+        "target": "BM8-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 682,
+        "type": "pick",
+        "target": "BM8-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 682,
+        "type": "pick",
+        "target": "PM72-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 686,
+        "type": "place",
+        "target": "PM97-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 686,
+        "type": "place",
+        "target": "BM8-2",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 687,
+        "type": "pick",
+        "target": "BM8-2",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 687,
+        "type": "pick",
+        "target": "PM97-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 688,
+        "type": "place",
+        "target": "PM34-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 689,
+        "type": "pick",
+        "target": "PM34-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 691,
+        "type": "place",
+        "target": "PM93-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 691,
+        "type": "place",
+        "target": "PM98-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 691,
+        "type": "place",
+        "target": "BM11-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 692,
+        "type": "pick",
+        "target": "PM81-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 692,
+        "type": "pick",
+        "target": "PM98-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 692,
+        "type": "pick",
+        "target": "PM73-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 692,
+        "type": "pick",
+        "target": "BM11-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 694,
+        "type": "place",
+        "target": "PM21-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 694,
+        "type": "pick",
+        "target": "PM35-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 694,
+        "type": "place",
+        "target": "PM15-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 696,
+        "type": "place",
+        "target": "PM94-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 696,
+        "type": "place",
+        "target": "BM11-2",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 696,
+        "type": "place",
+        "target": "BM7-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 697,
+        "type": "pick",
+        "target": "PM25-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 697,
+        "type": "pick",
+        "target": "BM7-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 697,
+        "type": "pick",
+        "target": "PM94-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 697,
+        "type": "pick",
+        "target": "BM11-2",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 699,
+        "type": "pick",
+        "target": "PM26-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 699,
+        "type": "place",
+        "target": "PM35-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 699,
+        "type": "place",
+        "target": "PM16-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 701,
+        "type": "place",
+        "target": "PM71-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 711,
+        "type": "place",
+        "target": "PM97-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 712,
+        "type": "pick",
+        "target": "PM97-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 712,
+        "type": "pick",
+        "target": "PM95-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 712,
+        "type": "pick",
+        "target": "PM71-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 714,
+        "type": "place",
+        "target": "PM36-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 715,
+        "type": "pick",
+        "target": "PM36-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 716,
+        "type": "place",
+        "target": "BM11-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 716,
+        "type": "place",
+        "target": "PM72-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 716,
+        "type": "place",
+        "target": "BM7-2",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 717,
+        "type": "place",
+        "target": "PM95-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 717,
+        "type": "pick",
+        "target": "BM7-2",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 717,
+        "type": "pick",
+        "target": "PM98-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 717,
+        "type": "pick",
+        "target": "PM96-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 717,
+        "type": "pick",
+        "target": "BM11-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 719,
+        "type": "place",
+        "target": "PM17-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 720,
+        "type": "pick",
+        "target": "PM11-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 721,
+        "type": "place",
+        "target": "PM98-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 721,
+        "type": "place",
+        "target": "BM11-2",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 721,
+        "type": "place",
+        "target": "PM73-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 722,
+        "type": "place",
+        "target": "PM85-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 722,
+        "type": "pick",
+        "target": "BM11-2",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 724,
+        "type": "pick",
+        "target": "PM37-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 724,
+        "type": "place",
+        "target": "PM18-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 725,
+        "type": "pick",
+        "target": "PM12-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 726,
+        "type": "place",
+        "target": "PM96-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 727,
+        "type": "pick",
+        "target": "PM72-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 727,
+        "type": "place",
+        "target": "PM86-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 731,
+        "type": "place",
+        "target": "BM8-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 732,
+        "type": "pick",
+        "target": "BM8-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 732,
+        "type": "pick",
+        "target": "PM73-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 734,
+        "type": "pick",
+        "target": "PM38-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 736,
+        "type": "place",
+        "target": "PM93-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 736,
+        "type": "place",
+        "target": "PM97-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 736,
+        "type": "place",
+        "target": "BM8-2",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 737,
+        "type": "pick",
+        "target": "BM8-2",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 737,
+        "type": "pick",
+        "target": "PM97-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 737,
+        "type": "pick",
+        "target": "PM93-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 739,
+        "type": "pick",
+        "target": "PM39-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 741,
+        "type": "place",
+        "target": "PM94-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 741,
+        "type": "place",
+        "target": "BM11-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 741,
+        "type": "place",
+        "target": "PM71-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 742,
+        "type": "pick",
+        "target": "PM94-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 742,
+        "type": "pick",
+        "target": "BM11-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 744,
+        "type": "place",
+        "target": "PM19-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 745,
+        "type": "pick",
+        "target": "PM13-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 746,
+        "type": "place",
+        "target": "PM98-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 746,
+        "type": "place",
+        "target": "PM72-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 747,
+        "type": "pick",
+        "target": "PM98-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 747,
+        "type": "place",
+        "target": "PM89-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 750,
+        "type": "pick",
+        "target": "PM14-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 751,
+        "type": "place",
+        "target": "BM11-2",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 752,
+        "type": "pick",
+        "target": "PM21-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 752,
+        "type": "pick",
+        "target": "PM71-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 752,
+        "type": "place",
+        "target": "PM90-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 752,
+        "type": "pick",
+        "target": "BM11-2",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 754,
+        "type": "place",
+        "target": "PM37-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 754,
+        "type": "place",
+        "target": "PM20-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 756,
+        "type": "place",
+        "target": "BM7-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 757,
+        "type": "pick",
+        "target": "BM7-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 757,
+        "type": "pick",
+        "target": "PM72-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 761,
+        "type": "place",
+        "target": "PM97-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 761,
+        "type": "place",
+        "target": "BM7-2",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 762,
+        "type": "pick",
+        "target": "BM7-2",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 762,
+        "type": "pick",
+        "target": "PM97-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 763,
+        "type": "pick",
+        "target": "PM95-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 765,
+        "type": "pick",
+        "target": "PM31-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 766,
+        "type": "place",
+        "target": "BM11-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 767,
+        "type": "place",
+        "target": "PM95-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 767,
+        "type": "place",
+        "target": "PM73-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 767,
+        "type": "pick",
+        "target": "BM11-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 768,
+        "type": "pick",
+        "target": "PM85-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 769,
+        "type": "place",
+        "target": "PM11-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 770,
+        "type": "pick",
+        "target": "PM15-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 770,
+        "type": "place",
+        "target": "PM41-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 771,
+        "type": "place",
+        "target": "PM98-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 772,
+        "type": "pick",
+        "target": "PM98-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 772,
+        "type": "pick",
+        "target": "PM96-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 772,
+        "type": "place",
+        "target": "PM85-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 773,
+        "type": "pick",
+        "target": "PM86-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 774,
+        "type": "pick",
+        "target": "PM32-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 775,
+        "type": "pick",
+        "target": "PM16-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 775,
+        "type": "place",
+        "target": "PM42-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 776,
+        "type": "place",
+        "target": "PM96-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 776,
+        "type": "place",
+        "target": "BM11-2",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 776,
+        "type": "place",
+        "target": "PM71-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 777,
+        "type": "place",
+        "target": "PM86-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 777,
+        "type": "pick",
+        "target": "BM11-2",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 778,
+        "type": "pick",
+        "target": "PM73-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 779,
+        "type": "place",
+        "target": "PM12-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 782,
+        "type": "pick",
+        "target": "PM93-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 782,
+        "type": "place",
+        "target": "BM8-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 783,
+        "type": "pick",
+        "target": "BM8-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 786,
+        "type": "place",
+        "target": "PM72-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 787,
+        "type": "place",
+        "target": "PM97-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 787,
+        "type": "pick",
+        "target": "PM97-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 787,
+        "type": "pick",
+        "target": "PM94-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 787,
+        "type": "pick",
+        "target": "PM71-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 790,
+        "type": "pick",
+        "target": "PM33-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 791,
+        "type": "place",
+        "target": "BM11-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 791,
+        "type": "place",
+        "target": "PM73-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 791,
+        "type": "place",
+        "target": "BM8-2",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 792,
+        "type": "place",
+        "target": "PM93-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 792,
+        "type": "pick",
+        "target": "BM8-2",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 792,
+        "type": "pick",
+        "target": "BM11-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 793,
+        "type": "pick",
+        "target": "PM89-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 794,
+        "type": "place",
+        "target": "PM13-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 795,
+        "type": "place",
+        "target": "PM43-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 795,
+        "type": "pick",
+        "target": "PM17-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 796,
+        "type": "place",
+        "target": "PM98-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 797,
+        "type": "pick",
+        "target": "PM98-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 797,
+        "type": "pick",
+        "target": "PM72-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 797,
+        "type": "place",
+        "target": "PM89-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 798,
+        "type": "pick",
+        "target": "PM90-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 799,
+        "type": "pick",
+        "target": "PM34-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 800,
+        "type": "pick",
+        "target": "PM18-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 800,
+        "type": "place",
+        "target": "PM44-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 801,
+        "type": "place",
+        "target": "PM94-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 801,
+        "type": "place",
+        "target": "BM11-2",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 801,
+        "type": "place",
+        "target": "BM7-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 802,
+        "type": "pick",
+        "target": "BM7-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 802,
+        "type": "pick",
+        "target": "PM73-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 802,
+        "type": "place",
+        "target": "PM90-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 802,
+        "type": "pick",
+        "target": "BM11-2",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 804,
+        "type": "place",
+        "target": "PM14-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 806,
+        "type": "place",
+        "target": "BM7-2",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 810,
+        "type": "pick",
+        "target": "PM35-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 812,
+        "type": "place",
+        "target": "PM95-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 812,
+        "type": "place",
+        "target": "PM97-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 813,
+        "type": "pick",
+        "target": "BM7-2",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 813,
+        "type": "pick",
+        "target": "PM97-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 813,
+        "type": "pick",
+        "target": "PM95-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 817,
+        "type": "place",
+        "target": "BM11-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 817,
+        "type": "place",
+        "target": "PM71-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 818,
+        "type": "pick",
+        "target": "PM85-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 818,
+        "type": "pick",
+        "target": "BM11-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 820,
+        "type": "pick",
+        "target": "PM19-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 820,
+        "type": "place",
+        "target": "PM45-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 820,
+        "type": "place",
+        "target": "PM15-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 821,
+        "type": "place",
+        "target": "PM98-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 822,
+        "type": "pick",
+        "target": "PM98-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 822,
+        "type": "pick",
+        "target": "PM96-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 822,
+        "type": "place",
+        "target": "PM85-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 823,
+        "type": "pick",
+        "target": "PM86-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 825,
+        "type": "pick",
+        "target": "PM36-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 825,
+        "type": "place",
+        "target": "PM46-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 826,
+        "type": "place",
+        "target": "BM11-2",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 826,
+        "type": "place",
+        "target": "PM72-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 827,
+        "type": "place",
+        "target": "PM96-1",
+        "TM": "TM3-2"
+    },
+    {
+        "time": 827,
+        "type": "pick",
+        "target": "BM11-2",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 828,
+        "type": "pick",
+        "target": "PM71-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 829,
+        "type": "place",
+        "target": "PM16-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 830,
+        "type": "pick",
+        "target": "PM20-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 832,
+        "type": "place",
+        "target": "BM8-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 832,
+        "type": "place",
+        "target": "PM86-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 833,
+        "type": "pick",
+        "target": "BM8-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 837,
+        "type": "place",
+        "target": "PM97-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 837,
+        "type": "pick",
+        "target": "PM72-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 838,
+        "type": "pick",
+        "target": "PM97-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 838,
+        "type": "pick",
+        "target": "PM93-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 841,
+        "type": "place",
+        "target": "BM8-2",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 842,
+        "type": "pick",
+        "target": "BM8-2",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 842,
+        "type": "place",
+        "target": "BM11-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 842,
+        "type": "place",
+        "target": "PM73-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 843,
+        "type": "pick",
+        "target": "PM89-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 843,
+        "type": "pick",
+        "target": "BM11-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 845,
+        "type": "place",
+        "target": "PM47-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 845,
+        "type": "place",
+        "target": "PM17-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 845,
+        "type": "pick",
+        "target": "PM11-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 846,
+        "type": "place",
+        "target": "PM98-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 847,
+        "type": "pick",
+        "target": "PM98-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 847,
+        "type": "pick",
+        "target": "PM94-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 847,
+        "type": "place",
+        "target": "PM89-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 848,
+        "type": "pick",
+        "target": "PM90-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 850,
+        "type": "place",
+        "target": "PM48-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 851,
+        "type": "place",
+        "target": "BM11-2",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 851,
+        "type": "place",
+        "target": "PM71-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 852,
+        "type": "pick",
+        "target": "BM11-2",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 853,
+        "type": "pick",
+        "target": "PM73-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 854,
+        "type": "place",
+        "target": "PM18-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 855,
+        "type": "pick",
+        "target": "PM12-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 857,
+        "type": "place",
+        "target": "BM7-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 857,
+        "type": "place",
+        "target": "PM90-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 858,
+        "type": "pick",
+        "target": "BM7-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 858,
+        "type": "pick",
+        "target": "PM95-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 862,
+        "type": "place",
+        "target": "PM97-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 862,
+        "type": "place",
+        "target": "PM72-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 862,
+        "type": "pick",
+        "target": "PM71-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 863,
+        "type": "pick",
+        "target": "PM97-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 865,
+        "type": "pick",
+        "target": "PM37-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 866,
+        "type": "place",
+        "target": "BM7-2",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 867,
+        "type": "place",
+        "target": "PM93-1",
+        "TM": "TM3-1"
+    },
+    {
+        "time": 867,
+        "type": "pick",
+        "target": "BM7-2",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 867,
+        "type": "place",
+        "target": "BM11-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 868,
+        "type": "pick",
+        "target": "PM85-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 868,
+        "type": "pick",
+        "target": "BM11-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 870,
+        "type": "pick",
+        "target": "PM13-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 870,
+        "type": "place",
+        "target": "PM49-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 870,
+        "type": "place",
+        "target": "PM19-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 871,
+        "type": "place",
+        "target": "PM98-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 872,
+        "type": "pick",
+        "target": "PM98-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 872,
+        "type": "place",
+        "target": "PM85-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 873,
+        "type": "pick",
+        "target": "PM96-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 873,
+        "type": "pick",
+        "target": "PM72-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 876,
+        "type": "place",
+        "target": "BM11-2",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 877,
+        "type": "place",
+        "target": "PM73-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 877,
+        "type": "place",
+        "target": "BM8-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 878,
+        "type": "pick",
+        "target": "BM8-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 878,
+        "type": "pick",
+        "target": "PM86-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 880,
+        "type": "pick",
+        "target": "PM14-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 880,
+        "type": "place",
+        "target": "PM50-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 881,
+        "type": "pick",
+        "target": "BM11-2",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 882,
+        "type": "place",
+        "target": "PM86-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 883,
+        "type": "place",
+        "target": "PM20-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 887,
+        "type": "place",
+        "target": "PM97-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 888,
+        "type": "pick",
+        "target": "PM97-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 888,
+        "type": "pick",
+        "target": "PM73-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 892,
+        "type": "place",
+        "target": "BM11-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 892,
+        "type": "place",
+        "target": "BM8-2",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 893,
+        "type": "pick",
+        "target": "BM8-2",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 893,
+        "type": "pick",
+        "target": "PM89-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 893,
+        "type": "pick",
+        "target": "BM11-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 895,
+        "type": "place",
+        "target": "PM51-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 895,
+        "type": "place",
+        "target": "PM11-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 896,
+        "type": "pick",
+        "target": "PM15-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 897,
+        "type": "place",
+        "target": "PM98-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 897,
+        "type": "pick",
+        "target": "PM98-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 898,
+        "type": "place",
+        "target": "PM89-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 901,
+        "type": "place",
+        "target": "BM11-2",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 902,
+        "type": "pick",
+        "target": "BM11-2",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 903,
+        "type": "pick",
+        "target": "PM90-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 904,
+        "type": "place",
+        "target": "PM12-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 905,
+        "type": "pick",
+        "target": "PM16-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 905,
+        "type": "place",
+        "target": "PM52-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 907,
+        "type": "place",
+        "target": "PM90-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 913,
+        "type": "pick",
+        "target": "PM97-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 913,
+        "type": "pick",
+        "target": "PM93-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 917,
+        "type": "place",
+        "target": "BM11-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 917,
+        "type": "place",
+        "target": "PM71-1",
+        "TM": "TM5-1"
+    },
+    {
+        "time": 918,
+        "type": "pick",
+        "target": "PM85-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 918,
+        "type": "pick",
+        "target": "BM11-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 920,
+        "type": "place",
+        "target": "PM13-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 921,
+        "type": "pick",
+        "target": "PM17-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 923,
+        "type": "pick",
+        "target": "PM98-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 923,
+        "type": "place",
+        "target": "PM85-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 927,
+        "type": "place",
+        "target": "BM11-2",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 928,
+        "type": "pick",
+        "target": "PM71-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 928,
+        "type": "pick",
+        "target": "PM86-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 932,
+        "type": "place",
+        "target": "BM7-1",
+        "TM": "TM5-2"
+    },
+    {
+        "time": 933,
+        "type": "pick",
+        "target": "BM7-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 934,
+        "type": "place",
+        "target": "PM41-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 935,
+        "type": "pick",
+        "target": "PM18-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 935,
+        "type": "pick",
+        "target": "PM41-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 937,
+        "type": "place",
+        "target": "PM97-1",
+        "TM": "TM4-1"
+    },
+    {
+        "time": 937,
+        "type": "place",
+        "target": "PM86-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 937,
+        "type": "place",
+        "target": "PM42-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 939,
+        "type": "place",
+        "target": "PM61-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 940,
+        "type": "pick",
+        "target": "PM42-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 940,
+        "type": "pick",
+        "target": "BM11-2",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 942,
+        "type": "place",
+        "target": "PM62-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 942,
+        "type": "place",
+        "target": "PM14-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 944,
+        "type": "pick",
+        "target": "PM89-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 946,
+        "type": "pick",
+        "target": "PM19-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 948,
+        "type": "place",
+        "target": "PM89-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 953,
+        "type": "pick",
+        "target": "PM90-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 959,
+        "type": "place",
+        "target": "PM43-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 960,
+        "type": "pick",
+        "target": "PM20-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 960,
+        "type": "pick",
+        "target": "PM43-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 962,
+        "type": "place",
+        "target": "PM90-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 962,
+        "type": "place",
+        "target": "PM44-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 963,
+        "type": "pick",
+        "target": "PM97-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 964,
+        "type": "place",
+        "target": "PM63-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 965,
+        "type": "pick",
+        "target": "PM44-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 967,
+        "type": "place",
+        "target": "BM11-1",
+        "TM": "TM4-2"
+    },
+    {
+        "time": 967,
+        "type": "place",
+        "target": "PM64-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 968,
+        "type": "pick",
+        "target": "BM11-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 969,
+        "type": "pick",
+        "target": "PM85-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 970,
+        "type": "place",
+        "target": "PM15-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 971,
+        "type": "pick",
+        "target": "PM11-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 973,
+        "type": "place",
+        "target": "PM85-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 984,
+        "type": "place",
+        "target": "PM45-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 985,
+        "type": "pick",
+        "target": "PM12-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 985,
+        "type": "pick",
+        "target": "PM45-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 987,
+        "type": "place",
+        "target": "PM86-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 987,
+        "type": "place",
+        "target": "PM65-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 988,
+        "type": "pick",
+        "target": "PM86-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 990,
+        "type": "pick",
+        "target": "PM46-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 990,
+        "type": "place",
+        "target": "PM46-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 992,
+        "type": "place",
+        "target": "PM66-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 994,
+        "type": "pick",
+        "target": "PM89-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 996,
+        "type": "pick",
+        "target": "PM13-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 998,
+        "type": "place",
+        "target": "PM89-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1009,
+        "type": "place",
+        "target": "PM47-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1010,
+        "type": "pick",
+        "target": "PM47-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1012,
+        "type": "place",
+        "target": "PM67-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1013,
+        "type": "pick",
+        "target": "PM61-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1013,
+        "type": "pick",
+        "target": "PM90-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1015,
+        "type": "place",
+        "target": "PM87-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1015,
+        "type": "place",
+        "target": "PM48-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1015,
+        "type": "pick",
+        "target": "PM48-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 1017,
+        "type": "place",
+        "target": "PM68-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 1018,
+        "type": "pick",
+        "target": "PM14-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1018,
+        "type": "pick",
+        "target": "PM62-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1020,
+        "type": "place",
+        "target": "PM90-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1020,
+        "type": "place",
+        "target": "PM88-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1021,
+        "type": "pick",
+        "target": "PM85-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1034,
+        "type": "place",
+        "target": "PM49-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1035,
+        "type": "pick",
+        "target": "PM49-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1037,
+        "type": "place",
+        "target": "PM61-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1038,
+        "type": "pick",
+        "target": "PM63-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 1038,
+        "type": "pick",
+        "target": "PM86-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1040,
+        "type": "place",
+        "target": "PM91-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 1043,
+        "type": "pick",
+        "target": "PM64-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1044,
+        "type": "place",
+        "target": "PM50-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1045,
+        "type": "pick",
+        "target": "PM50-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1045,
+        "type": "place",
+        "target": "PM92-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1047,
+        "type": "place",
+        "target": "PM62-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1048,
+        "type": "pick",
+        "target": "PM89-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1059,
+        "type": "place",
+        "target": "PM51-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1060,
+        "type": "pick",
+        "target": "PM15-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1060,
+        "type": "pick",
+        "target": "PM51-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1061,
+        "type": "pick",
+        "target": "PM87-1",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1062,
+        "type": "place",
+        "target": "PM85-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1062,
+        "type": "place",
+        "target": "PM63-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1063,
+        "type": "pick",
+        "target": "PM65-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1063,
+        "type": "place",
+        "target": "BM5-2",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1064,
+        "type": "pick",
+        "target": "BM5-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1065,
+        "type": "place",
+        "target": "PM87-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1066,
+        "type": "place",
+        "target": "CM1-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1066,
+        "type": "pick",
+        "target": "PM88-1",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1068,
+        "type": "pick",
+        "target": "PM66-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1068,
+        "type": "place",
+        "target": "BM6-2",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1069,
+        "type": "pick",
+        "target": "BM6-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1070,
+        "type": "place",
+        "target": "PM88-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1070,
+        "type": "pick",
+        "target": "PM52-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 1071,
+        "type": "place",
+        "target": "CM1-3",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1071,
+        "type": "pick",
+        "target": "PM90-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1072,
+        "type": "place",
+        "target": "PM64-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 1073,
+        "type": "place",
+        "target": "PM52-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1086,
+        "type": "pick",
+        "target": "PM91-1",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1088,
+        "type": "pick",
+        "target": "PM67-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 1088,
+        "type": "place",
+        "target": "BM5-2",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1089,
+        "type": "pick",
+        "target": "BM5-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1090,
+        "type": "place",
+        "target": "PM91-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 1091,
+        "type": "place",
+        "target": "CM1-4",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1091,
+        "type": "pick",
+        "target": "PM92-1",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1093,
+        "type": "pick",
+        "target": "PM68-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1093,
+        "type": "place",
+        "target": "BM6-2",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1094,
+        "type": "pick",
+        "target": "BM6-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1095,
+        "type": "place",
+        "target": "PM92-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1096,
+        "type": "place",
+        "target": "CM1-5",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1099,
+        "type": "pick",
+        "target": "PM41-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1101,
+        "type": "place",
+        "target": "PM65-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1104,
+        "type": "pick",
+        "target": "PM42-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1106,
+        "type": "place",
+        "target": "PM66-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1108,
+        "type": "pick",
+        "target": "PM85-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1110,
+        "type": "place",
+        "target": "PM41-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1111,
+        "type": "pick",
+        "target": "PM87-1",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1113,
+        "type": "pick",
+        "target": "PM61-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1113,
+        "type": "place",
+        "target": "BM5-2",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1114,
+        "type": "pick",
+        "target": "BM5-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1115,
+        "type": "place",
+        "target": "PM87-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1116,
+        "type": "place",
+        "target": "CM1-6",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1116,
+        "type": "pick",
+        "target": "PM88-1",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1118,
+        "type": "place",
+        "target": "BM6-2",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1119,
+        "type": "pick",
+        "target": "BM6-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1121,
+        "type": "place",
+        "target": "CM1-7",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1123,
+        "type": "pick",
+        "target": "PM62-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1125,
+        "type": "place",
+        "target": "PM88-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1126,
+        "type": "pick",
+        "target": "PM43-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1128,
+        "type": "place",
+        "target": "PM67-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1129,
+        "type": "pick",
+        "target": "PM44-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 1131,
+        "type": "place",
+        "target": "PM68-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 1136,
+        "type": "pick",
+        "target": "PM91-1",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1138,
+        "type": "pick",
+        "target": "PM63-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 1138,
+        "type": "place",
+        "target": "BM5-2",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1139,
+        "type": "pick",
+        "target": "BM5-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1140,
+        "type": "place",
+        "target": "PM91-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 1141,
+        "type": "place",
+        "target": "CM1-8",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1141,
+        "type": "pick",
+        "target": "PM92-1",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1143,
+        "type": "place",
+        "target": "BM6-2",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1144,
+        "type": "pick",
+        "target": "BM6-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1146,
+        "type": "place",
+        "target": "CM1-9",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1148,
+        "type": "pick",
+        "target": "PM64-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1150,
+        "type": "place",
+        "target": "PM92-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1151,
+        "type": "pick",
+        "target": "PM45-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1153,
+        "type": "place",
+        "target": "PM61-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1155,
+        "type": "pick",
+        "target": "PM46-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1157,
+        "type": "place",
+        "target": "PM62-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1161,
+        "type": "pick",
+        "target": "PM87-1",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1163,
+        "type": "place",
+        "target": "BM5-2",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1164,
+        "type": "pick",
+        "target": "BM5-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1166,
+        "type": "place",
+        "target": "CM1-10",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1171,
+        "type": "pick",
+        "target": "PM88-1",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1173,
+        "type": "place",
+        "target": "BM6-2",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1174,
+        "type": "pick",
+        "target": "BM6-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1174,
+        "type": "pick",
+        "target": "PM47-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1176,
+        "type": "place",
+        "target": "CM1-11",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1176,
+        "type": "place",
+        "target": "PM63-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1177,
+        "type": "pick",
+        "target": "PM65-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1179,
+        "type": "place",
+        "target": "PM87-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1180,
+        "type": "pick",
+        "target": "PM48-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 1182,
+        "type": "pick",
+        "target": "PM66-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1182,
+        "type": "place",
+        "target": "PM64-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 1184,
+        "type": "place",
+        "target": "PM88-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1186,
+        "type": "pick",
+        "target": "PM91-1",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1188,
+        "type": "place",
+        "target": "BM5-2",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1189,
+        "type": "pick",
+        "target": "BM5-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1191,
+        "type": "place",
+        "target": "CM1-12",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1196,
+        "type": "pick",
+        "target": "PM92-1",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1198,
+        "type": "place",
+        "target": "BM6-2",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1199,
+        "type": "pick",
+        "target": "BM6-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1199,
+        "type": "pick",
+        "target": "PM49-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1201,
+        "type": "place",
+        "target": "CM1-13",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1201,
+        "type": "place",
+        "target": "PM65-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1204,
+        "type": "pick",
+        "target": "PM67-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 1206,
+        "type": "place",
+        "target": "PM91-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 1207,
+        "type": "pick",
+        "target": "PM68-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1209,
+        "type": "pick",
+        "target": "PM50-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1209,
+        "type": "place",
+        "target": "PM92-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1211,
+        "type": "place",
+        "target": "PM66-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1224,
+        "type": "pick",
+        "target": "PM51-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1225,
+        "type": "pick",
+        "target": "PM87-1",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1226,
+        "type": "place",
+        "target": "PM67-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1227,
+        "type": "place",
+        "target": "BM5-2",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1228,
+        "type": "pick",
+        "target": "BM5-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1229,
+        "type": "pick",
+        "target": "PM61-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1230,
+        "type": "place",
+        "target": "CM1-14",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1230,
+        "type": "pick",
+        "target": "PM88-1",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1231,
+        "type": "place",
+        "target": "PM87-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1232,
+        "type": "place",
+        "target": "BM6-2",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1233,
+        "type": "pick",
+        "target": "BM6-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1233,
+        "type": "pick",
+        "target": "PM62-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1235,
+        "type": "place",
+        "target": "CM1-15",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1235,
+        "type": "place",
+        "target": "PM88-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1238,
+        "type": "pick",
+        "target": "PM52-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 1240,
+        "type": "place",
+        "target": "PM68-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 1252,
+        "type": "pick",
+        "target": "PM63-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 1252,
+        "type": "pick",
+        "target": "PM91-1",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1254,
+        "type": "place",
+        "target": "PM91-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 1254,
+        "type": "place",
+        "target": "BM5-2",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1255,
+        "type": "pick",
+        "target": "BM5-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1255,
+        "type": "pick",
+        "target": "PM92-1",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1257,
+        "type": "place",
+        "target": "CM1-16",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1257,
+        "type": "place",
+        "target": "BM6-2",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1258,
+        "type": "pick",
+        "target": "BM6-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1258,
+        "type": "pick",
+        "target": "PM64-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1260,
+        "type": "place",
+        "target": "CM1-17",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1260,
+        "type": "place",
+        "target": "PM92-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1275,
+        "type": "pick",
+        "target": "PM41-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1277,
+        "type": "pick",
+        "target": "PM65-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1277,
+        "type": "place",
+        "target": "PM61-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1277,
+        "type": "pick",
+        "target": "PM87-1",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1279,
+        "type": "place",
+        "target": "PM87-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1279,
+        "type": "place",
+        "target": "BM5-2",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1280,
+        "type": "pick",
+        "target": "BM5-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1281,
+        "type": "pick",
+        "target": "PM88-1",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1282,
+        "type": "place",
+        "target": "CM1-18",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1283,
+        "type": "place",
+        "target": "BM6-2",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1284,
+        "type": "pick",
+        "target": "BM6-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1286,
+        "type": "place",
+        "target": "CM1-19",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1287,
+        "type": "pick",
+        "target": "PM66-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1289,
+        "type": "place",
+        "target": "PM88-1",
+        "TM": "TM6-2"
+    },
+    {
+        "time": 1300,
+        "type": "pick",
+        "target": "PM91-1",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1302,
+        "type": "pick",
+        "target": "PM67-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 1302,
+        "type": "place",
+        "target": "BM5-2",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1303,
+        "type": "pick",
+        "target": "BM5-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1304,
+        "type": "place",
+        "target": "PM91-1",
+        "TM": "TM7-1"
+    },
+    {
+        "time": 1305,
+        "type": "place",
+        "target": "CM1-20",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1306,
+        "type": "pick",
+        "target": "PM92-1",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1308,
+        "type": "place",
+        "target": "BM6-2",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1309,
+        "type": "pick",
+        "target": "BM6-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1311,
+        "type": "place",
+        "target": "CM1-21",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1316,
+        "type": "pick",
+        "target": "PM68-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1318,
+        "type": "place",
+        "target": "PM92-1",
+        "TM": "TM7-2"
+    },
+    {
+        "time": 1325,
+        "type": "pick",
+        "target": "PM87-1",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1327,
+        "type": "place",
+        "target": "BM5-2",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1328,
+        "type": "pick",
+        "target": "BM5-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1330,
+        "type": "place",
+        "target": "CM1-22",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1335,
+        "type": "pick",
+        "target": "PM88-1",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1337,
+        "type": "place",
+        "target": "BM6-2",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1338,
+        "type": "pick",
+        "target": "BM6-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1340,
+        "type": "place",
+        "target": "CM1-23",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1350,
+        "type": "pick",
+        "target": "PM91-1",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1352,
+        "type": "place",
+        "target": "BM5-2",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1353,
+        "type": "pick",
+        "target": "BM5-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1353,
+        "type": "pick",
+        "target": "PM61-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1355,
+        "type": "place",
+        "target": "CM1-24",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1355,
+        "type": "place",
+        "target": "PM87-1",
+        "TM": "TM6-1"
+    },
+    {
+        "time": 1364,
+        "type": "pick",
+        "target": "PM92-1",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1366,
+        "type": "place",
+        "target": "BM6-2",
+        "TM": "TM8-2"
+    },
+    {
+        "time": 1367,
+        "type": "pick",
+        "target": "BM6-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1369,
+        "type": "place",
+        "target": "CM1-25",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1401,
+        "type": "pick",
+        "target": "PM87-1",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1403,
+        "type": "place",
+        "target": "BM5-2",
+        "TM": "TM8-1"
+    },
+    {
+        "time": 1404,
+        "type": "pick",
+        "target": "BM5-2",
+        "TM": "TM1-2"
+    },
+    {
+        "time": 1406,
+        "type": "place",
+        "target": "CM1-1",
+        "TM": "TM1-2"
+    }
+]
