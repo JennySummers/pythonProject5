@@ -316,7 +316,7 @@ class GA:
             if num > 0:
                 last_msg['relative_time'] = x.cmd_time - last_msg['time']
             if x.move_type == 0:    # 机械臂操作为取片，pick
-                msg['NO.'] = num
+                msg['number'] = num
                 num = num + 1
                 msg['time'] = x.cmd_time
                 msg['type'] = 'pick'
@@ -329,7 +329,7 @@ class GA:
                 Message_data.append(msg)
                 last_msg = msg
             if x.move_type == 1:    # 机械臂操作为放片，place
-                msg['NO.'] = num
+                msg['number'] = num
                 num = num + 1
                 msg['time'] = x.cmd_time
                 msg['type'] = 'place'
