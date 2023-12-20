@@ -309,20 +309,39 @@ class GA:
     def output_Message_to_Json(self, elements_name, cmd_message_path):
         Message_data = []
         self.TM_msg.sort(key=lambda y: y.cmd_time)  # 按时间进行排序
+        num = 0
+        last_msg = {}
         for x in self.TM_msg:
             msg = {}
+            if num > 0:
+                last_msg['relative_time'] = x.cmd_time - last_msg['time']
             if x.move_type == 0:    # 机械臂操作为取片，pick
+                msg['NO.'] = num
+                num = num + 1
                 msg['time'] = x.cmd_time
                 msg['type'] = 'pick'
-                msg['target'] = elements_name[x.move_from]
+                x_split = elements_name[x.move_from].split("-")
+                module_name = x_split[0]
+                slot_num = x_split[1]
+                msg['target'] = module_name
+                msg['slot'] = slot_num
                 msg['TM'] = elements_name[x.machine_no]
                 Message_data.append(msg)
+                last_msg = msg
             if x.move_type == 1:    # 机械臂操作为放片，place
+                msg['NO.'] = num
+                num = num + 1
                 msg['time'] = x.cmd_time
                 msg['type'] = 'place'
-                msg['target'] = elements_name[x.move_to]
+                x_split = elements_name[x.move_to].split("-")
+                module_name = x_split[0]
+                slot_num = x_split[1]
+                msg['target'] = module_name
+                msg['slot'] = slot_num
                 msg['TM'] = elements_name[x.machine_no]
+                last_msg = msg
                 Message_data.append(msg)
+        last_msg['relative_time'] = 0   # 最后一个因为没有再下一个来减了，所以相对时间设置为0
         with open(cmd_message_path, 'w+', encoding='utf-8') as file:
             json.dump(Message_data, file, indent=4)
         # print(Message_data)
