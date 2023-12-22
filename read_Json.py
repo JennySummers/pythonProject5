@@ -467,7 +467,9 @@ class get_Recipe:
         for i in range(self.J_num):
             for j in range(self.J_num):
                 tmp[i][0][j] = INVALID
+                tmp[i][-1][j] = INVALID
         for i in range(self.J_num):
             # tmp[i][0][i] = i * 3
             tmp[i][0][i] = 0
+            tmp[i][-1][i] = 0
         return tmp
