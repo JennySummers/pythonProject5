@@ -320,12 +320,19 @@ class GA:
                 num = num + 1
                 msg['time'] = x.cmd_time
                 msg['type'] = 'pick'
+
                 x_split = elements_name[x.move_from].split("-")
                 module_name = x_split[0]
                 slot_num = x_split[1]
                 msg['target'] = module_name
-                msg['slot'] = slot_num
-                msg['TM'] = elements_name[x.machine_no]
+                msg['target_slot'] = slot_num
+
+                tm_split = elements_name[x.machine_no].split("-")
+                tm_name = tm_split[0]
+                tm_slot_num = tm_split[1]
+                msg['TM'] = tm_name
+                msg['TM_slot'] = tm_slot_num
+
                 Message_data.append(msg)
                 last_msg = msg
             if x.move_type == 1:    # 机械臂操作为放片，place
@@ -333,15 +340,22 @@ class GA:
                 num = num + 1
                 msg['time'] = x.cmd_time
                 msg['type'] = 'place'
+
                 x_split = elements_name[x.move_to].split("-")
                 module_name = x_split[0]
                 slot_num = x_split[1]
                 msg['target'] = module_name
-                msg['slot'] = slot_num
-                msg['TM'] = elements_name[x.machine_no]
+                msg['target_slot'] = slot_num
+
+                tm_split = elements_name[x.machine_no].split("-")
+                tm_name = tm_split[0]
+                tm_slot_num = tm_split[1]
+                msg['TM'] = tm_name
+                msg['TM_slot'] = tm_slot_num
+
                 last_msg = msg
                 Message_data.append(msg)
-        last_msg['relative_time'] = 0   # 最后一个因为没有再下一个来减了，所以相对时间设置为0
+        last_msg['relative_time'] = -1   # 最后一个因为没有再下一个来减了，所以相对时间设置为0
         with open(cmd_message_path, 'w+', encoding='utf-8') as file:
             json.dump(Message_data, file, indent=4)
         # print(Message_data)

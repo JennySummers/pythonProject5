@@ -9,13 +9,14 @@ unit_time = 1  # 单位时间设定，单位为毫秒
 
 
 class Read_json:
-    def __init__(self, layout_path, layout_raw_path, wafer_path, wafer_noBM_path):
+    def __init__(self, layout_path, layout_raw_path, wafer_path, wafer_noBM_path, read_from_cpp_path):
         # layout_path = "./config/example1/layout.json"
         # wafer_path = "./config/example1/wafer.json"
         self.layout_path = layout_path
         self.layout_raw_path = layout_raw_path
         self.wafer_path = wafer_path
         self.wafer_noBM_path = wafer_noBM_path
+        self.read_from_cpp_path = read_from_cpp_path    # 从c++读过来的文件地址
         self.Processing_time = []
         self.process_list = []  # 工序列表
         self.wafer_num = []  # wafer的数量
@@ -37,6 +38,13 @@ class Read_json:
         self.transfer_time = []  # 每个机械臂的取放时间
         self.accessibleList = []  # 每个PM/CM的可交互机械臂列表在transfer_time中的索引
         self.TM_element_to_group = {}   # 将element的序号与TM group的序号对应
+
+    # 将从c++程序读进来的json文件序列化成方便阅读的格式
+    def serialize_Json(self):
+        with open(self.read_from_cpp_path, 'r', encoding='utf-8') as file:
+            data = json.load(file)
+        with open(self.wafer_noBM_path, 'w+', encoding='utf-8') as file:
+            json.dump(data, file, indent=4)
 
     # 判断输入的CM的槽位是否小于wafer数量，若是，则报错退出
     def check_waferNum(self):
@@ -414,8 +422,8 @@ O_num 表示所有工件的所有工序总数
 
 
 class get_Recipe:
-    def __init__(self, layout_path, layout_raw_path, wafer_path, wafer_noBM_path):
-        j = Read_json(layout_path, layout_raw_path, wafer_path, wafer_noBM_path)
+    def __init__(self, layout_path, layout_raw_path, wafer_path, wafer_noBM_path, read_from_cpp_path):
+        j = Read_json(layout_path, layout_raw_path, wafer_path, wafer_noBM_path, read_from_cpp_path)
         j.check_waferNum()  # 判断输入的CM的槽位是否小于wafer数量，若是,则报错退出
         j.layout_add_element_groupName()
         j.get_Layout_Info()
