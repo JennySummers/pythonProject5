@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 from Jobs import Job
 from Machines import Machine_Time_window
-from Instance import put_time, pick_time, switch_time, INVALID
+from read_Json import INVALID, pick_time, put_time, unit_time
 import numpy as np
 
 bias = 1
@@ -110,10 +110,28 @@ class Decode:
                 et = LT[ti + 1]
                 if ti == 1:
                     self.first_pick = max(self.first_pick, st)
-                self.Jobs[k-1]._Input(st, et, machine)  # 参数含义:工件的工序最早开始时间，当前工序结束时间，选择的机器号
+                # 计算fitness
                 if et > self.fitness:
                     self.fitness = et
-                self.Machines[machine]._Input(k-1, st, et - st, ti)  # 参数含义:工件编号，工件的工序最早开始时间，处理时间，工序编号
+                # 插入晶圆的时间窗
+                # self.Jobs[k - 1]._Input(st, et, machine)  # 参数含义:工件的工序最早开始时间，当前工序结束时间，选择的机器号
+                if ti == 0:  # 晶圆从CM中被取走的处理方法
+                    self.Jobs[k - 1]._Input(st, et + pick_time, machine)  # 参数含义:工件的工序最早开始时间，当前工序结束时间，选择的机器号
+                    self.Machines[machine]._Input(k - 1, st, et + pick_time - st, ti)  # 参数含义:工件编号，工件的工序最早开始时间，处理时间，工序编号
+                    continue
+                elif ti == len(LT) - 2:  # 晶圆被放回CM中的处理方法
+                    self.Jobs[k - 1]._Input(st - put_time, et, machine)  # 参数含义:工件的工序最早开始时间，当前工序结束时间，选择的机器号
+                    self.Machines[machine]._Input(k - 1, st - put_time, et - st + put_time, ti)  # 参数含义:工件编号，工件的工序最早开始时间，处理时间，工序编号
+                    continue
+                else:  # 晶圆在PM，TM或BM中的处理方法
+                    # self.Jobs[k - 1]._Input(st, et, machine)  # 参数含义:工件的工序最早开始时间，当前工序结束时间，选择的机器号
+                    # 插入机器的时间窗
+                    if machine >= self.TM_List:  # 机械臂处理方法
+                        self.Jobs[k - 1]._Input(st, et, machine)  # 参数含义:工件的工序最早开始时间，当前工序结束时间，选择的机器号
+                        self.Machines[machine]._Input(k-1, st, et - st, ti)  # 参数含义:工件编号，工件的工序最早开始时间，处理时间，工序编号
+                    else:  # 处理单元处理方法
+                        self.Jobs[k - 1]._Input(st - put_time, et + pick_time, machine)  # 参数含义:工件的工序最早开始时间，当前工序结束时间，选择的机器号
+                        self.Machines[machine]._Input(k - 1, st - put_time, et + pick_time - st, ti)  # 参数含义:工件编号，工件的工序最早开始时间，处理时间，工序编号
 
         return self.fitness
 
