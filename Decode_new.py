@@ -131,7 +131,7 @@ class Decode:
                         self.Machines[machine]._Input(k-1, st, et - st, ti)  # 参数含义:工件编号，工件的工序最早开始时间，处理时间，工序编号
                     else:  # 处理单元处理方法
                         self.Jobs[k - 1]._Input(st - put_time, et + pick_time, machine)  # 参数含义:工件的工序最早开始时间，当前工序结束时间，选择的机器号
-                        self.Machines[machine]._Input(k - 1, st - put_time, et + pick_time - st, ti)  # 参数含义:工件编号，工件的工序最早开始时间，处理时间，工序编号
+                        self.Machines[machine]._Input(k - 1, st - put_time, et + put_time + pick_time - st, ti)  # 参数含义:工件编号，工件的工序最早开始时间，处理时间，工序编号
 
         return self.fitness
 

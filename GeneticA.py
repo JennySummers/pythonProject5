@@ -360,6 +360,9 @@ class GA:
         Optimal_fit = INVALID
         # Optimal_CHS = 0
         self.d = Decode(J_O, processing_time, m_num, TM_num, self.Machine_status)
+        stop_time = datetime.datetime.now()
+        r_time = stop_time - start_time
+        print("Running time : ", r_time.total_seconds(), 'seconds')
         for i in range(self.Max_Iterations):
             Fit = self.fitness(C, J_O, processing_time, m_num, Len_Chromo)
             Best = C[Fit.index(min(Fit))]

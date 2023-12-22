@@ -18,7 +18,7 @@ def Gantt_Machine(Machines):
             # plt.text(x=Start_time[i_1] + 0.1, y=i, s=Machine.assigned_task[i_1])
             plt.barh(i, width=End_time[i_1] - Start_time[i_1], height=0.8, left=Start_time[i_1], color='white',
                      edgecolor='black')
-            plt.text(x=Start_time[i_1] + 0.1, y=i, s=Machine.assigned_task[i_1])
+            # plt.text(x=Start_time[i_1] + 0.1, y=i, s=Machine.assigned_task[i_1])
     plt.yticks(np.arange(i + 1), np.arange(1, i + 2))
     plt.title('Scheduling Gantt chart')
     plt.ylabel('Machines')
@@ -43,7 +43,7 @@ def Gantt_Job(Jobs):
             # plt.text(x=Start_time[j] + 0.1, y=i, s=job.J_machine[j]+1)
             plt.barh(i, width=End_time[j] - Start_time[j], height=0.8, left=Start_time[j], color='white',
                      edgecolor='black')
-            plt.text(x=Start_time[j] + 0.1, y=i, s=job.J_machine[j] + 1)
+            # plt.text(x=Start_time[j] + 0.1, y=i, s=job.J_machine[j] + 1)
     plt.yticks(np.arange(i + 1), np.arange(1, i + 2))
     plt.title('Scheduling Gantt chart')
     plt.ylabel('Jobs')
