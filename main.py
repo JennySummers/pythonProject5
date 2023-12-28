@@ -40,7 +40,6 @@ def first_scheduler():
 
 
 if __name__ == '__main__':
-    sys.setrecursionlimit(2000)
     log_path = './logs/'
     if not os.path.exists(log_path):
         os.makedirs(log_path)

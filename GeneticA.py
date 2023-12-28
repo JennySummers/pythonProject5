@@ -374,9 +374,6 @@ class GA:
         Optimal_fit = INVALID
         # Optimal_CHS = 0
         self.d = Decode(J_O, processing_time, m_num, TM_num, self.Machine_status)
-        stop_time = datetime.datetime.now()
-        r_time = stop_time - start_time
-        print("Running time : ", r_time.total_seconds(), 'seconds')
         for i in range(self.Max_Iterations):
             Fit = self.fitness(C, J_O, processing_time, m_num, Len_Chromo)
             Best = C[Fit.index(min(Fit))]
@@ -436,8 +433,8 @@ class GA:
         # self.print_TM_cmd(elements_name)
         # self.print_Message_Flow(elements_name, type_index)
         self.output_Message_to_Json(elements_name, cmd_message_path)  # 将cmd命令所需的信息输出到json文件中
-        Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
-        Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图
+        # Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
+        # Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图
         r_time = stop_time - start_time
         print("Running time : ", r_time.total_seconds(), 'seconds')
         print("Time steps = ", Time2Timestep(start_time, stop_time))
