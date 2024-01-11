@@ -21,7 +21,7 @@ def Timestep2Time(cur_time, time_step, time_decay=0):  # 将单位时间转换�
 
 
 def Time2Timestep(start_time, cur_time):  # 将实际的时间转换为单位时间
-    return math.ceil(((cur_time - start_time)/datetime.timedelta(milliseconds=1)) / unit_time)
+    return math.ceil(((cur_time - start_time) / datetime.timedelta(milliseconds=1)) / unit_time)
 
 
 # 机器部分交叉
@@ -238,9 +238,9 @@ class GA:
                 # time_1 = Timestep2Time(cur_time, Start_time[i_1])  # 设置时间格式为具体时间格式
                 # time_2 = Timestep2Time(cur_time, Start_time[i_1] + pick_time)  # 设置时间格式为具体时间格式
                 # time_3 = Timestep2Time(cur_time, End_time[i_1] - put_time)  # 设置时间格式为具体时间格式
-                self.TM_msg.append(Arm_Message(i, j+1, o+1, time_1, 0, pre, nxt))  # 机械臂取片指令
-                self.TM_msg.append(Arm_Message(i, j+1, o+1, time_2, 2, pre, nxt))  # 机械臂移动指令
-                self.TM_msg.append(Arm_Message(i, j+1, o+1, time_3, 1, pre, nxt))  # 机械臂放片指令
+                self.TM_msg.append(Arm_Message(i, j + 1, o + 1, time_1, 0, pre, nxt))  # 机械臂取片指令
+                # self.TM_msg.append(Arm_Message(i, j+1, o+1, time_2, 2, pre, nxt))  # 机械臂移动指令
+                self.TM_msg.append(Arm_Message(i, j + 1, o + 1, time_3, 1, pre, nxt))  # 机械臂放片指令
                 # 删除临时变量
                 del j
                 del o
@@ -285,7 +285,7 @@ class GA:
         self.TM_msg.sort(key=lambda y: y.cmd_time)  # 按时间进行排序
         print('------------------')
         for x in self.TM_msg:
-            if x.move_type == 0:    # 机械臂操作为取片，pick
+            if x.move_type == 0:  # 机械臂操作为取片，pick
                 # 从CM取片
                 # if type_index['CM'] <= x.move_from <= type_index['CM_end']:
                 #     print(elements_name[x.move_from], ':', 'PREPARE_SEND')
@@ -295,7 +295,7 @@ class GA:
                 print('Time:', x.cmd_time, ' ', elements_name[x.move_from], ':', 'PREPARE_SEND')
                 print('Time:', x.cmd_time, ' ', elements_name[x.machine_no], ':', 'PICK_WAFER', 'index:', x.machine_no)
                 print('Time:', x.cmd_time, ' ', elements_name[x.move_from], ':', 'POST_SEND')
-            if x.move_type == 1:    # 机械臂操作为放片，place
+            if x.move_type == 1:  # 机械臂操作为放片，place
                 print('RobotActionCmdType::Place')
                 print('nSlot/ModuleSlot=', elements_name[x.wafer_no], 'index:', x.wafer_no, '  (PREPARE_RECV)')
                 print('TargetModule=', elements_name[x.move_to], 'index:', x.move_to)  # 应该存编号？nArm是啥
@@ -315,7 +315,7 @@ class GA:
             msg = {}
             if num > 0:
                 last_msg['relative_time'] = x.cmd_time - last_msg['time']
-            if x.move_type == 0:    # 机械臂操作为取片，pick
+            if x.move_type == 0:  # 机械臂操作为取片，pick
                 msg['number'] = num
                 num = num + 1
                 msg['time'] = x.cmd_time
@@ -335,7 +335,7 @@ class GA:
 
                 Message_data.append(msg)
                 last_msg = msg
-            if x.move_type == 1:    # 机械臂操作为放片，place
+            if x.move_type == 1:  # 机械臂操作为放片，place
                 msg['number'] = num
                 num = num + 1
                 msg['time'] = x.cmd_time
@@ -355,12 +355,37 @@ class GA:
 
                 last_msg = msg
                 Message_data.append(msg)
-        last_msg['relative_time'] = -1   # 最后一个因为没有再下一个来减了，所以相对时间设置为0
+        last_msg['relative_time'] = -1  # 最后一个因为没有再下一个来减了，所以相对时间设置为0
         with open(cmd_message_path, 'w+', encoding='utf-8') as file:
             json.dump(Message_data, file, indent=4)
         # print(Message_data)
 
-    def main(self, processing_time, J_O, m_num, j_num, o_num, TM_num, group_name_index, elements_name, type_index, cmd_message_path):
+    # 以精简形式将cmd命令所需的信息输出到json文件中
+    def simple_output_Message_to_Json(self, cmd_message_path):
+        Message_data = []
+        self.TM_msg.sort(key=lambda y: y.cmd_time)  # 按时间进行排序
+        msg_size = len(self.TM_msg)
+        i = 0
+        while i < msg_size:
+            msg_group = []
+            time = self.TM_msg[i].cmd_time
+
+            while i < msg_size and self.TM_msg[i].cmd_time == time:
+                msg = []
+                type=self.TM_msg[i].move_type
+                msg.append(self.TM_msg[i].move_type)
+                msg.append(self.TM_msg[i].move_from if type==0 else self.TM_msg[i].move_to)
+                msg.append(self.TM_msg[i].machine_no)
+
+                msg_group.append(msg)
+                i += 1
+            Message_data.append(msg_group)
+
+        with open(cmd_message_path, 'w+', encoding='utf-8') as file:
+            json.dump(Message_data, file, indent=4)
+        # print(Message_data)
+
+    def main(self, processing_time, J_O, m_num, j_num, o_num, TM_num, group_name_index, type_index, cmd_message_path):
         start_time = datetime.datetime.now()
         print("start time is : ", start_time)
         e = Encode(processing_time, self.Pop_size, J_O, j_num, m_num, self.Machine_status)
@@ -432,7 +457,7 @@ class GA:
         self.set_TM_Message(m_num, TM_num, group_name_index, stop_time)
         # self.print_TM_cmd(elements_name)
         # self.print_Message_Flow(elements_name, type_index)
-        self.output_Message_to_Json(elements_name, cmd_message_path)  # 将cmd命令所需的信息输出到json文件中
+        self.simple_output_Message_to_Json(cmd_message_path)  # 将cmd命令所需的信息输出到json文件中
         # Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
         # Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图
         r_time = stop_time - start_time

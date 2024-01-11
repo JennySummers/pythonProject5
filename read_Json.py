@@ -299,6 +299,10 @@ class Read_json:
     def get_Wafer_Info(self):
         with open(self.wafer_path, 'r', encoding='utf-8') as file:
             wafer_json_data = json.load(file)
+            if "VERSION" in wafer_json_data:
+                version=wafer_json_data["VERSION"]
+            else:
+                version="1.0"
             for waferGroup in wafer_json_data:
                 list_recipe = []  # 第二层[]，代表不同的recipe
                 wafer_num = waferGroup['waferNum']
@@ -314,6 +318,8 @@ class Read_json:
                     list_step = [INVALID] * (
                             self.all_elements_num + len(self.transfer_time))  # 第三层[]，表示一个step中不同的处理单元的用时
                     transfer_step_time = [INVALID] * (self.all_elements_num + len(self.transfer_time))
+
+                    ## begin
                     processModule = step['processModule']
                     processTime = step['processTime']
                     for name in processModule:
@@ -437,7 +443,6 @@ class get_Recipe:
         self.J_num = len(j.Processing_time)  # 表示工件数目
         self.O_num = 0  # 表示所有工件的所有工序总数
         self.J = {}  # 表示各个工件对应的工序数，用键值对来表示
-        self.elements_name = j.elements_name_list
         # for i in range(len(j.process_list)):
         for i in range(len(j.Processing_time)):
             # self.J[i] = j.process_list[i]

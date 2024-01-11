@@ -33,7 +33,7 @@ def first_scheduler():
     Layout_path, layout_raw_path, Wafer_path, Wafer_noBM_path, Cmd_message_path, read_from_cpp_path = set_Wafer()
     r = get_Recipe(Layout_path, layout_raw_path, Wafer_path, Wafer_noBM_path, read_from_cpp_path)
     g = GA(r.Machine_status)
-    g.main(r.Processing_time, r.J, r.M_num, r.J_num, r.O_num, r.TM_num, r.group_name_index, r.elements_name,
+    g.main(r.Processing_time, r.J, r.M_num, r.J_num, r.O_num, r.TM_num, r.group_name_index,
            r.type_index, Cmd_message_path)
     del r
     del g
