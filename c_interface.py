@@ -27,11 +27,14 @@ if __name__ == '__main__':
     for one_wafer_json in json_data:
         one_wafer=one_wafer_recipe(one_wafer_json)
         wafers.append(one_wafer)
-        if one_wafer.begin_time>max_begin_time:
+        if one_wafer.has_processing and one_wafer.begin_time>max_begin_time:
             max_begin_time=one_wafer.begin_time
     # 已加工时间计算
     for wafer in wafers:
-        wafer.time_proceed=max_begin_time-wafer.begin_time
+        if wafer.has_processing:
+            wafer.time_proceed=max_begin_time-wafer.begin_time
+
+    print(wafers)
 
     # TODO 调用遗传算法
 
