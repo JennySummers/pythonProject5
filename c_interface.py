@@ -21,6 +21,7 @@ if __name__ == '__main__':
     with open('config/example3/recipe_array.json') as f:
         json_data=json.load(f)
     # 存储至对象数组
+    # wafers中每一个元素都存储了一片晶圆的调度需求
     wafers=[]
     max_begin_time=0
     for one_wafer_json in json_data:
