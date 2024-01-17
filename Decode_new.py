@@ -8,7 +8,7 @@ bias = 1
 
 
 class Decode:
-    def __init__(self, J, Processing_time, M_num, TM_num, M_status, pres=0):
+    def __init__(self, J, Processing_time, M_num, TM_num, M_status, join_time=0):
         self.Processing_time = Processing_time
         # self.Scheduled = []  # 已经排产过的工序
         self.M_num = M_num  # 机器数
@@ -22,8 +22,8 @@ class Decode:
         self.T = []  # 时间顺序矩阵，T[i][j]表示工件i的第j道工序在机器JM[i][j]上加工的加工时间为T[i][j]
         self.TM_List = M_num - TM_num  # 机械臂列表
         self.first_pick = 0  # 保证按序取片的最早可以开始时间
+        self.early_pick = int(join_time)  # 重调度晶圆的最早可以开始时间
         self.decay = 5  # 晶圆在机械臂上最长可以停留的时间
-        self.pres = pres
         for j in range(M_num):
             self.Machines.append(Machine_Time_window(j, self.Machine_time[j]))  # 为每个机器分配一个机器类，并对其进行编号
         for k, v in J.items():
@@ -100,7 +100,7 @@ class Decode:
         return int(earliest_start), int(nxt_early), int(nxt_late)  # 返回0.工件的工序最早开始时间，1.下一道工序最早可以开始的时间，2.下一道工序最晚可以开始的时间
 
     # 解码
-    def Decode_1(self, CHS, Len_Chromo):
+    def Decode_1(self, CHS, Len_Chromo):  # start_time表示晶圆最早可以开始加工时间，用于重调度
         MS = list(CHS[0:Len_Chromo])
         OS = list(CHS[Len_Chromo:2 * Len_Chromo])
         self.Order_Matrix(MS)
@@ -143,7 +143,8 @@ class Decode:
 
     def DFS_for_jobs(self, job, op, sop, LT, early_s, late_s):  # 参数：工件号，工序号，工序总数， 当前开始时间序列，当前工序的最早开始时间，最晚开始时间
         if not early_s:
-            early = int(0)
+            early = self.early_pick
+            # early = int(0)
         else:
             early = early_s[-1]
         if op == 1:

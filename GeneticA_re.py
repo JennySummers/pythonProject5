@@ -8,6 +8,7 @@ from Encode_for_FJSP import Encode
 from read_Json import INVALID, pick_time, put_time, unit_time
 from Jobs import Job
 from copy import *
+from Processing_list import processing_list
 import itertools
 from Messages import Arm_Message
 import datetime
@@ -23,8 +24,26 @@ def Time2Timestep(start_time, cur_time):  # 将实际的时间转换为单位时
     return math.ceil(((cur_time - start_time)/datetime.timedelta(milliseconds=1)) / unit_time)
 
 
+def set_Processing_list(Best_jobs):  # 将最终的调度结果存入json文件
+    path = 'config/example3/processing_list.json'
+    process = processing_list()
+    process.Job2Info(Best_jobs)
+    process.write_info(path)
+
+
+def get_Processing_list():  # 将json文件中的信息读取到job和machine中
+    path = 'config/example3/processing_list.json'
+    process = processing_list()
+    process.read_info(path)
+    pre_jobs = process.Info2Job()
+    pre_machine = process.Info2Machine()
+    return pre_jobs, pre_machine
+
+
 class GA:
-    def __init__(self, M_status, pop_size=2):
+    def __init__(self, join_time, M_status, pop_size=2):
+        self.join_time = join_time
+        self.Pre_Job = None  # 之前的晶圆加工调度结果
         self.Best_Job = None  # 最优的晶圆加工调度结果
         self.Best_Machine = None  # 最优的加工单元调度结果
         self.Pop_size = pop_size  # 种群数量
@@ -61,9 +80,12 @@ class GA:
                 # time_1 = Timestep2Time(cur_time, Start_time[i_1])  # 设置时间格式为具体时间格式
                 # time_2 = Timestep2Time(cur_time, Start_time[i_1] + pick_time)  # 设置时间格式为具体时间格式
                 # time_3 = Timestep2Time(cur_time, End_time[i_1] - put_time)  # 设置时间格式为具体时间格式
-                self.TM_msg.append(Arm_Message(i, j+1, o+1, time_1, 0, pre, nxt))  # 机械臂取片指令
-                self.TM_msg.append(Arm_Message(i, j+1, o+1, time_2, 2, pre, nxt))  # 机械臂移动指令
-                self.TM_msg.append(Arm_Message(i, j+1, o+1, time_3, 1, pre, nxt))  # 机械臂放片指令
+                if time_1 > self.join_time:
+                    self.TM_msg.append(Arm_Message(i, j+1, o+1, time_1, 0, pre, nxt))  # 机械臂取片指令
+                if time_1 > self.join_time:
+                    self.TM_msg.append(Arm_Message(i, j+1, o+1, time_2, 2, pre, nxt))  # 机械臂移动指令
+                if time_1 > self.join_time:
+                    self.TM_msg.append(Arm_Message(i, j+1, o+1, time_3, 1, pre, nxt))  # 机械臂放片指令
             self.TM_msg.sort(key=lambda TM_msg: TM_msg.cmd_time)  # 根据机械臂指令的时间，对指令进行排序
 
     def get_M_State(self, time):
@@ -119,6 +141,33 @@ class GA:
             # if x.move_type == 2:
             #     print('Machine:', x.machine_no, ' Time:', x.cmd_time, ' move from:', x.move_from, ' to:', x.move_to)
 
+
+
+    # 以精简形式将cmd命令所需的信息输出到json文件中
+    def simple_output_Message_to_Json(self, cmd_message_path):
+        Message_data = []
+        self.TM_msg.sort(key=lambda y: y.cmd_time)  # 按时间进行排序
+        msg_size = len(self.TM_msg)
+        i = 0
+        while i < msg_size:
+            msg_group = []
+            time = self.TM_msg[i].cmd_time
+
+            while i < msg_size and self.TM_msg[i].cmd_time == time:
+                msg = []
+                type=self.TM_msg[i].move_type
+                msg.append(self.TM_msg[i].move_type)
+                msg.append(self.TM_msg[i].move_from if type==0 else self.TM_msg[i].move_to)
+                msg.append(self.TM_msg[i].machine_no)
+
+                msg_group.append(msg)
+                i += 1
+            Message_data.append(msg_group)
+
+        with open(cmd_message_path, 'w+', encoding='utf-8') as file:
+            json.dump(Message_data, file, indent=4)
+        # print(Message_data)
+
     # 将cmd命令所需的信息输出到json文件中
     def output_Message_to_Json(self, elements_name, cmd_message_path):
         Message_data = []
@@ -161,7 +210,7 @@ class GA:
         # print(Message_data)
 
     def set_Machine_status(self, machines, jobs, sts, eds, ops, J_O, processing_time, m_num, TM_num):
-        self.d = Decode(J_O, processing_time, m_num, TM_num, self.Machine_status)
+        self.d = Decode(J_O, processing_time, m_num, TM_num, self.Machine_status, self.join_time)
         for i in range(len(machines)):
             self.d.set_Machines(machines[i], jobs[i], sts[i], eds[i] - sts[i], ops[i])
 
@@ -171,7 +220,7 @@ class GA:
             Jobs.append(Job(k, v))
         for i in range(len(machines)):
             Jobs[jobs[i]]._Input(sts[i], eds[i], machines[i])  # 参数含义:工件的工序最早开始时间，当前工序结束时间，选择的机器号
-        self.Best_Job = Jobs
+        self.Pre_Job = Jobs
     
     # 适应度
     def fitness(self, CHS, J_f, Processing_t, M_number, Len):
@@ -184,7 +233,7 @@ class GA:
         '''
         return Fit
 
-    def main(self, processing_time, J_O, m_num, j_num, o_num, TM_num, group_name_index, elements_name, type_index, cmd_message_path):
+    def main(self, processing_time, J_O, m_num, j_num, o_num, TM_num, group_name_index, type_index, cmd_message_path):
         start_time = datetime.datetime.now()
         print("start time is : ", start_time)
         e = Encode(processing_time, self.Pop_size, J_O, j_num, m_num, self.Machine_status)
@@ -210,14 +259,23 @@ class GA:
             print('best_fitness', best_fitness)
             # d = Decode(J_O, processing_time, m_num, self.Machine_status)
             self.Best_Machine = deepcopy(self.d.Machines)
-            self.Best_Job = self.Best_Job + self.d.Jobs
+            # self.Best_Job = self.Pre_Job + self.d.Jobs
+            self.Best_Job = []
+            for job in self.Pre_Job:
+                if job.Last_Processing_end_time > self.join_time:
+                    self.Best_Job.append(job)
+            for job in self.d.Jobs:
+                if job.Last_Processing_end_time > self.join_time:
+                    self.Best_Job.append(job)
             # Gantt_Machine(d.Machines)  # 根据机器调度结果，绘制调度结果的甘特图
             # Gantt_Job(d.Jobs)  # 根据工件调度结果，绘制调度结果的甘特图
         stop_time = datetime.datetime.now()
+        set_Processing_list(self.Best_Job)
+        pre_job, pre_machine = get_Processing_list()
         self.set_TM_Message(m_num, TM_num, group_name_index, stop_time)
         # self.print_TM_cmd(elements_name)
         # self.print_Message_Flow(elements_name, type_index)
-        self.output_Message_to_Json(elements_name, cmd_message_path)  # 将cmd命令所需的信息输出到json文件中
+        self.simple_output_Message_to_Json(cmd_message_path)  # 将cmd命令所需的信息输出到json文件中
         Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
         Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图
         r_time = stop_time - start_time

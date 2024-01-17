@@ -9,6 +9,7 @@ from read_Json import INVALID, pick_time, put_time, unit_time
 from Jobs import Job
 from copy import *
 import itertools
+from Processing_list import processing_list
 from Messages import Arm_Message
 import matplotlib.pyplot as plt
 import datetime
@@ -22,6 +23,22 @@ def Timestep2Time(cur_time, time_step, time_decay=0):  # 将单位时间转换�
 
 def Time2Timestep(start_time, cur_time):  # 将实际的时间转换为单位时间
     return math.ceil(((cur_time - start_time) / datetime.timedelta(milliseconds=1)) / unit_time)
+
+
+def set_Processing_list(Best_jobs):  # 将最终的调度结果存入json文件
+    path = 'config/example3/processing_list.json'
+    process = processing_list()
+    process.Job2Info(Best_jobs)
+    process.write_info(path)
+
+
+def get_Processing_list():  # 将json文件中的信息读取到job和machine中
+    path = 'config/example3/processing_list.json'
+    process = processing_list()
+    process.read_info(path)
+    pre_jobs = process.Info2Job()
+    pre_machine = process.Info2Machine()
+    return pre_jobs, pre_machine
 
 
 # 机器部分交叉
@@ -454,10 +471,13 @@ class GA:
                     C[j] = offspring[Fit.index(min(Fit))]
             print("current time : ", datetime.datetime.now())
         stop_time = datetime.datetime.now()
+        set_Processing_list(self.Best_Job)
+        pre_job, pre_machine = get_Processing_list()
         self.set_TM_Message(m_num, TM_num, group_name_index, stop_time)
         # self.print_TM_cmd(elements_name)
         # self.print_Message_Flow(elements_name, type_index)
         self.simple_output_Message_to_Json(cmd_message_path)  # 将cmd命令所需的信息输出到json文件中
+
         # Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
         # Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图
         r_time = stop_time - start_time

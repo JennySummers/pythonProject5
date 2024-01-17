@@ -136,26 +136,27 @@ class new_join:
 
     # processing_time, J_O, m_num, j_num, o_num, TM_num, group_name_index, elements_name, type_index, cmd_message_path
     def main(self, Best_Machine, Best_Job, new_status, new_Processing_time, new_J, new_M_num, new_J_num,
-             new_O_num, new_TM_num, group_name_index, elements_name, type_index, cmd_message_path):
+             new_O_num, new_TM_num, group_name_index, type_index, cmd_message_path):
         self.set_pres_machines(Best_Machine)
         self.set_pres_jobs(Best_Job)
         self.Join(new_Processing_time, new_J, new_M_num, new_J_num, new_O_num, new_TM_num)
-        re = GeneticA_re.GA(new_status)
+        re = GeneticA_re.GA(self.join_time, new_status)
         re.set_Machine_status(self.pre_machines, self.pre_jobs, self.pre_st, self.pre_ed, self.pre_ops, new_J,
                               new_Processing_time, new_M_num, new_TM_num)
         re.set_pre_jobs(self.pre_J, self.pre_machines, self.pre_jobs, self.pre_st, self.pre_ed, self.pre_ops)
+        # re.Best_Job = Best_Job
         re.main(new_Processing_time, new_J, new_M_num, new_J_num, new_O_num, new_TM_num, group_name_index,
-                elements_name, type_index, cmd_message_path)
+                type_index, cmd_message_path)
 
 
 if __name__ == '__main__':
     Layout_path, layout_raw_path, Wafer_path, Wafer_noBM_path, Cmd_message_path, read_from_cpp_path = set_Wafer()
     r = get_Recipe(Layout_path, layout_raw_path, Wafer_path, Wafer_noBM_path, read_from_cpp_path)
     g = GeneticA.GA(r.Machine_status)
-    g.main(r.Processing_time, r.J, r.M_num, r.J_num, r.O_num, r.TM_num, r.group_name_index, r.elements_name,
+    g.main(r.Processing_time, r.J, r.M_num, r.J_num, r.O_num, r.TM_num, r.group_name_index,
            r.type_index, Cmd_message_path)
-    n = new_join(500)
+    n = new_join(200)
     n.main(g.Best_Machine, g.Best_Job, r.Machine_status, r.Processing_time, r.J, r.M_num, r.J_num, r.O_num, r.TM_num,
-           r.group_name_index, r.elements_name, r.type_index, Cmd_message_path)
+           r.group_name_index, r.type_index, Cmd_message_path)
     print("1")
     # 取放 3.6ms
