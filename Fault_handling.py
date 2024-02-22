@@ -1,9 +1,8 @@
 from copy import *
-from GeneticA import GA
-from Instance import Processing_time, J, M_num, J_num, O_num, Machine_status
+import GeneticA
+import GeneticA_re
 import numpy as np
-
-from read_Json import INVALID
+from read_Json import INVALID, get_Recipe
 from Messages import Fault_Message
 
 
@@ -35,7 +34,7 @@ class Fault:
         res_t = []  # 剩余处理时间，已完成则为0
         for i in range(len(self.pres_jobs)):
             new_s = 0
-            while new_s < self.pres_jobs[i].Operation_num and self.pres_jobs[i].J_end[new_s] < self.join_time:
+            while new_s < self.pres_jobs[i].Operation_num and self.pres_jobs[i].J_end[new_s] < self.fault_time:
                 new_s += 1
             if new_s >= self.pres_jobs[i].Operation_num:  # 当前晶圆的所有工艺都已加工完成
                 jobs.append(-1)
@@ -68,8 +67,8 @@ class Fault:
         cnt = 0
         for i in range(len(jobs)):
             if jobs[i] != -1:
-                self.New_J[cnt+1] = self.pres_jobs[i].Operation_num - jobs[i]
-                self.New_O_num += self.New_J[cnt+1]
+                self.New_J[cnt + 1] = self.pres_jobs[i].Operation_num - jobs[i]
+                self.New_O_num += self.New_J[cnt + 1]
                 self.New_J_num += 1
                 self.New_Processing_time.append([])
                 if cur_m[i] != -1:
@@ -88,13 +87,26 @@ class Fault:
         self.New_M_num = m_num
 
 
+def set_Wafer(layout_path="./config/example3/layout.json",
+              layout_raw_path="./config/example3/layout_raw.json",
+              wafer_path="./config/example3/wafer.json",
+              wafer_noBM_path="./config/example3/wafer_noBM.json",
+              cmd_message_path="./config/example3/cmd_message.json",
+              read_from_cpp_path='./config/example3/Sch_output.json'):
+    return layout_path, layout_raw_path, wafer_path, wafer_noBM_path, cmd_message_path, read_from_cpp_path
+
+
 if __name__ == '__main__':
-    g = GA(Machine_status)
-    g.main(Processing_time, J, M_num, J_num, O_num)
-    mes = Fault_Message(1, 4, 20)
+    Layout_path, layout_raw_path, Wafer_path, Wafer_noBM_path, Cmd_message_path, read_from_cpp_path = set_Wafer()
+    r = get_Recipe(Layout_path, layout_raw_path, Wafer_path, Wafer_noBM_path, read_from_cpp_path)
+    g = GeneticA.GA(r.Machine_status)
+    g.main(r.Processing_time, r.J, r.M_num, r.J_num, r.O_num, r.TM_num, r.group_name_index,
+           r.type_index, Cmd_message_path)
+    mes = Fault_Message(1, 60, 100)
     f = Fault(mes)
     f.set_pres_machines(g.Best_Machine)
     f.set_pres_jobs(g.Best_Job)
-    f.Fault_Handle(Processing_time, M_num)
-    g.main(f.New_Processing_time, f.New_J, f.New_M_num, f.New_J_num, f.New_O_num)
+    f.Fault_Handle(r.Processing_time, r.M_num)
+    g.main(f.New_Processing_time, f.New_J, f.New_M_num, f.New_J_num, f.New_O_num, r.TM_num, r.group_name_index,
+           r.type_index, Cmd_message_path)
     print("1")

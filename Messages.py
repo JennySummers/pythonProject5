@@ -19,3 +19,8 @@ class Arm_Message:
         if self.move_type == 2:  # 当机械臂操作为移动，读取移动的起点和终点
             self.move_from = move_from
             self.move_to = move_to
+
+
+class Stop_Message:
+    def __init__(self, Abort_Only):
+        self.Abort_Only = Abort_Only
