@@ -2,10 +2,10 @@ import json
 import numpy as np
 import copy
 
-INVALID = 99999999
-pick_time = 1
-put_time = 1
-unit_time = 1  # 单位时间设定，单位为毫秒
+INVALID = 99999999.0
+pick_time = 1.0
+put_time = 1.0
+unit_time = 1.0  # 单位时间设定，单位为毫秒
 
 
 class Read_json:
@@ -328,7 +328,7 @@ class Read_json:
                         num = self.group_elements_num[name]
                         # 修改该gruop中的各处理单元对应的处理时间
                         for i in range(num):
-                            list_step[index + i] = copy.deepcopy(processTime)
+                            list_step[index + i] = float(processTime)
                             now_transfer |= self.accessibleList[index + i]  # 记录与当前工序相关联的机械臂
                         # 令空出来的槽位=INVALID
                         if name in self.CM_name_list:
@@ -338,8 +338,7 @@ class Read_json:
                     if last_transfer:  # 第一个工序不需要添加前置机械臂
                         transfer = last_transfer & now_transfer  # 选取前一道工序和当前工序关联机械臂的交集
                         for transfer_index in transfer:  # TODO 假如该工序与多个机械臂有关联，怎么处理？
-                            transfer_step_time[self.all_elements_num + transfer_index] = self.transfer_time[
-                                transfer_index]
+                            transfer_step_time[self.all_elements_num + transfer_index] = float(self.transfer_time[transfer_index])
                         list_recipe.append(transfer_step_time)
                     last_transfer = now_transfer
                     list_recipe.append(list_step)

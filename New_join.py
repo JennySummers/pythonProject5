@@ -2,7 +2,7 @@ from copy import *
 
 import GeneticA
 import GeneticA_re
-from Instance import Processing_time, J, M_num, J_num, O_num, Machine_status
+from read_Json import INVALID
 import numpy as np
 from read_Json import INVALID, get_Recipe
 

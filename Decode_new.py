@@ -3,6 +3,7 @@ from Jobs import Job
 from Machines import Machine_Time_window
 from read_Json import INVALID, pick_time, put_time, unit_time
 import numpy as np
+import math
 
 bias = 1
 
@@ -22,7 +23,7 @@ class Decode:
         self.T = []  # 时间顺序矩阵，T[i][j]表示工件i的第j道工序在机器JM[i][j]上加工的加工时间为T[i][j]
         self.TM_List = M_num - TM_num  # 机械臂列表
         self.first_pick = 0  # 保证按序取片的最早可以开始时间
-        self.early_pick = int(join_time)  # 重调度晶圆的最早可以开始时间
+        self.early_pick =join_time  # 重调度晶圆的最早可以开始时间
         self.decay = 5  # 晶圆在机械臂上最长可以停留的时间
         for j in range(M_num):
             self.Machines.append(Machine_Time_window(j, self.Machine_time[j]))  # 为每个机器分配一个机器类，并对其进行编号
@@ -72,10 +73,9 @@ class Decode:
     def Earliest_Start(self, job, O_num, Selected_Machine, early_start, late_start):  # 选中的机器即为当前的机器编号
         P_t = self.Processing_time[job][O_num][Selected_Machine]
         M_Tstart, M_Tend, M_Tlen = self.Machines[Selected_Machine].Empty_time_window()
-        earliest_start = int(
-            max(early_start, self.Machines[Selected_Machine].End_time))  # 当前工序的最早开始时间为上一道工序完成时间与机器到达空闲状态时间取最大值
+        earliest_start = max(early_start, self.Machines[Selected_Machine].End_time)  # 当前工序的最早开始时间为上一道工序完成时间与机器到达空闲状态时间取最大值
         nxt_early = earliest_start + P_t
-        nxt_late = int(-1)
+        nxt_late = -1
         if M_Tlen is not None:  # 此处为全插入时窗
             for le_i in range(len(M_Tlen)):
                 if M_Tlen[le_i] >= P_t:
@@ -97,7 +97,7 @@ class Decode:
         del M_Tend
         del M_Tlen
 
-        return int(earliest_start), int(nxt_early), int(nxt_late)  # 返回0.工件的工序最早开始时间，1.下一道工序最早可以开始的时间，2.下一道工序最晚可以开始的时间
+        return earliest_start, nxt_early, nxt_late  # 返回0.工件的工序最早开始时间，1.下一道工序最早可以开始的时间，2.下一道工序最晚可以开始的时间
 
     # 解码
     def Decode_1(self, CHS, Len_Chromo):  # start_time表示晶圆最早可以开始加工时间，用于重调度
@@ -144,13 +144,13 @@ class Decode:
     def DFS_for_jobs(self, job, op, sop, LT, early_s, late_s):  # 参数：工件号，工序号，工序总数， 当前开始时间序列，当前工序的最早开始时间，最晚开始时间
         if not early_s:
             early = self.early_pick
-            # early = int(0)
+            # early = 0
         else:
             early = early_s[-1]
         if op == 1:
             early = max(early, self.first_pick)
         if not late_s:
-            late = int(-1)
+            late = -1
         else:
             late = late_s[-1]
         if op == sop:

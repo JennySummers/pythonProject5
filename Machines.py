@@ -1,4 +1,5 @@
-from Instance import put_time, pick_time, switch_time
+from read_Json import INVALID
+from decimal import Decimal
 
 
 class Machine_Time_window:
@@ -21,11 +22,11 @@ class Machine_Time_window:
         if self.O_end is None:
             pass
         elif len(self.O_end) == 1:
-            if self.O_start[0] > self.Machine_state:
+            if Decimal(self.O_start[0]) > Decimal(self.Machine_state):
                 time_window_start = [self.Machine_state]
                 time_window_end = [self.O_start[0]]
         elif len(self.O_end) > 1:
-            if self.O_start[0] > self.Machine_state:
+            if Decimal(self.O_start[0]) > Decimal(self.Machine_state):
                 time_window_start.append(self.Machine_state)
                 time_window_end.append(self.O_start[0])
             time_window_start.extend(self.O_end[:-1])  # 因为使用时间窗的结束点就是空时间窗的开始点
@@ -46,9 +47,9 @@ class Machine_Time_window:
 
     def _Input(self, Job, M_Earliest, P_t, O_num):  # 参数含义:工件编号，工件的工序最早开始时间，处理时间，工序编号
         if self.O_end:
-            if self.O_start[-1] > M_Earliest:
+            if Decimal(self.O_start[-1]) > Decimal(M_Earliest):
                 for i in range(len(self.O_end)):
-                    if self.O_start[i] >= M_Earliest:
+                    if Decimal(self.O_start[i]) >= Decimal(M_Earliest):
                         self.assigned_task.insert(i, [Job + 1, O_num + 1])
                         break
             else:

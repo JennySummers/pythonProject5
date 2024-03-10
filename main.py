@@ -10,7 +10,7 @@ from GeneticA import GA
 from Logs import Logger
 from New_join import new_join
 from Fault_handling import Fault
-from Instance import Machine_status, Processing_time, J, M_num, J_num, O_num
+from read_Json import INVALID
 
 '''
 将晶圆在CM中的处理时间设置成晶圆需要等待之前的晶圆被取走的时间。

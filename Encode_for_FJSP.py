@@ -1,6 +1,6 @@
 import numpy as np
 import random
-from Instance import put_time, pick_time, switch_time, INVALID
+from read_Json import INVALID
 
 class Encode:
     def __init__(self, Matrix, Pop_size, J, J_num, M_num, M_status):
