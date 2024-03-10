@@ -1,7 +1,9 @@
+from decimal import Decimal
+
 import matplotlib.pyplot as plt
 from Jobs import Job
 from Machines import Machine_Time_window
-from read_Json import INVALID, pick_time, put_time, unit_time
+from read_Json import INVALID
 import numpy as np
 import math
 
@@ -119,13 +121,12 @@ class Decode:
                 # 插入晶圆的时间窗
                 # self.Jobs[k - 1]._Input(st, et, machine)  # 参数含义:工件的工序最早开始时间，当前工序结束时间，选择的机器号
                 if ti == 0:  # 晶圆从CM中被取走的处理方法
-                    self.Jobs[k - 1]._Input(st, et + pick_time, machine)  # 参数含义:工件的工序最早开始时间，当前工序结束时间，选择的机器号
-                    self.Machines[machine]._Input(k - 1, st, et + pick_time - st, ti)  # 参数含义:工件编号，工件的工序最早开始时间，处理时间，工序编号
+                    self.Jobs[k - 1]._Input(st, et, machine)  # 参数含义:工件的工序最早开始时间，当前工序结束时间，选择的机器号
+                    self.Machines[machine]._Input(k - 1, st, et - st, ti)  # 参数含义:工件编号，工件的工序最早开始时间，处理时间，工序编号
                     continue
                 elif ti == len(LT) - 2:  # 晶圆被放回CM中的处理方法
-                    self.Jobs[k - 1]._Input(st - put_time, et, machine)  # 参数含义:工件的工序最早开始时间，当前工序结束时间，选择的机器号
-                    self.Machines[machine]._Input(k - 1, st - put_time, et - st + put_time,
-                                                  ti)  # 参数含义:工件编号，工件的工序最早开始时间，处理时间，工序编号
+                    self.Jobs[k - 1]._Input(st, et, machine)  # 参数含义:工件的工序最早开始时间，当前工序结束时间，选择的机器号
+                    self.Machines[machine]._Input(k - 1, st, et - st, ti)  # 参数含义:工件编号，工件的工序最早开始时间，处理时间，工序编号
                     continue
                 else:  # 晶圆在PM，TM或BM中的处理方法
                     # self.Jobs[k - 1]._Input(st, et, machine)  # 参数含义:工件的工序最早开始时间，当前工序结束时间，选择的机器号
@@ -134,10 +135,8 @@ class Decode:
                         self.Jobs[k - 1]._Input(st, et, machine)  # 参数含义:工件的工序最早开始时间，当前工序结束时间，选择的机器号
                         self.Machines[machine]._Input(k - 1, st, et - st, ti)  # 参数含义:工件编号，工件的工序最早开始时间，处理时间，工序编号
                     else:  # 处理单元处理方法
-                        self.Jobs[k - 1]._Input(st - put_time, et + pick_time,
-                                                machine)  # 参数含义:工件的工序最早开始时间，当前工序结束时间，选择的机器号
-                        self.Machines[machine]._Input(k - 1, st - put_time, et + put_time + pick_time - st,
-                                                      ti)  # 参数含义:工件编号，工件的工序最早开始时间，处理时间，工序编号
+                        self.Jobs[k - 1]._Input(st, et, machine)  # 参数含义:工件的工序最早开始时间，当前工序结束时间，选择的机器号
+                        self.Machines[machine]._Input(k - 1, st, et - st, ti)  # 参数含义:工件编号，工件的工序最早开始时间，处理时间，工序编号
 
         return self.fitness
 
@@ -150,7 +149,7 @@ class Decode:
         if op == 1:
             early = max(early, self.first_pick)
         if not late_s:
-            late = -1
+            late = -1.0
         else:
             late = late_s[-1]
         if op == sop:
@@ -164,11 +163,11 @@ class Decode:
             if machine >= self.TM_List:
                 nxt_early = earliest_start + P_t
                 nxt_late = min(late + P_t + self.decay, nxt_late)
-                if late == -1:
-                    nxt_late = -1
+                if Decimal(late) == Decimal(-1.0):
+                    nxt_late = -1.0
             '''如果当前机器为机械臂的处理方法'''
             # 得到下一道工序的最早开始时间，和最晚开始时间
-            if late == -1 or early <= earliest_start <= late:
+            if Decimal(late) == Decimal(-1.0) or Decimal(early) <= Decimal(earliest_start) <= Decimal(late):
                 LT.append(earliest_start)
                 early_s.append(nxt_early)
                 late_s.append(nxt_late)
@@ -181,6 +180,9 @@ class Decode:
         LT.pop()
         if early_s:
             early_s[-1] = late + 1
+        else:
+            early_s.append(late + 1)
+            late_s.append(-1)
         return self.DFS_for_jobs(job, op - 1, sop, LT, early_s, late_s)
         # 返回当前工件的所有工序的开始时间序列
 
