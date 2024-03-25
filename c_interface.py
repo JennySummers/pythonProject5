@@ -1,16 +1,11 @@
 import json
+
+import numpy as np
+
 import GeneticA
 import GeneticA_re
 from read_Json import INVALID, get_Recipe
 import sys
-
-def set_Wafer(layout_path="./config/example3/layout.json",
-              layout_raw_path="./config/example3/layout_raw.json",
-              wafer_path="./config/example3/wafer.json",
-              wafer_noBM_path="./config/example3/wafer_noBM.json",
-              cmd_message_path="./config/example3/cmd_message.json",
-              read_from_cpp_path='./config/example3/Sch_output.json'):
-    return layout_path, layout_raw_path, wafer_path, wafer_noBM_path, cmd_message_path, read_from_cpp_path
 
 # 记录一个晶圆的配方信息
 class one_wafer_recipe:
@@ -31,16 +26,16 @@ class one_wafer_recipe:
 
 
 class New_join:
-    def __init__(self):
+    def __init__(self, m_num, tm_index):
         self.New_Processing_time = []  # 故障发生后新产生的各个晶圆处理时间矩阵
         self.New_Machine_status = []  # 故障发生后机器状态
         self.New_J = {}
-        self.New_M_num = 0
-        self.New_TM_num = 0
+        self.New_M_num = m_num
+        self.New_TM_list = tm_index
         self.New_J_num = 0
         self.New_O_num = 0
 
-    def Join(self, pre_wafers, new_wafers):
+    def Join(self, pre_wafers):
         no = int(1)
         for Wafer in pre_wafers:
             if Wafer.has_processing:
@@ -62,26 +57,22 @@ class New_join:
                 self.New_O_num = self.New_O_num + self.New_J[no]
                 self.New_J_num = self.New_J_num + 1
             no = no + 1
-        for k, v in new_wafers.J.items():
-            self.New_J[no] = v
-            no = no + 1
-        for pro_t in new_wafers.Processing_time:
-            self.New_Processing_time.append(pro_t)
-        self.New_O_num = self.New_O_num + new_wafers.O_num
-        self.New_J_num = self.New_J_num + new_wafers.J_num
-        self.New_M_num = new_wafers.M_num
-        self.New_TM_num = new_wafers.TM_num
-        self.New_Machine_status = new_wafers.Machine_status
+        # for k, v in new_wafers.J.items():
+        #     self.New_J[no] = v
+        #     no = no + 1
+        # for pro_t in new_wafers.Processing_time:
+        #     self.New_Processing_time.append(pro_t)
+        # self.New_O_num = self.New_O_num + new_wafers.O_num
+        # self.New_J_num = self.New_J_num + new_wafers.J_num
+        self.New_Machine_status = np.zeros(self.New_M_num, dtype=float)
         print('done')
 
     # processing_time, J_O, m_num, j_num, o_num, TM_num, group_name_index, elements_name, type_index, cmd_message_path
-    def main(self, pre_wafers):
-        Layout_path, layout_raw_path, Wafer_path, Wafer_noBM_path, Cmd_message_path, read_from_cpp_path = set_Wafer()
-        r = get_Recipe(Layout_path, layout_raw_path, Wafer_path, Wafer_noBM_path, read_from_cpp_path)
-        self.Join(pre_wafers, r)
-        g = GeneticA.GA(r.Machine_status)
-        g.main(self.New_Processing_time, self.New_J, self.New_M_num, self.New_J_num, self.New_O_num, self.New_TM_num, r.group_name_index,
-               r.type_index, Cmd_message_path)
+    def main(self, Wafers):
+        self.Join(Wafers)
+        Cmd_message_path = './config/example3/Sch_output.json'
+        g = GeneticA.GA(self.New_Machine_status)
+        g.main(self.New_Processing_time, self.New_J, self.New_M_num, self.New_J_num, self.New_O_num, self.New_TM_list, Cmd_message_path)
 
 # 用于被c语言调用
 if __name__ == '__main__':
@@ -102,11 +93,15 @@ if __name__ == '__main__':
             wafer.time_proceed=max_begin_time-wafer.begin_time
 
     with open('config/example3/layout.json') as f:
-        tmIndexs = json.load(f)
+        tmIndex = json.load(f)
+
+    M_num = 0
+    if wafers:
+        M_num = len(wafers[0].recipe_array[0])
 
     print(wafers)
 
     # TODO 调用遗传算法
     # 在输出格式上，进行了简化，现在只需输出动作类型+目标机器号+机械臂机器号 三元组即可，参照GA::simple_output_Message_to_Json和config/example3/cmd_message_bak.json
-    new_join = New_join()
+    new_join = New_join(M_num, tmIndex)
     new_join.main(wafers)

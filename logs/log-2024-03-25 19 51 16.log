@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "D:/Mycode/pythonProject/pythonProject5/main.py", line 49, in <module>
+    first_scheduler()
+  File "D:/Mycode/pythonProject/pythonProject5/main.py", line 34, in first_scheduler
+    r = get_Recipe(Layout_path, layout_raw_path, Wafer_path, Wafer_noBM_path, read_from_cpp_path)
+  File "D:\Mycode\pythonProject\pythonProject5\read_Json.py", line 432, in __init__
+    j.check_waferNum()  # 判断输入的CM的槽位是否小于wafer数量，若是,则报错退出
+  File "D:\Mycode\pythonProject\pythonProject5\read_Json.py", line 55, in check_waferNum
+    CM = layout_json_data['CM']
+TypeError: list indices must be integers or slices, not str

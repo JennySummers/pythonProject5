@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "D:\Mycode\pythonProject\pythonProject5\read_Json.py", line 55, in check_waferNum
+    CM = layout_json_data['CM']
+TypeError: list indices must be integers or slices, not str

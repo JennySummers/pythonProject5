@@ -237,9 +237,8 @@ class GA:
         del Fit
         return A_CHS[index]
 
-    def set_TM_Message(self, M_num, TM_num, group_name_index, cur_time):
-        for i in range(M_num - TM_num, M_num):
-            self.TM_List.append(i)
+    def set_TM_Message(self, M_num, TM_list):
+        self.TM_List = TM_list
         for i in self.TM_List:
             Machine = self.Best_Machine[i]
             Start_time = Machine.O_start
@@ -402,7 +401,7 @@ class GA:
             json.dump(Message_data, file, indent=4)
         # print(Message_data)
 
-    def main(self, processing_time, J_O, m_num, j_num, o_num, TM_num, group_name_index, type_index, cmd_message_path):
+    def main(self, processing_time, J_O, m_num, j_num, o_num, TM_list, cmd_message_path):
         start_time = datetime.datetime.now()
         print("start time is : ", start_time)
         e = Encode(processing_time, self.Pop_size, J_O, j_num, m_num, self.Machine_status)
@@ -415,7 +414,7 @@ class GA:
         C = CHS1
         Optimal_fit = INVALID
         # Optimal_CHS = 0
-        self.d = Decode(J_O, processing_time, m_num, TM_num, self.Machine_status)
+        self.d = Decode(J_O, processing_time, m_num, TM_list, self.Machine_status)
         for i in range(self.Max_Iterations):
             Fit = self.fitness(C, J_O, processing_time, m_num, Len_Chromo)
             Best = C[Fit.index(min(Fit))]
@@ -473,7 +472,7 @@ class GA:
         stop_time = datetime.datetime.now()
         # set_Processing_list(self.Best_Job)
         # pre_job, pre_machine = get_Processing_list()
-        self.set_TM_Message(m_num, TM_num, group_name_index, stop_time)
+        self.set_TM_Message(m_num, TM_list)
         # self.print_TM_cmd(elements_name)
         # self.print_Message_Flow(elements_name, type_index)
         self.simple_output_Message_to_Json(cmd_message_path)  # 将cmd命令所需的信息输出到json文件中
