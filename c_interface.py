@@ -101,6 +101,9 @@ if __name__ == '__main__':
         if wafer.has_processing:
             wafer.time_proceed=max_begin_time-wafer.begin_time
 
+    with open('config/example3/layout.json') as f:
+        tmIndexs = json.load(f)
+
     print(wafers)
 
     # TODO 调用遗传算法

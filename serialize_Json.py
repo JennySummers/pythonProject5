@@ -1,13 +1,14 @@
 import json
 
-src_path = './config/example3/Sch_output.json'
+src_path = './config/XWX_test/recipe_array.json'
 src_path_new = './config/example3/Sch_output_new.json'
 wafer_noBM_path = "./config/example3/wafer_noBM.json"
+src_path_indentation = './config/XWX_test/recipe_array_indentation.json'
 
 # 将json读入后输出缩进格式
 with open(src_path, 'r', encoding='utf-8') as file:
     data = json.load(file)
-with open(wafer_noBM_path, 'w+', encoding='utf-8') as file:
+with open(src_path_indentation, 'w+', encoding='utf-8') as file:
     json.dump(data, file, indent=4)
 
 # new_data = []
