@@ -70,7 +70,7 @@ class New_join:
     # processing_time, J_O, m_num, j_num, o_num, TM_num, group_name_index, elements_name, type_index, cmd_message_path
     def main(self, Wafers):
         self.Join(Wafers)
-        Cmd_message_path = './config/example3/Sch_output.json'
+        Cmd_message_path = './config/example3/cmd_message.json'
         g = GeneticA.GA(self.New_Machine_status)
         g.main(self.New_Processing_time, self.New_J, self.New_M_num, self.New_J_num, self.New_O_num, self.New_TM_list, Cmd_message_path)
 

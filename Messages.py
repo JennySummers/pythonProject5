@@ -14,7 +14,9 @@ class Arm_Message:
         self.move_type = move_type  # move_type表示机械臂指令的类型，0表示取片，1表示放片，2表示机械臂移动
         if self.move_type == 0:  # 当机械臂操作为取片，读取从哪台机器上取片
             self.move_from = move_from
+            self.move_to = move_to
         if self.move_type == 1:  # 当机械臂操作为放片，读取放到那台机器上
+            self.move_from = move_from
             self.move_to = move_to
         if self.move_type == 2:  # 当机械臂操作为移动，读取移动的起点和终点
             self.move_from = move_from

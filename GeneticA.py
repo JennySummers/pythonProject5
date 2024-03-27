@@ -390,8 +390,11 @@ class GA:
                 msg = []
                 type=self.TM_msg[i].move_type
                 msg.append(self.TM_msg[i].move_type)
+
                 msg.append(self.TM_msg[i].move_from if type==0 else self.TM_msg[i].move_to)
                 msg.append(self.TM_msg[i].machine_no)
+                if self.TM_msg[i].move_type == 0:
+                    msg.append(self.TM_msg[i].move_to)
 
                 msg_group.append(msg)
                 i += 1
