@@ -11,12 +11,12 @@ bias = 1
 
 
 class Decode:
-    def __init__(self, J, Processing_time, M_num, TM_list, M_status, join_time=0):
+    def __init__(self, J, Processing_time, M_num, TM_list, M_status, join_time=0.0):
         self.Processing_time = Processing_time
         # self.Scheduled = []  # 已经排产过的工序
         self.M_num = M_num  # 机器数
         self.Machines = []  # 存储机器类
-        self.fitness = 0  # 计算适应度
+        self.fitness = 0.0  # 计算适应度
         self.J = J  # 表示各个工件对应的工序数。用键值对来表示
         # self.Machine_time = np.zeros(self.M_num, dtype=float)  # 机器时间初始化，使用当前机器运行情况初始化
         self.Machine_time = [x for x in M_status]  # 机器时间初始化，使用当前机器运行情况初始化
@@ -24,9 +24,9 @@ class Decode:
         self.JM = []  # 机器顺序矩阵，JM[i][j]表示工件i的第j道工序在机器JM[i][j]上加工
         self.T = []  # 时间顺序矩阵，T[i][j]表示工件i的第j道工序在机器JM[i][j]上加工的加工时间为T[i][j]
         self.TM_List = TM_list  # 机械臂列表
-        self.first_pick = 0  # 保证按序取片的最早可以开始时间
-        self.early_pick =join_time  # 重调度晶圆的最早可以开始时间
-        self.decay = 5  # 晶圆在机械臂上最长可以停留的时间
+        self.first_pick = 0.0  # 保证按序取片的最早可以开始时间
+        self.early_pick = join_time  # 重调度晶圆的最早可以开始时间
+        self.decay = 5.0  # 晶圆在机械臂上最长可以停留的时间
         for j in range(M_num):
             self.Machines.append(Machine_Time_window(j, self.Machine_time[j]))  # 为每个机器分配一个机器类，并对其进行编号
         for k, v in J.items():
@@ -34,8 +34,8 @@ class Decode:
 
     def reset(self):
         self.Machines.clear()
-        self.fitness = 0
-        self.first_pick = 0
+        self.fitness = 0.0
+        self.first_pick = 0.0
         self.Jobs.clear()
         for j in range(self.M_num):
             self.Machines.append(Machine_Time_window(j, self.Machine_time[j]))  # 为每个机器分配一个机器类，并对其进行编号
@@ -77,7 +77,7 @@ class Decode:
         M_Tstart, M_Tend, M_Tlen = self.Machines[Selected_Machine].Empty_time_window()
         earliest_start = max(early_start, self.Machines[Selected_Machine].End_time)  # 当前工序的最早开始时间为上一道工序完成时间与机器到达空闲状态时间取最大值
         nxt_early = earliest_start + P_t
-        nxt_late = -1
+        nxt_late = -1.0
         if M_Tlen is not None:  # 此处为全插入时窗
             for le_i in range(len(M_Tlen)):
                 if M_Tlen[le_i] >= P_t:

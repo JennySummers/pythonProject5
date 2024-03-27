@@ -251,7 +251,10 @@ class GA:
                 time_1 = Start_time[i_1]  # 设置时间格式为单位时间格式
                 time_2 = Start_time[i_1] + pick_time  # 设置时间格式为单位时间格式
                 # time_3 = End_time[i_1] - put_time  # 设置时间格式为单位时间格式
-                time_3 = End_time[i_1]  # 设置时间格式为单位时间格式
+                time_3 = End_time[i_1]  # 设置时间格式为单位时间格式8
+                # print("machine ", i, " pick in time", time_1, " and put in time ", time_3)
+                if time_1 >= time_3:
+                    print("error in machine" + i)
                 # time_1 = Timestep2Time(cur_time, Start_time[i_1])  # 设置时间格式为具体时间格式
                 # time_2 = Timestep2Time(cur_time, Start_time[i_1] + pick_time)  # 设置时间格式为具体时间格式
                 # time_3 = Timestep2Time(cur_time, End_time[i_1] - put_time)  # 设置时间格式为具体时间格式
@@ -378,9 +381,12 @@ class GA:
         # print(Message_data)
 
     # 以精简形式将cmd命令所需的信息输出到json文件中
-    def simple_output_Message_to_Json(self, cmd_message_path):
+    def simple_output_Message_to_Json(self, cmd_message_path, tm_i=None):
         Message_data = []
         self.TM_msg.sort(key=lambda y: y.cmd_time)  # 按时间进行排序
+        for tm_i in self.TM_msg:
+            moves = "pick" if tm_i.move_type == 0 else "put"
+            print("at", tm_i.cmd_time, "time", tm_i.machine_no, moves, "from", tm_i.move_from, "to",tm_i.move_to)
         msg_size = len(self.TM_msg)
         i = 0
         while i < msg_size:
@@ -389,10 +395,10 @@ class GA:
 
             while i < msg_size and self.TM_msg[i].cmd_time == time:
                 msg = []
-                type=self.TM_msg[i].move_type
+                type = self.TM_msg[i].move_type
                 msg.append(self.TM_msg[i].move_type)
 
-                msg.append(self.TM_msg[i].move_from if type==0 else self.TM_msg[i].move_to)
+                msg.append(self.TM_msg[i].move_from if type == 0 else self.TM_msg[i].move_to)
                 msg.append(self.TM_msg[i].machine_no)
                 if self.TM_msg[i].move_type == 0:
                     msg.append(self.TM_msg[i].move_to)
@@ -481,8 +487,8 @@ class GA:
         # self.print_Message_Flow(elements_name, type_index)
         self.simple_output_Message_to_Json(cmd_message_path)  # 将cmd命令所需的信息输出到json文件中
 
-        Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
-        Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图
+        # Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
+        # Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图
         r_time = stop_time - start_time
         print("Running time : ", r_time.total_seconds(), 'seconds')
         print("Time steps = ", Time2Timestep(start_time, stop_time))
