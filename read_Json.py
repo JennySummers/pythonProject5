@@ -3,8 +3,8 @@ import numpy as np
 import copy
 
 INVALID = 99999999.0
-pick_time = 1.0
-put_time = 1.0
+pick_time = 0.1
+put_time = 0.1
 unit_time = 1.0  # 单位时间设定，单位为毫秒
 
 

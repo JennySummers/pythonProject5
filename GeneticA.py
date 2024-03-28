@@ -5,7 +5,6 @@ import random
 from Decode_new import Decode
 from GanttChart import Gantt_Machine, Gantt_Job
 from Encode_for_FJSP import Encode
-from read_Json import INVALID, pick_time, put_time, unit_time
 from Jobs import Job
 from copy import *
 import itertools
@@ -15,6 +14,11 @@ import matplotlib.pyplot as plt
 import datetime
 import math
 import json
+
+INVALID = 99999999.0
+pick_time = 0.1
+put_time = 0.1
+unit_time = 1.0  # 单位时间设定，单位为毫秒
 
 
 def Timestep2Time(cur_time, time_step, time_decay=0):  # 将单位时间转换为实际的时间
@@ -250,8 +254,7 @@ class GA:
                 nxt = self.Best_Job[j].J_machine[o + 1]
                 time_1 = Start_time[i_1]  # 设置时间格式为单位时间格式
                 time_2 = Start_time[i_1] + pick_time  # 设置时间格式为单位时间格式
-                # time_3 = End_time[i_1] - put_time  # 设置时间格式为单位时间格式
-                time_3 = End_time[i_1]  # 设置时间格式为单位时间格式8
+                time_3 = End_time[i_1] - put_time  # 设置时间格式为单位时间格式
                 # print("machine ", i, " pick in time", time_1, " and put in time ", time_3)
                 if time_1 >= time_3:
                     print("error in machine" + i)
