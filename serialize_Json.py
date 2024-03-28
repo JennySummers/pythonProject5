@@ -1,6 +1,6 @@
 import json
 
-src_path = './config/XWX_test/recipe_array.json'
+src_path = './config/XWX_test/recipe_array_back_up.json'
 src_path_new = './config/example3/Sch_output_new.json'
 wafer_noBM_path = "./config/example3/wafer_noBM.json"
 src_path_indentation = './config/XWX_test/recipe_array_indentation.json'

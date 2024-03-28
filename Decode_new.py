@@ -26,7 +26,7 @@ class Decode:
         self.TM_List = TM_list  # 机械臂列表
         self.first_pick = 0.0  # 保证按序取片的最早可以开始时间
         self.early_pick = join_time  # 重调度晶圆的最早可以开始时间
-        self.decay = 5.0  # 晶圆在机械臂上最长可以停留的时间
+        self.decay = 10.0  # 晶圆在机械臂上最长可以停留的时间
         for j in range(M_num):
             self.Machines.append(Machine_Time_window(j, self.Machine_time[j]))  # 为每个机器分配一个机器类，并对其进行编号
         for k, v in J.items():
@@ -80,24 +80,19 @@ class Decode:
         nxt_late = -1.0
         if M_Tlen is not None:  # 此处为全插入时窗
             for le_i in range(len(M_Tlen)):
-                if M_Tlen[le_i] >= P_t:
-                    if M_Tstart[le_i] >= early_start and (late_start < 0 or M_Tstart[le_i] < late_start):
+                if Decimal(M_Tlen[le_i]) >= Decimal(P_t):
+                    if Decimal(M_Tstart[le_i]) >= Decimal(early_start) and (Decimal(late_start) < Decimal(0) or Decimal(M_Tstart[le_i]) < Decimal(late_start)):
                         earliest_start = M_Tstart[le_i]
                         nxt_early = earliest_start + P_t
                         nxt_late = M_Tend[le_i]
                         break
-                    if M_Tstart[le_i] < early_start and (late_start < 0 or M_Tstart[le_i] < late_start) and M_Tend[
-                        le_i] - early_start >= P_t:
+                    if Decimal(M_Tstart[le_i]) < Decimal(early_start) and (Decimal(late_start) < Decimal(0) or Decimal(M_Tstart[le_i]) < Decimal(late_start)) and Decimal(M_Tend[le_i] - early_start) >= Decimal(P_t):
                         earliest_start = early_start
                         nxt_early = earliest_start + P_t
                         nxt_late = M_Tend[le_i]
                         break
         # M_Earliest = earliest_start
         # End_work_time = earliest_start + P_t
-        # 删除临时变量
-        del M_Tstart
-        del M_Tend
-        del M_Tlen
 
         return earliest_start, nxt_early, nxt_late  # 返回0.工件的工序最早开始时间，1.下一道工序最早可以开始的时间，2.下一道工序最晚可以开始的时间
 
@@ -159,12 +154,14 @@ class Decode:
         P_t = self.T[job][op]  # T[i][j]表示工件i的第j道工序的加工时间为T[i][j]
         while 1:
             earliest_start, nxt_early, nxt_late = self.Earliest_Start(job, op, machine, early, late)
+            if 0 < nxt_late < nxt_early:
+                print("error", job, machine, earliest_start)
             '''如果当前机器为机械臂的处理方法'''
-            if machine in self.TM_List:
-                nxt_early = earliest_start + P_t
-                nxt_late = min(late + P_t + self.decay, nxt_late)
-                if Decimal(late) == Decimal(-1.0):
-                    nxt_late = -1.0
+            # if machine in self.TM_List:
+            #     nxt_early = earliest_start + P_t
+            #     nxt_late = min(late + P_t + self.decay, nxt_late)
+            #     if Decimal(late) == Decimal(-1.0):
+            #         nxt_late = -1.0
             '''如果当前机器为机械臂的处理方法'''
             # 得到下一道工序的最早开始时间，和最晚开始时间
             if Decimal(late) == Decimal(-1.0) or Decimal(early) <= Decimal(earliest_start) <= Decimal(late):

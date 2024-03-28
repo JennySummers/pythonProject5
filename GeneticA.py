@@ -254,7 +254,8 @@ class GA:
                 nxt = self.Best_Job[j].J_machine[o + 1]
                 time_1 = Start_time[i_1]  # 设置时间格式为单位时间格式
                 time_2 = Start_time[i_1] + pick_time  # 设置时间格式为单位时间格式
-                time_3 = End_time[i_1] - put_time  # 设置时间格式为单位时间格式
+                # time_3 = End_time[i_1] - put_time  # 设置时间格式为单位时间格式
+                time_3 = End_time[i_1]  # 设置时间格式为单位时间格式
                 # print("machine ", i, " pick in time", time_1, " and put in time ", time_3)
                 if time_1 >= time_3:
                     print("error in machine" + i)
