@@ -4,7 +4,10 @@ import numpy as np
 
 import GeneticA
 import GeneticA_re
-from read_Json import INVALID, get_Recipe
+INVALID = 9999
+pick_time = 0.1
+put_time = 0.1
+unit_time = 1.0  # 单位时间设定，单位为毫秒
 import sys
 
 # 记录一个晶圆的配方信息

@@ -15,9 +15,9 @@ import datetime
 import math
 import json
 
-INVALID = 99999999.0
-pick_time = 0.1
-put_time = 0.1
+INVALID = 9999
+pick_time = 0.5
+put_time = 0.5
 unit_time = 1.0  # 单位时间设定，单位为毫秒
 
 
@@ -254,8 +254,8 @@ class GA:
                 nxt = self.Best_Job[j].J_machine[o + 1]
                 time_1 = Start_time[i_1]  # 设置时间格式为单位时间格式
                 time_2 = Start_time[i_1] + pick_time  # 设置时间格式为单位时间格式
-                # time_3 = End_time[i_1] - put_time  # 设置时间格式为单位时间格式
-                time_3 = End_time[i_1]  # 设置时间格式为单位时间格式
+                time_3 = End_time[i_1] - put_time  # 设置时间格式为单位时间格式
+                # time_3 = End_time[i_1]  # 设置时间格式为单位时间格式
                 # print("machine ", i, " pick in time", time_1, " and put in time ", time_3)
                 if time_1 >= time_3:
                     print("error in machine" + i)
@@ -390,7 +390,8 @@ class GA:
         self.TM_msg.sort(key=lambda y: y.cmd_time)  # 按时间进行排序
         for tm_i in self.TM_msg:
             moves = "pick" if tm_i.move_type == 0 else "put"
-            print("at", tm_i.cmd_time, "time", tm_i.machine_no, moves, "from", tm_i.move_from, "to",tm_i.move_to)
+            if tm_i.machine_no == 3:
+                print("at", tm_i.cmd_time, "time", tm_i.machine_no, moves, "from", tm_i.move_from, "to",tm_i.move_to)
         msg_size = len(self.TM_msg)
         i = 0
         while i < msg_size:
@@ -491,8 +492,8 @@ class GA:
         # self.print_Message_Flow(elements_name, type_index)
         self.simple_output_Message_to_Json(cmd_message_path)  # 将cmd命令所需的信息输出到json文件中
 
-        # Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
-        # Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图
+        Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
+        Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图
         r_time = stop_time - start_time
         print("Running time : ", r_time.total_seconds(), 'seconds')
         print("Time steps = ", Time2Timestep(start_time, stop_time))
