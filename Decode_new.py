@@ -142,12 +142,16 @@ class Decode:
         if not early_s:
             early = self.early_pick
             # early = 0
-        else:
+        elif len(early_s) == 1:
             early = early_s[-1]
+        else:
+            early = early_s[-1] - pick_time
         if op == 1:
             early = max(early, self.first_pick)
         if not late_s:
             late = -1.0
+        elif len(late_s) > 1 and late_s[-1] != -1.0:
+            late = late_s[-1] - pick_time
         else:
             late = late_s[-1]
         if op == sop:
@@ -168,14 +172,14 @@ class Decode:
             '''如果当前机器为机械臂的处理方法'''
             # 得到下一道工序的最早开始时间，和最晚开始时间
             if Decimal(late) == Decimal(-1.0) or Decimal(early) <= Decimal(earliest_start) <= Decimal(late):
-                if Lt and early_s and late_s:
-                    LT.append((earliest_start - pick_time) if earliest_start >=0 else earliest_start)
-                    early_s.append((nxt_early - pick_time) if nxt_early >=0 else nxt_early)
-                    late_s.append((nxt_late - pick_time) if nxt_late >=0 else nxt_late)
-                else:
-                    LT.append(earliest_start)
-                    early_s.append(nxt_early)
-                    late_s.append(nxt_late)
+                # if Lt and early_s and late_s:
+                #     LT.append((earliest_start - pick_time) if earliest_start >=0 else earliest_start)
+                #     early_s.append((nxt_early - pick_time) if nxt_early >=0 else nxt_early)
+                #     late_s.append((nxt_late - pick_time) if nxt_late >=0 else nxt_late)
+                # else:
+                LT.append(earliest_start)
+                early_s.append(nxt_early)
+                late_s.append(nxt_late)
                 return self.DFS_for_jobs(job, op + 1, sop, LT, early_s, late_s)
             else:  # 不满足条件则探索下一个时间窗
                 # if early >= late:  # 当结束时间无限制或最早时间大于最晚开始时间时说明无解，回溯

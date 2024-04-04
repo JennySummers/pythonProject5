@@ -61,4 +61,8 @@ class Machine_Time_window:
         self.O_end.append(M_Earliest + P_t)
         self.O_end.sort()
         self.End_time = self.O_end[-1]
+        M_Tstart, M_Tend, M_Tlen = self.Empty_time_window()
+        for i in M_Tlen :
+            if i < 0:
+                print("error in machine",self.Machine_index)
 
