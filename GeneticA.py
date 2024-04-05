@@ -257,12 +257,15 @@ class GA:
                 time_3 = End_time[i_1] - put_time  # 设置时间格式为单位时间格式
                 # time_3 = End_time[i_1]  # 设置时间格式为单位时间格式
                 # print("machine ", i, " pick in time", time_1, " and put in time ", time_3)
+                # print("at", time_1, "time", j, ' ', o, ' ', "machine", i, "pick from", pre, "to", nxt)
+                # print("at", time_3, "time", j, ' ', o, ' ', "machine", i, "put from", pre, "to", nxt)
                 if time_1 >= time_3:
                     print("error in machine" + i)
                 # time_1 = Timestep2Time(cur_time, Start_time[i_1])  # 设置时间格式为具体时间格式
                 # time_2 = Timestep2Time(cur_time, Start_time[i_1] + pick_time)  # 设置时间格式为具体时间格式
                 # time_3 = Timestep2Time(cur_time, End_time[i_1] - put_time)  # 设置时间格式为具体时间格式
-                self.TM_msg.append(Arm_Message(i, j + 1, o + 1, time_1, 0, pre, nxt))  # 机械臂取片指令
+                if o > 0:
+                    self.TM_msg.append(Arm_Message(i, j + 1, o + 1, time_1, 0, pre, nxt))  # 机械臂取片指令
                 # self.TM_msg.append(Arm_Message(i, j+1, o+1, time_2, 2, pre, nxt))  # 机械臂移动指令
                 self.TM_msg.append(Arm_Message(i, j + 1, o + 1, time_3, 1, pre, nxt))  # 机械臂放片指令
                 # 删除临时变量
@@ -391,7 +394,7 @@ class GA:
         for tm_i in self.TM_msg:
             moves = "pick" if tm_i.move_type == 0 else "put"
             if tm_i.machine_no == 3:
-                print("at", tm_i.cmd_time, "time", tm_i.machine_no, moves, "from", tm_i.move_from, "to",tm_i.move_to)
+                print("at", tm_i.cmd_time, "time", tm_i.machine_no, moves, "from", tm_i.move_from, "to", tm_i.move_to)
         msg_size = len(self.TM_msg)
         i = 0
         while i < msg_size:
@@ -492,8 +495,8 @@ class GA:
         # self.print_Message_Flow(elements_name, type_index)
         self.simple_output_Message_to_Json(cmd_message_path)  # 将cmd命令所需的信息输出到json文件中
 
-        Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
-        Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图
+        # Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
+        # Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图
         r_time = stop_time - start_time
         print("Running time : ", r_time.total_seconds(), 'seconds')
         print("Time steps = ", Time2Timestep(start_time, stop_time))
