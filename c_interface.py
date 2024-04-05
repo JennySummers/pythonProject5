@@ -46,7 +46,7 @@ class New_join:
                 tmp = []
                 for i in range(len(Wafer.recipe_array[Wafer.processing_step])):
                     tmp.append(INVALID)
-                tmp[Wafer.processing_unit_num] = Wafer.recipe_array[Wafer.processing_step][Wafer.processing_unit_num] - Wafer.time_proceed
+                tmp[Wafer.processing_unit_num] = max(0, Wafer.recipe_array[Wafer.processing_step][Wafer.processing_unit_num] - Wafer.time_proceed)
                 new_array.append(tmp)
                 for i in range(Wafer.processing_step + 1, len(Wafer.recipe_array)):
                     new_array.append(Wafer.recipe_array[i])
