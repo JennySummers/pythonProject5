@@ -495,8 +495,8 @@ class GA:
         # self.print_Message_Flow(elements_name, type_index)
         self.simple_output_Message_to_Json(cmd_message_path)  # 将cmd命令所需的信息输出到json文件中
 
-        Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
-        Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图
+        # Gantt_Machine(self.Best_Machine)  # 根据机器调度结果，绘制调度结果的甘特图
+        # Gantt_Job(self.Best_Job)  # 根据工件调度结果，绘制调度结果的甘特图
         r_time = stop_time - start_time
         print("Running time : ", r_time.total_seconds(), 'seconds')
         print("Time steps = ", Time2Timestep(start_time, stop_time))

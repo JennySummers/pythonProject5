@@ -5,11 +5,30 @@ src_path_new = './config/example3/Sch_output_new.json'
 wafer_noBM_path = "./config/example3/wafer_noBM.json"
 src_path_indentation = './config/XWX_test/recipe_array_indentation.json'
 
+# # 将json读入后输出缩进格式
+# with open(src_path, 'r', encoding='utf-8') as file:
+#     data = json.load(file)
+# with open(src_path_indentation, 'w+', encoding='utf-8') as file:
+#     json.dump(data, file, indent=4)
+
+
 # 将json读入后输出缩进格式
 with open(src_path, 'r', encoding='utf-8') as file:
     data = json.load(file)
-with open(src_path_indentation, 'w+', encoding='utf-8') as file:
-    json.dump(data, file, indent=4)
+    for group in data:
+        recipe_array = group['recipe_array']
+        j = 0
+        for array_group in recipe_array:
+            if array_group[90] != 9999:
+                print(j)
+            j = j + 1
+# with open(src_path_indentation, 'w+', encoding='utf-8') as file:
+#     json.dump(data, file, indent=4)
+
+
+
+
+
 
 # new_data = []
 #

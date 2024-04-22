@@ -1,4 +1,5 @@
 import json
+import os
 
 import numpy as np
 
@@ -79,6 +80,7 @@ class New_join:
 
 # 用于被c语言调用
 if __name__ == '__main__':
+    os.chdir(os.path.dirname(__file__)) # 修改工作目录为当前文件的绝对路径
     with open('config/example3/recipe_array.json') as f:
         json_data=json.load(f)
     # 存储至对象数组
@@ -104,7 +106,6 @@ if __name__ == '__main__':
 
     print(wafers)
 
-    # TODO 调用遗传算法
     # 在输出格式上，进行了简化，现在只需输出动作类型+目标机器号+机械臂机器号 三元组即可，参照GA::simple_output_Message_to_Json和config/example3/cmd_message_bak.json
     new_join = New_join(M_num, tmIndex)
     new_join.main(wafers)
