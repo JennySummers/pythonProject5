@@ -100,6 +100,8 @@ if __name__ == '__main__':
     with open('config/example3/layout.json') as f:
         tmIndex = json.load(f)
 
+    tm_cooling_time=2.0 #机械臂的单次交互时间
+
     M_num = 0
     if wafers:
         M_num = len(wafers[0].recipe_array[0])
