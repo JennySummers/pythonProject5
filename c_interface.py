@@ -4,11 +4,12 @@ import os
 import numpy as np
 
 import GeneticA
-import GeneticA_re
+# import GeneticA_re
 INVALID = 9999
 pick_time = 0.1
 put_time = 0.1
 unit_time = 1.0  # 单位时间设定，单位为毫秒
+tm_cooling_time=2.0
 import sys
 
 # 记录一个晶圆的配方信息
@@ -100,7 +101,7 @@ if __name__ == '__main__':
     with open('config/example3/layout.json') as f:
         tmIndex = json.load(f)
 
-    tm_cooling_time=2.0 #机械臂的单次交互时间
+    tm_cooling_time=2.0  # 机械臂的单次交互时间
 
     M_num = 0
     if wafers:
