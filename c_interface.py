@@ -98,9 +98,10 @@ if __name__ == '__main__':
             wafer.time_proceed=max_begin_time-wafer.begin_time
 
     with open('config/example3/layout.json') as f:
-        tmIndex = json.load(f)
-
-    tm_cooling_time=2.0 #机械臂的单次交互时间
+        layout=json.load(f)
+        tmIndex = layout['tmNumList']
+        time_limit=layout['timeLimit'] # 每个机器上的最长等待时间
+        tm_cooling_time=layout['tmTime'] # 机械臂的单次交互时间
 
     M_num = 0
     if wafers:
