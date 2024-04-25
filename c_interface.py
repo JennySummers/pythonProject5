@@ -4,7 +4,7 @@ import os
 import numpy as np
 
 import GeneticA
-import GeneticA_re
+# import GeneticA_re
 INVALID = 9999
 pick_time = 0.1
 put_time = 0.1

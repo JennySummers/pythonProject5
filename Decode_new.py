@@ -4,9 +4,10 @@ from decimal import Decimal
 import matplotlib.pyplot as plt
 from Jobs import Job
 from Machines import Machine_Time_window
+from c_interface import tm_cooling_time
 INVALID = 9999
-pick_time = 0.5
-put_time = 0.5
+pick_time = tm_cooling_time
+put_time = tm_cooling_time
 unit_time = 1.0  # 单位时间设定，单位为毫秒
 import numpy as np
 import math
@@ -74,7 +75,10 @@ class Decode:
             self.T.append(T_i)
 
     def Earliest_Start(self, job, O_num, Selected_Machine, early_start, late_start):  # 选中的机器即为当前的机器编号
-        P_t = self.Processing_time[job][O_num][Selected_Machine] + pick_time + put_time
+        P_t = self.Processing_time[job][O_num][Selected_Machine]
+        if O_num > 0:
+            P_t = P_t + pick_time
+        P_t = P_t + put_time
         M_Tstart, M_Tend, M_Tlen = self.Machines[Selected_Machine].Empty_time_window()
         earliest_start = max(early_start, self.Machines[Selected_Machine].End_time)  # 当前工序的最早开始时间为上一道工序完成时间与机器到达空闲状态时间取最大值
         nxt_early = earliest_start + P_t

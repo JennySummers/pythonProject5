@@ -10,14 +10,15 @@ from copy import *
 import itertools
 from Processing_list import processing_list
 from Messages import Arm_Message
+from c_interface import tm_cooling_time
 import matplotlib.pyplot as plt
 import datetime
 import math
 import json
 
 INVALID = 9999
-pick_time = 0.5
-put_time = 0.5
+pick_time = tm_cooling_time
+put_time = tm_cooling_time
 unit_time = 1.0  # 单位时间设定，单位为毫秒
 
 
