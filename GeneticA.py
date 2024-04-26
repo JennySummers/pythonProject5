@@ -10,15 +10,13 @@ from copy import *
 import itertools
 from Processing_list import processing_list
 from Messages import Arm_Message
-from c_interface import tm_cooling_time
 import matplotlib.pyplot as plt
 import datetime
 import math
 import json
 
 INVALID = 9999
-pick_time = tm_cooling_time
-put_time = tm_cooling_time
+
 unit_time = 1.0  # 单位时间设定，单位为毫秒
 
 
@@ -145,7 +143,7 @@ def Select(Fit_value):
 
 
 class GA:
-    def __init__(self, M_status, pop_size=2, p_c=0.8, p_m=0.3, p_v=0.5, p_w=0.95, max_iteration=1):
+    def __init__(self, time_limit, tm_cooling_time, M_status, pop_size=2, p_c=0.8, p_m=0.3, p_v=0.5, p_w=0.95, max_iteration=1):
         self.Best_Job = None  # 最优的晶圆加工调度结果
         self.Best_Machine = None  # 最优的加工单元调度结果
         self.Pop_size = pop_size  # 种群数量
@@ -159,6 +157,10 @@ class GA:
         self.Best_fit = []
         self.TM_msg = []  # 机械臂指令集合
         self.TM_List = []  # 机械臂编号集合
+        self.tm_cooling_time = tm_cooling_time
+        self.pick_time = tm_cooling_time
+        self.put_time = tm_cooling_time
+        self.time_limit = time_limit
 
     # 适应度
     def fitness(self, CHS, J_f, Processing_t, M_number, Len):
@@ -254,8 +256,8 @@ class GA:
                 pre = self.Best_Job[j].J_machine[o - 1]
                 nxt = self.Best_Job[j].J_machine[o + 1]
                 time_1 = Start_time[i_1]  # 设置时间格式为单位时间格式
-                time_2 = Start_time[i_1] + pick_time  # 设置时间格式为单位时间格式
-                time_3 = max(0, End_time[i_1] - put_time)  # 设置时间格式为单位时间格式
+                time_2 = Start_time[i_1] + self.pick_time  # 设置时间格式为单位时间格式
+                time_3 = max(0, End_time[i_1] - self.put_time)  # 设置时间格式为单位时间格式
                 # time_3 = End_time[i_1]  # 设置时间格式为单位时间格式
                 # print("machine ", i, " pick in time", time_1, " and put in time ", time_3)
                 # print("at", time_1, "time", j, ' ', o, ' ', "machine", i, "pick from", pre, "to", nxt)
@@ -433,7 +435,7 @@ class GA:
         C = CHS1
         Optimal_fit = INVALID
         # Optimal_CHS = 0
-        self.d = Decode(J_O, processing_time, m_num, TM_list, self.Machine_status)
+        self.d = Decode(J_O, processing_time, m_num, TM_list, self.Machine_status, self.tm_cooling_time, self.time_limit)
         for i in range(self.Max_Iterations):
             Fit = self.fitness(C, J_O, processing_time, m_num, Len_Chromo)
             Best = C[Fit.index(min(Fit))]

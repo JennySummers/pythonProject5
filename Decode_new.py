@@ -4,10 +4,8 @@ from decimal import Decimal
 import matplotlib.pyplot as plt
 from Jobs import Job
 from Machines import Machine_Time_window
-from c_interface import tm_cooling_time
 INVALID = 9999
-pick_time = tm_cooling_time
-put_time = tm_cooling_time
+
 unit_time = 1.0  # 单位时间设定，单位为毫秒
 import numpy as np
 import math
@@ -16,7 +14,7 @@ bias = 1
 
 
 class Decode:
-    def __init__(self, J, Processing_time, M_num, TM_list, M_status, join_time=0.0):
+    def __init__(self, J, Processing_time, M_num, TM_list, M_status, tm_cooling_time, time_limit, join_time=0.0):
         self.Processing_time = Processing_time
         # self.Scheduled = []  # 已经排产过的工序
         self.M_num = M_num  # 机器数
@@ -31,7 +29,9 @@ class Decode:
         self.TM_List = TM_list  # 机械臂列表
         self.first_pick = 0.0  # 保证按序取片的最早可以开始时间
         self.early_pick = join_time  # 重调度晶圆的最早可以开始时间
-        self.decay = 10.0  # 晶圆在机械臂上最长可以停留的时间
+        self.decay = time_limit  # 晶圆在机械臂上最长可以停留的时间
+        self.pick_time = tm_cooling_time
+        self.put_time = tm_cooling_time
         for j in range(M_num):
             self.Machines.append(Machine_Time_window(j, self.Machine_time[j]))  # 为每个机器分配一个机器类，并对其进行编号
         for k, v in J.items():
@@ -77,8 +77,8 @@ class Decode:
     def Earliest_Start(self, job, O_num, Selected_Machine, early_start, late_start):  # 选中的机器即为当前的机器编号
         P_t = self.Processing_time[job][O_num][Selected_Machine]
         if O_num > 0:
-            P_t = P_t + pick_time
-        P_t = P_t + put_time
+            P_t = P_t + self.pick_time
+        P_t = P_t + self.put_time
         M_Tstart, M_Tend, M_Tlen = self.Machines[Selected_Machine].Empty_time_window()
         earliest_start = max(early_start, self.Machines[Selected_Machine].End_time)  # 当前工序的最早开始时间为上一道工序完成时间与机器到达空闲状态时间取最大值
         nxt_early = earliest_start + P_t
@@ -112,7 +112,7 @@ class Decode:
                 machine = self.JM[k - 1][ti]
                 P_t = self.T[k - 1][ti]
                 st = LT[ti]
-                et = LT[ti + 1] + put_time
+                et = LT[ti + 1] + self.put_time
                 if ti == 1:
                     self.first_pick = max(self.first_pick, st)
                 # 计算fitness
@@ -149,13 +149,13 @@ class Decode:
         elif len(early_s) == 1:
             early = early_s[-1]
         else:
-            early = early_s[-1] - pick_time
+            early = early_s[-1] - self.pick_time
         if op == 1:
             early = max(early, self.first_pick)
         if not late_s:
             late = -1.0
         elif len(late_s) > 1 and late_s[-1] != -1.0:
-            late = late_s[-1] - pick_time
+            late = late_s[-1] - self.pick_time
         else:
             late = late_s[-1]
         if op == sop:
@@ -165,6 +165,8 @@ class Decode:
         P_t = self.T[job][op]  # T[i][j]表示工件i的第j道工序的加工时间为T[i][j]
         while 1:
             earliest_start, nxt_early, nxt_late = self.Earliest_Start(job, op, machine, early, late)
+            nxt_early = min(nxt_early, earliest_start + self.decay[machine])
+            nxt_late = min(nxt_late, earliest_start + self.decay[machine])
             if 0 < nxt_late < nxt_early:
                 print("error", job, machine, earliest_start)
             '''如果当前机器为机械臂的处理方法'''

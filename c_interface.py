@@ -30,7 +30,7 @@ class one_wafer_recipe:
 
 
 class New_join:
-    def __init__(self, m_num, tm_index):
+    def __init__(self, m_num, tm_index, t_limit, tm_cool_time):
         self.New_Processing_time = []  # 故障发生后新产生的各个晶圆处理时间矩阵
         self.New_Machine_status = []  # 故障发生后机器状态
         self.New_J = {}
@@ -38,6 +38,8 @@ class New_join:
         self.New_TM_list = tm_index
         self.New_J_num = 0
         self.New_O_num = 0
+        self.time_limit = t_limit
+        self.tm_cooling_time = tm_cool_time
 
     def Join(self, pre_wafers):
         no = int(1)
@@ -75,7 +77,7 @@ class New_join:
     def main(self, Wafers):
         self.Join(Wafers)
         Cmd_message_path = './config/example3/cmd_message.json'
-        g = GeneticA.GA(self.New_Machine_status)
+        g = GeneticA.GA(self.time_limit, self.tm_cooling_time, self.New_Machine_status)
         g.main(self.New_Processing_time, self.New_J, self.New_M_num, self.New_J_num, self.New_O_num, self.New_TM_list, Cmd_message_path)
 
 # 用于被c语言调用
@@ -100,8 +102,8 @@ if __name__ == '__main__':
     with open('config/example3/layout.json') as f:
         layout=json.load(f)
         tmIndex = layout['tmNumList']
-        time_limit=layout['timeLimit'] # 每个机器上的最长等待时间
-        tm_cooling_time=layout['tmTime'] # 机械臂的单次交互时间
+        time_limit=layout['timeLimit']  # 每个机器上的最长等待时间
+        tm_cooling_time=layout['tmTime']  # 机械臂的单次交互时间
 
     M_num = 0
     if wafers:
@@ -110,5 +112,5 @@ if __name__ == '__main__':
     print(wafers)
 
     # 在输出格式上，进行了简化，现在只需输出动作类型+目标机器号+机械臂机器号 三元组即可，参照GA::simple_output_Message_to_Json和config/example3/cmd_message_bak.json
-    new_join = New_join(M_num, tmIndex)
+    new_join = New_join(M_num, tmIndex, time_limit, tm_cooling_time)
     new_join.main(wafers)
