@@ -3,7 +3,7 @@ import random
 from read_Json import INVALID
 
 class Encode:
-    def __init__(self, Matrix, Pop_size, J, J_num, M_num, M_status):
+    def __init__(self, Matrix, Pop_size, J, J_num, M_num, M_status, pre_list):
         self.Matrix = Matrix  # 工件各工序对应各机器加工时间矩阵
         self.GS_num = int(0.6 * Pop_size)  # 全局选择初始化的种群数目
         self.LS_num = int(0.2 * Pop_size)  # 局部选择初始化的种群数目
@@ -14,6 +14,7 @@ class Encode:
         self.Machine_status = [x for x in M_status]  # 当前机器还需要Machine_status[i]个单位时间达到空闲状态。
         self.CHS = []
         self.Len_Chromo = 0  # 染色体长度，长度等于所有工序数的总和
+        self.pre_list = pre_list
         for i in J.values():
             self.Len_Chromo += i
 
@@ -53,6 +54,8 @@ class Encode:
         for i in range(self.GS_num):
             # Machine_time = np.zeros(self.M_num, dtype=float)  # 机器时间初始化，使用当前机器运行情况初始化
             Machine_time = [x for x in self.Machine_status]  # 机器时间初始化，使用当前机器运行情况初始化
+            for j in range(1, len(self.pre_list), 2):
+                Machine_time[self.pre_list[j]] += self.Matrix[self.pre_list[j-1]][0][self.pre_list[j]]
             # random.shuffle(OS_list)  # 生成工序排序部分
             OS[i] = np.array(OS_list)
             GJ_list = [i for i in range(self.J_num)]  # GJ_list表示

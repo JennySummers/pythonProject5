@@ -143,7 +143,7 @@ def Select(Fit_value):
 
 
 class GA:
-    def __init__(self, time_limit, tm_cooling_time, M_status, pop_size=2, p_c=0.8, p_m=0.3, p_v=0.5, p_w=0.95, max_iteration=1):
+    def __init__(self, time_limit, tm_cooling_time, M_status, pre_list, pop_size=2, p_c=0.8, p_m=0.3, p_v=0.5, p_w=0.95, max_iteration=1):
         self.Best_Job = None  # 最优的晶圆加工调度结果
         self.Best_Machine = None  # 最优的加工单元调度结果
         self.Pop_size = pop_size  # 种群数量
@@ -161,6 +161,11 @@ class GA:
         self.pick_time = tm_cooling_time
         self.put_time = tm_cooling_time
         self.time_limit = time_limit
+        self.pre_jobs = []
+        self.pre_machines = []
+        for i in range(0, len(pre_list), 2):
+            self.pre_jobs.append(pre_list[i])
+            self.pre_machines.append(pre_list[i+1])
 
     # 适应度
     def fitness(self, CHS, J_f, Processing_t, M_number, Len):
@@ -262,7 +267,7 @@ class GA:
                 # print("machine ", i, " pick in time", time_1, " and put in time ", time_3)
                 # print("at", time_1, "time", j, ' ', o, ' ', "machine", i, "pick from", pre, "to", nxt)
                 # print("at", time_3, "time", j, ' ', o, ' ', "machine", i, "put from", pre, "to", nxt)
-                if time_1 >= time_3:
+                if time_1 > time_3:
                     print("operation " + str(o) + " error in machine" + str(i))
                 # time_1 = Timestep2Time(cur_time, Start_time[i_1])  # 设置时间格式为具体时间格式
                 # time_2 = Timestep2Time(cur_time, Start_time[i_1] + pick_time)  # 设置时间格式为具体时间格式
@@ -425,7 +430,7 @@ class GA:
     def main(self, processing_time, J_O, m_num, j_num, o_num, TM_list, cmd_message_path):
         start_time = datetime.datetime.now()
         print("start time is : ", start_time)
-        e = Encode(processing_time, self.Pop_size, J_O, j_num, m_num, self.Machine_status)
+        e = Encode(processing_time, self.Pop_size, J_O, j_num, m_num, self.Machine_status, self.pre_jobs)
         # OS_List = e.OS_List()
         Len_Chromo = e.Len_Chromo
         CHS1 = e.Global_initial()
@@ -435,7 +440,7 @@ class GA:
         C = CHS1
         Optimal_fit = INVALID
         # Optimal_CHS = 0
-        self.d = Decode(J_O, processing_time, m_num, TM_list, self.Machine_status, self.tm_cooling_time, self.time_limit)
+        self.d = Decode(J_O, processing_time, m_num, TM_list, self.Machine_status, self.tm_cooling_time, self.time_limit, self.pre_jobs, self.pre_machines)
         for i in range(self.Max_Iterations):
             Fit = self.fitness(C, J_O, processing_time, m_num, Len_Chromo)
             Best = C[Fit.index(min(Fit))]

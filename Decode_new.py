@@ -14,7 +14,7 @@ bias = 1
 
 
 class Decode:
-    def __init__(self, J, Processing_time, M_num, TM_list, M_status, tm_cooling_time, time_limit, join_time=0.0):
+    def __init__(self, J, Processing_time, M_num, TM_list, M_status, tm_cooling_time, time_limit, pre_jobs, pre_machines, join_time=0.0):
         self.Processing_time = Processing_time
         # self.Scheduled = []  # 已经排产过的工序
         self.M_num = M_num  # 机器数
@@ -32,6 +32,8 @@ class Decode:
         self.decay = time_limit  # 晶圆在机械臂上最长可以停留的时间
         self.pick_time = tm_cooling_time
         self.put_time = tm_cooling_time
+        self.pre_jobs = pre_jobs  # 当前正在处理的晶圆编号
+        self.pre_machines = pre_machines  # 当前正在处理的晶圆所在的机器编号
         for j in range(M_num):
             self.Machines.append(Machine_Time_window(j, self.Machine_time[j]))  # 为每个机器分配一个机器类，并对其进行编号
         for k, v in J.items():
@@ -113,7 +115,7 @@ class Decode:
                 P_t = self.T[k - 1][ti]
                 st = LT[ti]
                 et = LT[ti + 1] + self.put_time
-                if ti == 1:
+                if (k-1) not in self.pre_jobs and ti == 1:
                     self.first_pick = max(self.first_pick, st)
                 # 计算fitness
                 if et > self.fitness:
@@ -163,6 +165,9 @@ class Decode:
             return LT
         machine = self.JM[job][op]  # JM[i][j]表示工件i的第j道工序在机器JM[i][j]上加工
         P_t = self.T[job][op]  # T[i][j]表示工件i的第j道工序的加工时间为T[i][j]
+        if machine in self.pre_machines and op >= 1:
+            x = self.pre_machines.index(machine)
+            early = max(early, self.T[self.pre_jobs[x]][0] + self.put_time + self.pick_time)
         while 1:
             earliest_start, nxt_early, nxt_late = self.Earliest_Start(job, op, machine, early, late)
             nxt_early = min(nxt_early, earliest_start + self.decay[machine])

@@ -40,6 +40,7 @@ class New_join:
         self.New_O_num = 0
         self.time_limit = t_limit
         self.tm_cooling_time = tm_cool_time
+        self.pre_list = []
 
     def Join(self, pre_wafers):
         no = int(1)
@@ -57,6 +58,8 @@ class New_join:
                 self.New_J[no] = len(Wafer.recipe_array) - Wafer.processing_step
                 self.New_O_num = self.New_O_num + self.New_J[no]
                 self.New_J_num = self.New_J_num + 1
+                self.pre_list.append(no - 1)
+                self.pre_list.append(Wafer.processing_unit_num)
             else:
                 self.New_Processing_time.append(Wafer.recipe_array)
                 self.New_J[no] = len(Wafer.recipe_array)
@@ -77,7 +80,7 @@ class New_join:
     def main(self, Wafers):
         self.Join(Wafers)
         Cmd_message_path = './config/example3/cmd_message.json'
-        g = GeneticA.GA(self.time_limit, self.tm_cooling_time, self.New_Machine_status)
+        g = GeneticA.GA(self.time_limit, self.tm_cooling_time, self.New_Machine_status, self.pre_list)
         g.main(self.New_Processing_time, self.New_J, self.New_M_num, self.New_J_num, self.New_O_num, self.New_TM_list, Cmd_message_path)
 
 # 用于被c语言调用
