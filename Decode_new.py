@@ -103,12 +103,26 @@ class Decode:
 
         return earliest_start, nxt_early, nxt_late  # 返回0.工件的工序最早开始时间，1.下一道工序最早可以开始的时间，2.下一道工序最晚可以开始的时间
 
+    def get_new_list(self):
+        new_list = []
+        for k, v in self.J.items():
+            machine = self.JM[k-1][0]
+            if machine in self.TM_List:
+                new_list.append(k)
+        for k, v in self.J.items():
+            if k not in new_list:
+                new_list.append(k)
+        return new_list
+
     # 解码
     def Decode_1(self, CHS, Len_Chromo):  # start_time表示晶圆最早可以开始加工时间，用于重调度
         MS = list(CHS[0:Len_Chromo])
         OS = list(CHS[Len_Chromo:2 * Len_Chromo])
         self.Order_Matrix(MS)
-        for k, v in self.J.items():
+        new_list = self.get_new_list()
+        # for k, v in self.J.items():
+        for k in new_list:
+            v = self.J[k]
             LT = self.DFS_for_jobs(k - 1, 0, v, [], [], [])  # early 和 late 为空表示第一道工序开始时间和结束时间无限制
             for ti in range(len(LT) - 1):
                 machine = self.JM[k - 1][ti]
