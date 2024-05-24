@@ -15,7 +15,7 @@ import datetime
 import math
 import json
 
-INVALID = 9999
+INVALID = 9990
 
 unit_time = 1.0  # 单位时间设定，单位为毫秒
 
@@ -193,7 +193,7 @@ class GA:
             Machine_using = O[job[0]][job[1]]
             Machine_time = []
             for j in range(len(Machine_using)):
-                if Machine_using[j] != INVALID:
+                if Machine_using[j] < INVALID:
                     Machine_time.append(Machine_using[j] + Machine_stat[j])
             MS[i] = Machine_time.index(min(Machine_time))  # MS[i] = Min_index
             # print(Machine_time)
@@ -440,7 +440,7 @@ class GA:
         C = CHS1
         Optimal_fit = INVALID
         # Optimal_CHS = 0
-        self.d = Decode(J_O, processing_time, m_num, TM_list, self.Machine_status, self.tm_cooling_time, self.time_limit, self.pre_jobs, self.pre_machines)
+        self.d = Decode(e.JM, J_O, processing_time, m_num, TM_list, self.Machine_status, self.tm_cooling_time, self.time_limit, self.pre_jobs, self.pre_machines)
         for i in range(self.Max_Iterations):
             Fit = self.fitness(C, J_O, processing_time, m_num, Len_Chromo)
             Best = C[Fit.index(min(Fit))]

@@ -14,7 +14,7 @@ bias = 1
 
 
 class Decode:
-    def __init__(self, J, Processing_time, M_num, TM_list, M_status, tm_cooling_time, time_limit, pre_jobs, pre_machines, join_time=0.0):
+    def __init__(self, JM, J, Processing_time, M_num, TM_list, M_status, tm_cooling_time, time_limit, pre_jobs, pre_machines, join_time=0.0):
         self.Processing_time = Processing_time
         # self.Scheduled = []  # 已经排产过的工序
         self.M_num = M_num  # 机器数
@@ -24,7 +24,7 @@ class Decode:
         # self.Machine_time = np.zeros(self.M_num, dtype=float)  # 机器时间初始化，使用当前机器运行情况初始化
         self.Machine_time = [x for x in M_status]  # 机器时间初始化，使用当前机器运行情况初始化
         self.Jobs = []  # 存储工件类
-        self.JM = []  # 机器顺序矩阵，JM[i][j]表示工件i的第j道工序在机器JM[i][j]上加工
+        self.JM = JM  # 机器顺序矩阵，JM[i][j]表示工件i的第j道工序在机器JM[i][j]上加工
         self.T = []  # 时间顺序矩阵，T[i][j]表示工件i的第j道工序在机器JM[i][j]上加工的加工时间为T[i][j]
         self.TM_List = TM_list  # 机械臂列表
         self.first_pick = 0.0  # 保证按序取片的最早可以开始时间
@@ -76,6 +76,12 @@ class Decode:
             self.JM.append(JM_i)
             self.T.append(T_i)
 
+    def get_T_Matrix(self):
+        for i in range(len(self.JM)):
+            self.T.append([])
+            for j in range(len(self.JM[i])):
+                self.T[i].append(self.Processing_time[i][j][self.JM[i][j]])
+
     def Earliest_Start(self, job, O_num, Selected_Machine, early_start, late_start):  # 选中的机器即为当前的机器编号
         P_t = self.Processing_time[job][O_num][Selected_Machine]
         if O_num > 0:
@@ -116,9 +122,10 @@ class Decode:
 
     # 解码
     def Decode_1(self, CHS, Len_Chromo):  # start_time表示晶圆最早可以开始加工时间，用于重调度
-        MS = list(CHS[0:Len_Chromo])
-        OS = list(CHS[Len_Chromo:2 * Len_Chromo])
-        self.Order_Matrix(MS)
+        # MS = list(CHS[0:Len_Chromo])
+        # OS = list(CHS[Len_Chromo:2 * Len_Chromo])
+        # self.Order_Matrix(MS)
+        self.get_T_Matrix()
         new_list = self.get_new_list()
         # for k, v in self.J.items():
         for k in new_list:
