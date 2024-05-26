@@ -4,11 +4,12 @@ from decimal import Decimal
 import matplotlib.pyplot as plt
 from Jobs import Job
 from Machines import Machine_Time_window
+import numpy as np
+import math
+
 INVALID = 9999
 
 unit_time = 1.0  # 单位时间设定，单位为毫秒
-import numpy as np
-import math
 
 bias = 1
 

@@ -496,6 +496,7 @@ class GA:
                     C[j] = offspring[Fit.index(min(Fit))]
             print("current time : ", datetime.datetime.now())
         stop_time = datetime.datetime.now()
+        self.judge_illegal()
         # set_Processing_list(self.Best_Job)
         # pre_job, pre_machine = get_Processing_list()
         self.set_TM_Message(m_num, TM_list)
@@ -529,3 +530,15 @@ class GA:
             End_time = Machine.O_end
             for j in range(len(End_time)):
                 print('step' + str(j) + ': Start_time:' + str(Start_time[j]) + ' End_time:' + str(End_time[j]))
+
+    def judge_illegal(self):
+        for job in self.Best_Job:
+            for i in range(len(job.J_start)):
+                process_time = job.J_end[i] - job.J_start[i]
+                machine = job.J_machine[i]
+                if process_time > self.time_limit[machine]:  # 如果处理时间超出时间限制则输出提示信息
+                    print("precess time overflow in job", job.Job_index, "op", i, " on machine", machine, "!", "using ", process_time, "second")
+                if process_time > 1000:  # 如果处理机器非法则输出错误信息
+                    print("Invalid machine in job", job.Job_index, "op", i, " on machine", machine)
+                if i >= 1 and job.J_start[i] != job.J_end[i-1] - 2:  # 预留取放片时间不满足则输出错误
+                    print("time error in job", job.Job_index, "op", i, " on machine", machine)
