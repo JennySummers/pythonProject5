@@ -143,7 +143,8 @@ def Select(Fit_value):
 
 
 class GA:
-    def __init__(self, time_limit, tm_cooling_time, M_status, pre_list, pop_size=2, p_c=0.8, p_m=0.3, p_v=0.5, p_w=0.95, max_iteration=1):
+    def __init__(self, time_limit, tm_cooling_time, M_status, pre_list, pop_size=2, p_c=0.8, p_m=0.3, p_v=0.5, p_w=0.95,
+                 max_iteration=1):
         self.Best_Job = None  # 最优的晶圆加工调度结果
         self.Best_Machine = None  # 最优的加工单元调度结果
         self.Pop_size = pop_size  # 种群数量
@@ -165,7 +166,7 @@ class GA:
         self.pre_machines = []
         for i in range(0, len(pre_list), 2):
             self.pre_jobs.append(pre_list[i])
-            self.pre_machines.append(pre_list[i+1])
+            self.pre_machines.append(pre_list[i + 1])
 
     # 适应度
     def fitness(self, CHS, J_f, Processing_t, M_number, Len):
@@ -399,10 +400,10 @@ class GA:
     def simple_output_Message_to_Json(self, cmd_message_path, tm_i=None):
         Message_data = []
         self.TM_msg.sort(key=lambda y: y.cmd_time)  # 按时间进行排序
-        for tm_i in self.TM_msg:
-            moves = "pick" if tm_i.move_type == 0 else "put"
-            if tm_i.machine_no == 3:
-                print("at", tm_i.cmd_time, "time", tm_i.machine_no, moves, "from", tm_i.move_from, "to", tm_i.move_to)
+        self.print_by_group()
+        # for tm_i in self.TM_msg:
+        #     moves = "pick" if tm_i.move_type == 0 else "put"
+        #     print("at", tm_i.cmd_time, "time", tm_i.machine_no, moves, "from", tm_i.move_from, "to", tm_i.move_to)
         msg_size = len(self.TM_msg)
         i = 0
         while i < msg_size:
@@ -440,7 +441,8 @@ class GA:
         C = CHS1
         Optimal_fit = INVALID
         # Optimal_CHS = 0
-        self.d = Decode(e.JM, J_O, processing_time, m_num, TM_list, self.Machine_status, self.tm_cooling_time, self.time_limit, self.pre_jobs, self.pre_machines)
+        self.d = Decode(e.JM, J_O, processing_time, m_num, TM_list, self.Machine_status, self.tm_cooling_time,
+                        self.time_limit, self.pre_jobs, self.pre_machines)
         for i in range(self.Max_Iterations):
             Fit = self.fitness(C, J_O, processing_time, m_num, Len_Chromo)
             Best = C[Fit.index(min(Fit))]
@@ -537,8 +539,32 @@ class GA:
                 process_time = job.J_end[i] - job.J_start[i]
                 machine = job.J_machine[i]
                 if process_time > self.time_limit[machine]:  # 如果处理时间超出时间限制则输出提示信息
-                    print("precess time overflow in job", job.Job_index, "op", i, " on machine", machine, "!", "using ", process_time, "second")
+                    print("precess time overflow in job", job.Job_index, "op", i, " on machine", machine, "!", "using ",
+                          process_time, "second")
                 if process_time > 1000:  # 如果处理机器非法则输出错误信息
                     print("Invalid machine in job", job.Job_index, "op", i, " on machine", machine)
-                if i >= 1 and job.J_start[i] != job.J_end[i-1] - 2:  # 预留取放片时间不满足则输出错误
+                if i >= 1 and job.J_start[i] != job.J_end[i - 1] - 2:  # 预留取放片时间不满足则输出错误
                     print("time error in job", job.Job_index, "op", i, " on machine", machine)
+
+    def print_by_group(self):
+        for tm in self.TM_List:
+            print("Machine ", tm, " :")
+            cnt = 0
+            stack = 0
+            flag = True
+            for msg in self.TM_msg:
+                if msg.machine_no == tm:
+                    cnt = cnt + 1
+                    moves = "pick" if msg.move_type == 0 else "put"
+                    print("at", msg.cmd_time, "time", msg.machine_no, moves, "from", msg.move_from, "to", msg.move_to)
+                    if cnt == 1 and msg.move_type == 1:
+                        stack = 0
+                    else:
+                        if msg.move_type == 1:
+                            stack = stack - 1
+                        else:
+                            stack = stack + 1
+                    if stack > 1 or stack < 0:
+                        flag = False
+            if not flag:
+                print("Error in Machine ", tm)

@@ -220,8 +220,13 @@ class Decode:
         early_s.pop()
         late_s.pop()
         LT.pop()
-        if early_s:
-            early_s[-1] = late + 1
+        if len(early_s) >= 1:
+            if machine in self.TM_List and len(early_s) >= 2 and (LT[-1] - LT[-2]) > (self.decay[self.JM[job][op-1]] + self.pick_time + self.put_time):
+                early_s.pop()
+                late_s.pop()
+                LT.pop()
+            else:
+                early_s[-1] = late + 1
         else:
             early_s.append(late + 1)
             late_s.append(-1.0)
