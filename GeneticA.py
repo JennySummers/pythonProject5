@@ -545,6 +545,16 @@ class GA:
                     print("Invalid machine in job", job.Job_index, "op", i, " on machine", machine)
                 if i >= 1 and job.J_start[i] != job.J_end[i - 1] - 2:  # 预留取放片时间不满足则输出错误
                     print("time error in job", job.Job_index, "op", i, " on machine", machine)
+        for machine in self.Best_Machine:
+            for i in range(len(machine.O_start)):
+                process_time_machine = machine.O_end[i] - machine.O_start[i]
+                j = machine.assigned_task[i][0] - 1
+                o = machine.assigned_task[i][1] - 1
+                process_time_job = self.Best_Job[j].J_end[o] - self.Best_Job[j].J_end[o]
+                if i >= 1 and machine.O_start[i] < machine.O_end[i-1]:
+                    print("Error in machine ", machine.Machine_index, "O_number ", i)
+                if process_time_machine < process_time_job:
+                    print("Reserved time not support in Job ", j, ", op ", o)
 
     def print_by_group(self):
         for tm in self.TM_List:
