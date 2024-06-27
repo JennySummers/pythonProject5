@@ -164,9 +164,11 @@ class GA:
         self.time_limit = time_limit
         self.pre_jobs = []
         self.pre_machines = []
-        for i in range(0, len(pre_list), 2):
+        self.pre_process = []
+        for i in range(0, len(pre_list), 3):
             self.pre_jobs.append(pre_list[i])
             self.pre_machines.append(pre_list[i + 1])
+            self.pre_process.append(pre_list[i + 2])
 
     # 适应度
     def fitness(self, CHS, J_f, Processing_t, M_number, Len):
@@ -400,10 +402,14 @@ class GA:
     def simple_output_Message_to_Json(self, cmd_message_path, tm_i=None):
         Message_data = []
         self.TM_msg.sort(key=lambda y: y.cmd_time)  # 按时间进行排序
-        self.print_by_group()
-        # for tm_i in self.TM_msg:
-        #     moves = "pick" if tm_i.move_type == 0 else "put"
-        #     print("at", tm_i.cmd_time, "time", tm_i.machine_no, moves, "from", tm_i.move_from, "to", tm_i.move_to)
+        # self.print_by_group()
+        for tm_i in self.TM_msg:
+            moves = "pick" if tm_i.move_type == 0 else "put"
+            if moves == "pick":
+                print("at", tm_i.cmd_time, "time", tm_i.machine_no, moves, "from", tm_i.move_from)
+            else:
+                print("at", tm_i.cmd_time, "time", tm_i.machine_no, moves, "to", tm_i.move_to)
+        # print("at", tm_i.cmd_time, "time", tm_i.machine_no, moves, "from", tm_i.move_from, "to", tm_i.move_to)
         msg_size = len(self.TM_msg)
         i = 0
         while i < msg_size:
@@ -442,7 +448,7 @@ class GA:
         Optimal_fit = INVALID
         # Optimal_CHS = 0
         self.d = Decode(e.JM, J_O, processing_time, m_num, TM_list, self.Machine_status, self.tm_cooling_time,
-                        self.time_limit, self.pre_jobs, self.pre_machines)
+                        self.time_limit, self.pre_jobs, self.pre_machines, self.pre_process)
         for i in range(self.Max_Iterations):
             Fit = self.fitness(C, J_O, processing_time, m_num, Len_Chromo)
             Best = C[Fit.index(min(Fit))]

@@ -60,6 +60,7 @@ class New_join:
                 self.New_J_num = self.New_J_num + 1
                 self.pre_list.append(no - 1)
                 self.pre_list.append(Wafer.processing_unit_num)
+                self.pre_list.append(tmp[Wafer.processing_unit_num])
             else:
                 self.New_Processing_time.append(Wafer.recipe_array)
                 self.New_J[no] = len(Wafer.recipe_array)

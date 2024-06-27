@@ -15,7 +15,8 @@ bias = 1
 
 
 class Decode:
-    def __init__(self, JM, J, Processing_time, M_num, TM_list, M_status, tm_cooling_time, time_limit, pre_jobs, pre_machines, join_time=0.0):
+    def __init__(self, JM, J, Processing_time, M_num, TM_list, M_status, tm_cooling_time, time_limit, pre_jobs,
+                 pre_machines, pre_process, join_time=0.0):
         self.Processing_time = Processing_time
         # self.Scheduled = []  # 已经排产过的工序
         self.M_num = M_num  # 机器数
@@ -35,6 +36,7 @@ class Decode:
         self.put_time = tm_cooling_time
         self.pre_jobs = pre_jobs  # 当前正在处理的晶圆编号
         self.pre_machines = pre_machines  # 当前正在处理的晶圆所在的机器编号
+        self.pre_process = pre_process
         for j in range(M_num):
             self.Machines.append(Machine_Time_window(j, self.Machine_time[j]))  # 为每个机器分配一个机器类，并对其进行编号
         for k, v in J.items():
@@ -89,18 +91,22 @@ class Decode:
             P_t = P_t + self.pick_time
         P_t = P_t + self.put_time
         M_Tstart, M_Tend, M_Tlen = self.Machines[Selected_Machine].Empty_time_window()
-        earliest_start = max(early_start, self.Machines[Selected_Machine].End_time)  # 当前工序的最早开始时间为上一道工序完成时间与机器到达空闲状态时间取最大值
+        earliest_start = max(early_start,
+                             self.Machines[Selected_Machine].End_time)  # 当前工序的最早开始时间为上一道工序完成时间与机器到达空闲状态时间取最大值
         nxt_early = earliest_start + P_t
         nxt_late = -1.0
         if M_Tlen is not None:  # 此处为全插入时窗
             for le_i in range(len(M_Tlen)):
                 if Decimal(M_Tlen[le_i]) >= Decimal(P_t):
-                    if Decimal(M_Tstart[le_i]) >= Decimal(early_start) and (Decimal(late_start) < Decimal(0) or Decimal(M_Tstart[le_i]) < Decimal(late_start)):
+                    if Decimal(M_Tstart[le_i]) >= Decimal(early_start) and (
+                            Decimal(late_start) < Decimal(0) or Decimal(M_Tstart[le_i]) < Decimal(late_start)):
                         earliest_start = M_Tstart[le_i]
                         nxt_early = earliest_start + P_t
                         nxt_late = M_Tend[le_i]
                         break
-                    if Decimal(M_Tstart[le_i]) < Decimal(early_start) and (Decimal(late_start) < Decimal(0) or Decimal(M_Tstart[le_i]) < Decimal(late_start)) and Decimal(M_Tend[le_i] - early_start) >= Decimal(P_t):
+                    if Decimal(M_Tstart[le_i]) < Decimal(early_start) and (
+                            Decimal(late_start) < Decimal(0) or Decimal(M_Tstart[le_i]) < Decimal(
+                            late_start)) and Decimal(M_Tend[le_i] - early_start) >= Decimal(P_t):
                         earliest_start = early_start
                         nxt_early = earliest_start + P_t
                         nxt_late = M_Tend[le_i]
@@ -110,14 +116,16 @@ class Decode:
 
         return earliest_start, nxt_early, nxt_late  # 返回0.工件的工序最早开始时间，1.下一道工序最早可以开始的时间，2.下一道工序最晚可以开始的时间
 
-    def get_new_list(self):
+    def get_new_list(self, problem_list):
         new_list = []
+        for x in problem_list:
+            new_list.append(x)
         for k, v in self.J.items():
-            machine = self.JM[k-1][0]
-            if machine in self.TM_List:
+            machine = self.JM[k - 1][0]
+            if machine in self.TM_List and k not in problem_list:
                 new_list.append(k)
         for k, v in self.J.items():
-            if k not in new_list:
+            if k not in new_list and k not in problem_list:
                 new_list.append(k)
         return new_list
 
@@ -127,7 +135,29 @@ class Decode:
         # OS = list(CHS[Len_Chromo:2 * Len_Chromo])
         # self.Order_Matrix(MS)
         self.get_T_Matrix()
-        new_list = self.get_new_list()
+        self.fitness = 0.0
+        problem_list = []
+        self.generate_answer(problem_list)
+        for i in self.pre_jobs:
+            if self.Jobs[i].J_start[0] > 0:
+                problem_list.append(i + 1)
+        while len(problem_list) != 0:
+            self.Jobs[:] = [None]*0
+            self.Machines[:] = [None]*0
+            for j in range(self.M_num):
+                self.Machines.append(Machine_Time_window(j, self.Machine_time[j]))  # 为每个机器分配一个机器类，并对其进行编号
+            for k, v in self.J.items():
+                self.Jobs.append(Job(k, v))
+            self.fitness = 0.0
+            self.generate_answer(problem_list)
+            problem_list = []
+            for i in self.pre_jobs:
+                if self.Jobs[i].J_start[0] > 0:
+                    problem_list.append(i + 1)
+        return self.fitness
+
+    def generate_answer(self, problem_list):
+        new_list = self.get_new_list(problem_list)
         # for k, v in self.J.items():
         for k in new_list:
             v = self.J[k]
@@ -137,7 +167,7 @@ class Decode:
                 P_t = self.T[k - 1][ti]
                 st = LT[ti]
                 et = LT[ti + 1] + self.put_time
-                if (k-1) not in self.pre_jobs and ti == 1:
+                if (k - 1) not in self.pre_jobs and ti == 1:
                     self.first_pick = max(self.first_pick, st)
                 # 计算fitness
                 if et > self.fitness:
@@ -221,12 +251,14 @@ class Decode:
         late_s.pop()
         LT.pop()
         if len(early_s) >= 1:
-            if machine in self.TM_List and len(early_s) >= 2 and (LT[-1] - LT[-2]) > (self.decay[self.JM[job][op-1]] + self.pick_time + self.put_time):
+            if machine in self.TM_List and len(early_s) >= 2 and (LT[-1] - LT[-2]) > (
+                    self.decay[self.JM[job][op - 1]] + self.pick_time + self.put_time):
                 early_s.pop()
                 late_s.pop()
                 LT.pop()
             else:
                 early_s[-1] = late + 1
+            # early_s[-1] = late + 1
         else:
             early_s.append(late + 1)
             late_s.append(-1.0)
