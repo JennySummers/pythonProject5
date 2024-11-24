@@ -58,9 +58,9 @@ class New_join:
                 self.New_J[no] = len(Wafer.recipe_array) - Wafer.processing_step
                 self.New_O_num = self.New_O_num + self.New_J[no]
                 self.New_J_num = self.New_J_num + 1
-                self.pre_list.append(no - 1)
-                self.pre_list.append(Wafer.processing_unit_num)
-                self.pre_list.append(tmp[Wafer.processing_unit_num])
+                self.pre_list.append(no - 1)  # 当前处理编号
+                self.pre_list.append(Wafer.processing_unit_num)  # 当前所在的机器编号
+                self.pre_list.append(tmp[Wafer.processing_unit_num])  # 当前剩余的处理时间
             else:
                 self.New_Processing_time.append(Wafer.recipe_array)
                 self.New_J[no] = len(Wafer.recipe_array)

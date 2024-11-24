@@ -21,10 +21,10 @@ class Decode:
         # self.Scheduled = []  # 已经排产过的工序
         self.M_num = M_num  # 机器数
         self.Machines = []  # 存储机器类
-        self.fitness = 0.0  # 计算适应度
+        self.fitness = 0.0  # 计算当前调度结果的时间长度
         self.J = J  # 表示各个工件对应的工序数。用键值对来表示
         # self.Machine_time = np.zeros(self.M_num, dtype=float)  # 机器时间初始化，使用当前机器运行情况初始化
-        self.Machine_time = [x for x in M_status]  # 机器时间初始化，使用当前机器运行情况初始化
+        self.Machine_time = [0 for x in M_status]  # 机器时间初始化，当前机器占用情况，初始值为0
         self.Jobs = []  # 存储工件类
         self.JM = JM  # 机器顺序矩阵，JM[i][j]表示工件i的第j道工序在机器JM[i][j]上加工
         self.T = []  # 时间顺序矩阵，T[i][j]表示工件i的第j道工序在机器JM[i][j]上加工的加工时间为T[i][j]
@@ -36,9 +36,9 @@ class Decode:
         self.put_time = tm_cooling_time
         self.pre_jobs = pre_jobs  # 当前正在处理的晶圆编号
         self.pre_machines = pre_machines  # 当前正在处理的晶圆所在的机器编号
-        self.pre_process = pre_process
+        self.pre_process = pre_process  # 当前正在处理的晶圆剩余处理时间
         for j in range(M_num):
-            self.Machines.append(Machine_Time_window(j, self.Machine_time[j]))  # 为每个机器分配一个机器类，并对其进行编号
+            self.Machines.append(Machine_Time_window(j, 0))  # 为每个机器分配一个机器类，并对其进行编号，默认所有机器未被占用
         for k, v in J.items():
             self.Jobs.append(Job(k, v))
 
@@ -48,7 +48,7 @@ class Decode:
         self.first_pick = 0.0
         self.Jobs.clear()
         for j in range(self.M_num):
-            self.Machines.append(Machine_Time_window(j, self.Machine_time[j]))  # 为每个机器分配一个机器类，并对其进行编号
+            self.Machines.append(Machine_Time_window(j, 0))  # 为每个机器分配一个机器类，并对其进行编号
         for k, v in self.J.items():
             self.Jobs.append(Job(k, v))
 
@@ -116,17 +116,26 @@ class Decode:
 
         return earliest_start, nxt_early, nxt_late  # 返回0.工件的工序最早开始时间，1.下一道工序最早可以开始的时间，2.下一道工序最晚可以开始的时间
 
-    def get_new_list(self, problem_list):
+    def get_new_list(self, problem_list):  # 目前已弃用
+        # new_list = []
+        # for x in problem_list:
+        #     new_list.append(x)
+        # for k, v in self.J.items():
+        #     machine = self.JM[k - 1][0]
+        #     if machine in self.TM_List and k not in problem_list:
+        #         new_list.append(k)
+        # for k, v in self.J.items():
+        #     if k not in new_list and k not in problem_list:
+        #         new_list.append(k)
+        # print(new_list)
+        #######################################
         new_list = []
         for x in problem_list:
             new_list.append(x)
         for k, v in self.J.items():
-            machine = self.JM[k - 1][0]
-            if machine in self.TM_List and k not in problem_list:
+            if k not in problem_list:
                 new_list.append(k)
-        for k, v in self.J.items():
-            if k not in new_list and k not in problem_list:
-                new_list.append(k)
+        # print(new_list)
         return new_list
 
     # 解码
@@ -134,18 +143,24 @@ class Decode:
         # MS = list(CHS[0:Len_Chromo])
         # OS = list(CHS[Len_Chromo:2 * Len_Chromo])
         # self.Order_Matrix(MS)
+        for i in range(len(self.pre_machines)):
+            self.Machine_time[self.pre_machines[i]] += self.pre_process[i]
         self.get_T_Matrix()
         self.fitness = 0.0
-        problem_list = []
-        self.generate_answer(problem_list)
+        problem_list = []  # 出现冲突的晶圆编号，通过增加等待时间来解决冲突
+        self.generate_answer([])
         for i in self.pre_jobs:
             if self.Jobs[i].J_start[0] > 0:
+                self.Machine_time[self.Jobs[i].J_machine[0]] += 2
                 problem_list.append(i + 1)
+        cnt = 0
         while len(problem_list) != 0:
+            cnt += 1
+            # print(problem_list)
             self.Jobs[:] = [None]*0
             self.Machines[:] = [None]*0
             for j in range(self.M_num):
-                self.Machines.append(Machine_Time_window(j, self.Machine_time[j]))  # 为每个机器分配一个机器类，并对其进行编号
+                self.Machines.append(Machine_Time_window(j, 0))  # 为每个机器分配一个机器类，并对其进行编号
             for k, v in self.J.items():
                 self.Jobs.append(Job(k, v))
             self.fitness = 0.0
@@ -153,10 +168,25 @@ class Decode:
             problem_list = []
             for i in self.pre_jobs:
                 if self.Jobs[i].J_start[0] > 0:
+                    self.Machine_time[self.Jobs[i].J_machine[0]] += 2
                     problem_list.append(i + 1)
+        # while len(problem_list) != 0:
+        #     self.Jobs[:] = [None]*0
+        #     self.Machines[:] = [None]*0
+        #     for j in range(self.M_num):
+        #         self.Machines.append(Machine_Time_window(j, self.Machine_time[j]))  # 为每个机器分配一个机器类，并对其进行编号
+        #     for k, v in self.J.items():
+        #         self.Jobs.append(Job(k, v))
+        #     self.fitness = 0.0
+        #     self.generate_answer(problem_list)
+        #     problem_list = []
+        #     for i in self.pre_jobs:
+        #         if self.Jobs[i].J_start[0] > 0:
+        #             problem_list.append(i + 1)
         return self.fitness
 
     def generate_answer(self, problem_list):
+        # for k, v in self.J.items():
         new_list = self.get_new_list(problem_list)
         # for k, v in self.J.items():
         for k in new_list:
@@ -204,22 +234,26 @@ class Decode:
             early = early_s[-1]
         else:
             early = early_s[-1] - self.pick_time
-        if op == 1:
-            early = max(early, self.first_pick)
         if not late_s:
             late = -1.0
         elif len(late_s) > 1 and late_s[-1] != -1.0:
             late = late_s[-1] - self.pick_time
         else:
             late = late_s[-1]
-        if op == sop:
+        if op == sop:  # 最后一道工序直接将开始时间存入序列，并返回
             LT.append(early)
             return LT
         machine = self.JM[job][op]  # JM[i][j]表示工件i的第j道工序在机器JM[i][j]上加工
         P_t = self.T[job][op]  # T[i][j]表示工件i的第j道工序的加工时间为T[i][j]
-        if machine in self.pre_machines and op >= 1:
+        if machine in self.pre_machines:
             x = self.pre_machines.index(machine)
-            early = max(early, self.T[self.pre_jobs[x]][0] + self.put_time + self.pick_time)
+            if job in self.pre_jobs and job == self.pre_jobs[x] and op == 0:
+                early = early
+            else:
+                early = max(early, self.Machine_time[machine])
+        # if machine in self.pre_machines and op >= 1:
+        #     x = self.pre_machines.index(machine)
+        #     early = max(early, self.T[self.pre_jobs[x]][0] + self.put_time + self.pick_time)
         while 1:
             earliest_start, nxt_early, nxt_late = self.Earliest_Start(job, op, machine, early, late)
             nxt_early = min(nxt_early, earliest_start + self.decay[machine])

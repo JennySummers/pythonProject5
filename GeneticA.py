@@ -14,11 +14,15 @@ import matplotlib.pyplot as plt
 import datetime
 import math
 import json
+from datetime import timedelta
 
 INVALID = 9990
 
 unit_time = 1.0  # 单位时间设定，单位为毫秒
 
+
+def seconds_to_time(seconds):
+    return str(timedelta(seconds=seconds)).split('.')[0]
 
 def Timestep2Time(cur_time, time_step, time_decay=0):  # 将单位时间转换为实际的时间
     return cur_time + datetime.timedelta(milliseconds=(time_step + time_decay) * unit_time)
@@ -437,7 +441,7 @@ class GA:
     def main(self, processing_time, J_O, m_num, j_num, o_num, TM_list, cmd_message_path):
         start_time = datetime.datetime.now()
         print("start time is : ", start_time)
-        e = Encode(processing_time, self.Pop_size, J_O, j_num, m_num, self.Machine_status, self.pre_jobs)
+        e = Encode(processing_time, self.Pop_size, J_O, j_num, m_num, self.Machine_status, self.pre_machines, TM_list)
         # OS_List = e.OS_List()
         Len_Chromo = e.Len_Chromo
         CHS1 = e.Global_initial()
@@ -517,6 +521,33 @@ class GA:
         r_time = stop_time - start_time
         print("Running time : ", r_time.total_seconds(), 'seconds')
         print("Time steps = ", Time2Timestep(start_time, stop_time))
+        print("Best Fitness : ", Optimal_fit)
+        print("吞吐量（小时）：", len(self.Best_Job)/Optimal_fit * 60 * 60)
+        job_index = 0
+        for i_job in self.Best_Job:
+            job_index = job_index + 1
+            pre_start = 0
+            pre_end = 0
+            res_start = i_job.J_start[1]
+            res_end = i_job.J_end[-2]
+            if job_index > 1:
+                pre_start = res_start - self.Best_Job[job_index-2].J_start[1]
+                pre_end = res_end - self.Best_Job[job_index-2].J_end[-2]
+                if res_end < self.Best_Job[job_index-2].J_end[-2]:
+                    pre_end = self.Best_Job[job_index - 2].J_end[-2] - res_end
+            time_consume = res_end - res_start
+            print(job_index, '\t', end='')
+            time_str = seconds_to_time(int(res_start))
+            print(time_str, '\t', end='', sep="")
+            time_str = seconds_to_time(int(res_end))
+            print(time_str, '\t', end='', sep="")
+            time_str = seconds_to_time(int(time_consume))
+            print(time_str, '\t', end='', sep="")
+            time_str = seconds_to_time(int(pre_start))
+            print(time_str, '\t', end='', sep="")
+            time_str = seconds_to_time(int(pre_end))
+            print(time_str, '\t', sep="")
+
         # 删除临时变量
         del start_time
         del e
@@ -584,3 +615,4 @@ class GA:
                         flag = False
             if not flag:
                 print("Error in Machine ", tm)
+
