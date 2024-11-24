@@ -59,7 +59,7 @@ class Encode:
             cnt = 1
             for j in self.pre_list:
                 if j in self.TM_List:
-                    Machine_time[j] += cnt * 10
+                    Machine_time[j] += 10
                     cnt += 1
             # random.shuffle(OS_list)  # 生成工序排序部分
             OS[i] = np.array(OS_list)
