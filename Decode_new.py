@@ -156,7 +156,7 @@ class Decode:
         cnt = 0
         while len(problem_list) != 0:
             cnt += 1
-            # print(problem_list)
+            print(problem_list)
             self.Jobs[:] = [None]*0
             self.Machines[:] = [None]*0
             for j in range(self.M_num):

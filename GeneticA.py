@@ -407,12 +407,14 @@ class GA:
         Message_data = []
         self.TM_msg.sort(key=lambda y: y.cmd_time)  # 按时间进行排序
         # self.print_by_group()
+        '''
         for tm_i in self.TM_msg:
             moves = "pick" if tm_i.move_type == 0 else "put"
             if moves == "pick":
                 print("at", tm_i.cmd_time, "time", tm_i.machine_no, moves, "from", tm_i.move_from)
             else:
                 print("at", tm_i.cmd_time, "time", tm_i.machine_no, moves, "to", tm_i.move_to)
+        '''
         # print("at", tm_i.cmd_time, "time", tm_i.machine_no, moves, "from", tm_i.move_from, "to", tm_i.move_to)
         msg_size = len(self.TM_msg)
         i = 0
@@ -523,6 +525,7 @@ class GA:
         print("Time steps = ", Time2Timestep(start_time, stop_time))
         print("Best Fitness : ", Optimal_fit)
         print("吞吐量（小时）：", len(self.Best_Job)/Optimal_fit * 60 * 60)
+        '''
         job_index = 0
         for i_job in self.Best_Job:
             job_index = job_index + 1
@@ -547,6 +550,7 @@ class GA:
             print(time_str, '\t', end='', sep="")
             time_str = seconds_to_time(int(pre_end))
             print(time_str, '\t', sep="")
+        '''
 
         # 删除临时变量
         del start_time
